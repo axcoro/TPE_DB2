@@ -1,4 +1,7 @@
-TPE_DB2
+Trabajo Practico Especial, Base de datos II 2013
 =======
 
-Trabajo Practico Especial, Base de datos II 2013
+Integrantes:
++ Axel Coronel
++ Sebastian Perez
+ 
