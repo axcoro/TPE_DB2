@@ -1,6 +1,6 @@
 <?php
 include './php/configs.conf.inc';
-include './php/funciones.php';
+include './php/utils/funciones.php';
 $seccion = get_url_var("seccion", SECCION_PRINCIPAL);
 ?>
 <!DOCTYPE html>
