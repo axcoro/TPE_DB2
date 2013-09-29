@@ -1,8 +1,12 @@
+<?php
+include './php/configs.conf.inc';
+include './php/funciones.php';
+$seccion = get_url_var("seccion", SECCION_PRINCIPAL);
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <title>TPE - DB2</title>
-
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -12,25 +16,24 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
                     <h1>Sistema</h1>
                 </div>
             </div>
-            <div class="row-fluid">
+            <div id="content" class="row-fluid">
                 <div class="span2">
                     <ul class="nav nav-list">
-                        <li class="nav-header">List header</li>
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
+                        <?php echo seccionBuilder($seccion); ?>
                     </ul>
                 </div>
-                <div id="content" class="span10">
-                    <div class="span4">
-                    </div>
-                    <div class="span8">
-                    </div>
+                <div class="span10">
+                    <?php
+                    $page = "content/$seccion.php";
+                    if (file_exists($page))
+                        include $page;
+                    ?>
                 </div>
             </div>
             <div id="footer" class="row-fluid">
