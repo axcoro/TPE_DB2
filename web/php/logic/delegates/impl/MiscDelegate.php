@@ -13,10 +13,10 @@ class MiscDelegate extends AbstractDelegate {
     function get_secciones($active = SECCION_PRINCIPAL, $url_base = URL_BASE_SECCIONES) {
         $secciones = array();
         // nombre secion / nombre archivo
-        $secciones[] = ["Trabajos", SECCION_PRINCIPAL];
-        $secciones[] = ["Clientes", "clientes"];
-        $secciones[] = ["Proveedores", "proveedores"];
-        $secciones[] = ["Terceros", "terceros"];
+        $secciones[] = array("Trabajos", SECCION_PRINCIPAL);
+        $secciones[] = array("Clientes", "clientes");
+        $secciones[] = array("Proveedores", "proveedores");
+        $secciones[] = array("Terceros", "terceros");
         $html = '';
         $c = count($secciones);
         $active_class = '';
@@ -30,7 +30,6 @@ class MiscDelegate extends AbstractDelegate {
 
         return $html;
     }
-
 }
 
 ?>

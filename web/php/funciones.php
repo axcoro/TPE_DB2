@@ -11,22 +11,4 @@ function get_url_var($name, $default = '') {
     return $value;
 }
 
-function seccionBuilder($active = SECCION_PRINCIPAL, $url_base = URL_BASE_SECCIONES) {
-    $secciones = array();
-    $secciones[] = array("Trabajos", "trabajos");
-    $secciones[] = array("Clientes", "clientes");
-    $secciones[] = array("Proveedores", "proveedores");
-    $secciones[] = array("Terceros", "terceros");
-    $html = '';
-    $c = count($secciones);
-    $active_class = '';
-    for ($i = 0; $i < $c; $i++) {
-        $seccion = $secciones[$i];
-        $active_class = ($seccion[1] == $active) ? 'active' : '';
-        $html .="<li class='$active_class'><a href='$url_base$seccion[1]'>$seccion[0]</a></li>";
-    }
-
-    return $html;
-}
-
 ?>
