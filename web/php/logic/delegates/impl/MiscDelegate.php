@@ -30,6 +30,7 @@ class MiscDelegate extends AbstractDelegate {
 
         return $html;
     }
+
 }
 
 ?>

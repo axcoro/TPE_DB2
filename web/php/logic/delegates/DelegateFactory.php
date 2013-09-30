@@ -29,6 +29,8 @@ class DelegateFactory {
                     break;
                 case DELEGATE_MISC:
                     $delegate = new $type();
+                case DELEGATE_TRABAJOS:
+                    $delegate = new $type();
                     break;
                 default:
                     break;

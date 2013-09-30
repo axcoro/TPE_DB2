@@ -23,6 +23,12 @@ switch ($operacion) {
             $response = $delegate->get_secciones();
         break;
 
+    case "listar_trabajos":
+        $delegate = DelegateFactory::getDelegateFor(DELEGATE_TRABAJOS);
+        if ($delegate)
+            $response = $delegate->get_listado_trabajos();
+        break;
+
     // respuesta por defecto
     default:
         $response = "<h1>Operacion '$operacion' no definida..</h1>";
