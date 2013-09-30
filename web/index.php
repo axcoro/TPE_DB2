@@ -14,12 +14,13 @@ $seccion = get_url_var("seccion", SECCION_PRINCIPAL);
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/bootstrap-rowlink.min.css">
     </head>
     <body>
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <h1>Sistema</h1>
+                    <h1>Efecto LED - Sistema de gestión de trabajos</h1>
                 </div>
             </div>
             <div id="content" class="row-fluid">
@@ -53,5 +54,6 @@ $seccion = get_url_var("seccion", SECCION_PRINCIPAL);
         </div>
         <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-rowlink.min.js"></script>
     </body>
 </html>

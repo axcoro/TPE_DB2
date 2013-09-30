@@ -13,10 +13,10 @@ function get_url_var($name, $default = '') {
 
 function seccionBuilder($active = SECCION_PRINCIPAL, $url_base = URL_BASE_SECCIONES) {
     $secciones = array();
-    $secciones[] = array("Home", SECCION_PRINCIPAL);
-    $secciones[] = array("Seccion 1", "seccion1");
-    $secciones[] = array("Seccion 2", "seccion2");
-    $secciones[] = array("Seccion 3", "seccion3");
+    $secciones[] = array("Trabajos", "trabajos");
+    $secciones[] = array("Clientes", "clientes");
+    $secciones[] = array("Proveedores", "proveedores");
+    $secciones[] = array("Terceros", "terceros");
     $html = '';
     $c = count($secciones);
     $active_class = '';

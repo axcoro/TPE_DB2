@@ -1,4 +1,4 @@
 <?php
-define("SECCION_PRINCIPAL", "home");
-define("URL_BASE_SECCIONES", "/TPE/?seccion=");
+define("SECCION_PRINCIPAL", "trabajos");
+define("URL_BASE_SECCIONES", "/~sperez/TPE?seccion=");
 ?>
