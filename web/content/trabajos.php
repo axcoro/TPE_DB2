@@ -1,7 +1,6 @@
 <?php
-include './php/configs.conf.inc';
-include './php/utils/funciones.php';
-include './php/logic/delegates/DelegateFactory.php';
+// pera: no hacer includes aca, xq este archivo YA se hace un include en el index
+// que a su vez hace un include de este archivo
 
 $delegate = DelegateFactory::getDelegateFor(DELEGATE_TRABAJOS);
 

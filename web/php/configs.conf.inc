@@ -5,11 +5,15 @@ define("SECCION_PRINCIPAL", "trabajos");
 switch (PHP_OS) {
     case stristr(PHP_OS, 'WIN'):
         define("URL_BASE_SECCIONES", "/TPE?seccion=");
+        break;
     case stristr(PHP_OS, 'DAR'):
         define("URL_BASE_SECCIONES", "/~sperez/TPE?seccion=");
+        break;
     default:
         define("URL_BASE_SECCIONES", "/TPE?seccion=");
+        break;
 }
+
 define("CONTENT_PATH", "content/");
 
 define("MYSQL_DB_PREFIX", "LED_");

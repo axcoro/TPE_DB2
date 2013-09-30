@@ -15,11 +15,15 @@ class TrabajosDelegate extends AbstractDelegate {
         $db = DelegateFactory::getDelegateFor(DELEGATE_MYSQL);
         $listado = array();
         if ($db) {
-            $result = $db->ListarTrabajos(); // Call LED_ListarTrabajos();
-            if ($result && $result->num_rows > 0) {
-                while ($r = $result->fetch_object()) {
-                    $listado[] = $r;
+            try { // try para el caso en que no este definida la sp
+                $result = $db->ListarTrabajos(); // Call LED_ListarTrabajos();
+                if ($result && $result->num_rows > 0) {
+                    while ($r = $result->fetch_object()) {
+                        $listado[] = $r;
+                    }
                 }
+            } catch (Exception $exc) {
+                $listado = $exc->getMessage();
             }
         }
 
