@@ -11,22 +11,10 @@ function get_url_var($name, $default = '') {
     return $value;
 }
 
-function seccionBuilder($active = SECCION_PRINCIPAL, $url_base = URL_BASE_SECCIONES) {
-    $secciones = array();
-    $secciones[] = array("Home", SECCION_PRINCIPAL);
-    $secciones[] = array("Seccion 1", "seccion1");
-    $secciones[] = array("Seccion 2", "seccion2");
-    $secciones[] = array("Seccion 3", "seccion3");
-    $html = '';
-    $c = count($secciones);
-    $active_class = '';
-    for ($i = 0; $i < $c; $i++) {
-        $seccion = $secciones[$i];
-        $active_class = ($seccion[1] == $active) ? 'active' : '';
-        $html .="<li class='$active_class'><a href='$url_base$seccion[1]'>$seccion[0]</a></li>";
-    }
-
-    return $html;
+function include_page($page_name, $base_path = CONTENT_PATH) {
+    $path = "$base_path$page_name.php";
+    if (file_exists($path))
+        include $path;
 }
 
 ?>

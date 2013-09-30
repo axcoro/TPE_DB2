@@ -1,7 +1,13 @@
 <?php
 include './php/configs.conf.inc';
 include './php/utils/funciones.php';
+include './php/logic/delegates/DelegateFactory.php';
+
 $seccion = get_url_var("seccion", SECCION_PRINCIPAL);
+
+// generar menu secciones
+$delegate = DelegateFactory::getDelegateFor(DELEGATE_MISC);
+$secciones = $delegate->get_secciones($seccion);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,14 +31,12 @@ $seccion = get_url_var("seccion", SECCION_PRINCIPAL);
             <div id="content" class="row-fluid">
                 <div class="span2">
                     <ul class="nav nav-list">
-                        <?php echo seccionBuilder($seccion); ?>
+                        <?php echo $secciones; ?>
                     </ul>
                 </div>
                 <div class="span10">
                     <?php
-                    $page = "content/$seccion.php";
-                    if (file_exists($page))
-                        include $page;
+                    include_page($seccion);
                     ?>
                 </div>
             </div>

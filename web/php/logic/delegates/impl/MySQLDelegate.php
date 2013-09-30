@@ -6,7 +6,7 @@
  *
  * @author Axel
  */
-class MySQLDelegate {
+class MySQLDelegate extends AbstractDatabaseDelegate {
 
     public $conn;
     private $last_error;
@@ -17,6 +17,7 @@ class MySQLDelegate {
      * Contruye la conexion a un servidor MySQL
      */
     public function __construct($host, $username, $password, $database) {
+        parent::__construct($host, $username, $password, $database);
         $this->conn = new mysqli($host, $username, $password, $database);
     }
 

@@ -35,6 +35,8 @@ when _tipo = 2 then -- terceros
     INSERT INTO `led_terceros` (`id_datos`) VALUES (LAST_INSERT_ID());
 end case; 
 
+select LAST_INSERT_ID() as id, _tipo as tipo;
+
 END$$
 
 DELIMITER ;
