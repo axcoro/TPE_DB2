@@ -29,7 +29,6 @@ CREATE TABLE IF NOT EXISTS `led_articulos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_articulos: ~1 rows (aproximadamente)
-DELETE FROM `led_articulos`;
 /*!40000 ALTER TABLE `led_articulos` DISABLE KEYS */;
 INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `marca_fabricante`, `modelo`, `observaciones`) VALUES
 	(1, 'b', 'b', 'b', 'b', 'b');
@@ -47,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `led_clientes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_clientes: ~1 rows (aproximadamente)
-DELETE FROM `led_clientes`;
 /*!40000 ALTER TABLE `led_clientes` DISABLE KEYS */;
 INSERT INTO `led_clientes` (`id_cliente`, `id_datos`) VALUES
 	(1, 1);
@@ -69,7 +67,6 @@ CREATE TABLE IF NOT EXISTS `led_datos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_datos: ~1 rows (aproximadamente)
-DELETE FROM `led_datos`;
 /*!40000 ALTER TABLE `led_datos` DISABLE KEYS */;
 INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`) VALUES
 	(1, '1', '1', '1', '1', '1', '1', '1');
@@ -91,7 +88,6 @@ CREATE TABLE IF NOT EXISTS `led_integrantes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_integrantes: ~1 rows (aproximadamente)
-DELETE FROM `led_integrantes`;
 /*!40000 ALTER TABLE `led_integrantes` DISABLE KEYS */;
 INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `correo_electronico`, `id_proveedor`) VALUES
 	(1, '1', '1', '1', '1', 1);
@@ -113,7 +109,6 @@ CREATE TABLE IF NOT EXISTS `led_participa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_participa: ~1 rows (aproximadamente)
-DELETE FROM `led_participa`;
 /*!40000 ALTER TABLE `led_participa` DISABLE KEYS */;
 INSERT INTO `led_participa` (`id_terceros`, `id_trabajos`, `costo_prestacion`, `descripcion_trabajo_realizado`) VALUES
 	(1, 1, 0, 'asdasd');
@@ -131,7 +126,6 @@ CREATE TABLE IF NOT EXISTS `led_proveedores` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_proveedores: ~1 rows (aproximadamente)
-DELETE FROM `led_proveedores`;
 /*!40000 ALTER TABLE `led_proveedores` DISABLE KEYS */;
 INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
 	(1, 1);
@@ -152,7 +146,6 @@ CREATE TABLE IF NOT EXISTS `led_provistos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_provistos: ~1 rows (aproximadamente)
-DELETE FROM `led_provistos`;
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
 INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `codigo_catalogo_proveedor`) VALUES
 	(1, 1, 'asdasda');
@@ -170,7 +163,6 @@ CREATE TABLE IF NOT EXISTS `led_terceros` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_terceros: ~1 rows (aproximadamente)
-DELETE FROM `led_terceros`;
 /*!40000 ALTER TABLE `led_terceros` DISABLE KEYS */;
 INSERT INTO `led_terceros` (`id_terceros`, `id_datos`) VALUES
 	(1, 1);
@@ -196,7 +188,6 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_trabajos: ~2 rows (aproximadamente)
-DELETE FROM `led_trabajos`;
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `id_cliente`) VALUES
 	(1, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 1),
@@ -222,7 +213,6 @@ CREATE TABLE IF NOT EXISTS `led_utiliza` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_utiliza: ~1 rows (aproximadamente)
-DELETE FROM `led_utiliza`;
 /*!40000 ALTER TABLE `led_utiliza` DISABLE KEYS */;
 INSERT INTO `led_utiliza` (`id_articulos`, `id_trabajos`, `id_proveedor`, `costo_unitario`, `cantidad_articulos`) VALUES
 	(1, 1, 1, 0, 0);
