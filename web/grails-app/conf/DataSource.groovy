@@ -23,7 +23,7 @@ environments {
             pooled = true
             dbCreate = "update"
             //url = "jdbc:mysql://localhost/yourDB"
-            url = "jdbc:mysql://192.168.1.102/efecto_led"
+            url = "jdbc:mysql://localhost/efecto_led"
             driverClassName = "com.mysql.jdbc.Driver"
             username = "root"
             password = ""
