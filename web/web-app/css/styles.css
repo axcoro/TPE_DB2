@@ -1,0 +1,31 @@
+body {
+    background-image: url('../img/bg.png');
+}
+
+body * {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+div {
+    border: 1px solid black; /* para maquetacion*/
+}
+
+#integrantes {
+    padding-top: 7px;
+    padding-right: 7px;
+    text-align: right;
+}
+
+#materia {
+    padding-top: 7px;
+    padding-left: 7px;
+    text-align: left;
+}
+
+#content {
+    min-height: 450px;
+}
+
+#footer {
+    min-height: 75px;
+}
