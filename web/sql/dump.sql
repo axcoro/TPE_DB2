@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Volcando estructura de base de datos para efecto_led
+DROP DATABASE IF EXISTS `efecto_led`;
 CREATE DATABASE IF NOT EXISTS `efecto_led` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `efecto_led`;
 
 
 -- Volcando estructura para tabla efecto_led.led_articulos
+DROP TABLE IF EXISTS `led_articulos`;
 CREATE TABLE IF NOT EXISTS `led_articulos` (
   `id_articulo` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_interno` varchar(45) NOT NULL,
@@ -35,6 +37,7 @@ INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `ma
 
 
 -- Volcando estructura para tabla efecto_led.led_clientes
+DROP TABLE IF EXISTS `led_clientes`;
 CREATE TABLE IF NOT EXISTS `led_clientes` (
   `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `id_datos` int(11) NOT NULL,
@@ -52,6 +55,7 @@ INSERT INTO `led_clientes` (`id_cliente`, `id_datos`) VALUES
 
 
 -- Volcando estructura para tabla efecto_led.led_datos
+DROP TABLE IF EXISTS `led_datos`;
 CREATE TABLE IF NOT EXISTS `led_datos` (
   `id_datos` int(11) NOT NULL AUTO_INCREMENT,
   `numero_cuil` varchar(45) NOT NULL,
@@ -73,6 +77,7 @@ INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`,
 
 
 -- Volcando estructura para tabla efecto_led.led_integrantes
+DROP TABLE IF EXISTS `led_integrantes`;
 CREATE TABLE IF NOT EXISTS `led_integrantes` (
   `id_integrantes` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
@@ -94,6 +99,7 @@ INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `
 
 
 -- Volcando estructura para tabla efecto_led.led_participa
+DROP TABLE IF EXISTS `led_participa`;
 CREATE TABLE IF NOT EXISTS `led_participa` (
   `id_terceros` int(11) NOT NULL,
   `id_trabajos` int(11) NOT NULL,
@@ -115,6 +121,7 @@ INSERT INTO `led_participa` (`id_terceros`, `id_trabajos`, `costo_prestacion`, `
 
 
 -- Volcando estructura para tabla efecto_led.led_proveedores
+DROP TABLE IF EXISTS `led_proveedores`;
 CREATE TABLE IF NOT EXISTS `led_proveedores` (
   `id_proveedores` int(11) NOT NULL AUTO_INCREMENT,
   `id_datos` int(11) NOT NULL,
@@ -132,6 +139,7 @@ INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
 
 
 -- Volcando estructura para tabla efecto_led.led_provistos
+DROP TABLE IF EXISTS `led_provistos`;
 CREATE TABLE IF NOT EXISTS `led_provistos` (
   `id_articulos` int(11) NOT NULL,
   `id_proveedores` int(11) NOT NULL,
@@ -152,6 +160,7 @@ INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `codigo_catalogo_
 
 
 -- Volcando estructura para tabla efecto_led.led_terceros
+DROP TABLE IF EXISTS `led_terceros`;
 CREATE TABLE IF NOT EXISTS `led_terceros` (
   `id_terceros` int(11) NOT NULL AUTO_INCREMENT,
   `id_datos` int(11) NOT NULL,
@@ -169,6 +178,7 @@ INSERT INTO `led_terceros` (`id_terceros`, `id_datos`) VALUES
 
 
 -- Volcando estructura para tabla efecto_led.led_trabajos
+DROP TABLE IF EXISTS `led_trabajos`;
 CREATE TABLE IF NOT EXISTS `led_trabajos` (
   `id_trabajos` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(255) NOT NULL,
@@ -195,6 +205,7 @@ INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fec
 
 
 -- Volcando estructura para tabla efecto_led.led_utiliza
+DROP TABLE IF EXISTS `led_utiliza`;
 CREATE TABLE IF NOT EXISTS `led_utiliza` (
   `id_articulos` int(11) NOT NULL,
   `id_trabajos` int(11) NOT NULL,
@@ -219,8 +230,9 @@ INSERT INTO `led_utiliza` (`id_articulos`, `id_trabajos`, `id_proveedor`, `costo
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_crearArticulo
+DROP PROCEDURE IF EXISTS `LED_crearArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_crearArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearArticulo`(
 
 
 _nombre VARCHAR(45),
@@ -241,8 +253,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_crearDatos
+DROP PROCEDURE IF EXISTS `LED_crearDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_crearDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearDatos`(
 
 
 _numero_cuil VARCHAR(45),
@@ -275,8 +288,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_crearTrabajo
+DROP PROCEDURE IF EXISTS `LED_crearTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_crearTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearTrabajo`(
 
 
 _descripcion VARCHAR(45),
@@ -300,8 +314,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarArticulo
+DROP PROCEDURE IF EXISTS `LED_eliminarArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_eliminarArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarArticulo`(
 
 
 _id INT
@@ -315,8 +330,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarDatos
+DROP PROCEDURE IF EXISTS `LED_eliminarDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_eliminarDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarDatos`(
 
 
 _id INT
@@ -330,8 +346,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarTrabajo
+DROP PROCEDURE IF EXISTS `LED_eliminarTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_eliminarTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarTrabajo`(
 
 
 _id INT
@@ -345,8 +362,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_listarArticulosPorTrabajo
+DROP PROCEDURE IF EXISTS `LED_listarArticulosPorTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarArticulosPorTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarArticulosPorTrabajo`(
 
 
 _id INT
@@ -362,8 +380,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_listarDatos
+DROP PROCEDURE IF EXISTS `LED_listarDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarDatos`(
 
 
 _tipo INT
@@ -387,8 +406,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_listarIntegrantesPorProveedor
+DROP PROCEDURE IF EXISTS `LED_listarIntegrantesPorProveedor`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarIntegrantesPorProveedor`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarIntegrantesPorProveedor`(
 
 /*
 ===================================================
@@ -411,8 +431,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_listarProveedoresPorArticulo
+DROP PROCEDURE IF EXISTS `LED_listarProveedoresPorArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarProveedoresPorArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarProveedoresPorArticulo`(
 
 
 _id INT
@@ -429,8 +450,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_listarTercerosPorTrabajo
+DROP PROCEDURE IF EXISTS `LED_listarTercerosPorTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarTercerosPorTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarTercerosPorTrabajo`(
 
 
 _id INT
@@ -446,8 +468,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_listarTrabajosPorCliente
+DROP PROCEDURE IF EXISTS `LED_listarTrabajosPorCliente`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarTrabajosPorCliente`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarTrabajosPorCliente`(
 
 
 _id INT
@@ -462,8 +485,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_modificarArticulo
+DROP PROCEDURE IF EXISTS `LED_modificarArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_modificarArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarArticulo`(
 
 
 _id INT,
@@ -487,8 +511,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_modificarDatos
+DROP PROCEDURE IF EXISTS `LED_modificarDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_modificarDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarDatos`(
 
 
 _id INT,
@@ -521,8 +546,9 @@ DELIMITER ;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_modificarTrabajo
+DROP PROCEDURE IF EXISTS `LED_modificarTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_modificarTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarTrabajo`(
 
 
 _id INT,
