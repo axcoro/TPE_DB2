@@ -1,20 +1,12 @@
 package tpe
 
-import groovy.sql.Sql
-
 class EfectoLedController {
 
-	def dataSource
+	def sqlService
 
 	def jobs() {
-		
-		def sql = Sql.newInstance( dataSource )
 
-		sql.eachRow("{call LED_listarDatos(1)}") { resultSet ->
-
-			println resultSet
-
-		}
+		sqlService.getJobs()
 
 		return
 	}
