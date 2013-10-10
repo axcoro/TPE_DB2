@@ -6,9 +6,16 @@ class EfectoLedController {
 
 	def jobs() {
 
-		sqlService.getJobs()
+		def jobs = sqlService.getJobs()
 
-		return
+		Map othersByJob = [:]
+
+		jobs.each { job ->
+
+			othersByJob."${job.id_trabajos}" = sqlService.getOthersByJob(job.id_trabajos)
+		}
+
+		return [jobs:jobs, othersByJob:othersByJob]
 	}
 
 	def clients() {

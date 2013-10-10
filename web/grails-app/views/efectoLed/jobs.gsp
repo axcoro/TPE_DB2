@@ -29,36 +29,45 @@
 			</thead>
 
 			<tbody data-provides="rowlink">
-				<tr class="rowlink">
-					<td><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">cliente1</button></td>
-					<td>2</td>
-					<td>3</td>
-					<td>4</td>
-					<td>5</td>
-					<td>6</td>
-					<td>7</td>
-					<td>8</td>
-					<td>9</td>
-					<td>
-						<div class="btn-group">
-							<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">seleccionar <span class="caret"></span></button>
-							<ul class="dropdown-menu">
-							<li><a href="#myModal2" data-toggle="modal">Tercero1</a></li>
-							<li><a href="#myModal2" data-toggle="modal">Tercero2</a></li>
-							</ul>
-						</div>
-					</td>
-					<td>
-						<div class="btn-group">
-							<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								
-								<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
-								<li><a href="#"><i class="icon-trash"></i> Eliminar</a></li>
-							</ul>
-						</div>
-					</td>
-				</tr>
+
+				<g:each var="job" in="${jobs}">
+
+					<tr class="rowlink">
+						<td><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
+						<td>${job.descripcion}</td>
+						<td>${job.fecha_creacion}</td>
+						<td>${job.fecha_aprobacion_presupuesto}</td>
+						<td>${job.fecha_inicio_obra}</td>
+						<td>${job.fecha_fin_obra}</td>
+						<td>${job.precio_total}</td>
+						<td>${job.precio_mano_obra}</td>
+						<td>${job.precio_articulos}</td>
+						<td>
+							<div class="btn-group">
+								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">seleccionar <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+
+									<% def list = othersByJob."${job.id_trabajos}" %>
+
+									<g:each var="other" in="${list}">
+										<li><a href="#myModal2" data-toggle="modal">${other.id_terceros}</a></li>
+									</g:each>
+
+								</ul>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group">
+								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									
+									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
+									<li><a href="#"><i class="icon-trash"></i> Eliminar</a></li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</g:each>
 			</tbody>
 
 			<table class="table table-condensed">
