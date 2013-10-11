@@ -47,7 +47,7 @@
 								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">seleccionar <span class="caret"></span></button>
 								<ul class="dropdown-menu">
 
-									<% def list = [[id_terceros:"Z"], [id_terceros:"Q"], [id_terceros:"R"]]/*othersByJob."${job.id_trabajos}"*/ %>
+									<% def list = [[id_terceros:""]] + othersByJob."${job.id_trabajos}" %>
 
 									<g:each var="other" in="${list}">
 										<li>

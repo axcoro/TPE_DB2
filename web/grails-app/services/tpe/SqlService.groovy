@@ -29,4 +29,15 @@ class SqlService {
 
 		return rows
 	}
+
+	def getItemsByJob(jobId) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		List rows = sql.rows("{call LED_listarArticulosPorTrabajo($jobId)}")
+
+		sql.close()
+
+		return rows
+	}
 }

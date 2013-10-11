@@ -18,6 +18,13 @@ class EfectoLedController {
 		return [jobs:jobs, othersByJob:othersByJob]
 	}
 
+	def itemsByJob() {
+
+		def itemsByJob = sqlService.getItemsByJob(params.jobId)
+
+		return [itemsByJob:itemsByJob]
+	}
+
 	def clients() {
 
 		return

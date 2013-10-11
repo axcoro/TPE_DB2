@@ -22,5 +22,11 @@ class UrlMappings {
 			controller = "efectoLed"
 			action = "others"
 		}
+
+		"/itemsByJob" {
+
+			controller = "ajax"
+			action = "itemsByJob"
+		}
 	}
 }
