@@ -48,4 +48,15 @@ class SqlService {
 
 		return getRows("{call LED_listarDatos(2)}")
 	}
+
+	def deleteCop(copId) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_listarDatos(2)}")
+
+		sql.close()
+
+		return result
+	}
 }

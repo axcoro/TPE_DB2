@@ -2,31 +2,36 @@ class UrlMappings {
 
 	static mappings = {
 
-		"/(trabajos)?" {
+		"/(listar-trabajos)?" {
 
 			controller = "efectoLed"
-			action = "jobs"
+			action = "listJobs"
 		}
-		"/clientes" {
+		"/listar-clientes" {
 
 			controller = "efectoLed"
-			action = "clients"
+			action = "listClients"
 		}
-		"/proveedores" {
+		"/listar-proveedores" {
 
 			controller = "efectoLed"
-			action = "providers"
+			action = "listProviders"
 		}
-		"/terceros" {
+		"/listar-terceros" {
 
 			controller = "efectoLed"
-			action = "others"
+			action = "listOthers"
+		}
+		"/eliminar-(cliente|proveedor|tercero)" {
+
+			controller = "efectoLed"
+			action = "deleteCop"
 		}
 
 		"/itemsByJob" {
 
 			controller = "ajax"
-			action = "itemsByJob"
+			action = "getItemsByJob"
 		}
 	}
 }

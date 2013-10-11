@@ -4,7 +4,7 @@ class EfectoLedController {
 
 	def sqlService
 
-	def jobs() {
+	def listJobs() {
 
 		def jobs = sqlService.getJobs()
 
@@ -18,31 +18,29 @@ class EfectoLedController {
 		return [jobs:jobs, othersByJob:othersByJob]
 	}
 
-	def itemsByJob() {
-
-		def itemsByJob = sqlService.getItemsByJob(params.jobId)
-
-		return [itemsByJob:itemsByJob]
-	}
-
-	def clients() {
+	def listClients() {
 
 		def clients = sqlService.getClients()
 
-		render(view:"cops", model:[cops:clients, copsTitle:"Clientes"])
+		render(view:"listCops", model:[cops:clients, copsTitle:"Clientes"])
 	}
 
-	def providers() {
+	def listProviders() {
 
 		def providers = sqlService.getProviders()
 
-		render(view:"cops", model:[cops:providers, copsTitle:"Proveedores"])
+		render(view:"listCops", model:[cops:providers, copsTitle:"Proveedores"])
 	}
 
-	def others() {
+	def listOthers() {
 
 		def others = sqlService.getOthers()
 
-		render(view:"cops", model:[cops:others, copsTitle:"Terceros"])
+		render(view:"listCops", model:[cops:others, copsTitle:"Terceros"])
+	}
+
+	def deleteCop() {
+
+		render sqlService.deleteCop(params.copType)
 	}
 }
