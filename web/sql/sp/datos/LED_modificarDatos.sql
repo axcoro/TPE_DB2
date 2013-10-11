@@ -19,7 +19,8 @@ _direccion VARCHAR(255),
 _codigo_postal VARCHAR(45),
 _telefono_principal VARCHAR(45),
 _correo_electrónico_principal VARCHAR(45),
-_sitio_web VARCHAR(255)
+_sitio_web VARCHAR(255),
+_estado TINYINT
 )
 BEGIN
 
@@ -31,9 +32,11 @@ SET
     codigo_postal = _codigo_postal,
     telefono_principal = _telefono_principal,
     correo_electronico_principal = _correo_electronico_principal,
-    sitio_web = _sitio_web
+    sitio_web = _sitio_web,
+    estado = _estado
 WHERE
-    id_datos = _id;
+    id_datos = _id
+LIMIT 1;
 
 select _id as id;
 

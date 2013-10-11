@@ -5,7 +5,7 @@ CREATE PROCEDURE `LED_eliminarIntegrante`(
 
 /*
 ===================================================
- Nombre: LED_eliminarDatos
+ Nombre: LED_eliminarIntegrante
  Descripcion: elimina un dato
  Comentarios: 
  Autores: Coronel, Axel
@@ -16,7 +16,9 @@ _id INT
 )
 BEGIN
 
-    DELETE FROM led_integrantes WHERE  id_integrantes = _id;
+    DELETE FROM led_integrantes
+    WHERE id_integrantes = _id
+    LIMIT 1;
 
 END$$
 

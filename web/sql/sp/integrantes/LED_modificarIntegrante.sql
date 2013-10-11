@@ -1,11 +1,11 @@
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `LED_modificarArticulo`$$
-CREATE PROCEDURE `LED_modificarArticulo`(
+DROP PROCEDURE IF EXISTS `LED_modificarIntegrante`$$
+CREATE PROCEDURE `LED_modificarIntegrante`(
 
 /*
 ===================================================
- Nombre: LED_modificarArticulo
+ Nombre: LED_modificarIntegrante
  Descripcion: Modifica un articulo
  Comentarios: 
  Autores: Coronel, Axel
@@ -26,7 +26,9 @@ UPDATE led_integrantes
         area = _area,
         telefono = _telefono,
         correo_electronico = _correo_electronico
-WHERE  id_integrantes = _id;
+WHERE 
+    id_integrantes = _id
+LIMIT 1;
 
 END$$
 
