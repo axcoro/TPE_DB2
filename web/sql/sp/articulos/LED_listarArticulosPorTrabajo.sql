@@ -16,9 +16,9 @@ _id INT
 )
 BEGIN
 
-select a.*, u.* from led_articulos a
-inner join led_utiliza u on u.id_articulos = a.id_articulo
-where u.id_trabajos = _id;
+select a.*, p.* from led_articulos a
+inner join led_provistos p on p.id_articulos = a.id_articulo
+where p.id_trabajos = _id;
 
 END$$
 

@@ -26,13 +26,19 @@ CREATE TABLE IF NOT EXISTS `led_articulos` (
   `modelo` varchar(255) NOT NULL,
   `observaciones` varchar(255) NOT NULL,
   PRIMARY KEY (`id_articulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_articulos: ~1 rows (aproximadamente)
-DELETE FROM `led_articulos`;
 /*!40000 ALTER TABLE `led_articulos` DISABLE KEYS */;
 INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `marca_fabricante`, `modelo`, `observaciones`) VALUES
-	(1, 'b', 'b', 'b', 'b', 'b');
+	(1, 'a', 'a', 'a', 'a', 'a'),
+	(2, 'b', 'b', 'b', 'b', 'b'),
+	(3, 'c', 'c', 'c', 'c', 'c'),
+	(4, 'd', 'd', 'd', 'd', 'd'),
+	(5, 'f', 'f', 'f', 'f', 'f'),
+	(6, 'g', 'g', 'g', 'g', 'g'),
+	(7, 'h', 'h', 'h', 'h', 'h'),
+	(8, 'i', 'i', 'i', 'i', 'i');
 /*!40000 ALTER TABLE `led_articulos` ENABLE KEYS */;
 
 
@@ -44,13 +50,19 @@ CREATE TABLE IF NOT EXISTS `led_clientes` (
   PRIMARY KEY (`id_cliente`),
   KEY `fk_led_cliente_led_datos1_idx` (`id_datos`),
   CONSTRAINT `fk_led_cliente_led_datos1` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_clientes: ~1 rows (aproximadamente)
-DELETE FROM `led_clientes`;
 /*!40000 ALTER TABLE `led_clientes` DISABLE KEYS */;
 INSERT INTO `led_clientes` (`id_cliente`, `id_datos`) VALUES
-	(1, 1);
+	(1, 1),
+	(2, 2),
+	(3, 3),
+	(4, 4),
+	(5, 5),
+	(6, 6),
+	(7, 7),
+	(8, 8);
 /*!40000 ALTER TABLE `led_clientes` ENABLE KEYS */;
 
 
@@ -66,13 +78,20 @@ CREATE TABLE IF NOT EXISTS `led_datos` (
   `correo_electronico_principal` varchar(45) NOT NULL,
   `sitio_web` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_datos`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_datos: ~1 rows (aproximadamente)
-DELETE FROM `led_datos`;
 /*!40000 ALTER TABLE `led_datos` DISABLE KEYS */;
 INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`) VALUES
-	(1, '1', '1', '1', '1', '1', '1', '1');
+	(1, '1', '1', '1', '1', '1', '1', '1'),
+	(2, '2', '2', '2', '2', '2', '2', '2'),
+	(3, '3', '3', '3', '3', '3', '3', '3'),
+	(4, '4', '4', '4', '4', '4', '4', '4'),
+	(5, '5', '5', '5', '5', '5', '5', '5'),
+	(6, '6', '6', '6', '6', '6', '6', '6'),
+	(7, '7', '7', '7', '7', '7', '7', '7'),
+	(8, '8', '8', '8', '8', '8', '8', '8'),
+	(9, '9', '9', '9', '9', '9', '9', '9');
 /*!40000 ALTER TABLE `led_datos` ENABLE KEYS */;
 
 
@@ -88,13 +107,35 @@ CREATE TABLE IF NOT EXISTS `led_integrantes` (
   PRIMARY KEY (`id_integrantes`),
   KEY `tienen` (`id_proveedor`),
   CONSTRAINT `tienen` FOREIGN KEY (`id_proveedor`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_integrantes: ~1 rows (aproximadamente)
-DELETE FROM `led_integrantes`;
 /*!40000 ALTER TABLE `led_integrantes` DISABLE KEYS */;
 INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `correo_electronico`, `id_proveedor`) VALUES
-	(1, '1', '1', '1', '1', 1);
+	(1, '1', '1', '1', '1', 1),
+	(2, '2', '2', '2', '2', 1),
+	(3, '3', '3', '3', '3', 1),
+	(4, '4', '4', '4', '4', 3),
+	(5, '5', '5', '5', '5', 3),
+	(6, '6', '6', '6', '6', 3),
+	(7, '7', '7', '7', '7', 4),
+	(8, '8', '8', '8', '8', 4),
+	(9, '9', '9', '9', '9', 5),
+	(10, '10', '10', '10', '10', 5),
+	(11, '10', '10', '10', '10', 5),
+	(12, '10', '10', '10', '10', 6),
+	(13, '10', '10', '10', '10', 6),
+	(14, '10', '10', '10', '10', 7),
+	(15, '10', '10', '10', '10', 7),
+	(16, '10', '10', '10', '10', 8),
+	(17, '10', '10', '10', '10', 8),
+	(18, '10', '10', '10', '10', 8),
+	(19, '10', '10', '10', '10', 9),
+	(20, '10', '10', '10', '10', 9),
+	(21, '10', '10', '10', '10', 9),
+	(22, '10', '10', '10', '10', 9),
+	(23, '10', '10', '10', '10', 9),
+	(24, '10', '10', '10', '10', 9);
 /*!40000 ALTER TABLE `led_integrantes` ENABLE KEYS */;
 
 
@@ -113,10 +154,13 @@ CREATE TABLE IF NOT EXISTS `led_participa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_participa: ~1 rows (aproximadamente)
-DELETE FROM `led_participa`;
 /*!40000 ALTER TABLE `led_participa` DISABLE KEYS */;
 INSERT INTO `led_participa` (`id_terceros`, `id_trabajos`, `costo_prestacion`, `descripcion_trabajo_realizado`) VALUES
-	(1, 1, 0, 'asdasd');
+	(1, 1, 32, 'asdasd'),
+	(1, 6, 5, 'dsfdsfd'),
+	(2, 5, 45, 'dsfdsfd'),
+	(3, 3, 313, 'rtewrewrew'),
+	(7, 16, 4534, 'eger');
 /*!40000 ALTER TABLE `led_participa` ENABLE KEYS */;
 
 
@@ -128,13 +172,20 @@ CREATE TABLE IF NOT EXISTS `led_proveedores` (
   PRIMARY KEY (`id_proveedores`),
   KEY `fk_led_proveedores_led_datos_idx` (`id_datos`),
   CONSTRAINT `fk_led_proveedores_led_datos` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_proveedores: ~1 rows (aproximadamente)
-DELETE FROM `led_proveedores`;
 /*!40000 ALTER TABLE `led_proveedores` DISABLE KEYS */;
 INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
-	(1, 1);
+	(1, 1),
+	(2, 2),
+	(3, 3),
+	(4, 4),
+	(5, 5),
+	(6, 6),
+	(7, 7),
+	(8, 8),
+	(9, 9);
 /*!40000 ALTER TABLE `led_proveedores` ENABLE KEYS */;
 
 
@@ -143,19 +194,26 @@ DROP TABLE IF EXISTS `led_provistos`;
 CREATE TABLE IF NOT EXISTS `led_provistos` (
   `id_articulos` int(11) NOT NULL,
   `id_proveedores` int(11) NOT NULL,
+  `id_trabajos` int(11) NOT NULL,
   `codigo_catalogo_proveedor` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_proveedores`,`id_articulos`),
+  `cantidad_articulos` float NOT NULL DEFAULT '0',
+  `costo_unitario` float NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_articulos`,`id_proveedores`,`id_trabajos`),
   KEY `fk_led_provistos_led_articulos1_idx` (`id_articulos`),
   KEY `fk_led_provistos_led_proveedores1_idx` (`id_proveedores`),
+  KEY `fk_led_provistos_led_trabajos1_idx` (`id_trabajos`),
+  CONSTRAINT `fk_led_provistos_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_led_provistos_led_articulos1` FOREIGN KEY (`id_articulos`) REFERENCES `led_articulos` (`id_articulo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_led_provistos_led_proveedores1` FOREIGN KEY (`id_proveedores`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_provistos: ~1 rows (aproximadamente)
-DELETE FROM `led_provistos`;
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
-INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `codigo_catalogo_proveedor`) VALUES
-	(1, 1, 'asdasda');
+INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `codigo_catalogo_proveedor`, `cantidad_articulos`, `costo_unitario`) VALUES
+	(1, 1, 1, 'adasdsa', 0, 0),
+	(2, 2, 1, 'adasdsa', 0, 0),
+	(3, 3, 3, 'adasdsa', 0, 0),
+	(4, 4, 4, 'asdasd', 0, 0);
 /*!40000 ALTER TABLE `led_provistos` ENABLE KEYS */;
 
 
@@ -167,13 +225,20 @@ CREATE TABLE IF NOT EXISTS `led_terceros` (
   PRIMARY KEY (`id_terceros`),
   KEY `fk_led_terceros_led_datos1_idx` (`id_datos`),
   CONSTRAINT `fk_led_terceros_led_datos1` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_terceros: ~1 rows (aproximadamente)
-DELETE FROM `led_terceros`;
 /*!40000 ALTER TABLE `led_terceros` DISABLE KEYS */;
 INSERT INTO `led_terceros` (`id_terceros`, `id_datos`) VALUES
-	(1, 1);
+	(1, 1),
+	(2, 2),
+	(3, 3),
+	(4, 4),
+	(5, 5),
+	(6, 6),
+	(7, 7),
+	(8, 8),
+	(9, 9);
 /*!40000 ALTER TABLE `led_terceros` ENABLE KEYS */;
 
 
@@ -193,46 +258,36 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
   PRIMARY KEY (`id_trabajos`),
   KEY `solicita` (`id_cliente`),
   CONSTRAINT `solicita` FOREIGN KEY (`id_cliente`) REFERENCES `led_clientes` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_trabajos: ~2 rows (aproximadamente)
-DELETE FROM `led_trabajos`;
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `id_cliente`) VALUES
 	(1, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 1),
-	(2, '2', '2013-10-09 20:41:53', '2013-10-09 20:41:55', '2013-10-09 20:41:56', '2013-10-09 20:41:57', 0, 0, 0, 1);
+	(3, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 1),
+	(4, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 2),
+	(5, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 2),
+	(6, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 3),
+	(7, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 3),
+	(8, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 4),
+	(9, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 4),
+	(10, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 5),
+	(11, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 5),
+	(12, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 6),
+	(13, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 6),
+	(14, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 7),
+	(15, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 7),
+	(16, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
+	(17, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
+	(18, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
+	(19, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8);
 /*!40000 ALTER TABLE `led_trabajos` ENABLE KEYS */;
-
-
--- Volcando estructura para tabla efecto_led.led_utiliza
-DROP TABLE IF EXISTS `led_utiliza`;
-CREATE TABLE IF NOT EXISTS `led_utiliza` (
-  `id_articulos` int(11) NOT NULL,
-  `id_trabajos` int(11) NOT NULL,
-  `id_proveedor` int(11) NOT NULL,
-  `costo_unitario` float DEFAULT '0',
-  `cantidad_articulos` int(11) DEFAULT '0',
-  PRIMARY KEY (`id_articulos`,`id_trabajos`),
-  KEY `fk_led_utiliza_led_articulos1_idx` (`id_articulos`),
-  KEY `fk_led_utiliza_led_trabajos1_idx` (`id_trabajos`),
-  KEY `FK_led_utiliza_led_proveedores` (`id_proveedor`),
-  CONSTRAINT `fk_led_utiliza_led_articulos1` FOREIGN KEY (`id_articulos`) REFERENCES `led_articulos` (`id_articulo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_led_utiliza_led_proveedores` FOREIGN KEY (`id_proveedor`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_led_utiliza_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Volcando datos para la tabla efecto_led.led_utiliza: ~1 rows (aproximadamente)
-DELETE FROM `led_utiliza`;
-/*!40000 ALTER TABLE `led_utiliza` DISABLE KEYS */;
-INSERT INTO `led_utiliza` (`id_articulos`, `id_trabajos`, `id_proveedor`, `costo_unitario`, `cantidad_articulos`) VALUES
-	(1, 1, 1, 0, 0);
-/*!40000 ALTER TABLE `led_utiliza` ENABLE KEYS */;
 
 
 -- Volcando estructura para procedimiento efecto_led.LED_crearArticulo
 DROP PROCEDURE IF EXISTS `LED_crearArticulo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearArticulo`(
+CREATE  PROCEDURE `LED_crearArticulo`(
 
 
 _nombre VARCHAR(45),
@@ -255,7 +310,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_crearDatos
 DROP PROCEDURE IF EXISTS `LED_crearDatos`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearDatos`(
+CREATE  PROCEDURE `LED_crearDatos`(
 
 
 _numero_cuil VARCHAR(45),
@@ -290,7 +345,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_crearTrabajo
 DROP PROCEDURE IF EXISTS `LED_crearTrabajo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearTrabajo`(
+CREATE  PROCEDURE `LED_crearTrabajo`(
 
 
 _descripcion VARCHAR(45),
@@ -316,7 +371,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarArticulo
 DROP PROCEDURE IF EXISTS `LED_eliminarArticulo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarArticulo`(
+CREATE  PROCEDURE `LED_eliminarArticulo`(
 
 
 _id INT
@@ -332,7 +387,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarDatos
 DROP PROCEDURE IF EXISTS `LED_eliminarDatos`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarDatos`(
+CREATE  PROCEDURE `LED_eliminarDatos`(
 
 
 _id INT
@@ -348,7 +403,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarTrabajo
 DROP PROCEDURE IF EXISTS `LED_eliminarTrabajo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarTrabajo`(
+CREATE  PROCEDURE `LED_eliminarTrabajo`(
 
 
 _id INT
@@ -364,16 +419,16 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarArticulosPorTrabajo
 DROP PROCEDURE IF EXISTS `LED_listarArticulosPorTrabajo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarArticulosPorTrabajo`(
+CREATE  PROCEDURE `LED_listarArticulosPorTrabajo`(
 
 
 _id INT
 )
 BEGIN
 
-select a.*, u.* from led_articulos a
-inner join led_utiliza u on u.id_articulos = a.id_articulo
-where u.id_trabajos = _id;
+select a.*, p.* from led_articulos a
+inner join led_provistos p on p.id_articulos = a.id_articulo
+where p.id_trabajos = _id;
 
 END//
 DELIMITER ;
@@ -382,7 +437,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarDatos
 DROP PROCEDURE IF EXISTS `LED_listarDatos`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarDatos`(
+CREATE  PROCEDURE `LED_listarDatos`(
 
 
 _tipo INT
@@ -408,7 +463,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarIntegrantesPorProveedor
 DROP PROCEDURE IF EXISTS `LED_listarIntegrantesPorProveedor`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarIntegrantesPorProveedor`(
+CREATE  PROCEDURE `LED_listarIntegrantesPorProveedor`(
 
 /*
 ===================================================
@@ -433,7 +488,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarProveedoresPorArticulo
 DROP PROCEDURE IF EXISTS `LED_listarProveedoresPorArticulo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarProveedoresPorArticulo`(
+CREATE  PROCEDURE `LED_listarProveedoresPorArticulo`(
 
 
 _id INT
@@ -452,7 +507,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarTercerosPorTrabajo
 DROP PROCEDURE IF EXISTS `LED_listarTercerosPorTrabajo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarTercerosPorTrabajo`(
+CREATE  PROCEDURE `LED_listarTercerosPorTrabajo`(
 
 
 _id INT
@@ -467,10 +522,25 @@ END//
 DELIMITER ;
 
 
+-- Volcando estructura para procedimiento efecto_led.LED_listarTrabajos
+DROP PROCEDURE IF EXISTS `LED_listarTrabajos`;
+DELIMITER //
+CREATE  PROCEDURE `LED_listarTrabajos`(
+
+
+)
+BEGIN
+
+select t.* from led_trabajos t;
+
+END//
+DELIMITER ;
+
+
 -- Volcando estructura para procedimiento efecto_led.LED_listarTrabajosPorCliente
 DROP PROCEDURE IF EXISTS `LED_listarTrabajosPorCliente`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarTrabajosPorCliente`(
+CREATE  PROCEDURE `LED_listarTrabajosPorCliente`(
 
 
 _id INT
@@ -487,7 +557,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_modificarArticulo
 DROP PROCEDURE IF EXISTS `LED_modificarArticulo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarArticulo`(
+CREATE  PROCEDURE `LED_modificarArticulo`(
 
 
 _id INT,
@@ -513,7 +583,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_modificarDatos
 DROP PROCEDURE IF EXISTS `LED_modificarDatos`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarDatos`(
+CREATE  PROCEDURE `LED_modificarDatos`(
 
 
 _id INT,
@@ -548,7 +618,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_modificarTrabajo
 DROP PROCEDURE IF EXISTS `LED_modificarTrabajo`;
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarTrabajo`(
+CREATE  PROCEDURE `LED_modificarTrabajo`(
 
 
 _id INT,
@@ -574,6 +644,43 @@ UPDATE led_trabajos
         precio_articulos = _precio_articulos
 WHERE
         id_trabajos = _id;
+
+END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento efecto_led.LED_obtenerClientePorTrabajo
+DROP PROCEDURE IF EXISTS `LED_obtenerClientePorTrabajo`;
+DELIMITER //
+CREATE  PROCEDURE `LED_obtenerClientePorTrabajo`(
+
+
+_id INT
+)
+BEGIN
+
+select c.id_cliente, d.* from led_clientes c
+inner join led_datos d on d.id_datos = c.id_datos
+inner join led_trabajos t on t.id_cliente = c.id_cliente
+where t.id_trabajos = _id;
+
+END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento efecto_led.LED_obtenerTercero
+DROP PROCEDURE IF EXISTS `LED_obtenerTercero`;
+DELIMITER //
+CREATE  PROCEDURE `LED_obtenerTercero`(
+
+
+_id INT
+)
+BEGIN
+
+select t.id_terceros, d.* from led_datos d
+inner join led_terceros t on t.id_datos = d.id_datos
+where t.id_terceros = _id;
 
 END//
 DELIMITER ;
