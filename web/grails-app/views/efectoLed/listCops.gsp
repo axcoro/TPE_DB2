@@ -9,7 +9,7 @@
 
 	<body>
 		<table class="table table-hover">
-			<caption><h3>${copsTitle}</h3></caption>
+			<caption><h3><cops:title copType="${copType}" /></h3></caption>
 			<thead>
 				<tr>
 					<th>CUIT / CUIL</th>
@@ -39,7 +39,7 @@
 								<ul class="dropdown-menu">
 									
 									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
-									<li><a href="#"><i class="icon-trash"></i> Eliminar</a></li>
+									<li><cops:deleteLink copType="${copType}" copId="${cop.id_datos}" /><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
 							</div>
 						</td>

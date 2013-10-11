@@ -4,7 +4,7 @@ class AjaxController {
 
 	def sqlService
 
-	def itemsByJob() {
+	def getItemsByJob() {
 
 		def itemsByJob = sqlService.getItemsByJob(params.jobId)
 
