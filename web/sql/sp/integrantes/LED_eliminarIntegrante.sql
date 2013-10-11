@@ -5,7 +5,7 @@ CREATE PROCEDURE `LED_eliminarIntegrante`(
 
 /*
 ===================================================
- Nombre: LED_eliminarDatos
+ Nombre: LED_eliminarIntegrante
  Descripcion: elimina un dato
  Comentarios: 
  Autores: Coronel, Axel

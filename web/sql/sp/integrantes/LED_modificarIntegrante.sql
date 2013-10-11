@@ -1,11 +1,11 @@
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `LED_modificarArticulo`$$
-CREATE PROCEDURE `LED_modificarArticulo`(
+DROP PROCEDURE IF EXISTS `LED_modificarIntegrante`$$
+CREATE PROCEDURE `LED_modificarIntegrante`(
 
 /*
 ===================================================
- Nombre: LED_modificarArticulo
+ Nombre: LED_modificarIntegrante
  Descripcion: Modifica un articulo
  Comentarios: 
  Autores: Coronel, Axel

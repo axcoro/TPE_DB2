@@ -1,12 +1,12 @@
 DELIMITER $$
 
-DROP PROCEDURE IF EXISTS `LED_crearArticulo`$$
-CREATE PROCEDURE `LED_crearArticulo`(
+DROP PROCEDURE IF EXISTS `LED_crearIntegrante`$$
+CREATE PROCEDURE `LED_crearIntegrante`(
 
 /*
 ===================================================
- Nombre: LED_crearArticulo
- Descripcion: Da de alta un articulo
+ Nombre: LED_crearIntegrante
+ Descripcion: Da de alta un integrante
  Comentarios: 
  Autores: Coronel, Axel
  Audit Trail:
