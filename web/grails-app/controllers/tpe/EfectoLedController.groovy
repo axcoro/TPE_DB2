@@ -1,5 +1,7 @@
 package tpe
 
+import tpe.Constants
+
 class EfectoLedController {
 
 	def sqlService
@@ -22,21 +24,21 @@ class EfectoLedController {
 
 		def clients = sqlService.getClients()
 
-		render(view:"listCops", model:[cops:clients, copsTitle:"Clientes"])
+		render(view:"listCops", model:[cops:clients, copType:Constants.CLIENTS])
 	}
 
 	def listProviders() {
 
 		def providers = sqlService.getProviders()
 
-		render(view:"listCops", model:[cops:providers, copsTitle:"Proveedores"])
+		render(view:"listCops", model:[cops:providers, copType:Constants.PROVIDERS])
 	}
 
 	def listOthers() {
 
 		def others = sqlService.getOthers()
 
-		render(view:"listCops", model:[cops:others, copsTitle:"Terceros"])
+		render(view:"listCops", model:[cops:others, copType:Constants.OTHERS])
 	}
 
 	def deleteCop() {

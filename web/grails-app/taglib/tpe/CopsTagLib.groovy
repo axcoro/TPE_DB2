@@ -1,19 +1,24 @@
 package tpe
 
+import tpe.Constants
+
 class CopsTagLib {
 
 	static namespace = "cops"
 
-	def copsPlural = [ 0: "Proovedores", 1: "Clientes", 2: "Terceros" ]
-	def copsSingular = [ 0: "proveedor", 1: "cliente", 2: "tercero" ]
-
 	def title = { attrs, body ->
 
-		out << copsPlural[attrs.copType]
+		Map pluralCop = [ 0:"Proovedores", 1:"Clientes", 2:"Terceros" ]
+
+		out << pluralCop[attrs.copType]
 	}
 
 	def deleteLink = { attrs, body ->
 
-		out << '<a href="/eliminar-${copsSingular[attrs.copType]}?copId=${attrs.copId}">'
+		Map singularCop = [ 0:"proveedor", 1:"cliente", 2:"tercero" ]
+
+		String deleteLink = "<a href=\"/eliminar-${singularCop[attrs.copType]}?copId=${attrs.copId}\">"
+
+		out << deleteLink
 	}
 }

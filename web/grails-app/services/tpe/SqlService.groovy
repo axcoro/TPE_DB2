@@ -53,7 +53,7 @@ class SqlService {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result = sql.call("{call LED_listarDatos(2)}")
+		int result = sql.call("{call LED_eliminarDatos(copId)}")
 
 		sql.close()
 
