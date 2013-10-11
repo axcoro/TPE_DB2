@@ -16,7 +16,9 @@ _id INT
 )
 BEGIN
 
-    DELETE FROM led_integrantes WHERE  id_integrantes = _id;
+    DELETE FROM led_integrantes
+    WHERE id_integrantes = _id
+    LIMIT 1;
 
 END$$
 

@@ -28,7 +28,8 @@ UPDATE led_articulos
         modelo = _modelo,
         observaciones = _observaciones
 WHERE
-    id_articulos = _id;
+    id_articulos = _id
+LIMIT 1;
 
 END$$
 

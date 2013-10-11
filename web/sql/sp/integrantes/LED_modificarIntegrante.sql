@@ -26,7 +26,9 @@ UPDATE led_integrantes
         area = _area,
         telefono = _telefono,
         correo_electronico = _correo_electronico
-WHERE  id_integrantes = _id;
+WHERE 
+    id_integrantes = _id
+LIMIT 1;
 
 END$$
 

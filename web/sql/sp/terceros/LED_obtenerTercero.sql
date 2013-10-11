@@ -17,7 +17,8 @@ BEGIN
 
 select t.id_terceros, d.* from led_datos d
 inner join led_terceros t on t.id_datos = d.id_datos
-where t.id_terceros = _id;
+where t.id_terceros = _id
+limit 1;
 
 END$$
 
