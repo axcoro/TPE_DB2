@@ -47,10 +47,12 @@
 								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">seleccionar <span class="caret"></span></button>
 								<ul class="dropdown-menu">
 
-									<% def list = othersByJob."${job.id_trabajos}" %>
+									<% def list = [[id_terceros:"Z"], [id_terceros:"Q"], [id_terceros:"R"]]/*othersByJob."${job.id_trabajos}"*/ %>
 
 									<g:each var="other" in="${list}">
-										<li><a href="#myModal2" data-toggle="modal">${other.id_terceros}</a></li>
+										<li>
+											<a href="#myModal2" data-toggle="modal">${other.id_terceros}</a>
+										</li>
 									</g:each>
 
 								</ul>
@@ -58,9 +60,12 @@
 						</td>
 						<td>
 							<div class="btn-group">
-								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
+								<button class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown">
+									<i class="icon-align-justify icon-white"></i>
+									<span class="caret"></span>
+								</button>
+
 								<ul class="dropdown-menu">
-									
 									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
 									<li><a href="#"><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
@@ -69,46 +74,6 @@
 					</tr>
 				</g:each>
 			</tbody>
-
-			<table class="table table-condensed">
-				<caption><p>Artículos</p></caption>
-				<thead>
-					<tr>
-						<th>Código interno</th>
-						<th>Descripción</th>
-						<th>Dirección</th>
-						<th>marca / Fabricante</th>
-						<th>Modelo</th>
-						<th>Observaciones</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>2</td>
-						<td>3</td>
-						<td>4</td>
-						<td>5</td>
-						<td>6</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>2</td>
-						<td>3</td>
-						<td>4</td>
-						<td>5</td>
-						<td>6</td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td>2</td>
-						<td>3</td>
-						<td>4</td>
-						<td>5</td>
-						<td>6</td>
-					</tr>
-				</tbody>
-			</table>
 
 			<!-- Clients Modal -->
 			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
