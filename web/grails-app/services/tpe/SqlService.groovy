@@ -8,36 +8,44 @@ class SqlService {
 
 	def dataSource
 
-	def getJobs() {
+	def getRows(storedProcedureCall) {
 
 		def sql = Sql.newInstance(dataSource)
 
-		List rows = sql.rows("{call LED_listarTrabajos()}")
+		List rows = sql.rows(storedProcedureCall)
 
 		sql.close()
 
 		return rows
+	}
+
+	def getJobs() {
+
+		return getRows("{call LED_listarTrabajos()}")
 	}
 
 	def getOthersByJob(jobId) {
 
-		def sql = Sql.newInstance(dataSource)
-
-		List rows = sql.rows("{call LED_listarTercerosPorTrabajo($jobId)}")
-
-		sql.close()
-
-		return rows
+		return getRows("{call LED_listarTercerosPorTrabajo($jobId)}")
 	}
 
 	def getItemsByJob(jobId) {
 
-		def sql = Sql.newInstance(dataSource)
+		return getRows("{call LED_listarArticulosPorTrabajo($jobId)}")
+	}
 
-		List rows = sql.rows("{call LED_listarArticulosPorTrabajo($jobId)}")
+	def getClients() {
 
-		sql.close()
+		return getRows("{call LED_listarDatos(1)}")
+	}
 
-		return rows
+	def getProviders() {
+
+		return getRows("{call LED_listarDatos(0)}")
+	}
+
+	def getOthers() {
+
+		return getRows("{call LED_listarDatos(2)}")
 	}
 }

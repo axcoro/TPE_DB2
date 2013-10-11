@@ -32,7 +32,8 @@
 
 				<g:each var="job" in="${jobs}">
 
-					<tr class="rowlink">
+					<tr name="jobRow" class="rowlink" data-jobId="${job.id_trabajos}">
+
 						<td><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
 						<td>${job.descripcion}</td>
 						<td>${job.fecha_creacion}</td>
@@ -74,30 +75,36 @@
 					</tr>
 				</g:each>
 			</tbody>
-
-			<!-- Clients Modal -->
-			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h3 id="myModalLabel">Cliente</h3>
-				</div>
-				<div class="modal-body">
-					Datos...
-				</div>
-			</div>
-
-			<!-- Others Modal -->
-			<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h3 id="myModalLabel">Tercero</h3>
-				</div>
-				<div class="modal-body">
-					Datos...
-				</div>
-			</div>
-
 		</table>
+
+		<div id="itemsTable">
+			<table class="table table-condensed">
+				<caption><p>Artículos</p></caption>
+				<thead><tr><td>Selecciona un trabajo para ver los artículos utilizados en el mismo.</tr></td></thead>
+			</table>
+		</div>
+
+		<!-- Clients Modal -->
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Cliente</h3>
+			</div>
+			<div class="modal-body">
+				Datos...
+			</div>
+		</div>
+
+		<!-- Others Modal -->
+		<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Tercero</h3>
+			</div>
+			<div class="modal-body">
+				Datos...
+			</div>
+		</div>
 
 	</body>
 

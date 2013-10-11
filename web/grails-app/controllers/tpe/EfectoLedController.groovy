@@ -27,16 +27,22 @@ class EfectoLedController {
 
 	def clients() {
 
-		return
+		def clients = sqlService.getClients()
+
+		render(view:"cops", model:[cops:clients, copsTitle:"Clientes"])
 	}
 
 	def providers() {
 
-		return
+		def providers = sqlService.getProviders()
+
+		render(view:"cops", model:[cops:providers, copsTitle:"Proveedores"])
 	}
 
 	def others() {
 
-		return
+		def others = sqlService.getOthers()
+
+		render(view:"cops", model:[cops:others, copsTitle:"Terceros"])
 	}
 }
