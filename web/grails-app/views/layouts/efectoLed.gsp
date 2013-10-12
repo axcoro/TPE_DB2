@@ -37,6 +37,10 @@
 				</div>
 			</div>
 			<br>
+
+			<div id="notifications">
+			</div>
+
 			<div id="content" class="row-fluid">
 				<div class="span12">
 					<g:layoutBody />

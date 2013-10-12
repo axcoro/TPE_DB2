@@ -10,4 +10,11 @@ class AjaxController {
 
 		return [itemsByJob:itemsByJob]
 	}
+
+	def getOthersByJob() {
+
+		def othersByJob = sqlService.getOthersByJob(params.jobId)
+
+		return [othersByJob:othersByJob]
+	}
 }

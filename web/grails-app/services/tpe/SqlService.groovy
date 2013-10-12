@@ -27,12 +27,17 @@ class SqlService {
 
 	def getOthersByJob(jobId) {
 
-		return getRows("{call LED_listarTercerosPorTrabajo($jobId)}")
+		return getRows("{call LED_listarTercerosPorTrabajo(${jobId})}")
 	}
 
 	def getItemsByJob(jobId) {
 
-		return getRows("{call LED_listarArticulosPorTrabajo($jobId)}")
+		return getRows("{call LED_listarArticulosPorTrabajo(${jobId})}")
+	}
+
+	def getOthersByJob(jobId) {
+
+		return getRows("{call LED_listarTercerosPorTrabajo(${jobId})}")
 	}
 
 	def getClients() {

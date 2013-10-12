@@ -43,5 +43,10 @@ class UrlMappings {
 			controller = "ajax"
 			action = "getItemsByJob"
 		}
+		"/othersByJob" {
+
+			controller = "ajax"
+			action = "getOthersByJob"
+		}
 	}
 }

@@ -54,8 +54,8 @@
 										</li>
 									</g:each>--%>
 									<li><a href="#"></a></li>
-									<li><a href="#myModal2" data-toggle="modal">Terceros</a></li>
-									<li><a href="#myModal22" data-toggle="modal">Artículos</a></li>
+									<li><a name="othersByJob" data-jobId="${job.id_trabajos}">Terceros</a></li>
+									<li><a name="itemsByJob" data-jobId="${job.id_trabajos}">Artículos</a></li>
 
 								</ul>
 							</div>
@@ -78,12 +78,14 @@
 			</tbody>
 		</table>
 	  </div>
-		<div id="itemsTable">
+		<%-- div id="itemsTable">
 			<table class="table table-condensed">
 				<caption><p>Artículos</p></caption>
 				<thead><tr><td>Selecciona un trabajo para ver los artículos utilizados en el mismo.</tr></td></thead>
 			</table>
-		</div>
+		</div--%>
+
+		<%-- Modals --%>
 
         <div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
             <div class="modal-header">
@@ -102,27 +104,37 @@
             </div>
         </div>
 
-		<!-- Clients Modal -->
-		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h3 id="myModalLabel">Cliente</h3>
-			</div>
-			<div class="modal-body">
-				Datos...
-			</div>
-		</div>
+        <div id="itemsByJobModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+            <div class="modal-header">
+                <h3>Artículos</h3>
+            </div>
+            <div id="itemsByJobModalContent" class="modal-body" style="min-width: 350px; min-height: 50px;">
+            	<%-- Content --%>
+            </div>
+            <div class="modal-footer">
+                <div class="control-group">
+                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
 
-		<!-- Others Modal -->
-		<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h3 id="myModalLabel">Tercero</h3>
-			</div>
-			<div class="modal-body">
-				Datos...
-			</div>
-		</div>
+        <div id="othersByJobModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+            <div class="modal-header">
+                <h3>Terceros</h3>
+            </div>
+            <div id="othersByJobModalContent" class="modal-body" style="min-width: 350px; min-height: 50px;">
+            	<%-- Content --%>
+            </div>
+            <div class="modal-footer">
+                <div class="control-group">
+                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
 
 	</body>
 
