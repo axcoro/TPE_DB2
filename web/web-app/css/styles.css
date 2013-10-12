@@ -10,6 +10,10 @@ div {
     /*border: 1px solid black;  para maquetacion*/
 }
 
+.table-container {
+    overflow: auto;
+}
+
 .modal {
     min-width: 350px !important;
     min-height: 100px !important;
@@ -39,7 +43,7 @@ div {
     display:block;
     overflow-y: auto;
     overflow-x: hidden;
-    height:300px;
+    max-height:300px;
 }
 
 .table-col-nombre {
