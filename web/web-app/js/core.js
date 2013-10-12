@@ -21,3 +21,14 @@ $("[name='deleteCop']").on('click', function() {
 
 	$("#deleteModal").modal('show');
 });
+
+$("[name='deleteJob']").on('click', function() {
+
+	var jobId = $(this).attr("data-jobId");
+
+	var dataUri = $("#yesBtn").attr("data-uri");
+
+	$("#yesBtn").attr("href", dataUri+"?jobId="+jobId);
+
+	$("#deleteModal").modal('show');
+});

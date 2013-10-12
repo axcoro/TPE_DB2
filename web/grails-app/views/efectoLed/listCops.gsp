@@ -55,7 +55,7 @@
                 <h3>Esta acción requiere confirmación</h3>
             </div>
             <div class="modal-body" style="min-width: 350px; min-height: 50px;">
-                ¿Está seguro que desea eliminar este <cops:singular copType="${copType}" />?
+                ¿Está seguro que desea eliminar este <cops:label copType="${copType}" />?
             </div>
             <div class="modal-footer">
                 <div class="control-group">

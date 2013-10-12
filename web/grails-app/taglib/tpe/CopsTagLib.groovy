@@ -6,14 +6,7 @@ class CopsTagLib {
 
 	static namespace = "cops"
 
-	def plural = { attrs, body ->
-
-		Map pluralCop = [ 0:"Proovedores", 1:"Clientes", 2:"Terceros" ]
-
-		out << pluralCop[attrs.copType]
-	}
-
-	def singular = { attrs, body ->
+	def label = { attrs, body ->
 
 		Map singularCop = [ 0:"proveedor", 1:"cliente", 2:"tercero" ]
 
