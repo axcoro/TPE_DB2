@@ -102,6 +102,10 @@ div {
     background-size: cover;
 }
 
+#header {
+    max-height: 80px;
+}
+
 #footer {
     min-height: 75px;
 }
