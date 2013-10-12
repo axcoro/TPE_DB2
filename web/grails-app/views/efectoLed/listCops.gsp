@@ -38,14 +38,12 @@
 						<td class="table-col-url">${cop.sitio_web}</td>
 						<td class="table-col-custom">
 							<div class="btn-group">
-						<center>
 								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									
 									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
 									<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
-						</center>
 							</div>
 						</td>
 					</tr>
