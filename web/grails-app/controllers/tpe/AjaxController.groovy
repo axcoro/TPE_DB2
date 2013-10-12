@@ -17,4 +17,16 @@ class AjaxController {
 
 		return [othersByJob:othersByJob]
 	}
+
+	def getCreateForm() {
+
+		if ( params.copType == "" ) {
+
+			render(view:"getCreateJobForm", model:[:])
+		}
+		else {
+
+			render(view:"getCreateCopForm", model:[copType:params.copType])
+		}
+	}
 }

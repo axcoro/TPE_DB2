@@ -10,14 +10,7 @@ class EfectoLedController {
 
 		def jobs = sqlService.getJobs()
 
-		/*Map othersByJob = [:]
-
-		jobs.each { job ->
-
-			othersByJob."${job.id_trabajos}" = sqlService.getOthersByJob(job.id_trabajos)
-		}*/
-
-		return [jobs:jobs] //, othersByJob:othersByJob]*/
+		return [jobs:jobs]
 	}
 
 	def listClients() {
@@ -40,6 +33,21 @@ class EfectoLedController {
 
 		render(view:"listCops", model:[cops:others, copType:Constants.OTHERS])
 	}
+
+	/*def createClient() {
+
+		render(view:"createCop", model:[copType:Constants.CLIENTS])
+	}
+
+	def createProvider() {
+
+		render(view:"createCop", model:[copType:Constants.PROVIDERS])
+	}
+
+	def createOther() {
+
+		render(view:"createCop", model:[copType:Constants.OTHERS])
+	}*/
 
 	def deleteCop() {
 

@@ -9,7 +9,7 @@
 
 	<body>
 	  <div class="container">
-	  	
+
 		<div id="notifications"></div>
 
 		<table class="table table-hover table-bordered table-header-fix">
@@ -54,24 +54,40 @@
 
 			</tbody>
 		</table>
-	  </div>
+	</div>
 
-        <div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
-            <div class="modal-header">
-                <h3>Esta acción requiere confirmación</h3>
-            </div>
-            <div class="modal-body">
-                ¿Está seguro que desea eliminar este <cops:label copType="${copType}" />?
-            </div>
-            <div class="modal-footer">
-                <div class="control-group">
-                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
-                        No
-                    </button>
-                        <cops:deleteLink copType="${copType}" />Si</a>
-                </div>
-            </div>
-        </div>
+	<%-- Modals --%>
+
+	<div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div class="modal-header">
+			<h3>Esta acción requiere confirmación</h3>
+		</div>
+		<div class="modal-body" style="min-width: 350px; min-height: 50px;">
+			¿Está seguro que desea eliminar este <cops:label copType="${copType}" />?
+		</div>
+		<div class="modal-footer">
+			<div class="control-group">
+				<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">No</button>
+				<cops:deleteLink copType="${copType}" />Si</a>
+			</div>
+		</div>
+	</div>
+
+	<%-- TODO: esto puedo llevarlo al layout, ver si se reutiliza este modal y el js en jobs --%>
+	<div id="createFormModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div class="modal-header">
+			<h3>Nuevo <cops:label copType="${copType}" /></h3>
+		</div>
+		<div id="createFormContent" class="modal-body" style="min-width: 350px; min-height: 50px;">
+			<%-- Content --%>
+		</div>
+		<div class="modal-footer">
+			<div class="control-group">
+				<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">Cancelar</button>
+				<cops:createLink copType="${copType}" />Crear</a>
+			</div>
+		</div>
+	</div>
 
 	</body>
 

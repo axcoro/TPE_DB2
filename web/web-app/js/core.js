@@ -85,6 +85,25 @@ $("[name='deleteJob']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
+$("#create").on('click', function() {
+
+	var copType = $(this).attr("data-copType");
+
+	$.ajax("/createForm?copType="+copType, {
+
+		success: function(data) { 
+
+			$("#createFormContent").html(data);
+			$("#createFormModal").modal("show");
+		},
+		error: function(data) {
+
+			$("#notifications").html("Ocurió un error al intentar recuperar el formulario de alta.");
+			$("#notifications").addClass("alert alert-error");
+		}
+	});
+});
+
 $(document).ready(function() {
 
 	var copType = document.getElementById('copType').innerHTML;
