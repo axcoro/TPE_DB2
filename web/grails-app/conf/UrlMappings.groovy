@@ -37,6 +37,21 @@ class UrlMappings {
 			controller = "efectoLed"
 			action = "deleteJob"
 		}
+		/*"/crear-cliente" {
+
+			controller = "efectoLed"
+			action = "createClient"
+		}
+		"/crear-proveedor" {
+
+			controller = "efectoLed"
+			action = "createProvider"
+		}
+		"/crear-tercero" {
+
+			controller = "efectoLed"
+			action = "createOther"
+		}*/
 
 		"/itemsByJob" {
 
@@ -47,6 +62,11 @@ class UrlMappings {
 
 			controller = "ajax"
 			action = "getOthersByJob"
+		}
+		"/createForm" {
+
+			controller = "ajax"
+			action = "getCreateForm"
 		}
 	}
 }
