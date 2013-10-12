@@ -24,7 +24,7 @@
 					<th class="table-col-precio"><center>P. total</center></th>
 					<th class="table-col-precio"><center>P. m. obra</center></th>
 					<th class="table-col-precio"><center>P. art.</center></th>
-					<th class="table-col-custom"><center>Terceros</center></th>
+					<th class="table-col-custom"><center>Mas Info.</center></th>
 					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
 			</thead>
