@@ -8,6 +8,8 @@ class EfectoLedService {
 
 	def getCopAction(copType) {
 
+		String action
+
 		switch (copType) {
 
 			case "$Constants.CLIENTS" :
@@ -22,5 +24,6 @@ class EfectoLedService {
 				action = "listOthers"
 			break
 		}
+		return action
 	}
 }
