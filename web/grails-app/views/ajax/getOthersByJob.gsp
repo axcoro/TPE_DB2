@@ -6,6 +6,8 @@
 			<tr>
 				<th>CUIT / CUIL</th>
 				<th>Razón social</th>
+				<th>Costo Prestación</th>
+				<th>Descripción trabajo</th>
 				<th>Dirección</th>
 				<th>Código postal</th>
 				<th>Teléfono principal</th>
@@ -15,15 +17,17 @@
 		</thead>
 
 		<tbody>
-			<g:each var="item" in="${othersByJob}">
+			<g:each var="other" in="${othersByJob}">
 				<tr>
-					<td>${cop.numero_cuil}</td>
-					<td>${cop.razon_social}</td>
-					<td>${cop.direccion}</td>
-					<td>${cop.codigo_postal}</td>
-					<td>${cop.telefono_principal}</td>
-					<td>${cop.correo_electronico_principal}</td>
-					<td>${cop.sitio_web}</td>
+					<td>${other.numero_cuil}</td>
+					<td>${other.razon_social}</td>
+					<td>${other.costo_prestacion}</td>
+					<td>${other.descripcion_trabajo_realizado}</td>
+					<td>${other.direccion}</td>
+					<td>${other.codigo_postal}</td>
+					<td>${other.telefono_principal}</td>
+					<td>${other.correo_electronico_principal}</td>
+					<td>${other.sitio_web}</td>
 				</tr>
 			</g:each>
 		</tbody>

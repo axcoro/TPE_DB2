@@ -15,8 +15,9 @@ _id INT
 )
 BEGIN
 
-select t.*, p.costo_prestacion, p.descripcion_trabajo_realizado from led_terceros t
+select t.*, d.*, p.costo_prestacion, p.descripcion_trabajo_realizado from led_terceros t
 inner join led_participa p on p.id_terceros = t.id_terceros
+inner join led_datos d on d.id_datos = t.id_datos
 where p.id_trabajos = _id;
 
 END$$

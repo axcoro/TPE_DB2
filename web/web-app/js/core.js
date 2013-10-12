@@ -2,6 +2,7 @@
 $("[name='itemsByJob']").on('click', function(){
 
 	$("#itemsByJobModalContent").html("");
+	$("#notifications").html("");
 	$("#notifications").removeClass("alert");
 	$("#notifications").removeClass("alert-error");
 
@@ -33,6 +34,7 @@ $("[name='itemsByJob']").on('click', function(){
 $("[name='othersByJob']").on('click', function(){
 
 	$("#othersByJobModalContent").html("");
+	$("#notifications").html("");
 	$("#notifications").removeClass("alert");
 	$("#notifications").removeClass("alert-error");
 

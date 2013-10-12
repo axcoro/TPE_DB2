@@ -9,6 +9,9 @@
 
 	<body>
 	  <div class="container">
+
+		<div id="notifications"></div>
+
 		<table class="table table-hover table-bordered table-header-fix">
 			<thead>
 				<tr>
