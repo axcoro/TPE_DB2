@@ -36,6 +36,7 @@ $("[name='deleteJob']").on('click', function() {
 $(document).ready(function() {
 
 	var pathname = window.location.pathname.replace('\/', '');
-
+	if (pathname === '')
+	    pathname = 'listar-trabajos';
 	document.getElementById(pathname).className = 'active';
 });
