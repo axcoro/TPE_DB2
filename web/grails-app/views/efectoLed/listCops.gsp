@@ -8,7 +8,7 @@
 	</head>
 
 	<body>
-	  <div class="container-fluid">
+	  <div class="container">
 		<table class="table table-hover table-bordered table-header-fix">
 
 			<thead>
