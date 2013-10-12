@@ -42,7 +42,7 @@
 			<br>
 
 			<div id="content" class="row-fluid">
-				<div class="span12">
+				<div class="span12 table-container">
 					<g:layoutBody />
 				</div>
 			</div>
