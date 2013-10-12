@@ -2,13 +2,13 @@ package tpe
 
 import tpe.Constants
 
-class CopsTagLib {
+class JobsTagLib {
 
-	static namespace = "cops"
+	static namespace = "jobs"
 
 	def plural = { attrs, body ->
 
-		Map pluralCop = [ 0:"Proovedores", 1:"Clientes", 2:"Terceros" ]
+		/*Map pluralCop = [ 0:"Proovedores", 1:"Clientes", 2:"Terceros" ]
 
 		out << pluralCop[attrs.copType]
 	}
@@ -26,6 +26,6 @@ class CopsTagLib {
 
 		String deleteLink = "<a id=\"yesBtn\" class=\"btn btn-success\" data-uri=\"/eliminar-${singularCop[attrs.copType]}?copType=${attrs.copType}\">"
 
-		out << deleteLink
+		out << deleteLink*/
 	}
 }

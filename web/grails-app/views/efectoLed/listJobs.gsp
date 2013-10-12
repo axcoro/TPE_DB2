@@ -84,6 +84,23 @@
 			</table>
 		</div>
 
+        <div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+            <div class="modal-header">
+                <h3>Esta acción requiere confirmación</h3>
+            </div>
+            <div class="modal-body" style="min-width: 350px; min-height: 50px;">
+                ¿Está seguro que desea eliminar este trabajo?
+            </div>
+            <div class="modal-footer">
+                <div class="control-group">
+                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+                        No
+                    </button>
+                        <cops:deleteLink copType="${copType}" />Si</a>
+                </div>
+            </div>
+        </div>
+
 		<!-- Clients Modal -->
 		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">

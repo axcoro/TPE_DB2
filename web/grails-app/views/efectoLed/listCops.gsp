@@ -8,8 +8,8 @@
 	</head>
 
 	<body>
-		<table class="table table-hover">
-			<caption><h3><cops:title copType="${copType}" /></h3></caption>
+		<table class="table table-hover table-striped">
+			<caption><h3><cops:plural copType="${copType}" /></h3></caption>
 			<thead>
 				<tr>
 					<th>CUIT / CUIL</th>
@@ -39,7 +39,7 @@
 								<ul class="dropdown-menu">
 									
 									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
-									<li><cops:deleteLink copType="${copType}" copId="${cop.id_datos}" /><i class="icon-trash"></i> Eliminar</a></li>
+									<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
 							</div>
 						</td>
@@ -48,6 +48,23 @@
 
 			</tbody>
 		</table>
+
+        <div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+            <div class="modal-header">
+                <h3>Esta acción requiere confirmación</h3>
+            </div>
+            <div class="modal-body" style="min-width: 350px; min-height: 50px;">
+                ¿Está seguro que desea eliminar este <cops:singular copType="${copType}" />?
+            </div>
+            <div class="modal-footer">
+                <div class="control-group">
+                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+                        No
+                    </button>
+                        <cops:deleteLink copType="${copType}" />Si</a>
+                </div>
+            </div>
+        </div>
 
 	</body>
 

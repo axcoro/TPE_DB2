@@ -1,6 +1,7 @@
 package tpe
 
 import groovy.sql.Sql
+import tpe.Constants
 
 class SqlService {
 
@@ -36,24 +37,24 @@ class SqlService {
 
 	def getClients() {
 
-		return getRows("{call LED_listarDatos(1)}")
+		return getRows("{call LED_listarDatos(${Constants.CLIENTS})}")
 	}
 
 	def getProviders() {
 
-		return getRows("{call LED_listarDatos(0)}")
+		return getRows("{call LED_listarDatos(${Constants.PROVIDERS})}")
 	}
 
 	def getOthers() {
 
-		return getRows("{call LED_listarDatos(2)}")
+		return getRows("{call LED_listarDatos(${Constants.OTHERS})}")
 	}
 
 	def deleteCop(copId) {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result = sql.call("{call LED_eliminarDatos(copId)}")
+		int result = sql.call("{call LED_eliminarDatos(${copId})}")
 
 		sql.close()
 

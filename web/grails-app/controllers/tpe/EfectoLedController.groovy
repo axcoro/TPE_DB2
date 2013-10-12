@@ -43,6 +43,26 @@ class EfectoLedController {
 
 	def deleteCop() {
 
-		render sqlService.deleteCop(params.copType)
+		sqlService.deleteCop(params.copId)
+
+		String action
+
+		switch (params.copType) {
+
+			case "$Constants.CLIENTS" :
+				action = "listClients"
+			break
+
+			case "$Constants.PROVIDERS" :
+				action = "listProviders"
+			break
+
+			case "$Constants.OTHERS" :
+				action = "listOthers"
+			break
+
+		}
+
+		redirect(action:action)
 	}
 }

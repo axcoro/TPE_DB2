@@ -10,3 +10,14 @@ $("[name='jobRow']").on('click', function(){
 		error: function(data) { $("#itemsTable").html("No se pudieron obtener los artículos."); }
 	});
 });
+
+$("[name='deleteCop']").on('click', function() {
+
+	var copId = $(this).attr("data-copId");
+
+	var dataUri = $("#yesBtn").attr("data-uri");
+
+	$("#yesBtn").attr("href", dataUri+"&copId="+copId);
+
+	$("#deleteModal").modal('show');
+});
