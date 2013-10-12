@@ -10,6 +10,10 @@ div {
     /*border: 1px solid black;  para maquetacion*/
 }
 
+.dropdown-menu { /* hack para que no se corten por el overflow-x: en los table*/
+  left: -120px !important;
+}
+
 .table-header-fix thead {
     display:block;
 }
@@ -21,18 +25,18 @@ div {
 }
 
 .table-col-nombre {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 130px;
+    max-width: 130px;
 }
 
 .table-col-descripcion {
-    min-width: 90px;
-    max-width: 90px;
+    min-width: 130px;
+    max-width: 130px;
 }
 
 .table-col-fecha {
-    min-width: 145px;
-    max-width: 145px;
+    min-width: 100px;
+    max-width: 100px;
 }
 
 .table-col-precio {
@@ -43,6 +47,41 @@ div {
 .table-col-custom {
     min-width: 65px;
     max-width: 65px;
+}
+
+.table-col-cuit {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.table-col-razon {
+    min-width: 175px;
+    max-width: 175px;
+}
+
+.table-col-direccion {
+    min-width: 175px;
+    max-width: 175px;
+}
+
+.table-col-codigo {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.table-col-tel {
+    min-width: 110px;
+    max-width: 110px;
+}
+
+.table-col-email{
+    min-width: 175px;
+    max-width: 175px;
+}
+
+.table-col-url{
+    min-width: 150px;
+    max-width: 150px;
 }
 
 #integrantes {

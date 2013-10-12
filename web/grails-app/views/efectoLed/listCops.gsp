@@ -8,33 +8,35 @@
 	</head>
 
 	<body>
-
-		<table class="table table-hover table-bordered table-scrollable">
+	  <div class="container">
+		<table class="table table-hover table-bordered table-header-fix">
 
 			<thead>
 				<tr>
-					<th>CUIT / CUIL</th>
-					<th>Razón social</th>
-					<th>Dirección</th>
-					<th>Código postal</th>
-					<th>Teléfono principal</th>
-					<th>Correo electrónico principal</th>
-					<th>Sitio web</th>
-					<th>Acciones</th>
+					<th class="table-col-cuit"><center>CUIT / CUIL</center></th>
+					<th class="table-col-razon"><center>Razón social</center></th>
+					<th class="table-col-direccion"><center>Dirección</center></th>
+					<th class="table-col-codigo"><center>Código postal</center></th>
+					<th class="table-col-tel"><center>Tel. principal</center></th>
+					<th class="table-col-email"><center>Correo el. principal</center></th>
+					<th class="table-col-url"><center>Sitio web</center></th>
+					<th class="table-col-custom"<center>Acciones</center></th>
 				</tr>
-			</thead>
+			</thead> 
+		</table> 
+		<table class="table table-hover table-bordered table-header-fix">
 			<tbody>
 
 				<g:each var="cop" in="${cops}">
 					<tr>
-						<td>${cop.numero_cuil}</td>
-						<td>${cop.razon_social}</td>
-						<td>${cop.direccion}</td>
-						<td>${cop.codigo_postal}</td>
-						<td>${cop.telefono_principal}</td>
-						<td>${cop.correo_electronico_principal}</td>
-						<td>${cop.sitio_web}</td>
-						<td>
+						<td class="table-col-cuit">${cop.numero_cuil}</td>
+						<td class="table-col-razon">${cop.razon_social}</td>
+						<td class="table-col-direccion">${cop.direccion}</td>
+						<td class="table-col-codigo">${cop.codigo_postal}</td>
+						<td class="table-col-tel">${cop.telefono_principal}</td>
+						<td class="table-col-email">${cop.correo_electronico_principal}</td>
+						<td class="table-col-url">${cop.sitio_web}</td>
+						<td class="table-col-custom">
 							<div class="btn-group">
 								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
 								<ul class="dropdown-menu">
@@ -49,6 +51,7 @@
 
 			</tbody>
 		</table>
+	  </div>
 
         <div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
             <div class="modal-header">
