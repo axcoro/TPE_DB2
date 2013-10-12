@@ -11,7 +11,6 @@
 
 		<table class="table table-hover table-bordered">
 
-			<caption><h3>Trabajos</h3></caption>
 			<thead>
 				<tr>
 					<th>Cliente</th>

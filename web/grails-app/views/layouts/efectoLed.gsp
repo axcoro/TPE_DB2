@@ -21,26 +21,25 @@
 		<div class="container-fluid">
 
 			<div id="header" class="row-fluid">
-                          <div class="page-header">
-	                      <h1>Efecto LED <small>Sistema de gestión de trabajos</small></h1>
-		          </div>
-			</div>
-
-			<div class="row-fluid">
-				<div class="span12">
-                                          <ul class="nav nav-tabs">
-                                                  <li class="active"><a href="/listar-trabajos">Trabajos</a></li>
-                                                  <li><a href="/listar-clientes">Clientes</a></li>
-                                                  <li><a href="/listar-proveedores">Proveedores</a></li>
-                                                  <li><a href="/listar-terceros">Terceros</a></li>
-                                          </ul>
+				<div class="page-header">
+					<h1>Efecto LED <small>Sistema de gestión de trabajos</small></h1>
 				</div>
 			</div>
+			<br>
+			<div class="row-fluid">
+				<div class="span12">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="/listar-trabajos">Trabajos</a></li>
+						<li><a href="/listar-clientes">Clientes</a></li>
+						<li><a href="/listar-proveedores">Proveedores</a></li>
+						<li><a href="/listar-terceros">Terceros</a></li>
+					</ul>
+				</div>
+			</div>
+			<br>
 			<div id="content" class="row-fluid">
 				<div class="span12">
-                                        <br>
 					<g:layoutBody />
-
 				</div>
 			</div>
 
