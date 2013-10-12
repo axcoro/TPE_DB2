@@ -85,7 +85,8 @@ $("[name='deleteJob']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
-$("#create").on('click', function() {
+function create() {
+
 	var copType = $(this).attr("data-copType");
 
 	$.ajax("/createForm?copType="+copType, {
@@ -101,35 +102,15 @@ $("#create").on('click', function() {
 			$("#notifications").addClass("alert alert-error");
 		}
 	});
-});
+};
 
 $(document).ready(function() {
 
 	var copType = document.getElementById('copType').innerHTML;
 	document.getElementById('copType-' + copType).className = 'active';
 
-	var el = document.getElementById('alta');
-
-	$("#create").off('click');
+	var el = document.getElementById('alta');	
 	el.innerHTML = '<a id="create" data-copType="'+copType+'" href="#"><i class="icon-plus-sign"></i> Nuevo</a>';
-	
-	
-	$("#create").on('click', function() {
-	var copType = $(this).attr("data-copType");
 
-	$.ajax("/createForm?copType="+copType, {
-
-		success: function(data) { 
-
-			$("#createFormContent").html(data);
-			$("#createFormModal").modal("show");
-		},
-		error: function(data) {
-
-			$("#notifications").html("Ocurió un error al intentar recuperar el formulario de alta.");
-			$("#notifications").addClass("alert alert-error");
-		}
-	});
-});
-	
+	$("#create").on('click', create);
 });

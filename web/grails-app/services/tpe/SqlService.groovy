@@ -71,4 +71,15 @@ class SqlService {
 
 		return result
 	}
+
+	def createCop(cop) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_crearDatos('${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electrónico_principal}', '${cop.sitio_web}', ${cop.copType}, 1)}")
+
+		sql.close()
+
+		return result
+	}
 }
