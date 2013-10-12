@@ -52,14 +52,9 @@ CREATE TABLE IF NOT EXISTS `led_clientes` (
   CONSTRAINT `fk_led_cliente_led_datos1` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_clientes: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_clientes: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_clientes` DISABLE KEYS */;
 INSERT INTO `led_clientes` (`id_cliente`, `id_datos`) VALUES
-	(1, 1),
-	(2, 2),
-	(3, 3),
-	(4, 4),
-	(5, 5),
 	(6, 6),
 	(7, 7),
 	(8, 8);
@@ -81,14 +76,9 @@ CREATE TABLE IF NOT EXISTS `led_datos` (
   PRIMARY KEY (`id_datos`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_datos: ~9 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_datos: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_datos` DISABLE KEYS */;
 INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`, `estado`) VALUES
-	(1, '1', '1', '1', '1', '1', '1', '1', 1),
-	(2, '2', '2', '2', '2', '2', '2', '2', 1),
-	(3, '3', '3', '3', '3', '3', '3', '3', 1),
-	(4, '4', '4', '4', '4', '4', '4', '4', 1),
-	(5, '5', '5', '5', '5', '5', '5', '5', 1),
 	(6, '6', '6', '6', '6', '6', '6', '6', 1),
 	(7, '7', '7', '7', '7', '7', '7', '7', 1),
 	(8, '8', '8', '8', '8', '8', '8', '8', 1),
@@ -110,20 +100,9 @@ CREATE TABLE IF NOT EXISTS `led_integrantes` (
   CONSTRAINT `tienen` FOREIGN KEY (`id_proveedor`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_integrantes: ~18 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_integrantes: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_integrantes` DISABLE KEYS */;
 INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `correo_electronico`, `id_proveedor`) VALUES
-	(1, '1', '1', '1', '1', 1),
-	(2, '2', '2', '2', '2', 1),
-	(3, '3', '3', '3', '3', 1),
-	(4, '4', '4', '4', '4', 3),
-	(5, '5', '5', '5', '5', 3),
-	(6, '6', '6', '6', '6', 3),
-	(7, '7', '7', '7', '7', 4),
-	(8, '8', '8', '8', '8', 4),
-	(9, '9', '9', '9', '9', 5),
-	(10, '10', '10', '10', '10', 5),
-	(11, '10', '10', '10', '10', 5),
 	(12, '10', '10', '10', '10', 6),
 	(13, '10', '10', '10', '10', 6),
 	(14, '10', '10', '10', '10', 7),
@@ -148,12 +127,9 @@ CREATE TABLE IF NOT EXISTS `led_participa` (
   CONSTRAINT `fk_led_participa_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_participa: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_participa: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_participa` DISABLE KEYS */;
 INSERT INTO `led_participa` (`id_terceros`, `id_trabajos`, `costo_prestacion`, `descripcion_trabajo_realizado`) VALUES
-	(1, 1, 32, 'asdasd'),
-	(2, 5, 45, 'dsfdsfd'),
-	(3, 3, 313, 'rtewrewrew'),
 	(7, 16, 4534, 'eger');
 /*!40000 ALTER TABLE `led_participa` ENABLE KEYS */;
 
@@ -168,14 +144,9 @@ CREATE TABLE IF NOT EXISTS `led_proveedores` (
   CONSTRAINT `fk_led_proveedores_led_datos` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_proveedores: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_proveedores: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_proveedores` DISABLE KEYS */;
 INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
-	(1, 1),
-	(2, 2),
-	(3, 3),
-	(4, 4),
-	(5, 5),
 	(6, 6),
 	(7, 7),
 	(8, 8);
@@ -200,12 +171,8 @@ CREATE TABLE IF NOT EXISTS `led_provistos` (
   CONSTRAINT `fk_led_provistos_led_proveedores1` FOREIGN KEY (`id_proveedores`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_provistos: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_provistos: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
-INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `codigo_catalogo_proveedor`, `cantidad_articulos`, `costo_unitario`) VALUES
-	(1, 1, 1, 'adasdsa', 0, 0),
-	(2, 2, 1, 'adasdsa', 0, 0),
-	(3, 3, 3, 'adasdsa', 0, 0);
 /*!40000 ALTER TABLE `led_provistos` ENABLE KEYS */;
 
 
@@ -219,14 +186,9 @@ CREATE TABLE IF NOT EXISTS `led_terceros` (
   CONSTRAINT `fk_led_terceros_led_datos1` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_terceros: ~9 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_terceros: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_terceros` DISABLE KEYS */;
 INSERT INTO `led_terceros` (`id_terceros`, `id_datos`) VALUES
-	(1, 1),
-	(2, 2),
-	(3, 3),
-	(4, 4),
-	(5, 5),
 	(6, 6),
 	(7, 7),
 	(8, 8),
@@ -252,18 +214,9 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
   CONSTRAINT `solicita` FOREIGN KEY (`id_cliente`) REFERENCES `led_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_trabajos: ~17 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_trabajos: ~8 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `id_cliente`) VALUES
-	(1, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 1),
-	(3, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 1),
-	(5, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 2),
-	(6, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 3),
-	(7, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 3),
-	(8, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 4),
-	(9, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 4),
-	(10, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 5),
-	(11, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 5),
 	(12, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 6),
 	(13, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 6),
 	(14, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 7),
@@ -333,15 +286,15 @@ _razon_social VARCHAR(45),
 _direccion VARCHAR(255),
 _codigo_postal VARCHAR(45),
 _telefono_principal VARCHAR(45),
-_correo_electrónico_principal VARCHAR(45),
+_correo_electronico_principal VARCHAR(45),
 _sitio_web VARCHAR(255),
 _tipo INT,
 _estado TINYINT
 )
 BEGIN
 
-INSERT INTO `led_datos` (`numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electrónico_principal`, `sitio_web`, `estado`)
-VALUES (_numero_cuil, _razon_social, _direccion, _codigo_postal, _telefono_principal, _correo_electrónico_principal, _sitio_web, _estado);
+INSERT INTO `led_datos` (`numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`, `estado`)
+VALUES (_numero_cuil, _razon_social, _direccion, _codigo_postal, _telefono_principal, _correo_electronico_principal, _sitio_web, _estado);
 
 case  
 when _tipo = 0 then 
@@ -649,7 +602,7 @@ _razon_social VARCHAR(45),
 _direccion VARCHAR(255),
 _codigo_postal VARCHAR(45),
 _telefono_principal VARCHAR(45),
-_correo_electrónico_principal VARCHAR(45),
+_correo_electronico_principal VARCHAR(45),
 _sitio_web VARCHAR(255),
 _estado TINYINT
 )
