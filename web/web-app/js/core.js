@@ -86,7 +86,6 @@ $("[name='deleteJob']").on('click', function() {
 });
 
 $("#create").on('click', function() {
-
 	var copType = $(this).attr("data-copType");
 
 	$.ajax("/createForm?copType="+copType, {
@@ -111,6 +110,26 @@ $(document).ready(function() {
 
 	var el = document.getElementById('alta');
 
+	$("#create").off('click');
 	el.innerHTML = '<a id="create" data-copType="'+copType+'" href="#"><i class="icon-plus-sign"></i> Nuevo</a>';
+	
+	
+	$("#create").on('click', function() {
+	var copType = $(this).attr("data-copType");
+
+	$.ajax("/createForm?copType="+copType, {
+
+		success: function(data) { 
+
+			$("#createFormContent").html(data);
+			$("#createFormModal").modal("show");
+		},
+		error: function(data) {
+
+			$("#notifications").html("Ocurió un error al intentar recuperar el formulario de alta.");
+			$("#notifications").addClass("alert alert-error");
+		}
+	});
+});
 	
 });
