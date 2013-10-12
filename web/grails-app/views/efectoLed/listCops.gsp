@@ -60,7 +60,7 @@
             <div class="modal-header">
                 <h3>Esta acción requiere confirmación</h3>
             </div>
-            <div class="modal-body" style="min-width: 350px; min-height: 50px;">
+            <div class="modal-body">
                 ¿Está seguro que desea eliminar este <cops:label copType="${copType}" />?
             </div>
             <div class="modal-footer">

@@ -10,13 +10,31 @@ div {
     /*border: 1px solid black;  para maquetacion*/
 }
 
+.modal {
+    min-width: 350px !important;
+    min-height: 100px !important;
+}
+
+.modal-small {
+    width: 200px; margin-left: -100px;
+}
+
+.modal-medium {
+    width: 600px; margin-left: -300px;
+}
+
+.modal-large {
+    width: 900px; margin-left: -450px;
+}
+
 .dropdown-menu { /* hack para que no se corten por el overflow-x: en los table*/
-  left: -120px !important;
+    left: -120px !important;
 }
 
 .table-header-fix thead {
     display:block;
 }
+
 .table-header-fix tbody {
     display:block;
     overflow-y: auto;
