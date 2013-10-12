@@ -37,21 +37,11 @@ class UrlMappings {
 			controller = "efectoLed"
 			action = "deleteJob"
 		}
-		/*"/crear-cliente" {
+		"/crear" {
 
 			controller = "efectoLed"
-			action = "createClient"
+			action = "createCop"
 		}
-		"/crear-proveedor" {
-
-			controller = "efectoLed"
-			action = "createProvider"
-		}
-		"/crear-tercero" {
-
-			controller = "efectoLed"
-			action = "createOther"
-		}*/
 
 		"/itemsByJob" {
 

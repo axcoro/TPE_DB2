@@ -4,7 +4,7 @@ import tpe.Constants
 
 class EfectoLedController {
 
-	def sqlService
+	def sqlService, efectoLedService
 
 	def listJobs() {
 
@@ -34,44 +34,18 @@ class EfectoLedController {
 		render(view:"listCops", model:[cops:others, copType:Constants.OTHERS])
 	}
 
-	/*def createClient() {
+	def createCop() {
 
-		render(view:"createCop", model:[copType:Constants.CLIENTS])
+		sqlService.createCop(params)
+
+		redirect(action:efectoLedService.getCopAction(params.copType))
 	}
-
-	def createProvider() {
-
-		render(view:"createCop", model:[copType:Constants.PROVIDERS])
-	}
-
-	def createOther() {
-
-		render(view:"createCop", model:[copType:Constants.OTHERS])
-	}*/
 
 	def deleteCop() {
 
 		sqlService.deleteCop(params.copId)
 
-		String action
-
-		switch (params.copType) {
-
-			case "$Constants.CLIENTS" :
-				action = "listClients"
-			break
-
-			case "$Constants.PROVIDERS" :
-				action = "listProviders"
-			break
-
-			case "$Constants.OTHERS" :
-				action = "listOthers"
-			break
-
-		}
-
-		redirect(action:action)
+		redirect(action:efectoLedService.getCopAction(params.copType))
 	}
 
 	def deleteJob() {

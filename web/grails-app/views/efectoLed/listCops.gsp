@@ -76,6 +76,7 @@
 	<%-- TODO: esto puedo llevarlo al layout, ver si se reutiliza este modal y el js en jobs --%>
 	<div id="createFormModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Nuevo <cops:label copType="${copType}" /></h3>
 		</div>
 		<div id="createFormContent" class="modal-body" style="min-width: 350px; min-height: 50px;">
@@ -83,8 +84,9 @@
 		</div>
 		<div class="modal-footer">
 			<div class="control-group">
-				<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">Cancelar</button>
-				<cops:createLink copType="${copType}" />Crear</a>
+				<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+				<button name="reset" class="btn" onclick="document.forms['form'].reset();" >Limpiar</button>
+				<button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Guardar</button>
 			</div>
 		</div>
 	</div>
