@@ -305,18 +305,18 @@ DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearArticulo`(
 
 
-_nombre VARCHAR(45),
-_area VARCHAR(255),
-_telefono VARCHAR(255),
-_correo_electronico VARCHAR(255)
+_codigo_interno VARCHAR(45),
+_descripcion VARCHAR(255),
+_marca_fabricante VARCHAR(255),
+_modelo VARCHAR(255),
+_observaciones VARCHAR(255)
 )
 BEGIN
 
-INSERT INTO 
-led_integrantes
-    (nombre, area, telefono, correo_electronico)
+INSERT INTO led_articulos
+    (codigo_interno, descripcion, marca_fabricante, modelo, observaciones)
 VALUES
-    (_nombre, _area, _telefono, _correo_electronico);
+    (_codigo_interno, _descripcion, _marca_fabricante, _modelo, _observaciones);
 
 END//
 DELIMITER ;
@@ -353,6 +353,29 @@ when _tipo = 2 then
 end case; 
 
 select LAST_INSERT_ID() as id, _tipo as tipo;
+
+END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento efecto_led.LED_crearIntegrante
+DROP PROCEDURE IF EXISTS `LED_crearIntegrante`;
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearIntegrante`(
+
+
+_nombre VARCHAR(45),
+_area VARCHAR(255),
+_telefono VARCHAR(255),
+_correo_electronico VARCHAR(255)
+)
+BEGIN
+
+INSERT INTO 
+led_integrantes
+    (nombre, area, telefono, correo_electronico)
+VALUES
+    (_nombre, _area, _telefono, _correo_electronico);
 
 END//
 DELIMITER ;
@@ -503,15 +526,7 @@ DROP PROCEDURE IF EXISTS `LED_listarIntegrantesPorProveedor`;
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarIntegrantesPorProveedor`(
 
-/*
-===================================================
- Nombre: LED_listarIntegrantesPorProveedor
- Descripcion: dado un proveedor, lista los integrantes
- Comentarios: 
- Autores: Coronel, Axel
- Audit Trail:
-===================================================
-*/
+
 _id INT
 )
 BEGIN
@@ -552,8 +567,9 @@ _id INT
 )
 BEGIN
 
-select t.*, p.costo_prestacion, p.descripcion_trabajo_realizado from led_terceros t
+select t.*, d.*, p.costo_prestacion, p.descripcion_trabajo_realizado from led_terceros t
 inner join led_participa p on p.id_terceros = t.id_terceros
+inner join led_datos d on d.id_datos = t.id_datos
 where p.id_trabajos = _id;
 
 END//
@@ -654,6 +670,34 @@ WHERE
 LIMIT 1;
 
 select _id as id;
+
+END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento efecto_led.LED_modificarIntegrante
+DROP PROCEDURE IF EXISTS `LED_modificarIntegrante`;
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarIntegrante`(
+
+
+_id INT,
+_nombre VARCHAR(45),
+_area VARCHAR(255),
+_telefono VARCHAR(255),
+_correo_electronico VARCHAR(255)
+)
+BEGIN
+
+UPDATE led_integrantes
+    SET
+        nombre = _nombre,
+        area = _area,
+        telefono = _telefono,
+        correo_electronico = _correo_electronico
+WHERE 
+    id_integrantes = _id
+LIMIT 1;
 
 END//
 DELIMITER ;
@@ -781,6 +825,24 @@ select t.id_terceros, d.* from led_datos d
 inner join led_terceros t on t.id_datos = d.id_datos
 where t.id_terceros = _id
 limit 1;
+
+END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento efecto_led.LED_obtenerTrabajo
+DROP PROCEDURE IF EXISTS `LED_obtenerTrabajo`;
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_obtenerTrabajo`(
+
+
+_id INT
+)
+BEGIN
+
+select t.*
+from led_trabajos t
+where t.id_trabajos = _id;
 
 END//
 DELIMITER ;
