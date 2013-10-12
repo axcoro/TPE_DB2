@@ -43,16 +43,19 @@
 						<td class="table-col-precio">${job.precio_articulos}</td>
 						<td class="table-col-custom">
 							<div class="btn-group">
-								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">seleccionar <span class="caret"></span></button>
-								<ul class="dropdown-menu">
+								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu">
 
-									<% def list = [[id_terceros:""]] + othersByJob."${job.id_trabajos}" %>
+									<%-- def list = [[id_terceros:""]] + othersByJob."${job.id_trabajos}" 
 
 									<g:each var="other" in="${list}">
 										<li>
 											<a href="#myModal2" data-toggle="modal">${other.id_terceros}</a>
 										</li>
-									</g:each>
+									</g:each>--%>
+									<li><a href="#"></a></li>
+									<li><a href="#myModal2" data-toggle="modal">Terceros</a></li>
+									<li><a href="#myModal22" data-toggle="modal">Artículos</a></li>
 
 								</ul>
 							</div>
@@ -66,7 +69,7 @@
 
 								<ul class="dropdown-menu">
 									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
-									<li><a href="#"><i class="icon-trash"></i> Eliminar</a></li>
+									<li><a name="deleteJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
 							</div>
 						</td>
@@ -87,14 +90,14 @@
                 <h3>Esta acción requiere confirmación</h3>
             </div>
             <div class="modal-body" style="min-width: 350px; min-height: 50px;">
-                ¿Está seguro que desea eliminar este trabajo?
+                Eliminar este trabajo implica perder constancia de los artículos utilizados durante el mismo.
             </div>
             <div class="modal-footer">
                 <div class="control-group">
                     <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
-                        No
+                        Cancelar
                     </button>
-                        <cops:deleteLink copType="${copType}" />Si</a>
+                    <a id="yesBtn" class="btn btn-success" data-uri="/eliminar-trabajo">Eliminar</a>
                 </div>
             </div>
         </div>

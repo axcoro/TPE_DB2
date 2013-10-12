@@ -2,7 +2,12 @@ class UrlMappings {
 
 	static mappings = {
 
-		"/(listar-trabajos)?" {
+		"/" {
+
+			controller = "efectoLed"
+			action = "listJobs"
+		}
+		"/listar-trabajos" {
 
 			controller = "efectoLed"
 			action = "listJobs"
@@ -26,6 +31,11 @@ class UrlMappings {
 
 			controller = "efectoLed"
 			action = "deleteCop"
+		}
+		"/eliminar-trabajo" {
+
+			controller = "efectoLed"
+			action = "deleteJob"
 		}
 
 		"/itemsByJob" {

@@ -22,7 +22,20 @@ $("[name='deleteCop']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
-$(document).ready(function(){
-    var pathname = window.location.pathname.replace('\/', '');
-    document.getElementById(pathname).className = 'active';
+$("[name='deleteJob']").on('click', function() {
+
+	var jobId = $(this).attr("data-jobId");
+
+	var dataUri = $("#yesBtn").attr("data-uri");
+
+	$("#yesBtn").attr("href", dataUri+"?jobId="+jobId);
+
+	$("#deleteModal").modal('show');
+});
+
+$(document).ready(function() {
+
+	var pathname = window.location.pathname.replace('\/', '');
+
+	document.getElementById(pathname).className = 'active';
 });

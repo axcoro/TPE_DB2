@@ -60,4 +60,15 @@ class SqlService {
 
 		return result
 	}
+
+	def deleteJob(jobId) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_eliminarTrabajo(${jobId})}")
+
+		sql.close()
+
+		return result
+	}
 }
