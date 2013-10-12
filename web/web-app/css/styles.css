@@ -10,6 +10,41 @@ div {
     /*border: 1px solid black;  para maquetacion*/
 }
 
+.table-header-fix thead {
+    display:block;
+}
+.table-header-fix tbody {
+    display:block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height:300px;
+}
+
+.table-col-nombre {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.table-col-descripcion {
+    min-width: 90px;
+    max-width: 90px;
+}
+
+.table-col-fecha {
+    min-width: 145px;
+    max-width: 145px;
+}
+
+.table-col-precio {
+    min-width: 72px;
+    max-width: 72px;
+}
+
+.table-col-custom {
+    min-width: 65px;
+    max-width: 65px;
+}
+
 #integrantes {
     padding-top: 7px;
     padding-right: 7px;
