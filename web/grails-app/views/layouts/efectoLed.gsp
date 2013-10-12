@@ -23,7 +23,7 @@
 
 			<div id="header" class="row-fluid">
 				<div class="page-header">
-					<h1>Efecto LED <small>Sistema de gestión de trabajos</small></h1>
+				  <h1>&nbsp;&nbsp;&nbsp;Efecto LED <small>Sistema de gestión de trabajos</small></h1>
 				</div>
 			</div>
 			<br>
