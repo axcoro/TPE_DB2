@@ -45,6 +45,41 @@ div {
     max-width: 65px;
 }
 
+.table-col-cuit {
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.table-col-razon {
+    min-width: 75px;
+    max-width: 75px;
+}
+
+.table-col-direccion {
+    min-width: 75px;
+    max-width: 75px;
+}
+
+.table-col-codigo {
+    min-width: 75px;
+    max-width: 75px;
+}
+
+.table-col-tel {
+    min-width: 75px;
+    max-width: 75px;
+}
+
+.table-col-email{
+    min-width: 75px;
+    max-width: 75px;
+}
+
+.table-col-url{
+    min-width: 100px;
+    max-width: 100px;
+}
+
 #integrantes {
     padding-top: 7px;
     padding-right: 7px;
