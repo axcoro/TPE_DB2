@@ -106,8 +106,11 @@ $("#create").on('click', function() {
 
 $(document).ready(function() {
 
-	var pathname = window.location.pathname.replace('\/', '');
-	if (pathname === '')
-	    pathname = 'listar-trabajos';
-	document.getElementById(pathname).className = 'active';
+	var copType = document.getElementById('copType').innerHTML;
+	document.getElementById('copType-' + copType).className = 'active';
+
+	var el = document.getElementById('alta');
+
+	el.innerHTML = '<a id="create" data-copType="'+copType+'" href="#"><i class="icon-plus-sign"></i> Nuevo</a>';
+	
 });

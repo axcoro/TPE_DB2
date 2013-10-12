@@ -10,13 +10,31 @@ div {
     /*border: 1px solid black;  para maquetacion*/
 }
 
+.modal {
+    min-width: 350px !important;
+    min-height: 100px !important;
+}
+
+.modal-small {
+    width: 200px; margin-left: -100px;
+}
+
+.modal-medium {
+    width: 600px; margin-left: -300px;
+}
+
+.modal-large {
+    width: 900px; margin-left: -450px;
+}
+
 .dropdown-menu { /* hack para que no se corten por el overflow-x: en los table*/
-  left: -120px !important;
+    left: -120px !important;
 }
 
 .table-header-fix thead {
     display:block;
 }
+
 .table-header-fix tbody {
     display:block;
     overflow-y: auto;
@@ -25,18 +43,18 @@ div {
 }
 
 .table-col-nombre {
-    min-width: 130px;
-    max-width: 130px;
+    min-width: 125px;
+    max-width: 125px;
 }
 
 .table-col-descripcion {
-    min-width: 130px;
-    max-width: 130px;
+    min-width: 125px;
+    max-width: 125px;
 }
 
 .table-col-fecha {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 96px;
+    max-width: 96px;
 }
 
 .table-col-precio {
@@ -100,6 +118,10 @@ div {
     color: white;
     background-image: url('../img/lights.jpg');
     background-size: cover;
+}
+
+#header {
+    max-height: 80px;
 }
 
 #footer {

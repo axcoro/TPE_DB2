@@ -18,7 +18,7 @@
 	</head>
 
 	<body>
-
+		<span id="copType" class="hide">${copType}</span>
 		<div class="container-fluid">
 
 			<div id="header" class="row-fluid">
@@ -30,10 +30,12 @@
 			<div class="row-fluid">
 				<div class="span12">
 					<ul class="nav nav-tabs">
-						<li id="listar-trabajos"><a href="/listar-trabajos">Trabajos</a></li>
-						<li id="listar-clientes"><a href="/listar-clientes">Clientes</a></li>
-						<li id="listar-proveedores"><a href="/listar-proveedores">Proveedores</a></li>
-						<li id="listar-terceros"><a href="/listar-terceros">Terceros</a></li>
+						<li id="copType-"><a href="/listar-trabajos">Trabajos</a></li>
+						<li id="copType-1"><a href="/listar-clientes">Clientes</a></li>
+						<li id="copType-0"><a href="/listar-proveedores">Proveedores</a></li>
+						<li id="copType-2"><a href="/listar-terceros">Terceros</a></li>
+						<li id="alta" class="pull-right">
+						</li>
 					</ul>
 				</div>
 			</div>

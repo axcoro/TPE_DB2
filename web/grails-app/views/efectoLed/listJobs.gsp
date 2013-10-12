@@ -24,7 +24,7 @@
 					<th class="table-col-precio"><center>P. total</center></th>
 					<th class="table-col-precio"><center>P. m. obra</center></th>
 					<th class="table-col-precio"><center>P. art.</center></th>
-					<th class="table-col-custom"><center>Terceros</center></th>
+					<th class="table-col-custom"><center>Mas Info.</center></th>
 					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
 			</thead>
@@ -95,7 +95,7 @@
             <div class="modal-header">
                 <h3>Esta acción requiere confirmación</h3>
             </div>
-            <div class="modal-body" style="min-width: 350px; min-height: 50px;">
+            <div class="modal-body">
                 Eliminar este trabajo implica perder constancia de los artículos utilizados durante el mismo.
             </div>
             <div class="modal-footer">
@@ -108,11 +108,11 @@
             </div>
         </div>
 
-        <div id="itemsByJobModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+        <div id="itemsByJobModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
             <div class="modal-header">
                 <h3>Artículos</h3>
             </div>
-            <div id="itemsByJobModalContent" class="modal-body" style="min-width: 350px; min-height: 50px;">
+            <div id="itemsByJobModalContent" class="modal-body">
             	<%-- Content --%>
             </div>
             <div class="modal-footer">
@@ -124,11 +124,11 @@
             </div>
         </div>
 
-        <div id="othersByJobModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+        <div id="othersByJobModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
             <div class="modal-header">
                 <h3>Terceros</h3>
             </div>
-            <div id="othersByJobModalContent" class="modal-body" style="min-width: 350px; min-height: 50px;">
+            <div id="othersByJobModalContent" class="modal-body">
             	<%-- Content --%>
             </div>
             <div class="modal-footer">
