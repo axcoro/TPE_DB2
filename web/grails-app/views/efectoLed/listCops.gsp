@@ -8,8 +8,9 @@
 	</head>
 
 	<body>
-		<table class="table table-hover table-striped">
-			<caption><h3><cops:plural copType="${copType}" /></h3></caption>
+
+		<table class="table table-hover table-bordered">
+
 			<thead>
 				<tr>
 					<th>CUIT / CUIL</th>
