@@ -18,7 +18,7 @@ _razon_social VARCHAR(45),
 _direccion VARCHAR(255),
 _codigo_postal VARCHAR(45),
 _telefono_principal VARCHAR(45),
-_correo_electrónico_principal VARCHAR(45),
+_correo_electronico_principal VARCHAR(45),
 _sitio_web VARCHAR(255),
 _estado TINYINT
 )
