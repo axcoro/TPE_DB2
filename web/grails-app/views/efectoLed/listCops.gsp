@@ -8,23 +8,23 @@
 	</head>
 
 	<body>
-
-		<table class="table table-hover table-bordered">
+	  <div class="container">
+		<table class="table table-hover table-bordered table-header-fix">
 
 			<thead>
 				<tr>
-					<th class="table-col-cuit">CUIT / CUIL</th>
-					<th class="table-col-razon">Razón social</th>
-					<th class="table-col-direccion">Dirección</th>
-					<th class="table-col-codigo">Código postal</th>
-					<th class="table-col-tel">Teléfono principal</th>
-					<th class="table-col-email">Correo electrónico principal</th>
-					<th class="table-col-url">Sitio web</th>
-					<th class="table-col-custom">Acciones</th>
+					<th class="table-col-cuit"><center>CUIT / CUIL</center></th>
+					<th class="table-col-razon"><center>Razón social</center></th>
+					<th class="table-col-direccion"><center>Dirección</center></th>
+					<th class="table-col-codigo"><center>Código postal</center></th>
+					<th class="table-col-tel"><center>Tel. principal</center></th>
+					<th class="table-col-email"><center>Correo el. principal</center></th>
+					<th class="table-col-url"><center>Sitio web</center></th>
+					<th class="table-col-custom"<center>Acciones</center></th>
 				</tr>
 			</thead> 
 		</table> 
-		<table class="table table-hover table-bordered">
+		<table class="table table-hover table-bordered table-header-fix">
 			<tbody>
 
 				<g:each var="cop" in="${cops}">
@@ -35,15 +35,17 @@
 						<td class="table-col-codigo">${cop.codigo_postal}</td>
 						<td class="table-col-tel">${cop.telefono_principal}</td>
 						<td class="table-col-email">${cop.correo_electronico_principal}</td>
-						<td class="table-col-web">${cop.sitio_web}</td>
-						<td class="table-col-cuit">
+						<td class="table-col-url">${cop.sitio_web}</td>
+						<td class="table-col-custom">
 							<div class="btn-group">
+						<center>
 								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									
 									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
 									<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
+						</center>
 							</div>
 						</td>
 					</tr>
@@ -51,6 +53,7 @@
 
 			</tbody>
 		</table>
+	  </div>
 
         <div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
             <div class="modal-header">

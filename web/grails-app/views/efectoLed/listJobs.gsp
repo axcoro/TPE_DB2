@@ -8,20 +8,21 @@
 	</head>
 
 	<body>
+	  <div class="container">
 		<table class="table table-hover table-bordered table-header-fix">
 			<thead>
 				<tr>
-					<th class="table-col-nombre">Cliente</th>
-					<th class="table-col-descripcion">Descripción</th>
-					<th class="table-col-fecha">F. creación</th>
-					<th class="table-col-fecha">F. aprobación</th>
-					<th class="table-col-fecha">F. inicio obra</th>
-					<th class="table-col-fecha">F. fin obra</th>
-					<th class="table-col-precio">P. total</th>
-					<th class="table-col-precio">P. m. obra</th>
-					<th class="table-col-precio">P. art.</th>
-					<th class="table-col-custom">Terceros</th>
-					<th class="table-col-custom">Acciones</th>
+					<th class="table-col-nombre"><center>Cliente</center></th>
+					<th class="table-col-descripcion"><center>Descripción</center></th>
+					<th class="table-col-fecha"><center>F. creación</center></th>
+					<th class="table-col-fecha"><center>F. aprobación</center></th>
+					<th class="table-col-fecha"><center>F. inicio obra</center></th>
+					<th class="table-col-fecha"><center>F. fin obra</center></th>
+					<th class="table-col-precio"><center>P. total</center></th>
+					<th class="table-col-precio"><center>P. m. obra</center></th>
+					<th class="table-col-precio"><center>P. art.</center></th>
+					<th class="table-col-custom"><center>Terceros</center></th>
+					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
 			</thead>
 		</table>
