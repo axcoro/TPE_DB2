@@ -8,41 +8,40 @@
 	</head>
 
 	<body>
-
-		<table class="table table-hover table-bordered">
-
+		<table class="table table-hover table-bordered table-header-fix">
 			<thead>
 				<tr>
-					<th>Cliente</th>
-					<th>Descripción</th>
-					<th>Fecha creación</th>
-					<th>Fecha aprobación</th>
-					<th>Fecha inicio obra</th>
-					<th>Fecha fin obra</th>
-					<th>Precio total</th>
-					<th>Precio mano obra</th>
-					<th>Precio artículos</th>
-					<th>Terceros</th>
-					<th>Acciones</th>
+					<th class="table-col-nombre">Cliente</th>
+					<th class="table-col-descripcion">Descripción</th>
+					<th class="table-col-fecha">F. creación</th>
+					<th class="table-col-fecha">F. aprobación</th>
+					<th class="table-col-fecha">F. inicio obra</th>
+					<th class="table-col-fecha">F. fin obra</th>
+					<th class="table-col-precio">P. total</th>
+					<th class="table-col-precio">P. m. obra</th>
+					<th class="table-col-precio">P. art.</th>
+					<th class="table-col-custom">Terceros</th>
+					<th class="table-col-custom">Acciones</th>
 				</tr>
 			</thead>
-
+		</table>
+		<table class="table table-hover table-bordered table-header-fix">
 			<tbody data-provides="rowlink">
 
 				<g:each var="job" in="${jobs}">
 
 					<tr name="jobRow" class="rowlink" data-jobId="${job.id_trabajos}">
 
-						<td><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
-						<td>${job.descripcion}</td>
-						<td>${job.fecha_creacion}</td>
-						<td>${job.fecha_aprobacion_presupuesto}</td>
-						<td>${job.fecha_inicio_obra}</td>
-						<td>${job.fecha_fin_obra}</td>
-						<td>${job.precio_total}</td>
-						<td>${job.precio_mano_obra}</td>
-						<td>${job.precio_articulos}</td>
-						<td>
+						<td class="table-col-nombre"><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
+						<td class="table-col-descripcion">${job.descripcion}</td>
+						<td class="table-col-fecha">${job.fecha_creacion}</td>
+						<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto}</td>
+						<td class="table-col-fecha">${job.fecha_inicio_obra}</td>
+						<td class="table-col-fecha">${job.fecha_fin_obra}</td>
+						<td class="table-col-precio">${job.precio_total}</td>
+						<td class="table-col-precio">${job.precio_mano_obra}</td>
+						<td class="table-col-precio">${job.precio_articulos}</td>
+						<td class="table-col-custom">
 							<div class="btn-group">
 								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">seleccionar <span class="caret"></span></button>
 								<ul class="dropdown-menu">
@@ -58,7 +57,7 @@
 								</ul>
 							</div>
 						</td>
-						<td>
+						<td class="table-col-custom">
 							<div class="btn-group">
 								<button class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown">
 									<i class="icon-align-justify icon-white"></i>
@@ -75,7 +74,7 @@
 				</g:each>
 			</tbody>
 		</table>
-
+	  </div>
 		<div id="itemsTable">
 			<table class="table table-condensed">
 				<caption><p>Artículos</p></caption>

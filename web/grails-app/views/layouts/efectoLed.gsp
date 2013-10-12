@@ -29,10 +29,10 @@
 			<div class="row-fluid">
 				<div class="span12">
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="/listar-trabajos">Trabajos</a></li>
-						<li><a href="/listar-clientes">Clientes</a></li>
-						<li><a href="/listar-proveedores">Proveedores</a></li>
-						<li><a href="/listar-terceros">Terceros</a></li>
+						<li id="listar-trabajos"><a href="/listar-trabajos">Trabajos</a></li>
+						<li id="listar-clientes"><a href="/listar-clientes">Clientes</a></li>
+						<li id="listar-proveedores"><a href="/listar-proveedores">Proveedores</a></li>
+						<li id="listar-terceros"><a href="/listar-terceros">Terceros</a></li>
 					</ul>
 				</div>
 			</div>

@@ -21,3 +21,8 @@ $("[name='deleteCop']").on('click', function() {
 
 	$("#deleteModal").modal('show');
 });
+
+$(document).ready(function(){
+    var pathname = window.location.pathname.replace('\/', '');
+    document.getElementById(pathname).className = 'active';
+});

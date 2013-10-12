@@ -9,7 +9,7 @@
 
 	<body>
 
-		<table class="table table-hover table-bordered">
+		<table class="table table-hover table-bordered table-scrollable">
 
 			<thead>
 				<tr>
