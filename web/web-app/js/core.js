@@ -53,12 +53,6 @@ $("[name='itemsByJob']").on('click', function(){
 
 		success: function(data) { 
 
-			if (data === "") {
-
-				showAlert("Este trabajo no tiene artículos cargados.");
-			}
-			else {
-
 				$("#itemsByJobModalContent").html(data);
 				$("#itemsByJobModal").modal("show");
 			}
@@ -79,17 +73,10 @@ $("[name='othersByJob']").on('click', function(){
 
 	$.ajax("/othersByJob?jobId="+jobId, {
 
-		success: function(data) { 
+		success: function(data) {
 
-			if (data === "") {
-
-				showAlert("Este trabajo no tiene terceros cargados.");
-			}
-			else {
-
-				$("#othersByJobModalContent").html(data);
-				$("#othersByJobModal").modal("show");
-			}
+			$("#othersByJobModalContent").html(data);
+			$("#othersByJobModal").modal("show");
 		},
 		error: function(data) {
 
@@ -161,8 +148,30 @@ $("#crateNext").on('click', function() {
 
 		success: function(data) { 
 
-			$("#createFormContent").html(data);
-			$("#createFormModal").modal("show");
+			var content = "";
+
+			$.ajax("/getItemsForm?jobId="+data, {
+				async: false,
+				success: function(data2) { 
+					content += data2;
+				},
+				error: function() {
+					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+				}
+			});
+
+			$.ajax("/itemsByJob?jobId="+data, {
+				async: false,
+				success: function(data3) { 
+					content += data3;
+				},
+				error: function(data3) {
+					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+				}
+			});
+
+			$("#createFormContent").html(content);
+			
 		},
 		error: function(data) {
 

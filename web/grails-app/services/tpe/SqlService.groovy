@@ -103,13 +103,7 @@ class SqlService {
 
 	def createJob(job) {
 
-		def sql = Sql.newInstance(dataSource)
-
-		int result = sql.call("{call LED_crearTrabajo('${job.descripcion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_mano_obra}', ${job.clientId})}")
-
-		sql.close()
-
-		return result
+		return getRows("{call LED_crearTrabajo('${job.descripcion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_mano_obra}', ${job.clientId})}")[0]
 	}
 
 	def editCop(cop) {

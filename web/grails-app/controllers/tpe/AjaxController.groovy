@@ -47,8 +47,13 @@ class AjaxController {
 
 	def createJob() {
 
-		def jobId = sqlService.createJob(params)
+		def jobId = sqlService.createJob(params).id
 
 		render "${jobId}"
+	}
+
+	def getItemsForm() {
+
+		render(view:"getItemsForm", model:[jobId:params.jobId])
 	}
 }

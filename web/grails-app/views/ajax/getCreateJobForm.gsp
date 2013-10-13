@@ -14,13 +14,13 @@
         <div class="control-group">
           <label class="control-label" for="fecha_inicio_obra">Fecha de Inicio de Obra</label>
           <div class="controls">
-            <input type="date" id="fecha_inicio_obra" />
+            <input type="date" name="fecha_inicio_obra" id="fecha_inicio_obra" />
           </div>
         </div>
         <div class="control-group">
           <label class="control-label" for="fecha_fin_obra">Fecha de Fin de Obra</label>
           <div class="controls">
-            <input type="date" id="fecha_fin_obra" />
+            <input type="date" name="fecha_fin_obra" id="fecha_fin_obra" />
           </div>
         </div>
         <div class="control-group">
