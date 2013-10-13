@@ -14,7 +14,6 @@ CREATE PROCEDURE `LED_modificarTrabajo`(
 */
 _id INT,
 _descripcion VARCHAR(45),
-_fecha_creacion DATETIME,
 _fecha_aprobacion_presupuesto DATETIME,
 _fecha_inicio_obra DATETIME,
 _fecha_fin_obra DATETIME,
@@ -26,7 +25,6 @@ BEGIN
 
 UPDATE led_trabajos
     SET descripcion = _descripcion,
-        fecha_creacion = _fecha_creacion,
         fecha_aprobacion_presupuesto = _fecha_aprobacion_presupuesto,
         fecha_inicio_obra = _fecha_inicio_obra,
         fecha_fin_obra = _fecha_fin_obra,
