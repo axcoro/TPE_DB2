@@ -2,7 +2,7 @@
   def inhabilitado = (cop.estado == 0 ? "selected" : "")
   def habilitado = (cop.estado == 1 ? "selected" : "")
 %>
-  <form id="form" method="post" class="form-horizontal" action="/editar">
+  <form id="formEditCop" method="post" class="form-horizontal" action="/editar">
     <fieldset>
       <input type="hidden" name="copType" value="${cop.tipo}"/>
       <input type="hidden" name="id" value="${cop.id}"/>

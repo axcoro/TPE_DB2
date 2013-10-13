@@ -151,8 +151,8 @@
 	      <div class="modal-footer">
 		      <div class="control-group">
 			      <button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-			      <button name="reset" class="btn" onclick="document.forms['form'].reset();" >Limpiar</button>
-			      <button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Guardar</button>
+			      <button name="reset" class="btn" onclick="document.forms['formCreateJob'].reset();" >Limpiar</button>
+			      <button id="crateNext" name="next" class="btn btn-success">Siguiente</button>
 		      </div>
 	      </div>
       </div>
@@ -167,8 +167,8 @@
 	      <div class="modal-footer">
 		      <div class="control-group">
 			      <button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-			      <button name="reset" class="btn" onclick="document.forms['form'].reset();" >Deshacer</button>
-			      <button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Actualizar</button>
+			      <button name="reset" class="btn" onclick="document.forms['formEditJob'].reset();" >Deshacer</button>
+			      <button id="editNext" name="next" class="btn btn-success">Siguiente</button>
 		      </div>
 	      </div>
       </div>

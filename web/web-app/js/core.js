@@ -17,12 +17,36 @@ function showAlert(msg, cls)
     $("#notifications").html(msg);
     if(!cls)
         cls = '';
+    
+    $("#notifications").removeClass("alert-error");
     $("#notifications").addClass("alert " + cls);
    
     timerActive = setTimeout(function(){ // establecer caducidad del alert
         timerActive = null;
         clearAlert();
     }, 3000);
+}
+
+function nextStep(){
+    var el = $("[name='step'].active").next();
+    return el;
+}
+
+function activateStep(step){
+    if (step) {
+        var id = step[0].id;
+        // activo tabs
+        $("[name='step']").removeClass('active').addClass('disabled');
+        $('#' + id).removeClass('disabled').addClass('active');
+
+        // alterno contenido
+        $("[name='content-step']").addClass('hide');
+        $('#content-' + id).removeClass('hide');
+    }
+    else // si hay proximo, asumo que el ultimo paso..
+    {
+        document.forms['form'].submit();
+    }
 }
 
 $("[name='itemsByJob']").on('click', function(){
@@ -132,6 +156,13 @@ $("[name='deleteJob']").on('click', function() {
 	$("#yesBtn").attr("href", dataUri+"?jobId="+jobId);
 
 	$("#deleteModal").modal('show');
+});
+
+$("#crateNext").on('click', function() {
+    activateStep(nextStep());
+});
+$("#updNext").on('click', function() {
+    activateStep(nextStep());
 });
 
 function create() {

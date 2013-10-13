@@ -2,7 +2,7 @@
   def checked = (job.fecha_aprobacion_presupuesto != null) ? "checked" : "" // hack me
 %>
 <div class="modal-body">
-  <form id="form" method="post" action="/editar-trabajo" class="form-horizontal">
+  <form id="formEditJob" method="post" action="/editar-trabajo" class="form-horizontal">
     <fieldset>
       <input type="hidden" name="jobId" value="${job.id_trabajos}"/>
       <input type="hidden" name="clientId" value="${job.id_cliente}"/>

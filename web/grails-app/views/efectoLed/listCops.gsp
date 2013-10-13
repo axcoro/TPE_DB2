@@ -85,8 +85,8 @@
 		<div class="modal-footer">
 			<div class="control-group">
 				<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-				<button name="reset" class="btn" onclick="document.forms['form'].reset();" >Limpiar</button>
-				<button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Guardar</button>
+				<button name="reset" class="btn" onclick="document.forms['formCreateCop'].reset();" >Limpiar</button>
+				<button name="save" class="btn btn-success" onclick="document.forms['formCreateCop'].submitBtn.click();">Guardar</button>
 			</div>
 		</div>
 	</div>
@@ -101,8 +101,8 @@
 		<div class="modal-footer">
 			<div class="control-group">
 				<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-				<button name="reset" class="btn" onclick="document.forms['form'].reset();" >Deshacer</button>
-				<button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Actualizar</button>
+				<button name="reset" class="btn" onclick="document.forms['formEditCop'].reset();" >Deshacer</button>
+				<button name="save" class="btn btn-success" onclick="document.forms['formEditCop'].submitBtn.click();">Actualizar</button>
 			</div>
 		</div>
 	</div>

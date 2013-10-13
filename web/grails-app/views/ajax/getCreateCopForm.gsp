@@ -1,5 +1,5 @@
 <div class="modal-body">
-    <form id="form" method="post" class="form-horizontal" action="/crear">
+    <form id="formCreateCop" method="post" class="form-horizontal" action="/crear">
         <fieldset>
             <input type="hidden" name="copType" value="${copType}"/>
             

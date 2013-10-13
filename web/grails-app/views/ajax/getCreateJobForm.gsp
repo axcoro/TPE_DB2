@@ -1,15 +1,15 @@
-<form id="form" method="post" action="/crear-trabajo" class="form-horizontal">
+<form id="formCreateJob" method="post" action="/crear-trabajo" class="form-horizontal">
   <fieldset>
     <ul class="nav nav-tabs">
-      <li class="active">
+      <li class="active" name="step" id="step1">
         <a href="#">Datos del Trabajo</a>
       </li>
-      <li class="disabled">
+      <li class="disabled" name="step" id="step2">
         <a href="#">Articulos del Trabajo</a>
       </li>
     </ul>
     <div class="modal-body">
-      <div id="step1">
+      <div name="content-step" id="content-step1">
         <div class="control-group">
           <label class="control-label" for="cliente">Cliente</label>
           <div class="controls">
@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div id="step2" class="hide">
+      <div name="content-step" id="content-step2" class="hide">
         test
       </div>
     </div>
