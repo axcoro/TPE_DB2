@@ -1,4 +1,4 @@
-<form id="formCreateJob" method="post" action="/crear-trabajo" class="form-horizontal">
+<form id="formCreateJob" method="post" action="/createJob" class="form-horizontal">
   <fieldset>
     <div class="modal-body">
         <div class="control-group">
@@ -24,23 +24,15 @@
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label" for="estado_aprobacion">Presupuesto Aprobado</label>
+          <label class="control-label" for="fecha_aprobacion_presupuesto">Fecha Aprobacion Presupuesto</label>
           <div class="controls">
-            <input type="checkbox" name="estado_aprobacion" id="estado_aprobacion">
+            <input type="date" name="fecha_aprobacion_presupuesto" id="fecha_aprobacion_presupuesto">
           </div>
         </div>
         <div class="control-group">
           <label class="control-label" for="precio_mano_obra">Mano de Obra</label>
           <div class="controls">                     
             <input type="number" step="any" min="0" id="precio_mano_obra" required="" name="precio_mano_obra" value='0.0'>
-          </div>
-          <label class="control-label" for="precio_total">Articulos</label>
-          <div class="controls">                     
-            <input type="number" step="any" min="0" id="precio_articulos" required="" name="precio_articulos" disabled="" value='0.0'>
-          </div>
-          <label class="control-label" for="precio_total">Total</label>
-          <div class="controls">                     
-            <input type="number" step="any" min="0" id="precio_total" required="" name="precio_total" disabled="" value='0.0'>
           </div>
         </div>
         <div class="control-group">

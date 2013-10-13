@@ -105,7 +105,7 @@ class SqlService {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result = sql.call("{call LED_crearTrabajo('${job.descripcion}', '${job.fecha_creacion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_total}', '${job.precio_mano_obra}', '${job.precio_articulos}', ${job.clientId})}")
+		int result = sql.call("{call LED_crearTrabajo('${job.descripcion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_mano_obra}', ${job.clientId})}")
 
 		sql.close()
 

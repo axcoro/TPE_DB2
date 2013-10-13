@@ -33,19 +33,12 @@ function nextStep(){
 }
 
 function activateStep(step){
-    if (step) {
+    
+    if (step.length > 0) {
         var id = step[0].id;
         // activo tabs
         $("[name='step']").removeClass('active').addClass('disabled');
         $('#' + id).removeClass('disabled').addClass('active');
-
-        // alterno contenido
-        $("[name='content-step']").addClass('hide');
-        $('#content-' + id).removeClass('hide');
-    }
-    else // si hay proximo, asumo que el ultimo paso..
-    {
-        document.forms['form'].submit();
     }
 }
 
@@ -159,8 +152,25 @@ $("[name='deleteJob']").on('click', function() {
 });
 
 $("#crateNext").on('click', function() {
+
     activateStep(nextStep());
+
+    var queryString = $("#formCreateJob").serialize();
+
+    $.ajax("/createJob?"+queryString, {
+
+		success: function(data) { 
+
+			$("#createFormContent").html(data);
+			$("#createFormModal").modal("show");
+		},
+		error: function(data) {
+
+			showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+		}
+	});
 });
+
 $("#updNext").on('click', function() {
     activateStep(nextStep());
 });
