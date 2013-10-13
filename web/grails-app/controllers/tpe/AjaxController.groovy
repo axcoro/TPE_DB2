@@ -20,25 +20,28 @@ class AjaxController {
 
 	def getCreateForm() {
 
-		if ( params.copType == "" ) {
-			def clients = sqlService.getClients()
-			render(view:"getCreateJobForm", model:[clients:clients])
+		if ( params.containsKey("copType") ) {
+
+			render(view:"getCreateCopForm", model:[copType:params.copType])
 		}
 		else {
 
-			render(view:"getCreateCopForm", model:[copType:params.copType])
+			def clients = sqlService.getClients()
+			render(view:"getCreateJobForm", model:[clients:clients])
 		}
 	}
 
 	def getEditForm() {
 
-		if ( params.copType == "" ) { // hack me
-		        def jobData = sqlService.getJob(params.jobId)
-		        render(view:"getEditJobForm", model: [job : jobData[0]]) // hack me ?
+		if ( params.containsKey("copType") ) {
+
+			def copData = sqlService.getData(params.copId, params.copType)
+	        render(view:"getEditCopForm", model: [cop : copData])
 		}
 		else {
-		        def copData = sqlService.getData(params.copId, params.copType)
-		        render(view:"getEditCopForm", model: [cop : copData[0]])
+
+	        def jobData = sqlService.getJob(params.jobId)
+	        render(view:"getEditJobForm", model: [job : jobData])
 		}
 	}
 }

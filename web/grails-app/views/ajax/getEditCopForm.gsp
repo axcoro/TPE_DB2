@@ -49,15 +49,6 @@
           <input id="sitio_web" name="sitio_web" type="url" value="${cop.sitio_web}" placeholder="http://www.unsl.edu.ar" class="input-xlarge">
         </div>
       </div>
-      <div class="control-group">
-        <label class="control-label" for="estado">Estado</label>
-        <div class="controls">
-          <select id="estado" name="estado" class="input-xlarge">
-            <option value="0" ${inhabilitado}>Inhabilitado</option>
-            <option value="1" ${habilitado} >Habilitado</option>
-          </select>
-        </div>
-      </div>
       <button name="submitBtn" type="submit" class="hide"></button>
     </fieldset>
   </form>
