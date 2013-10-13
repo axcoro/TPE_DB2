@@ -136,7 +136,7 @@ $("[name='editJob']").on('click', function() {
 
 	var jobId = $(this).attr("data-jobId");
 
-	$.ajax("/editForm?copType=&jobId="+jobId, {
+	$.ajax("/editForm?jobId="+jobId, {
 		success: function(data) { 
 			$("#editFormContent").html(data);
 			$("#editFormModal").modal("show");

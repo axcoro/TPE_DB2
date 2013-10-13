@@ -1,7 +1,4 @@
-<%
-  def inhabilitado = (cop.estado == 0 ? "selected" : "")
-  def habilitado = (cop.estado == 1 ? "selected" : "")
-%>
+<div class="modal-body">
   <form id="formEditCop" method="post" class="form-horizontal" action="/editar">
     <fieldset>
       <input type="hidden" name="copType" value="${cop.tipo}"/>
@@ -40,7 +37,7 @@
       <div class="control-group">
         <label class="control-label" for="correo_electronico_principal">Correo Electroníco</label>
         <div class="controls">
-          <input id="correo_electronico_principal" name="correo_electronico_principal" value="${cop.correo_electronico_principal}" type="email" placeholder="Ej: contacto@efecto-led.com" class="input-xlarge">
+          <input id="correo_electronico_principal" name="correo_electronico_principal" value="${cop.correo_electronico_principal}" type="email" placeholder="Ej: contacto&#64;efecto-led.com" class="input-xlarge">
         </div>
       </div>
       <div class="control-group">
@@ -52,3 +49,4 @@
       <button name="submitBtn" type="submit" class="hide"></button>
     </fieldset>
   </form>
+</div>
