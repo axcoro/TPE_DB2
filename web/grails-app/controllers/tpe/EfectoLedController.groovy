@@ -41,12 +41,12 @@ class EfectoLedController {
 		redirect(action:efectoLedService.getCopAction(params.copType))
 	}
 
-	def createJob() {
+	/*def createJob() {
 
 		sqlService.createJob(params)
 
 		redirect(action:"listJobs")
-	}
+	}*/
 
 	def editCop() {
 
