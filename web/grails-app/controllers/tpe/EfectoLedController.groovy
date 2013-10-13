@@ -64,7 +64,7 @@ class EfectoLedController {
 
 	def deleteCop() {
 
-		sqlService.deleteCop(params.copId)
+		sqlService.deleteCop(params.copId, params.copType)
 
 		redirect(action:efectoLedService.getCopAction(params.copType))
 	}

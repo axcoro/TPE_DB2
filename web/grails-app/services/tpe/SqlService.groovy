@@ -52,19 +52,27 @@ class SqlService {
 
 	def getData(copId, copType) {
 
-		return getRows("{call LED_obtenerDato(${copId}, ${copType})}")
+		return getRows("{call LED_obtenerDato(${copId}, ${copType})}")[0] //TODO: cochinada
 	}
 	
-    	def getJob(jobId) {
+    def getJob(jobId) {
 
-		return getRows("{call LED_obtenerTrabajo(${jobId})}")
+		return getRows("{call LED_obtenerTrabajo(${jobId})}")[0] //TODO: cochinada
 	} 
 
-	def deleteCop(copId) {
+	def deleteCop(copId, copType) {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result = sql.call("{call LED_eliminarDatos(${copId})}")
+		int result
+		if (copType == "${Constants.CLIENTS}") {
+
+			result = sql.call("{call LED_eliminarDatos(${copId})}")
+		}
+		else {
+
+			result = sql.call("{call LED_cambiarEstadoDato(${copId}, 0)}")
+		}
 
 		sql.close()
 
@@ -108,7 +116,7 @@ class SqlService {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result = sql.call("{call LED_modificarDatos(${cop.id}, '${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', ${cop.estado})}")
+		int result = sql.call("{call LED_modificarDatos(${cop.id}, '${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', 1)}")
 
 		sql.close()
 
