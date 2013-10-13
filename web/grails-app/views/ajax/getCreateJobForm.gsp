@@ -1,21 +1,12 @@
 <form id="formCreateJob" method="post" action="/crear-trabajo" class="form-horizontal">
   <fieldset>
-    <ul class="nav nav-tabs">
-      <li class="active" name="step" id="step1">
-        <a href="#">Datos del Trabajo</a>
-      </li>
-      <li class="disabled" name="step" id="step2">
-        <a href="#">Articulos del Trabajo</a>
-      </li>
-    </ul>
     <div class="modal-body">
-      <div name="content-step" id="content-step1">
         <div class="control-group">
           <label class="control-label" for="cliente">Cliente</label>
           <div class="controls">
             <select id="clientId" name="clientId" class="input-xlarge">
               <g:each var="client" in="${clients}">
-	<option value="${client.id_cliente}">${client.razon_social}</option>
+	               <option value="${client.id_cliente}">${client.razon_social}</option>
               </g:each>
             </select>
           </div>
@@ -32,7 +23,6 @@
             <input type="date" id="fecha_fin_obra" />
           </div>
         </div>
-
         <div class="control-group">
           <label class="control-label" for="estado_aprobacion">Presupuesto Aprobado</label>
           <div class="controls">
@@ -59,13 +49,7 @@
             <textarea id="descripcion" name="descripcion"></textarea>
           </div>
         </div>
-      </div>
-      <div name="content-step" id="content-step2" class="hide">
-        test
-      </div>
     </div>
-    </div>
-
     <button name="submitBtn" type="submit" class="hide"></button>
   </fieldset>
 </form>

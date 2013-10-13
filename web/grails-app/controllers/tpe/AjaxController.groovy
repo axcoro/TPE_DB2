@@ -20,7 +20,7 @@ class AjaxController {
 
 	def getCreateForm() {
 
-		if ( params.containsKey("copType") ) {
+		if ( params.copType != "" ) {
 
 			render(view:"getCreateCopForm", model:[copType:params.copType])
 		}

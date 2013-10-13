@@ -130,6 +130,16 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3>Nuevo Trabajo</h3>
 			</div>
+
+		    <ul class="nav nav-tabs">
+		      <li class="active" name="step" id="step1">
+		        <a href="#">Datos del Trabajo</a>
+		      </li>
+		      <li class="disabled" name="step" id="step2">
+		        <a href="#">Articulos del Trabajo</a>
+		      </li>
+		    </ul>
+
 			<div id="createFormContent">
 				<%-- Content --%>
 			</div>
