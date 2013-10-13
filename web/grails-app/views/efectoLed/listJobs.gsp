@@ -91,7 +91,7 @@
 
 		<%-- Modals --%>
 
-        <div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+        <div id="deleteModal" class="modal hide fade modal-small" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
             <div class="modal-header">
                 <h3>Esta acción requiere confirmación</h3>
             </div>

@@ -19,21 +19,21 @@ BEGIN
 
 case  
 when _tipo = 0 then -- proveedores
-    select p.id_proveedores, d.* from led_datos d
+    select p.id_proveedores as id, _tipo as tipo, d.* from led_datos d
 	inner join led_proveedores p on d.id_datos = p.id_datos
-        where p.id_proveedores = _id
+        where p.id_datos = _id
         limit 1;
 
 when _tipo = 1 then -- clientes
-    select p.id_cliente, d.* from led_datos d
+    select p.id_cliente as id, _tipo as tipo, d.* from led_datos d
 	inner join led_clientes p on d.id_datos = p.id_datos
-        where p.id_cliente = _id
+        where p.id_datos = _id
         limit 1;
 
 when _tipo = 2 then -- terceros
-    select p.id_terceros, d.* from led_datos d
+    select p.id_terceros as id, _tipo as tipo, d.* from led_datos d
 	inner join led_terceros p on d.id_datos = p.id_datos
-        where p.id_terceros = _id
+        where p.id_datos = _id
         limit 1;
 
 end case; 

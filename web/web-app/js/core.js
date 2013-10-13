@@ -74,6 +74,23 @@ $("[name='deleteCop']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
+$("[name='editCop']").on('click', function() {
+	var copId = $(this).attr("data-copId");
+	var copType = $(this).attr("data-copType");
+
+	$.ajax("/editForm?copType="+copType+"&copId="+copId, {
+
+		success: function(data) { 
+			$("#editFormContent").html(data);
+			$("#editFormModal").modal("show");
+		},
+		error: function(data) {
+			$("#notifications").html("Ocurió un error al intentar recuperar el formulario de edicion.");
+			$("#notifications").addClass("alert alert-error");
+		}
+	});
+});
+
 $("[name='deleteJob']").on('click', function() {
 
 	var jobId = $(this).attr("data-jobId");

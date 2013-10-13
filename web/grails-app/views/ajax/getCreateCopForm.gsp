@@ -4,15 +4,15 @@
             <input type="hidden" name="copType" value="${copType}"/>
             
             <div class="control-group">
-                <label class="control-label" for="razon_social">Razón Social</label>
-                <div class="controls">
-                    <input id="razon_social" name="razon_social" type="text" placeholder="Ej: UNSL" class="input-xlarge" required="">
-                </div>
-            </div>
-            <div class="control-group">
                 <label class="control-label" for="numero_cuil">CUIL/CUIT</label>
                 <div class="controls">
                     <input id="numero_cuil" name="numero_cuil" type="text" pattern="[0-9]*" placeholder="Ej: XXXXXXXXXXX" class="input-xlarge" required="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="razon_social">Razón Social</label>
+                <div class="controls">
+                    <input id="razon_social" name="razon_social" type="text" placeholder="Ej: UNSL" class="input-xlarge" required="">
                 </div>
             </div>
             <div class="control-group">
@@ -42,7 +42,7 @@
             <div class="control-group">
                 <label class="control-label" for="sitio_web">Pagina Web</label>
                 <div class="controls">
-                    <input id="sitio_web" name="sitio_web" type="url" placeholder="http://www.unsl.edu.ar" class="input-xlarge">
+                    <input id="sitio_web" name="sitio_web" type="url" placeholder="http://www.unsl.edu.ar" value="http://" class="input-xlarge">
                 </div>
             </div>
             <button name="submitBtn" type="submit" class="hide"></button>

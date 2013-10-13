@@ -6,12 +6,12 @@
 			<tr>
 				<th>CUIT / CUIL</th>
 				<th>Razón social</th>
-				<th>Costo Prestación</th>
-				<th>Descripción trabajo</th>
+				<th>C. Prestación</th>
+				<th>Desc. trabajo</th>
 				<th>Dirección</th>
 				<th>Código postal</th>
-				<th>Teléfono principal</th>
-				<th>Correo electrónico principal</th>
+				<th>Tel. principal</th>
+				<th>Correo el. principal</th>
 				<th>Sitio web</th>
 			</tr>
 		</thead>

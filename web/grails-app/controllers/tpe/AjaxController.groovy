@@ -29,4 +29,11 @@ class AjaxController {
 			render(view:"getCreateCopForm", model:[copType:params.copType])
 		}
 	}
+
+	def getEditForm() {
+
+	        def copData = sqlService.getData(params.copId, params.copType)
+
+	        render(view:"getEditCopForm", model: [cop : copData[0]])
+	}
 }

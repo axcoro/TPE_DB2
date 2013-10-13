@@ -10,6 +10,11 @@ div {
     /*border: 1px solid black;  para maquetacion*/
 }
 
+.last-drop-down
+{
+    top: -70px;
+}
+
 .table-container {
     overflow: auto;
 }

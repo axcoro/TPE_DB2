@@ -44,7 +44,7 @@
 								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									
-									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
+									<li><a name="editCop"   href="#" data-copId="${cop.id_datos}" data-copType="${copType}"><i class="icon-pencil"></i> Editar</a></li>
 									<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
 							</div>
@@ -58,11 +58,11 @@
 
 	<%-- Modals --%>
 
-	<div id="deleteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+	<div id="deleteModal" class="modal hide fade modal-small" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 		<div class="modal-header">
 			<h3>Esta acción requiere confirmación</h3>
 		</div>
-		<div class="modal-body" style="min-width: 350px; min-height: 50px;">
+		<div class="modal-body">
 			¿Está seguro que desea eliminar este <cops:label copType="${copType}" />?
 		</div>
 		<div class="modal-footer">
@@ -74,12 +74,12 @@
 	</div>
 
 	<%-- TODO: esto puedo llevarlo al layout, ver si se reutiliza este modal y el js en jobs --%>
-	<div id="createFormModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+	<div id="createFormModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Nuevo <cops:label copType="${copType}" /></h3>
 		</div>
-		<div id="createFormContent" class="modal-body" style="min-width: 350px; min-height: 50px;">
+		<div id="createFormContent" class="modal-body">
 			<%-- Content --%>
 		</div>
 		<div class="modal-footer">
@@ -87,6 +87,22 @@
 				<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
 				<button name="reset" class="btn" onclick="document.forms['form'].reset();" >Limpiar</button>
 				<button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Guardar</button>
+			</div>
+		</div>
+	</div>
+	<div id="editFormModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3>Editar <cops:label copType="${copType}" /></h3>
+		</div>
+		<div id="editFormContent" class="modal-body">
+			<%-- Content --%>
+		</div>
+		<div class="modal-footer">
+			<div class="control-group">
+				<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+				<button name="reset" class="btn" onclick="document.forms['form'].reset();" >Deshacer</button>
+				<button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Actualizar</button>
 			</div>
 		</div>
 	</div>

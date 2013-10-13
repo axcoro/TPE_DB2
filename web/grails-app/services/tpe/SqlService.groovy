@@ -50,6 +50,11 @@ class SqlService {
 		return getRows("{call LED_listarDatos(${Constants.OTHERS})}")
 	}
 
+	def getData(copId, copType) {
+
+		return getRows("{call LED_obtenerDato(${copId}, ${copType})}")
+	}
+
 	def deleteCop(copId) {
 
 		def sql = Sql.newInstance(dataSource)
@@ -77,6 +82,17 @@ class SqlService {
 		def sql = Sql.newInstance(dataSource)
 
 		int result = sql.call("{call LED_crearDatos('${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', ${cop.copType}, 1)}")
+
+		sql.close()
+
+		return result
+	}
+
+	def editCop(cop) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_modificarDatos(${cop.id}, '${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', ${cop.estado})}")
 
 		sql.close()
 
