@@ -29,6 +29,8 @@ INSERT INTO led_trabajos
 VALUES
     (_descripcion, _fecha_creacion, _fecha_aprobacion_presupuesto, _fecha_inicio_obra, _fecha_fin_obra, _precio_total, _precio_mano_obra, _precio_articulos, _id_cliente);
 
+select LAST_INSERT_ID() as id;
+
 END$$
 
 DELIMITER ;
