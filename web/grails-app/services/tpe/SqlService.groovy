@@ -54,6 +54,11 @@ class SqlService {
 
 		return getRows("{call LED_obtenerDato(${copId}, ${copType})}")
 	}
+	
+    	def getJob(jobId) {
+
+		return getRows("{call LED_obtenerTrabajo(${jobId})}")
+	} 
 
 	def deleteCop(copId) {
 
@@ -88,11 +93,33 @@ class SqlService {
 		return result
 	}
 
+	def createJob(job) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_crearTrabajo('${job.descripcion}', '${job.fecha_creacion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_total}', '${job.precio_mano_obra}', '${job.precio_articulos}', ${job.clientId})}")
+
+		sql.close()
+
+		return result
+	}
+
 	def editCop(cop) {
 
 		def sql = Sql.newInstance(dataSource)
 
 		int result = sql.call("{call LED_modificarDatos(${cop.id}, '${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', ${cop.estado})}")
+
+		sql.close()
+
+		return result
+	}
+	
+	def editJob(job) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_modificarTrabajo('${job.jobId}', '${job.descripcion}', '${job.fecha_creacion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_total}', '${job.precio_mano_obra}', '${job.precio_articulos}'}")
 
 		sql.close()
 

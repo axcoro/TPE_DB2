@@ -79,7 +79,7 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Nuevo <cops:label copType="${copType}" /></h3>
 		</div>
-		<div id="createFormContent" class="modal-body">
+		<div id="createFormContent">
 			<%-- Content --%>
 		</div>
 		<div class="modal-footer">
@@ -95,7 +95,7 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Editar <cops:label copType="${copType}" /></h3>
 		</div>
-		<div id="editFormContent" class="modal-body">
+		<div id="editFormContent">
 			<%-- Content --%>
 		</div>
 		<div class="modal-footer">

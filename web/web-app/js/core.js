@@ -1,10 +1,34 @@
+// todo: merjorar
+var timerActive = null; // timerid
+function clearAlert()
+{
+    if(timerActive) // si hay un timer activo dejarlo que termine
+        return;
+    $("#notifications").html("");
+    $("#notifications").removeClass("alert");
+    $("#notifications").removeClass("alert-error");
+}
+
+function showAlert(msg, cls)
+{
+    if(timerActive) // si hay un timer activo previo, borrarlo
+        clearTimeout(timerActive);
+    
+    $("#notifications").html(msg);
+    if(!cls)
+        cls = '';
+    $("#notifications").addClass("alert " + cls);
+   
+    timerActive = setTimeout(function(){ // establecer caducidad del alert
+        timerActive = null;
+        clearAlert();
+    }, 3000);
+}
 
 $("[name='itemsByJob']").on('click', function(){
 
+	clearAlert();
 	$("#itemsByJobModalContent").html("");
-	$("#notifications").html("");
-	$("#notifications").removeClass("alert");
-	$("#notifications").removeClass("alert-error");
 
 	var jobId = $(this).attr("data-jobId");
 
@@ -14,8 +38,7 @@ $("[name='itemsByJob']").on('click', function(){
 
 			if (data === "") {
 
-				$("#notifications").html("Este trabajo no tiene artículos cargados.");
-				$("#notifications").addClass("alert");
+				showAlert("Este trabajo no tiene artículos cargados.");
 			}
 			else {
 
@@ -25,18 +48,15 @@ $("[name='itemsByJob']").on('click', function(){
 		},
 		error: function(data) {
 
-			$("#notifications").html("No se pudieron obtener los artículos.");
-			$("#notifications").addClass("alert alert-error");
+			showAlert("No se pudieron obtener los artículos.", "alert-error");
 		}
 	});
 });
 
 $("[name='othersByJob']").on('click', function(){
 
+	clearAlert();
 	$("#othersByJobModalContent").html("");
-	$("#notifications").html("");
-	$("#notifications").removeClass("alert");
-	$("#notifications").removeClass("alert-error");
 
 	var jobId = $(this).attr("data-jobId");
 
@@ -46,8 +66,7 @@ $("[name='othersByJob']").on('click', function(){
 
 			if (data === "") {
 
-				$("#notifications").html("Este trabajo no tiene terceros cargados.");
-				$("#notifications").addClass("alert");
+				showAlert("Este trabajo no tiene terceros cargados.");
 			}
 			else {
 
@@ -57,8 +76,7 @@ $("[name='othersByJob']").on('click', function(){
 		},
 		error: function(data) {
 
-			$("#notifications").html("No se pudieron obtener los terceros.");
-			$("#notifications").addClass("alert alert-error");
+			showAlert("No se pudieron obtener los terceros.", "alert-error");
 		}
 	});
 });
@@ -85,8 +103,22 @@ $("[name='editCop']").on('click', function() {
 			$("#editFormModal").modal("show");
 		},
 		error: function(data) {
-			$("#notifications").html("Ocurió un error al intentar recuperar el formulario de edicion.");
-			$("#notifications").addClass("alert alert-error");
+			showAlert("Ocurió un error al intentar recuperar el formulario de edicion.", "alert-error");
+		}
+	});
+});
+
+$("[name='editJob']").on('click', function() {
+
+	var jobId = $(this).attr("data-jobId");
+
+	$.ajax("/editForm?copType=&jobId="+jobId, {
+		success: function(data) { 
+			$("#editFormContent").html(data);
+			$("#editFormModal").modal("show");
+		},
+		error: function(data) {
+			showAlert("Ocurió un error al intentar recuperar el formulario de edicion.", "alert-error");
 		}
 	});
 });
@@ -115,8 +147,7 @@ function create() {
 		},
 		error: function(data) {
 
-			$("#notifications").html("Ocurió un error al intentar recuperar el formulario de alta.");
-			$("#notifications").addClass("alert alert-error");
+			showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
 		}
 	});
 };
@@ -130,4 +161,6 @@ $(document).ready(function() {
 	el.innerHTML = '<a id="create" data-copType="'+copType+'" href="#"><i class="icon-plus-sign"></i> Nuevo</a>';
 
 	$("#create").on('click', create);
+	
+	$('.dropdown-menu:last').addClass('last-drop-down');
 });

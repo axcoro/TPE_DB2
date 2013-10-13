@@ -25,15 +25,19 @@ div {
 }
 
 .modal-small {
-    width: 200px; margin-left: -100px;
+    width: 200px;
+    margin-left: -100px;
 }
 
 .modal-medium {
-    width: 600px; margin-left: -300px;
+    width: 600px;
+    margin-left: -300px;
 }
 
 .modal-large {
-    width: 900px; margin-left: -450px;
+    top: 20px !important;
+    width: 900px;
+    margin-left: -450px;
 }
 
 .dropdown-menu { /* hack para que no se corten por el overflow-x: en los table*/

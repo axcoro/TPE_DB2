@@ -42,12 +42,21 @@ class UrlMappings {
 			controller = "efectoLed"
 			action = "createCop"
 		}
+		"/crear-trabajo" {
+
+			controller = "efectoLed"
+			action = "createJob"
+		}
 		"/editar" {
 
 			controller = "efectoLed"
 			action = "editCop"
 		}
+		"/editar-trabajo" {
 
+			controller = "efectoLed"
+			action = "editJob"
+		}
 		"/itemsByJob" {
 
 			controller = "ajax"

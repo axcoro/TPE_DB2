@@ -21,8 +21,8 @@ class AjaxController {
 	def getCreateForm() {
 
 		if ( params.copType == "" ) {
-
-			render(view:"getCreateJobForm", model:[:])
+			def clients = sqlService.getClients()
+			render(view:"getCreateJobForm", model:[clients:clients])
 		}
 		else {
 
@@ -32,8 +32,13 @@ class AjaxController {
 
 	def getEditForm() {
 
-	        def copData = sqlService.getData(params.copId, params.copType)
-
-	        render(view:"getEditCopForm", model: [cop : copData[0]])
+		if ( params.copType == "" ) { // hack me
+		        def jobData = sqlService.getJob(params.jobId)
+		        render(view:"getEditJobForm", model: [job : jobData[0]]) // hack me ?
+		}
+		else {
+		        def copData = sqlService.getData(params.copId, params.copType)
+		        render(view:"getEditCopForm", model: [cop : copData[0]])
+		}
 	}
 }

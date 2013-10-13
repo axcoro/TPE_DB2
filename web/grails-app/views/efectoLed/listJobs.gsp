@@ -72,7 +72,7 @@
 								</button>
 
 								<ul class="dropdown-menu">
-									<li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
+									<li><a name="editJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-pencil"></i> Editar</a></li>
 									<li><a name="deleteJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-trash"></i> Eliminar</a></li>
 								</ul>
 							</div>
@@ -139,6 +139,39 @@
                 </div>
             </div>
         </div>
+	  
+        <div id="createFormModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+	      <div class="modal-header">
+		      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		      <h3>Nuevo Trabajo</h3> <!-- hack me -->
+	      </div>
+	      <div id="createFormContent">
+		      <%-- Content --%>
+	      </div>
+	      <div class="modal-footer">
+		      <div class="control-group">
+			      <button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+			      <button name="reset" class="btn" onclick="document.forms['form'].reset();" >Limpiar</button>
+			      <button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Guardar</button>
+		      </div>
+	      </div>
+      </div>
+      <div id="editFormModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+	      <div class="modal-header">
+		      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		      <h3>Editar Trabajo</h3>
+	      </div>
+	      <div id="editFormContent">
+		      <%-- Content --%>
+	      </div>
+	      <div class="modal-footer">
+		      <div class="control-group">
+			      <button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+			      <button name="reset" class="btn" onclick="document.forms['form'].reset();" >Deshacer</button>
+			      <button name="save" class="btn btn-success" onclick="document.forms['form'].submitBtn.click();">Actualizar</button>
+		      </div>
+	      </div>
+      </div>
 
 	</body>
 
