@@ -49,18 +49,9 @@
 							<div class="btn-group">
 								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu">
-
-									<%-- def list = [[id_terceros:""]] + othersByJob."${job.id_trabajos}" 
-
-									<g:each var="other" in="${list}">
-										<li>
-											<a href="#myModal2" data-toggle="modal">${other.id_terceros}</a>
-										</li>
-									</g:each>--%>
 									<li><a href="#"></a></li>
 									<li><a name="othersByJob" data-jobId="${job.id_trabajos}">Terceros</a></li>
 									<li><a name="itemsByJob" data-jobId="${job.id_trabajos}">Artículos</a></li>
-
 								</ul>
 							</div>
 						</td>
@@ -82,12 +73,6 @@
 			</tbody>
 		</table>
 	  </div>
-		<%-- div id="itemsTable">
-			<table class="table table-condensed">
-				<caption><p>Artículos</p></caption>
-				<thead><tr><td>Selecciona un trabajo para ver los artículos utilizados en el mismo.</tr></td></thead>
-			</table>
-		</div--%>
 
 		<%-- Modals --%>
 
@@ -108,70 +93,71 @@
             </div>
         </div>
 
-        <div id="itemsByJobModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
-            <div class="modal-header">
-                <h3>Artículos</h3>
-            </div>
-            <div id="itemsByJobModalContent" class="modal-body">
-            	<%-- Content --%>
-            </div>
-            <div class="modal-footer">
-                <div class="control-group">
-                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
-                        Cerrar
-                    </button>
-                </div>
-            </div>
-        </div>
+		<div id="itemsByJobModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+			<div class="modal-header">
+				<h3>Artículos</h3>
+			</div>
+			<div id="itemsByJobModalContent" class="modal-body">
+				<%-- Content --%>
+			</div>
+			<div class="modal-footer">
+				<div class="control-group">
+					<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+					Cerrar
+					</button>
+				</div>
+			</div>
+		</div>
 
-        <div id="othersByJobModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
-            <div class="modal-header">
-                <h3>Terceros</h3>
-            </div>
-            <div id="othersByJobModalContent" class="modal-body">
-            	<%-- Content --%>
-            </div>
-            <div class="modal-footer">
-                <div class="control-group">
-                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
-                        Cerrar
-                    </button>
-                </div>
-            </div>
-        </div>
-	  
-        <div id="createFormModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
-	      <div class="modal-header">
-		      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		      <h3>Nuevo Trabajo</h3> <!-- hack me -->
-	      </div>
-	      <div id="createFormContent">
-		      <%-- Content --%>
-	      </div>
-	      <div class="modal-footer">
-		      <div class="control-group">
-			      <button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-			      <button name="reset" class="btn" onclick="document.forms['formCreateJob'].reset();" >Limpiar</button>
-			      <button id="crateNext" name="next" class="btn btn-success">Siguiente</button>
-		      </div>
-	      </div>
-      </div>
-      <div id="editFormModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
-	      <div class="modal-header">
-		      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		      <h3>Editar Trabajo</h3>
-	      </div>
-	      <div id="editFormContent">
-		      <%-- Content --%>
-	      </div>
-	      <div class="modal-footer">
-		      <div class="control-group">
-			      <button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-			      <button name="reset" class="btn" onclick="document.forms['formEditJob'].reset();" >Deshacer</button>
-			      <button id="editNext" name="next" class="btn btn-success">Siguiente</button>
-		      </div>
-	      </div>
-      </div>
+		<div id="othersByJobModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+			<div class="modal-header">
+				<h3>Terceros</h3>
+			</div>
+			<div id="othersByJobModalContent" class="modal-body">
+				<%-- Content --%>
+			</div>
+			<div class="modal-footer">
+				<div class="control-group">
+					<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+					Cerrar
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="createFormModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3>Nuevo Trabajo</h3> <!-- hack me -->
+			</div>
+			<div id="createFormContent">
+				<%-- Content --%>
+			</div>
+			<div class="modal-footer">
+				<div class="control-group">
+					<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+					<button name="reset" class="btn" onclick="document.forms['formCreateJob'].reset();" >Limpiar</button>
+					<button id="crateNext" name="next" class="btn btn-success">Siguiente</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="editFormModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3>Editar Trabajo</h3>
+			</div>
+			<div id="editFormContent">
+				<%-- Content --%>
+			</div>
+			<div class="modal-footer">
+				<div class="control-group">
+					<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+					<button name="reset" class="btn" onclick="document.forms['formEditJob'].reset();" >Deshacer</button>
+					<button id="editNext" name="next" class="btn btn-success">Siguiente</button>
+				</div>
+			</div>
+		</div>
 
 	</body>
 
