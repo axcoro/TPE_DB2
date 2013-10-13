@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `led_datos` (
 -- Volcando datos para la tabla efecto_led.led_datos: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_datos` DISABLE KEYS */;
 INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`, `estado`) VALUES
-	(7, '7', 'asdasda', '7', '7', '7', 'a@a.com.ar', 'http://www.com.ar', 0),
+	(7, '7', 'asdasda', '7', '7', '7', 'a@a.com.ar', 'http://www.com.ar', 1),
 	(8, '8', '8', '8', '8', '8', '8', '8', 1),
 	(9, '9', '9', '9', '9', '9', '9', '9', 1),
 	(13, '123123', 'test', 'test 123', '5700', '2664863396', 'a@a.com.ar', 'http://www.example.com', 1),
