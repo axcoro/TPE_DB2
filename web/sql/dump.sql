@@ -229,7 +229,7 @@ INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fec
 -- Volcando estructura para procedimiento efecto_led.LED_cambiarEstadoDato
 DROP PROCEDURE IF EXISTS `LED_cambiarEstadoDato`;
 DELIMITER //
-CREATE PROCEDURE `LED_cambiarEstadoDato`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_cambiarEstadoDato`(
 
 
 _id INT,
@@ -253,7 +253,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_crearArticulo
 DROP PROCEDURE IF EXISTS `LED_crearArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_crearArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearArticulo`(
 
 
 _codigo_interno VARCHAR(45),
@@ -276,7 +276,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_crearDatos
 DROP PROCEDURE IF EXISTS `LED_crearDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_crearDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearDatos`(
 
 
 _numero_cuil VARCHAR(45),
@@ -312,7 +312,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_crearIntegrante
 DROP PROCEDURE IF EXISTS `LED_crearIntegrante`;
 DELIMITER //
-CREATE PROCEDURE `LED_crearIntegrante`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearIntegrante`(
 
 
 _nombre VARCHAR(45),
@@ -335,7 +335,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_crearTrabajo
 DROP PROCEDURE IF EXISTS `LED_crearTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_crearTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_crearTrabajo`(
 
 
 _descripcion VARCHAR(45),
@@ -362,7 +362,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarArticulo
 DROP PROCEDURE IF EXISTS `LED_eliminarArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_eliminarArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarArticulo`(
 
 
 _id INT
@@ -380,7 +380,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarDatos
 DROP PROCEDURE IF EXISTS `LED_eliminarDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_eliminarDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarDatos`(
 
 
 _id INT
@@ -398,7 +398,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarIntegrante
 DROP PROCEDURE IF EXISTS `LED_eliminarIntegrante`;
 DELIMITER //
-CREATE PROCEDURE `LED_eliminarIntegrante`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarIntegrante`(
 
 
 _id INT
@@ -416,7 +416,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_eliminarTrabajo
 DROP PROCEDURE IF EXISTS `LED_eliminarTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_eliminarTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_eliminarTrabajo`(
 
 
 _id INT
@@ -432,7 +432,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarArticulosPorTrabajo
 DROP PROCEDURE IF EXISTS `LED_listarArticulosPorTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarArticulosPorTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarArticulosPorTrabajo`(
 
 
 _id INT
@@ -450,7 +450,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarDatos
 DROP PROCEDURE IF EXISTS `LED_listarDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarDatos`(
 
 
 _tipo INT
@@ -479,7 +479,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarIntegrantesPorProveedor
 DROP PROCEDURE IF EXISTS `LED_listarIntegrantesPorProveedor`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarIntegrantesPorProveedor`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarIntegrantesPorProveedor`(
 
 
 _id INT
@@ -496,7 +496,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarProveedoresPorArticulo
 DROP PROCEDURE IF EXISTS `LED_listarProveedoresPorArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarProveedoresPorArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarProveedoresPorArticulo`(
 
 
 _id INT
@@ -515,7 +515,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarTercerosPorTrabajo
 DROP PROCEDURE IF EXISTS `LED_listarTercerosPorTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarTercerosPorTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarTercerosPorTrabajo`(
 
 
 _id INT
@@ -534,7 +534,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarTrabajos
 DROP PROCEDURE IF EXISTS `LED_listarTrabajos`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarTrabajos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarTrabajos`(
 
 
 )
@@ -549,7 +549,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_listarTrabajosPorCliente
 DROP PROCEDURE IF EXISTS `LED_listarTrabajosPorCliente`;
 DELIMITER //
-CREATE PROCEDURE `LED_listarTrabajosPorCliente`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_listarTrabajosPorCliente`(
 
 
 _id INT
@@ -566,7 +566,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_modificarArticulo
 DROP PROCEDURE IF EXISTS `LED_modificarArticulo`;
 DELIMITER //
-CREATE PROCEDURE `LED_modificarArticulo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarArticulo`(
 
 
 _id INT,
@@ -595,7 +595,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_modificarDatos
 DROP PROCEDURE IF EXISTS `LED_modificarDatos`;
 DELIMITER //
-CREATE PROCEDURE `LED_modificarDatos`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarDatos`(
 
 
 _id INT,
@@ -633,7 +633,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_modificarIntegrante
 DROP PROCEDURE IF EXISTS `LED_modificarIntegrante`;
 DELIMITER //
-CREATE PROCEDURE `LED_modificarIntegrante`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarIntegrante`(
 
 
 _id INT,
@@ -661,7 +661,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_modificarTrabajo
 DROP PROCEDURE IF EXISTS `LED_modificarTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_modificarTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_modificarTrabajo`(
 
 
 _id INT,
@@ -695,7 +695,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_obtenerClientePorTrabajo
 DROP PROCEDURE IF EXISTS `LED_obtenerClientePorTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_obtenerClientePorTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_obtenerClientePorTrabajo`(
 
 
 _id INT
@@ -714,7 +714,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_obtenerDato
 DROP PROCEDURE IF EXISTS `LED_obtenerDato`;
 DELIMITER //
-CREATE PROCEDURE `LED_obtenerDato`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_obtenerDato`(
 
 
 _id INT,
@@ -751,7 +751,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_obtenerIntegrante
 DROP PROCEDURE IF EXISTS `LED_obtenerIntegrante`;
 DELIMITER //
-CREATE PROCEDURE `LED_obtenerIntegrante`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_obtenerIntegrante`(
 
 
 _id INT
@@ -769,7 +769,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_obtenerTercero
 DROP PROCEDURE IF EXISTS `LED_obtenerTercero`;
 DELIMITER //
-CREATE PROCEDURE `LED_obtenerTercero`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_obtenerTercero`(
 
 
 _id INT
@@ -788,7 +788,7 @@ DELIMITER ;
 -- Volcando estructura para procedimiento efecto_led.LED_obtenerTrabajo
 DROP PROCEDURE IF EXISTS `LED_obtenerTrabajo`;
 DELIMITER //
-CREATE PROCEDURE `LED_obtenerTrabajo`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `LED_obtenerTrabajo`(
 
 
 _id INT
