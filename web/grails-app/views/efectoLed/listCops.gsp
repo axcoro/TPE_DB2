@@ -23,7 +23,7 @@
 					<th class="table-col-tel"><center>Tel. principal</center></th>
 					<th class="table-col-email"><center>Correo el. principal</center></th>
 					<th class="table-col-url"><center>Sitio web</center></th>
-					<th class="table-col-custom"<center>Acciones</center></th>
+					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
 			</thead> 
 		</table> 
