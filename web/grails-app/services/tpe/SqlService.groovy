@@ -127,12 +127,7 @@ class SqlService {
 
 	def createItem(params) {
 		def resultado = getRows("{call LED_crearArticulo('${params.codigo_interno}', '${params.descripcion}', '${params.marca_fabricante}', '${params.modelo}', '${params.observaciones}')}")[0]
-//		def itemId = resultado.id;
-//		def jobId = params.jobId;
-//		def providerId = params.providerId;
-//		def providerCode = params.codigo_catalogo_proveedor;
-//		def itemAmount = params.cantidad_articulos;
-//		def itemPrice = params.costo_unitario;
+		return getRows("{call LED_asociarArticuloTrabajo(${resultado.id},${params.jobId},'${params.providerId}','${params.codigo_catalogo_proveedor}',${params.cantidad_articulos},'${params.costo_unitario}')}")[0]
 	}
 
 	def editCop(cop) {
