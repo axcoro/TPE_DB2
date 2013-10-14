@@ -10,6 +10,7 @@ class SqlService {
 	def dataSource
 
 	def getRows(storedProcedureCall) {
+
 		String query = storedProcedureCall;
 		
 		def sql = Sql.newInstance(dataSource)
@@ -102,13 +103,7 @@ class SqlService {
 
 	def createCop(cop) {
 
-		def sql = Sql.newInstance(dataSource)
-
-		int result = sql.call("{call LED_crearDatos('${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', ${cop.copType}, 1)}")
-
-		sql.close()
-
-		return result
+		return getRows("{call LED_crearDatos('${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', ${cop.copType}, 1)}")[0]
 	}
 
 	def createJob(job) {
@@ -150,5 +145,10 @@ class SqlService {
 		sql.close()
 
 		return result
+	}
+
+	def getMembersByProvider(copId) {
+
+		return getRows("{call LED_listarIntegrantesPorProveedor(${copId})}")
 	}
 }

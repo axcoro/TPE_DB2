@@ -91,5 +91,21 @@ class UrlMappings {
 			controller = "ajax"
 			action = "createItem"
 		}
+		"/createCop" {
+
+			controller = "ajax"
+			action = "createCop"
+		}
+		"/getMembersForm" {
+
+			controller = "ajax"
+			action = "getMembersForm"
+		}
+		"/getMembersByProvider" {
+
+			controller = "ajax"
+			action = "getMembersByProvider"
+		}
+
 	}
 }

@@ -66,6 +66,26 @@ function registerItemsFunctions(jobId) {
     });
 }
 
+function registerMembersFunctions(copId) {
+    
+    /*  TODO: implementar con data-providerMemberId
+
+    $("[name='item-remove']").off('click');
+    $("[name='item-remove']").on('click', function() {
+        var jobItemId = $(this).attr("data-jobItemId");
+
+        $.ajax("/deleteItem?itemId=" + jobItemId + "&jobId=" + jobId, {
+            success: function(data) {
+	    $("#listJobsContainer").replaceWith(data);
+            },
+            error: function() {
+	showAlert("No se pudieron obtener los artículos.", "alert-error");
+            }
+        });
+
+    });*/
+}
+
 $("[name='itemsByJob']").on('click', function(){
 
 	clearAlert();
@@ -159,7 +179,7 @@ $("[name='deleteJob']").on('click', function() {
 
 	$("#deleteModal").modal('show');
 });
-
+/*
 $("#createNext").on('click', function() {
 
     var queryString = $("#formCreateJob").serialize();
@@ -194,6 +214,81 @@ $("#createNext").on('click', function() {
 			});
 
 			$.ajax("/itemsByJob?jobId="+data, {
+				async: false,
+				success: function(d2) { 
+					divListado.html(d2);
+				},
+				error: function() {
+					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+				}
+			});
+
+			divRow.append(divFormulario);
+			divRow.append(divListado);
+			divContenedor.append(divRow);
+
+			$("#createFormContent").html(divContenedor);
+			
+		},
+		error: function(data) {
+
+			showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+		}
+	});
+});*/
+
+$("#createNext").on('click', function() {
+
+	var jobMapping = {
+
+		"formSelector"	: "#formCreateJob",
+		"createUri"		: "/createJob?",
+		"formUri"		: "/getItemsForm?jobId=",
+		"listUri"		: "/itemsByJob?jobId="
+	}
+
+	var copMapping = {
+
+		"formSelector"	: "#formCreateCop",
+		"createUri"		: "/createCop?",
+		"formUri"		: "/getMembersForm?poviderId=",
+		"listUri"		: "/getMembersByProvider?poviderId="
+	}
+
+	var mapping = ($(this).attr("data-copType") === "0") ? copMapping : jobMapping;
+
+    var queryString = $(mapping.formSelector+"").serialize();
+
+    $.ajax(mapping.createUri+queryString, {
+
+		success: function(data) {
+
+			activateStep(nextStep());
+			var divContenedor = $('<div/>', {class: 'span12'});
+			var divRow = $('<div/>', {class: 'row-fluid'});
+			var divFormulario = $('<div/>', {
+			    class: 'span5',
+			    style :'max-width: 440px; margin-right: 10px;'
+			});
+			var divListado = $('<div/>', {
+			    id: 'divItemsByJob',
+			    class: 'span7',
+			    style :'margin-left: 0px; padding-left: 0px;'
+			});
+			
+			$.ajax(mapping.formUri+data, {
+				async: false,
+				success: function(d1) { 
+					var form = $(d1);
+					divFormulario.html(form);
+					interceptSubmit(form);
+				},
+				error: function() {
+					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+				}
+			});
+
+			$.ajax(mapping.listUri+data, {
 				async: false,
 				success: function(d2) { 
 					divListado.html(d2);

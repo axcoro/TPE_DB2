@@ -41,13 +41,6 @@ class EfectoLedController {
 		redirect(action:efectoLedService.getCopAction(params.copType))
 	}
 
-	/*def createJob() {
-
-		sqlService.createJob(params)
-
-		redirect(action:"listJobs")
-	}*/
-
 	def editCop() {
 
 		sqlService.editCop(params)

@@ -78,14 +78,31 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Nuevo <cops:label copType="${copType}" /></h3>
 		</div>
-		<div id="createFormContent">
+
+		<g:if test="${copType == 0}">
+			<ul class="nav nav-tabs">
+			  <li class="active" name="step" id="step1">
+			    <a href="#">Datos del Proveedor</a>
+			  </li>
+			  <li class="disabled" name="step" id="step2">
+			    <a href="#">Integrantes del proveedor</a>
+			  </li>
+			</ul>
+		</g:if>
+
+		<div id="createFormContent" class="row-fluid">
 			<%-- Content --%>
 		</div>
 		<div class="modal-footer">
 			<div class="control-group">
-				<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-				<button name="reset" class="btn" onclick="document.forms['formCreateCop'].reset();" >Limpiar</button>
-				<button name="save" class="btn btn-success" onclick="document.forms['formCreateCop'].submitBtn.click();">Guardar</button>
+				<button id="createCancel" name="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+				<button id="createReset" name="reset" class="btn" onclick="document.forms['formCreateCop'].reset();" >Limpiar</button>
+				<g:if test="${copType == 0}">
+					<button id="createNext" data-copType="${copType}" name="save" class="btn btn-success">Siguiente</button>
+				</g:if>
+				<g:else>
+					<button name="save" class="btn btn-success" onclick="document.forms['formCreateCop'].submitBtn.click();">Guardar</button>
+				</g:else>
 			</div>
 		</div>
 	</div>

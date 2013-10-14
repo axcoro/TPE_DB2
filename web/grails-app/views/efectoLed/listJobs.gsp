@@ -146,7 +146,7 @@
 				<div class="control-group">
 					<button id="createCancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
 					<button id="createReset" name="reset" class="btn" onclick="document.forms['formCreateJob'].reset();" >Limpiar</button>
-					<button id="createNext" name="next" class="btn btn-success">Siguiente</button>
+					<button id="createNext" data-copType="" name="next" class="btn btn-success">Siguiente</button>
 				</div>
 			</div>
 		</div>
