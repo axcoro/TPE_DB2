@@ -171,11 +171,11 @@ $("#createNext").on('click', function() {
 			activateStep(nextStep());
 			var divContenedor = $('<div/>', {class: 'span12'});
 			var divRow = $('<div/>', {class: 'row-fluid'});
-			var divFormulario = $('<div/>', {class: 'span4'});
+			var divFormulario = $('<div/>', {class: 'span5'});
 			var divListado = $('<div/>', {
 			    id: 'divItemsByJob',
-			    class: 'span8',
-			    style :'margin-left: 0px; padding-left: 50px;'
+			    class: 'span7',
+			    style :'margin-left: 0px; padding-left: 0px;'
 			});
 			
 			$.ajax("/getItemsForm?jobId="+data, {
