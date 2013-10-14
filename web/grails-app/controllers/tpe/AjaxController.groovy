@@ -17,6 +17,13 @@ class AjaxController {
 
 	}
 
+	def deleteMember() {
+
+		sqlService.deleteMember(params.memberId)
+		redirect(action:"getMembersByProvider", params : params)
+
+	}
+
 	def getOthersByJob() {
 
 		def othersByJob = sqlService.getOthersByJob(params.jobId)
@@ -77,7 +84,6 @@ class AjaxController {
 	}
 
 	def getMembersForm() {
-		println "----- getMembersForm ---- params.copId = ${params.copId}  -------------------------"
 		render(view:"getMembersForm", model:[copId:params.copId])
 	}
 

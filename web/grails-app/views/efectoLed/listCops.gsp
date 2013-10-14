@@ -111,14 +111,17 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Editar <cops:label copType="${copType}" /></h3>
 		</div>
+	  
+	  <g:if test="${copType == 0}">
 		<ul class="nav nav-tabs">
 		  <li class="active" name="stepEdit" id="step1Edit">
-		    <a href="#">Datos del Trabajo</a>
+		    <a href="#">Datos del Proveedor</a>
 		  </li>
 		  <li class="disabled" name="stepEdit" id="step2Edit">
-		    <a href="#">Articulos del Trabajo</a>
+		    <a href="#">Integrantes del Proveedor</a>
 		  </li>
 		</ul>
+	  </g:if>
 		<div id="editFormContent" class="row-fluid">
 			<%-- Content --%>
 		</div>

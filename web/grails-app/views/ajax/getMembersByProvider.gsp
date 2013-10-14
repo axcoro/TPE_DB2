@@ -7,7 +7,7 @@
 			<th class="table-col-descripcion">Area</th>
 			<th class="table-col-descripcion">Teléfono Principal</th>
 			<th class="table-col-descripcion">Correo Electrónico</th>
-			<th class="table-col-custom">Borrar</th>
+			<th class="table-col-descripcion">Borrar</th>
 		</tr>
 	</thead>
 
@@ -30,7 +30,7 @@
 					<td class="table-col-descripcion">${member.area}</td>
 					<td class="table-col-descripcion">${member.telefono}</td>
 					<td class="table-col-descripcion">${member.correo_electronico}</td>
-					<td class="table-col-custom"><a href="#" name="member-remove" data-providerMemberId="${member.id_integrantes}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a></td>
+					<td class="table-col-descripcion"><a href="#" name="member-remove" data-memberId="${member.id_integrantes}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a></td>
 				</tr>
 			</g:each>
 

@@ -66,6 +66,10 @@ class UrlMappings {
 			controller = "ajax"
 			action = "deleteItem"
 		}
+		"/deleteMember" {
+			controller = "ajax"
+			action = "deleteMember"
+		}
 		"/othersByJob" {
 
 			controller = "ajax"

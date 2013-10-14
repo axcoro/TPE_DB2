@@ -171,7 +171,6 @@ $("[name='deleteJob']").on('click', function() {
 });
 
 function magicLogic(map, _that) {
-    debugger;
     var mapping = ($(_that).attr("data-copType") === "0") ? map.cop : map.job;
 
     var queryString = $(mapping.formSelector).serialize();
@@ -191,7 +190,7 @@ function magicLogic(map, _that) {
 			var divListado = $('<div/>', {
 			    id: mapping.divItems,
 			    class: 'span7',
-			    style :'margin-left: 0px; padding-left: 0px;'
+			    style :'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px;'
 			});
 			
 			$.ajax(mapping.formUri+data, {
@@ -344,24 +343,21 @@ function registerItemsFunctions(jobId) {
     });
 }
 
-function registerMembersFunctions(copId) {
-    
-    /*  TODO: implementar con data-providerMemberId
+function registerMembersFunctions(providerId) {
+    $("[name='member-remove']").off('click');
+    $("[name='member-remove']").on('click', function() {
+        var memberId = $(this).attr("data-memberId");
 
-    $("[name='item-remove']").off('click');
-    $("[name='item-remove']").on('click', function() {
-        var jobItemId = $(this).attr("data-jobItemId");
-
-        $.ajax("/deleteItem?itemId=" + jobItemId + "&jobId=" + jobId, {
+        $.ajax("/deleteMember?memberId=" + memberId + "&providerId=" + providerId, {
             success: function(data) {
-	    $("#listJobsContainer").replaceWith(data);
+	    $("#listMembersContainer").replaceWith(data);
             },
             error: function() {
-	showAlert("No se pudieron obtener los artículos.", "alert-error");
+	showAlert("No se pudieron obtener los integrantes.", "alert-error");
             }
         });
 
-    });*/
+    });
 }
 
 $(document).ready(function() {
