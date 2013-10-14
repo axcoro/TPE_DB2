@@ -52,11 +52,14 @@ class UrlMappings {
 			controller = "efectoLed"
 			action = "editJob"
 		}
-
 		"/itemsByJob" {
 
 			controller = "ajax"
 			action = "getItemsByJob"
+		}
+		"/deleteItem" {
+			controller = "ajax"
+			action = "deleteItem"
 		}
 		"/othersByJob" {
 

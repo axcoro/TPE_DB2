@@ -75,4 +75,11 @@ class EfectoLedController {
 
 		redirect(action:"listJobs")
 	}
+
+	def deleteItem() {
+
+		sqlService.deleteItem(params.jobId)
+
+		redirect(action:"listJobs")
+	}
 }
