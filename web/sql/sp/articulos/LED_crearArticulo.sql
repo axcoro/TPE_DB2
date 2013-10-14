@@ -25,6 +25,8 @@ INSERT INTO led_articulos
 VALUES
     (_codigo_interno, _descripcion, _marca_fabricante, _modelo, _observaciones);
 
+select LAST_INSERT_ID() as id;
+
 END$$
 
 DELIMITER ;

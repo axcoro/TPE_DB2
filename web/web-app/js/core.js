@@ -42,7 +42,10 @@ function activateStep(step){
 
         if (id === "step2"){
 			$("#createFormModal").removeClass('modal-medium').addClass('modal-extra-large');
-		}
+			$("#createNext").addClass('hide');
+			$("#createReset").addClass('hide');
+			$("#createCancel").html('Finalizar');
+        }
     }
 }
 
@@ -158,7 +161,7 @@ $("[name='deleteJob']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
-$("#crateNext").on('click', function() {
+$("#createNext").on('click', function() {
 
     var queryString = $("#formCreateJob").serialize();
 
@@ -171,6 +174,7 @@ $("#crateNext").on('click', function() {
 			var divRow = $('<div/>', {class: 'row-fluid'});
 			var divFormulario = $('<div/>', {class: 'span4'});
 			var divListado = $('<div/>', {
+			    id: 'divItemsByJob',
 			    class: 'span8',
 			    style :'margin-left: 0px; padding-left: 50px;'
 			});
@@ -178,7 +182,9 @@ $("#crateNext").on('click', function() {
 			$.ajax("/getItemsForm?jobId="+data, {
 				async: false,
 				success: function(d1) { 
-					divFormulario.html(d1);
+					var form = $(d1);
+					divFormulario.html(form);
+					interceptSubmit(form);
 				},
 				error: function() {
 					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
@@ -213,12 +219,26 @@ $("#updNext").on('click', function() {
     activateStep(nextStep());
 });
 
-function create() {
+function interceptSubmit(form){
+    var el = form.find("#itemsForm"); 
+    el.submit(function() {
+        $.post($("#itemsForm").attr("action"), $("#itemsForm").serialize(), function(data){
+            // <--- limpiar el form!!
+            $('#divItemsByJob').html(data);
+        });
+        return false;
+    });
+}
 
+function create() {
 	$("[name='step']").removeClass('active').addClass('disabled');
 	$('#step1').removeClass('disabled').addClass('active');
 
 	$("#createFormModal").removeClass('modal-extra-large');
+	
+	$("#createNext").removeClass('hide');
+	$("#createReset").removeClass('hide');
+	$("#createCancel").html('Cancelar');
 
 	var copType = $(this).attr("data-copType");
 

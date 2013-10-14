@@ -115,6 +115,19 @@ class SqlService {
 		return getRows("{call LED_crearTrabajo('${job.descripcion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_mano_obra}', ${job.clientId})}")[0]
 	}
 
+	def createItem(params) {
+println "---------------------";
+println params;
+println "---------------------";
+		def resultado = getRows("{call LED_crearArticulo('${params.codigo_interno}', '${params.descripcion}', '${params.marca_fabricante}', '${params.modelo}', '${params.observaciones}')}")[0]
+//		def itemId = resultado.id;
+//		def jobId = params.jobId;
+//		def providerId = params.providerId;
+//		def providerCode = params.codigo_catalogo_proveedor;
+//		def itemAmount = params.cantidad_articulos;
+//		def itemPrice = params.costo_unitario;
+	}
+
 	def editCop(cop) {
 
 		def sql = Sql.newInstance(dataSource)

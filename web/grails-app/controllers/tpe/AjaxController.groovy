@@ -58,6 +58,12 @@ class AjaxController {
 		render "${jobId}"
 	}
 
+	def createItem() {
+		sqlService.createItem(params)
+
+		redirect(action:"getItemsByJob", params : params)
+	}
+
 	def getItemsForm() {
 		def providers = sqlService.getProviders()
 		render(view:"getItemsForm", model:[jobId:params.jobId, providers: providers])
