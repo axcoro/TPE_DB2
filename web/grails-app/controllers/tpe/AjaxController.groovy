@@ -95,7 +95,14 @@ class AjaxController {
 		redirect(action:"getMembersByProvider", params : params)
 	}
 
-    def editJob() {
+	def editCop() {
+
+		sqlService.editCop(params)
+
+		render "${params.id}"
+	}
+	
+	def editJob() {
 		sqlService.editJob(params)
 		
 		render "${params.jobId}"

@@ -171,6 +171,7 @@ $("[name='deleteJob']").on('click', function() {
 });
 
 function magicLogic(map, _that) {
+    debugger;
     var mapping = ($(_that).attr("data-copType") === "0") ? map.cop : map.job;
 
     var queryString = $(mapping.formSelector).serialize();
@@ -245,8 +246,8 @@ $("#createNext").on('click', function() {
         cop: {
             "formSelector": "#formCreateCop",
             "createUri": "/createCop?",
-            "formUri": "/getMembersForm?poviderId=",
-            "listUri": "/getMembersByProvider?poviderId=",
+            "formUri": "/getMembersForm?copId=",
+            "listUri": "/getMembersByProvider?copId=",
             "formContentSelector": "#createFormContent",
             "divItems": "divItemsByCopCreate",
             "divItemsSelector": "#divItemsByCopCreate",
@@ -275,8 +276,8 @@ $("#editNext").on('click', function() {
         cop: {
             "formSelector": "#formEditCop",
             "createUri": "/editCop?",
-            "formUri": "/getMembersForm?poviderId=",
-            "listUri": "/getMembersByProvider?poviderId=",
+            "formUri": "/getMembersForm?copId=",
+            "listUri": "/getMembersByProvider?copId=",
             "formContentSelector": "#editFormContent",
             "divItems": "divItemsByCopEdit",
             "divItemsSelector": "#divItemsByCopEdit",
