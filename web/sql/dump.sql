@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `led_articulos` (
   PRIMARY KEY (`id_articulo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_articulos: ~15 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_articulos: ~21 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_articulos` DISABLE KEYS */;
 INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `marca_fabricante`, `modelo`, `observaciones`) VALUES
 	(1, 'asd', 'asd', 'asd', 'asd', 'asd'),
@@ -51,7 +51,13 @@ INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `ma
 	(26, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
 	(27, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
 	(28, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
-	(29, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd');
+	(29, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
+	(30, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
+	(31, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
+	(33, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
+	(34, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
+	(35, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
+	(36, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd');
 /*!40000 ALTER TABLE `led_articulos` ENABLE KEYS */;
 
 
@@ -187,7 +193,13 @@ CREATE TABLE IF NOT EXISTS `led_provistos` (
 -- Volcando datos para la tabla efecto_led.led_provistos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
 INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `codigo_catalogo_proveedor`, `cantidad_articulos`, `costo_unitario`) VALUES
-	(1, 7, 14, 'Das', 0, 0);
+	(1, 7, 14, 'Das', 0, 0),
+	(23, 7, 14, 'asdasdasd', 123, 12.65),
+	(31, 8, 58, 'null', 6, 19.5),
+	(33, 8, 58, 'null', 6, 19.5),
+	(34, 8, 58, 'null', 6, 19.5),
+	(35, 8, 58, 'null', 6, 19.5),
+	(36, 8, 58, 'null', 6, 19.5);
 /*!40000 ALTER TABLE `led_provistos` ENABLE KEYS */;
 
 
@@ -229,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
   CONSTRAINT `solicita` FOREIGN KEY (`id_cliente`) REFERENCES `led_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_trabajos: ~13 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_trabajos: ~45 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `id_cliente`) VALUES
 	(14, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 7),
