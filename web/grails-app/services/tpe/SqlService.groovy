@@ -112,7 +112,16 @@ class SqlService {
 
 	def createJob(job) {
 
-		return getRows("{call LED_crearTrabajo('${job.descripcion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_mano_obra}', ${job.clientId})}")[0]
+		job.each { key, value -> 
+			if ( (key ==~ "fecha_.*") && (value == "") ){
+				job[key] = null
+			}
+			else if ( !(key in ["clientId", "precio_mano_obra"]) ){
+				job[key] = "'${value}'"
+			}
+		}
+
+		return getRows("{call LED_crearTrabajo(${job.descripcion}, ${job.fecha_aprobacion_presupuesto}, ${job.fecha_inicio_obra}, ${job.fecha_fin_obra}, ${job.precio_mano_obra}, ${job.clientId})}")[0]
 	}
 
 	def createItem(params) {
