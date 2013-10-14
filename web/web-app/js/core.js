@@ -57,23 +57,6 @@ function activateStep(step, suffix, action){
     }
 }
 
-function registerItemsFunctions(jobId) {
-    $("[name='item-remove']").off('click');
-    $("[name='item-remove']").on('click', function() {
-        var jobItemId = $(this).attr("data-jobItemId");
-
-        $.ajax("/deleteItem?itemId=" + jobItemId + "&jobId=" + jobId, {
-            success: function(data) {
-	    $("#listJobsContainer").replaceWith(data);
-            },
-            error: function() {
-	showAlert("No se pudieron obtener los artículos.", "alert-error");
-            }
-        });
-
-    });
-}
-
 $("[name='itemsByJob']").on('click', function(){
 
 	clearAlert();
