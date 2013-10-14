@@ -93,7 +93,7 @@
             </div>
         </div>
 
-		<div id="itemsByJobModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div id="itemsByJobModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 			<div class="modal-header">
 				<h3>Artículos</h3>
 			</div>
