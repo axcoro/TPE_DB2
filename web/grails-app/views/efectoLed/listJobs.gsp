@@ -17,13 +17,13 @@
 				<tr>
 					<th class="table-col-nombre"><center>Cliente</center></th>
 					<th class="table-col-descripcion"><center>Descripción</center></th>
-					<th class="table-col-fecha"><center>F. creación</center></th>
-					<th class="table-col-fecha"><center>F. aprobación</center></th>
-					<th class="table-col-fecha"><center>F. inicio obra</center></th>
-					<th class="table-col-fecha"><center>F. fin obra</center></th>
-					<th class="table-col-precio"><center>P. total</center></th>
-					<th class="table-col-precio"><center>P. m. obra</center></th>
-					<th class="table-col-precio"><center>P. art.</center></th>
+					<th class="table-col-fecha"><center>F. Creación</center></th>
+					<th class="table-col-fecha"><center>F. Aprobación</center></th>
+					<th class="table-col-fecha"><center>F. Inicio Obra</center></th>
+					<th class="table-col-fecha"><center>F. Fin Obra</center></th>
+					<th class="table-col-precio"><center>P. Total</center></th>
+					<th class="table-col-precio"><center>P. M. Obra</center></th>
+					<th class="table-col-precio"><center>P. Art.</center></th>
 					<th class="table-col-custom"><center>Mas Info.</center></th>
 					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
@@ -135,7 +135,7 @@
 			    <a href="#">Datos del Trabajo</a>
 			  </li>
 			  <li class="disabled" name="step" id="step2">
-			    <a href="#">Articulos del Trabajo</a>
+			    <a href="#">Artículos del Trabajo</a>
 			  </li>
 			</ul>
 			<div id="createFormContent" class="row-fluid">
@@ -161,7 +161,7 @@
 			    <a href="#">Datos del Trabajo</a>
 			  </li>
 			  <li class="disabled" name="stepEdit" id="step2Edit">
-			    <a href="#">Articulos del Trabajo</a>
+			    <a href="#">Artículos del Trabajo</a>
 			  </li>
 			</ul>
 			<div id="editFormContent" class="row-fluid">

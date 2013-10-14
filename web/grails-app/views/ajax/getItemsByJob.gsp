@@ -14,7 +14,7 @@
 			<th class="table-col-descripcion"><center>Descripción</center></th>
 			<th class="table-col-descripcion"><center>Marca/Fabricante</center></th>
 			<th class="table-col-descripcion"><center><center>Modelo</center></th>
-			<th class="table-col-precio"><center>Cantidad Articulos</center></th>
+			<th class="table-col-precio"><center>Cantidad Artículos</center></th>
 			<th class="table-col-precio"><center>Costo Unitario</center></th>
 			<g:if test="${modal == false}">
 			    <th class="table-col-custom"><center>Borrar</center></th>

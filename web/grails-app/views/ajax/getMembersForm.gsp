@@ -10,7 +10,7 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="area">Area</label>
+				<label class="control-label" for="area">Área</label>
 				<div class="controls">
 					<input id="area" name="area" type="text" placeholder="Contabilidad" class="input-medium" required="">
 				</div>

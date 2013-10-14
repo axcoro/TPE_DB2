@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label" for="fecha_aprobacion_presupuesto">Fecha Aprobacion Presupuesto</label>
+          <label class="control-label" for="fecha_aprobacion_presupuesto">Fecha Aprobación Presupuesto</label>
           <div class="controls">
             <input type="date" name="fecha_aprobacion_presupuesto" id="fecha_aprobacion_presupuesto">
           </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label" for="descripcion">Descripcion</label>
+          <label class="control-label" for="descripcion">Descripción</label>
           <div class="controls">                     
             <textarea id="descripcion" name="descripcion"></textarea>
           </div>

@@ -10,7 +10,7 @@
 	<thead>
 		<tr>
 			<th class="table-col-codigo"><center>Nombre</center></th>
-			<th class="table-col-descripcion"><center>Area</center></th>
+			<th class="table-col-descripcion"><center>Área</center></th>
 			<th class="table-col-descripcion"><center>Teléfono P.</center></th>
 			<th class="table-col-descripcion"><center>Correo El.</center></th>
 			<g:if test="${modal == false}">

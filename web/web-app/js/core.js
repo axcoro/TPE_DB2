@@ -152,7 +152,7 @@ $("[name='editCop']").on('click', function() {
 			$("#editFormModal").modal("show");
 		},
 		error: function(data) {
-			showAlert("Ocurió un error al intentar recuperar el formulario de edicion.", "alert-error");
+			showAlert("Ocurió un error al intentar recuperar el formulario de edición.", "alert-error");
 		}
 	});
 });
@@ -176,7 +176,7 @@ $("[name='editJob']").on('click', function() {
 			$("#editFormModal").modal("show");
 		},
 		error: function(data) {
-			showAlert("Ocurió un error al intentar recuperar el formulario de edicion.", "alert-error");
+			showAlert("Ocurió un error al intentar recuperar el formulario de edición.", "alert-error");
 		}
 	});
 });
@@ -232,7 +232,7 @@ function magicLogic(map, _that) {
 					interceptSubmit(form, divFormulario.html(), mapping.divItemsSelector, mapping.formListSelector);
 				},
 				error: function() {
-					showAlert("Ocurió un error al intentar recuperar el formulario", "alert alert-error");
+					showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
 				}
 			});
 
@@ -242,7 +242,7 @@ function magicLogic(map, _that) {
 					divListado.html(d2);
 				},
 				error: function() {
-					showAlert("Ocurió un error al intentar recuperar el listado", "alert alert-error");
+					showAlert("Ocurió un error al intentar recuperar el listado.", "alert alert-error");
 				}
 			});
 
@@ -254,7 +254,7 @@ function magicLogic(map, _that) {
 			
 		},
 		error: function() {
-			showAlert("Ocurió un error al intentar recuperar el formulario", "alert alert-error");
+			showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
 		}
 	});
     }
