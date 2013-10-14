@@ -61,11 +61,13 @@
 			              </div>
 		              </div>
 			<div class="control-group">
-			  <div id="pull-right">
-			  <button id="itemReset" type="reset" name="reset" class="btn">Deshacer</button>
-			  <button id="itemSubmit" type="submit" name="submit" class="btn btn-success">Guardar</button>
+			  <div>
+			  	<center>
+				  <button id="itemReset" type="reset" name="reset" class="btn" onclick="document.forms['itemsForm'].reset();">Limpiar</button>
+				  <button id="itemSubmit" type="submit" name="submit" class="btn btn-success">Guardar</button>
+				</center>
 			  </div>
-		              </div>
-	              </fieldset>
-              </form>
+		    </div>
+      </fieldset>
+  </form>
 </div>
