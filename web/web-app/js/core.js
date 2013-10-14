@@ -171,7 +171,10 @@ $("#createNext").on('click', function() {
 			activateStep(nextStep());
 			var divContenedor = $('<div/>', {class: 'span12'});
 			var divRow = $('<div/>', {class: 'row-fluid'});
-			var divFormulario = $('<div/>', {class: 'span5'});
+			var divFormulario = $('<div/>', {
+			    class: 'span5',
+			    style :'max-width: 440px; margin-right: 10px;'
+			});
 			var divListado = $('<div/>', {
 			    id: 'divItemsByJob',
 			    class: 'span7',
