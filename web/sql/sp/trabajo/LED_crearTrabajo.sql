@@ -13,9 +13,9 @@ CREATE PROCEDURE `LED_crearTrabajo`(
 ===================================================
 */
 _descripcion VARCHAR(45),
-_fecha_aprobacion_presupuesto DATETIME,
-_fecha_inicio_obra DATETIME,
-_fecha_fin_obra DATETIME,
+_fecha_aprobacion_presupuesto DATE,
+_fecha_inicio_obra DATE,
+_fecha_fin_obra DATE,
 _precio_mano_obra FLOAT,
 _id_cliente INT
 )

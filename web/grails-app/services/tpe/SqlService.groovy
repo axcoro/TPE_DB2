@@ -10,10 +10,11 @@ class SqlService {
 	def dataSource
 
 	def getRows(storedProcedureCall) {
-
+		String query = storedProcedureCall;
+		
 		def sql = Sql.newInstance(dataSource)
 
-		List rows = sql.rows(storedProcedureCall)
+		List rows = sql.rows(query)
 
 		sql.close()
 
@@ -125,9 +126,6 @@ class SqlService {
 	}
 
 	def createItem(params) {
-println "---------------------";
-println params;
-println "---------------------";
 		def resultado = getRows("{call LED_crearArticulo('${params.codigo_interno}', '${params.descripcion}', '${params.marca_fabricante}', '${params.modelo}', '${params.observaciones}')}")[0]
 //		def itemId = resultado.id;
 //		def jobId = params.jobId;

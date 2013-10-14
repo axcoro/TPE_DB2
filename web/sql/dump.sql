@@ -26,19 +26,32 @@ CREATE TABLE IF NOT EXISTS `led_articulos` (
   `modelo` varchar(255) NOT NULL,
   `observaciones` varchar(255) NOT NULL,
   PRIMARY KEY (`id_articulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_articulos: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_articulos: ~15 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_articulos` DISABLE KEYS */;
 INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `marca_fabricante`, `modelo`, `observaciones`) VALUES
-	(1, 'a', 'a', 'a', 'a', 'a'),
-	(2, 'b', 'b', 'b', 'b', 'b'),
-	(3, 'c', 'c', 'c', 'c', 'c'),
-	(4, 'd', 'd', 'd', 'd', 'd'),
-	(5, 'f', 'f', 'f', 'f', 'f'),
-	(6, 'g', 'g', 'g', 'g', 'g'),
-	(7, 'h', 'h', 'h', 'h', 'h'),
-	(8, 'i', 'i', 'i', 'i', 'i');
+	(1, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(9, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(10, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(11, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(12, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(13, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(14, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(15, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(16, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(17, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(18, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(19, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(20, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(21, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(23, 'asd', 'asd', 'asd', 'asd', 'asd'),
+	(24, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
+	(25, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
+	(26, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
+	(27, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
+	(28, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
+	(29, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd');
 /*!40000 ALTER TABLE `led_articulos` ENABLE KEYS */;
 
 
@@ -171,8 +184,10 @@ CREATE TABLE IF NOT EXISTS `led_provistos` (
   CONSTRAINT `fk_led_provistos_led_proveedores1` FOREIGN KEY (`id_proveedores`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_provistos: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_provistos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
+INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `codigo_catalogo_proveedor`, `cantidad_articulos`, `costo_unitario`) VALUES
+	(1, 7, 14, 'Das', 0, 0);
 /*!40000 ALTER TABLE `led_provistos` ENABLE KEYS */;
 
 
@@ -212,9 +227,9 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
   PRIMARY KEY (`id_trabajos`),
   KEY `solicita` (`id_cliente`),
   CONSTRAINT `solicita` FOREIGN KEY (`id_cliente`) REFERENCES `led_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_trabajos: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_trabajos: ~13 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `id_cliente`) VALUES
 	(14, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 7),
@@ -222,7 +237,46 @@ INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fec
 	(16, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
 	(17, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
 	(18, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
-	(19, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8);
+	(19, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
+	(20, 'test', '2013-10-13 19:36:38', '2013-10-10 00:00:00', NULL, '2013-10-10 00:00:00', 0, 10, 0, 8),
+	(21, 'test', '2013-10-13 19:36:45', '2013-10-10 00:00:00', NULL, '2013-10-10 00:00:00', 0, 10, 0, 8),
+	(22, 'test', '2013-10-13 19:37:06', '2013-10-10 00:00:00', NULL, '2013-10-10 00:00:00', 0, 10, 0, 8),
+	(23, 'asdasdasd', '2013-10-14 08:31:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7.8, 0, 7),
+	(24, 'asdasda', '2013-10-14 08:32:56', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7.8, 0, 7),
+	(25, 'sdasasd', '2013-10-14 08:34:28', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(26, 'asdasdasd', '2013-10-14 08:36:45', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7.8, 0, 7),
+	(27, 'asdasdasd', '2013-10-14 08:42:16', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 11.9, 0, 7),
+	(28, 'asdasdasdasdasd', '2013-10-14 08:43:45', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
+	(29, 'asdasd', '2013-10-14 08:54:31', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(30, 'asdasdas', '2013-10-14 08:59:46', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7, 0, 7),
+	(31, 'asdasdasd', '2013-10-14 09:02:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(32, 'asdasdasd', '2013-10-14 09:12:51', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
+	(33, 'asdasdasd', '2013-10-14 09:13:40', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
+	(34, 'asdasdas', '2013-10-14 09:14:37', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
+	(35, 'asdasdasdasdasdasd', '2013-10-14 09:16:03', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7, 0, 7),
+	(36, 'asdasdasd', '2013-10-14 09:17:22', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(37, 'asdasdasdasdas', '2013-10-14 09:19:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(38, 'asdasdas', '2013-10-14 09:21:02', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(39, 'asdasdasdas', '2013-10-14 09:25:23', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
+	(40, 'asdada', '2013-10-14 09:28:23', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 3, 0, 7),
+	(41, 'asdasdasdaasdasdas', '2013-10-14 09:45:05', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 3, 0, 7),
+	(42, 'asdasds', '2013-10-14 09:51:02', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(43, 'asdasdas', '2013-10-14 09:52:39', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
+	(44, 'asdasdasd', '2013-10-14 09:54:35', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(45, 'asdasd', '2013-10-14 09:55:16', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(46, 'asdasdasd', '2013-10-14 09:58:20', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
+	(47, 'asdasdas', '2013-10-14 09:59:33', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(48, 'asdasdasd', '2013-10-14 10:00:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(49, 'adasdasdsa', '2013-10-14 10:02:28', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 8),
+	(50, 'asdasdas', '2013-10-14 10:07:23', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(51, 'asdasdsa', '2013-10-14 10:15:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(52, 'asdasdsa', '2013-10-14 10:15:47', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(53, '\'asdasdsa\'', '2013-10-14 10:16:48', NULL, NULL, NULL, 0, 5, 0, 7),
+	(54, 'adasdas', '2013-10-14 10:21:17', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(55, 'adasdas', '2013-10-14 10:25:26', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
+	(56, 'asdasdas', '2013-10-14 10:27:27', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
+	(57, 'asdasdasdas', '2013-10-14 10:29:04', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7, 0, 7),
+	(58, 'asdasdasdasd', '2013-10-14 10:29:41', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 8, 0, 7);
 /*!40000 ALTER TABLE `led_trabajos` ENABLE KEYS */;
 
 
@@ -268,6 +322,8 @@ INSERT INTO led_articulos
     (codigo_interno, descripcion, marca_fabricante, modelo, observaciones)
 VALUES
     (_codigo_interno, _descripcion, _marca_fabricante, _modelo, _observaciones);
+
+select LAST_INSERT_ID() as id;
 
 END//
 DELIMITER ;
@@ -339,9 +395,9 @@ CREATE PROCEDURE `LED_crearTrabajo`(
 
 
 _descripcion VARCHAR(45),
-_fecha_aprobacion_presupuesto DATETIME,
-_fecha_inicio_obra DATETIME,
-_fecha_fin_obra DATETIME,
+_fecha_aprobacion_presupuesto DATE,
+_fecha_inicio_obra DATE,
+_fecha_fin_obra DATE,
 _precio_mano_obra FLOAT,
 _id_cliente INT
 )
