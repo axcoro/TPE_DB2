@@ -42,14 +42,13 @@
 						<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto}</td>
 						<td class="table-col-fecha">${job.fecha_inicio_obra}</td>
 						<td class="table-col-fecha">${job.fecha_fin_obra}</td>
-						<td class="table-col-precio">${job.precio_total}</td>
-						<td class="table-col-precio">${job.precio_mano_obra}</td>
-						<td class="table-col-precio">${job.precio_articulos}</td>
+						<td class="table-col-precio">$ ${job.precio_total}</td>
+						<td class="table-col-precio">$ ${job.precio_mano_obra}</td>
+						<td class="table-col-precio">$ ${job.precio_articulos}</td>
 						<td class="table-col-custom">
 							<div class="btn-group">
 								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
 								<ul name="view" class="dropdown-menu" role="menu">
-									<li><a href="#"></a></li>
 									<li><a name="othersByJob" data-jobId="${job.id_trabajos}">Terceros</a></li>
 									<li><a name="itemsByJob" data-jobId="${job.id_trabajos}">Artículos</a></li>
 								</ul>

@@ -31,7 +31,7 @@
 					<tr>
 						<td>${other.numero_cuil}</td>
 						<td>${other.razon_social}</td>
-						<td>${other.costo_prestacion}</td>
+						<td>$ ${other.costo_prestacion}</td>
 						<td>${other.descripcion_trabajo_realizado}</td>
 						<td>${other.direccion}</td>
 						<td>${other.codigo_postal}</td>
