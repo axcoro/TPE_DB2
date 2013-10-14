@@ -88,6 +88,13 @@ class AjaxController {
 		render(view:"getMembersByProvider", model:[copId:params.copId, membersByProvider: membersByProvider])
 	}
 
+	def createMember() {
+
+		sqlService.createMember(params)
+
+		redirect(action:"getMembersByProvider", params : params)
+	}
+
     def editJob() {
 		sqlService.editJob(params)
 		
