@@ -77,7 +77,7 @@ class AjaxController {
 	}
 
 	def getMembersForm() {
-
+		println "----- getMembersForm ---- params.copId = ${params.copId}  -------------------------"
 		render(view:"getMembersForm", model:[copId:params.copId])
 	}
 

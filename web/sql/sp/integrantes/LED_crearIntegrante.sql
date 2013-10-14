@@ -26,6 +26,8 @@ led_integrantes
 VALUES
     (_nombre, _area, _telefono, _correo_electronico, _id_proveedor);
 
+select LAST_INSERT_ID() as id;
+
 END$$
 
 DELIMITER ;

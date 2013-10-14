@@ -26,7 +26,7 @@
 
 			<g:each var="member" in="${membersByProvider}">
 				<tr>
-					<td class="table-col-codigo">${member.nomber}</td>
+					<td class="table-col-codigo">${member.nombre}</td>
 					<td class="table-col-descripcion">${member.area}</td>
 					<td class="table-col-descripcion">${member.telefono}</td>
 					<td class="table-col-descripcion">${member.correo_electronico}</td>

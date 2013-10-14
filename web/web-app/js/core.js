@@ -282,8 +282,8 @@ $("#createNext").on('click', function() {
         cop: {
             "formSelector": "#formCreateCop",
             "createUri": "/createCop?",
-            "formUri": "/getMembersForm?poviderId=",
-            "listUri": "/getMembersByProvider?poviderId=",
+            "formUri": "/getMembersForm?copId=",
+            "listUri": "/getMembersByProvider?copId=",
             "formContentSelector": "#createFormContent",
             "divItems": "divItemsByCopCreate",
             "divItemsSelector": "#divItemsByCopCreate",

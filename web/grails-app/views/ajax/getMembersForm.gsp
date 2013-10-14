@@ -16,15 +16,15 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="telefono_principal">Teléfono Principal</label>
+				<label class="control-label" for="telefono">Teléfono Principal</label>
 				<div class="controls">
-					<input id="telefono_principal" name="telefono_principal" type="tel" placeholder="2664XXXXXX" class="input-medium" required="">
+					<input id="telefono" name="telefono" type="tel" placeholder="2664XXXXXX" class="input-medium" required="">
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="email">Correo Electrónico</label>
+				<label class="control-label" for="correo_electronico">Correo Electrónico</label>
 				<div class="controls">
-					<input id="email" name="email" type="email" placeholder="contacto@led.com" class="input-medium">
+					<input id="correo_electronico" name="correo_electronico" type="email" placeholder="contacto@led.com" class="input-medium">
 				</div>
 			</div>
 
