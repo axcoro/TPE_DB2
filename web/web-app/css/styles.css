@@ -19,6 +19,10 @@ div {
     overflow: auto;
 }
 
+.container {
+    height:370px;
+}
+
 .modal {
     min-width: 350px !important;
     min-height: 100px !important;

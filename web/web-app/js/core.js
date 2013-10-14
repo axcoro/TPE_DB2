@@ -268,5 +268,7 @@ $(document).ready(function() {
 
 	$("#create").on('click', create);
 	
-	$('.dropdown-menu:last').addClass('last-drop-down');
+	$("[name='view']:last").addClass("last-drop-down");
+
+	$(".dropdown-menu:last").addClass("last-drop-down");
 });

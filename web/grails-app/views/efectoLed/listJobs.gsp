@@ -30,11 +30,11 @@
 			</thead>
 		</table>
 		<table class="table table-hover table-bordered table-header-fix">
-			<tbody data-provides="rowlink">
+			<tbody>
 
 				<g:each var="job" in="${jobs}">
 
-					<tr name="jobRow" class="rowlink" data-jobId="${job.id_trabajos}">
+					<tr data-jobId="${job.id_trabajos}">
 
 						<td class="table-col-nombre"><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
 						<td class="table-col-descripcion">${job.descripcion}</td>
@@ -48,7 +48,7 @@
 						<td class="table-col-custom">
 							<div class="btn-group">
 								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
-								<ul class="dropdown-menu" role="menu">
+								<ul name="view" class="dropdown-menu" role="menu">
 									<li><a href="#"></a></li>
 									<li><a name="othersByJob" data-jobId="${job.id_trabajos}">Terceros</a></li>
 									<li><a name="itemsByJob" data-jobId="${job.id_trabajos}">Artículos</a></li>
