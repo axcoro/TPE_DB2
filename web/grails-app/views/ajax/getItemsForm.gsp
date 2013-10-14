@@ -6,7 +6,7 @@
 		              <div class="control-group">
 			              <label class="control-label" for="providerId">Proveedor</label>
 			              <div class="controls">
-				              <select id="providerId" name="providerId" class="input-large">
+				              <select id="providerId" name="providerId" class="input-medium">
 					              <g:each var="provider" in="${providers}">
 						              <option value="${provider.id_proveedores}">${provider.razon_social}</option>
 					              </g:each>
@@ -17,22 +17,22 @@
 		              <div class="control-group">
 			              <label class="control-label" for="codigo_interno">Código Interno</label>
 			              <div class="controls">
-				              <input id="codigo_interno" name="codigo_interno" type="text" placeholder="Ej: ABCD12345" class="input-large" required="">
+				              <input id="codigo_interno" name="codigo_interno" type="text" placeholder="ABCD12345" class="input-medium" required="">
 			              </div>
 			              <label class="control-label" for="codigo_proveedor">Código Catalogo Proveedor</label>
 			              <div class="controls">
-				              <input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="Ej: ABCD12345" class="input-large" required="">
+				              <input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="ABCD12345" class="input-medium" required="">
 			              </div>
 		              </div>
 
 		              <div class="control-group">
 			              <label class="control-label" for="marca_fabricante">Fabricante</label>
 			              <div class="controls">
-				              <input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Ej: Phillips" class="input-large" required="">
+				              <input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Phillips" class="input-medium" required="">
 			              </div>
 			              <label class="control-label" for="modelo">Modelo</label>
 			              <div class="controls">
-				              <input id="modelo" name="modelo" type="text" placeholder="Ej: Bañador FX3388" class="input-large" required="">
+				              <input id="modelo" name="modelo" type="text" placeholder="Bañador FX3388" class="input-medium" required="">
 			              </div>
 		              </div>
 
