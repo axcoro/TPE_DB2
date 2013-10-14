@@ -106,6 +106,11 @@ class UrlMappings {
 			controller = "ajax"
 			action = "getMembersByProvider"
 		}
+		"/createMember" {
+
+			controller = "ajax"
+			action = "createMember"
+		}
 
 	}
 }

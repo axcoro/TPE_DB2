@@ -166,4 +166,9 @@ class SqlService {
 
 		return getRows("{call LED_listarIntegrantesPorProveedor(${copId})}")
 	}
+
+	def createMember(params) {
+
+		return getRows("{call LED_crearIntegrante('${params.nombre}', '${params.area}', '${params.telefono}', '${params.correo_electronico}')}")[0] 
+	}
 }
