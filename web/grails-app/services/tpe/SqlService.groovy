@@ -55,7 +55,7 @@ class SqlService {
 		return getRows("{call LED_obtenerDato(${copId}, ${copType})}")[0] //TODO: cochinada
 	}
 	
-    def getJob(jobId) {
+	def getJob(jobId) {
 
 		return getRows("{call LED_obtenerTrabajo(${jobId})}")[0] //TODO: cochinada
 	} 
@@ -77,6 +77,15 @@ class SqlService {
 		sql.close()
 
 		return result
+	}
+
+	def deleteItem(itemId) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		sql.call("{call LED_eliminarArticulo(${itemId})}")
+
+		sql.close()
 	}
 
 	def deleteJob(jobId) {

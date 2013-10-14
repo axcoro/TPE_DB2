@@ -5,10 +5,16 @@ class AjaxController {
 	def sqlService
 
 	def getItemsByJob() {
-
 		def itemsByJob = sqlService.getItemsByJob(params.jobId)
 
-		return [itemsByJob:itemsByJob]
+		return [itemsByJob:itemsByJob, jobId: params.jobId]
+	}
+
+	def deleteItem() {
+
+		sqlService.deleteItem(params.itemId)
+		redirect(action:"getItemsByJob", params : params)
+
 	}
 
 	def getOthersByJob() {
@@ -35,13 +41,13 @@ class AjaxController {
 
 		if ( params.containsKey("copType") ) {
 
-			def copData = sqlService.getData(params.copId, params.copType)
-	        render(view:"getEditCopForm", model: [cop : copData])
+		    def copData = sqlService.getData(params.copId, params.copType)
+		    render(view:"getEditCopForm", model: [cop : copData])
 		}
 		else {
 
-	        def jobData = sqlService.getJob(params.jobId)
-	        render(view:"getEditJobForm", model: [job : jobData])
+		    def jobData = sqlService.getJob(params.jobId)
+		    render(view:"getEditJobForm", model: [job : jobData])
 		}
 	}
 
