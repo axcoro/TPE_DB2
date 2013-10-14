@@ -121,7 +121,7 @@
 				<button id="createCancel" name="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
 				<button id="createReset" name="reset" class="btn" onclick="document.forms['formCreateCop'].reset();" >Limpiar</button>
 				<g:if test="${copType == 0}">
-					<button id="createNext" data-copType="${copType}" name="save" class="btn btn-success">Siguiente</button>
+					<button id="createNext" data-copType="${copType}" name="next" class="btn btn-success">Siguiente</button>
 				</g:if>
 				<g:else>
 					<button name="save" class="btn btn-success" onclick="document.forms['formCreateCop'].submitBtn.click();">Guardar</button>
@@ -134,22 +134,30 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Editar <cops:label copType="${copType}" /></h3>
 		</div>
+	  
+	  <g:if test="${copType == 0}">
 		<ul class="nav nav-tabs">
 		  <li class="active" name="stepEdit" id="step1Edit">
-		    <a href="#">Datos del Trabajo</a>
+		    <a href="#">Datos del Proveedor</a>
 		  </li>
 		  <li class="disabled" name="stepEdit" id="step2Edit">
-		    <a href="#">Artículos del Trabajo</a>
+		    <a href="#">Integrantes del Proveedor</a>
 		  </li>
 		</ul>
-		<div id="editFormContent">
+	  </g:if>
+		<div id="editFormContent" class="row-fluid">
 			<%-- Content --%>
 		</div>
 		<div class="modal-footer">
 			<div class="control-group">
 				<button id="editCancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
 				<button id="editReset" name="reset" class="btn" onclick="document.forms['formEditCop'].reset();" >Deshacer</button>
-				<button id="editNext"  name="save" class="btn btn-success" onclick="document.forms['formEditCop'].submitBtn.click();">Actualizar</button>
+				<g:if test="${copType == 0}">
+					<button id="editNext" name="edit" data-copType="${copType}" name="save" class="btn btn-success">Siguiente</button>
+				</g:if>
+				<g:else>
+					<button name="save" class="btn btn-success" onclick="document.forms['formEditCop'].submitBtn.click();">Guardar</button>
+				</g:else>
 			</div>
 		</div>
 	</div>

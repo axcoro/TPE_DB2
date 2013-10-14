@@ -212,7 +212,7 @@ function magicLogic(map, _that) {
 			var divListado = $('<div/>', {
 			    id: mapping.divItems,
 			    class: 'span7',
-			    style :'margin-left: 0px; padding-left: 0px;'
+			    style :'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px;'
 			});
 			
 			$.ajax(mapping.formUri+data, {
@@ -297,8 +297,8 @@ $("#editNext").on('click', function() {
         cop: {
             "formSelector": "#formEditCop",
             "createUri": "/editCop?",
-            "formUri": "/getMembersForm?poviderId=",
-            "listUri": "/getMembersByProvider?poviderId=",
+            "formUri": "/getMembersForm?copId=",
+            "listUri": "/getMembersByProvider?copId=",
             "formContentSelector": "#editFormContent",
             "divItems": "divItemsByCopEdit",
             "divItemsSelector": "#divItemsByCopEdit",
@@ -365,27 +365,21 @@ function registerItemsFunctions(jobId) {
     });
 }
 
-function registerMembersFunctions(copId) {
+function registerMembersFunctions(providerId) {
+    $("[name='member-remove']").off('click');
+    $("[name='member-remove']").on('click', function() {
+        var memberId = $(this).attr("data-memberId");
 
-    /*  
-	revisarrrrr providerId
-
-    TODO: implementar con data-providerMemberId
-
-    $("[name='item-remove']").off('click');
-    $("[name='item-remove']").on('click', function() {
-        var jobItemId = $(this).attr("data-jobItemId");
-
-        $.ajax("/deleteItem?itemId=" + jobItemId + "&jobId=" + jobId, {
+        $.ajax("/deleteMember?memberId=" + memberId + "&providerId=" + providerId, {
             success: function(data) {
-	    $("#listJobsContainer").replaceWith(data);
+	    $("#listMembersContainer").replaceWith(data);
             },
             error: function() {
-	showAlert("No se pudieron obtener los artículos.", "alert-error");
+	showAlert("No se pudieron obtener los integrantes.", "alert-error");
             }
         });
 
-    });*/
+    });
 }
 
 $('#deleteModal, #createFormModal, #editFormModal').on('hide', function () {

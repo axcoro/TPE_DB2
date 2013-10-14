@@ -94,6 +94,15 @@ class SqlService {
 		sql.close()
 	}
 
+	def deleteMember(memberId) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		sql.call("{call LED_eliminarIntegrante(${memberId})}")
+
+		sql.close()
+	}
+
 	def deleteJob(jobId) {
 
 		def sql = Sql.newInstance(dataSource)
@@ -133,7 +142,7 @@ class SqlService {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result = sql.call("{call LED_modificarDatos(${cop.id}, '${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', 1)}")
+		int result = sql.call("{call LED_modificarDatos(${cop.id}, ${cop.copType}, '${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', 1)}")
 
 		sql.close()
 
