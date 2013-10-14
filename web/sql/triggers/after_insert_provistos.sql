@@ -1,9 +1,13 @@
+DROP TRIGGER IF EXISTS after_insert_provistos;
+
+DELIMITER $$
+
 CREATE
 	TRIGGER `after_insert_provistos` AFTER INSERT
 	ON `led_provistos`
 	FOR EACH ROW BEGIN
 
-		SET @jobId = OLD.id_trabajos;
+		SET @jobId = NEW.id_trabajos;
 
 		SET @total = 0;
 

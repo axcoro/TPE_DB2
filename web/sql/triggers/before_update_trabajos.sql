@@ -1,3 +1,5 @@
+DROP TRIGGER IF EXISTS before_update_trabajos;
+
 DELIMITER $$
 
 CREATE

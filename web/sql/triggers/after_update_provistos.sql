@@ -1,7 +1,8 @@
+DROP TRIGGER IF EXISTS after_update_provistos;
+
 DELIMITER $$
 
-CREATE
-	TRIGGER `after_update_provistos` AFTER UPDATE
+CREATE TRIGGER `after_update_provistos` AFTER UPDATE
 	ON `led_provistos`
 	FOR EACH ROW BEGIN
 
