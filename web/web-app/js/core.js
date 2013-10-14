@@ -50,14 +50,13 @@ function activateStep(step){
 }
 
 function registerItemsFunctions(jobId) {
+    $("[name='item-remove']").off('click');
     $("[name='item-remove']").on('click', function() {
         var jobItemId = $(this).attr("data-jobItemId");
 
         $.ajax("/deleteItem?itemId=" + jobItemId + "&jobId=" + jobId, {
             success: function(data) {
-
-	    $("#itemsByJobModalContent").html(data);
-	    $("#itemsByJobModal").modal("show");
+	    $("#listJobsContainer").replaceWith(data);
             },
             error: function() {
 	showAlert("No se pudieron obtener los artículos.", "alert-error");
