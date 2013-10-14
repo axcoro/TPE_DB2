@@ -33,12 +33,16 @@ function nextStep(){
 }
 
 function activateStep(step){
-    
+
     if (step.length > 0) {
         var id = step[0].id;
         // activo tabs
         $("[name='step']").removeClass('active').addClass('disabled');
         $('#' + id).removeClass('disabled').addClass('active');
+
+        if (id === "step2"){
+			$("#createFormModal").removeClass('modal-medium').addClass('modal-extra-large');
+		}
     }
 }
 
@@ -48,7 +52,7 @@ function registerItemsFunctions(jobId) {
 
         $.ajax("/deleteItem?itemId=" + jobItemId + "&jobId=" + jobId, {
             success: function(data) {
-	debugger;
+
 	    $("#itemsByJobModalContent").html(data);
 	    $("#itemsByJobModal").modal("show");
             },
@@ -156,16 +160,18 @@ $("[name='deleteJob']").on('click', function() {
 
 $("#crateNext").on('click', function() {
 
-    activateStep(nextStep());
-
     var queryString = $("#formCreateJob").serialize();
 
     $.ajax("/createJob?"+queryString, {
 
-		success: function(data) { 
+		success: function(data) {
+
+			activateStep(nextStep());
 
 			var content = "";
 
+			content += "<div class=\"span12\"><div class=\"row-fluid\"><div class=\"span4\">";
+			
 			$.ajax("/getItemsForm?jobId="+data, {
 				async: false,
 				success: function(data2) { 
@@ -176,6 +182,8 @@ $("#crateNext").on('click', function() {
 				}
 			});
 
+			content += "</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class=\"span7\">";
+
 			$.ajax("/itemsByJob?jobId="+data, {
 				async: false,
 				success: function(data3) { 
@@ -185,6 +193,8 @@ $("#crateNext").on('click', function() {
 					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
 				}
 			});
+
+			content += "</div></div></div>";
 
 			$("#createFormContent").html(content);
 			
@@ -201,6 +211,11 @@ $("#updNext").on('click', function() {
 });
 
 function create() {
+
+	$("[name='step']").removeClass('active').addClass('disabled');
+	$('#step1').removeClass('disabled').addClass('active');
+
+	$("#createFormModal").removeClass('modal-extra-large');
 
 	var copType = $(this).attr("data-copType");
 

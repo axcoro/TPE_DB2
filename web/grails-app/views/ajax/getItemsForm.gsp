@@ -5,7 +5,7 @@
 		<div class="control-group">
 			<label class="control-label" for="proveedor">Proveedor</label>
 			<div class="controls">
-				<select id="proveedor" name="proveedor" class="input-xlarge">
+				<select id="proveedor" name="proveedor" class="input-large">
 					<option value="1">Phillips</option>
 				</select>
 			</div>
@@ -14,22 +14,22 @@
 		<div class="control-group">
 			<label class="control-label" for="codigo_interno">Código Interno</label>
 			<div class="controls">
-				<input id="codigo_interno" name="codigo_interno" type="text" placeholder="Ej: ABCD12345" class="input-xlarge" required="">
+				<input id="codigo_interno" name="codigo_interno" type="text" placeholder="Ej: ABCD12345" class="input-large" required="">
 			</div>
 			<label class="control-label" for="codigo_proveedor">Código Catalogo Proveedor</label>
 			<div class="controls">
-				<input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="Ej: ABCD12345" class="input-xlarge" required="">
+				<input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="Ej: ABCD12345" class="input-large" required="">
 			</div>
 		</div>
 
 		<div class="control-group">
 			<label class="control-label" for="marca_fabricante">Fabricante</label>
 			<div class="controls">
-				<input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Ej: Phillips" class="input-xlarge" required="">
+				<input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Ej: Phillips" class="input-large" required="">
 			</div>
 			<label class="control-label" for="modelo">Modelo</label>
 			<div class="controls">
-				<input id="modelo" name="modelo" type="text" placeholder="Ej: Bañador FX3388" class="input-xlarge" required="">
+				<input id="modelo" name="modelo" type="text" placeholder="Ej: Bañador FX3388" class="input-large" required="">
 			</div>
 		</div>
 

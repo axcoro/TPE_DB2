@@ -40,6 +40,11 @@ div {
     margin-left: -450px;
 }
 
+.modal-extra-large {
+    top: 20px !important;
+    width: 1200px;
+    margin-left: -600px;
+}
 .dropdown-menu { /* hack para que no se corten por el overflow-x: en los table*/
     left: -120px !important;
 }
