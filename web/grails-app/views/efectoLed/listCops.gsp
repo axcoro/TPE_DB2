@@ -111,14 +111,22 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3>Editar <cops:label copType="${copType}" /></h3>
 		</div>
+		<ul class="nav nav-tabs">
+		  <li class="active" name="stepEdit" id="step1Edit">
+		    <a href="#">Datos del Trabajo</a>
+		  </li>
+		  <li class="disabled" name="stepEdit" id="step2Edit">
+		    <a href="#">Articulos del Trabajo</a>
+		  </li>
+		</ul>
 		<div id="editFormContent">
 			<%-- Content --%>
 		</div>
 		<div class="modal-footer">
 			<div class="control-group">
-				<button id="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
-				<button name="reset" class="btn" onclick="document.forms['formEditCop'].reset();" >Deshacer</button>
-				<button name="save" class="btn btn-success" onclick="document.forms['formEditCop'].submitBtn.click();">Actualizar</button>
+				<button id="editCancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
+				<button id="editReset" name="reset" class="btn" onclick="document.forms['formEditCop'].reset();" >Deshacer</button>
+				<button id="editNext"  name="save" class="btn btn-success" onclick="document.forms['formEditCop'].submitBtn.click();">Actualizar</button>
 			</div>
 		</div>
 	</div>
