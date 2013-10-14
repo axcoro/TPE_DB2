@@ -6,8 +6,8 @@ class AjaxController {
 
 	def getItemsByJob() {
 		def itemsByJob = sqlService.getItemsByJob(params.jobId)
-
-		return [itemsByJob:itemsByJob, jobId: params.jobId]
+		def modal = params.containsKey("modal");
+		return [itemsByJob:itemsByJob, jobId: params.jobId, modal: modal]
 	}
 
 	def deleteItem() {
@@ -91,8 +91,8 @@ class AjaxController {
 	def getMembersByProvider() {
 
 		def membersByProvider = sqlService.getMembersByProvider(params.providerId)
-
-		render(view:"getMembersByProvider", model:[providerId:params.providerId, membersByProvider: membersByProvider])
+		def modal = params.containsKey("modal");
+		render(view:"getMembersByProvider", model:[providerId:params.providerId, membersByProvider: membersByProvider, modal:modal])
 	}
 
 	def createMember() {

@@ -66,7 +66,7 @@ $("[name='membersByProvider']").on('click', function(){
 
 	var providerId = $(this).attr("data-providerId");
 
-	$.ajax("/getMembersByProvider?providerId="+providerId, {
+	$.ajax("/getMembersByProvider?modal=&providerId="+providerId, {
 
 		success: function(data) { 
 				$("#membersByProviderModalContent").html(data);
@@ -86,7 +86,7 @@ $("[name='itemsByJob']").on('click', function(){
 
 	var jobId = $(this).attr("data-jobId");
 
-	$.ajax("/itemsByJob?jobId="+jobId, {
+	$.ajax("/itemsByJob?modal=&jobId="+jobId, {
 
 		success: function(data) { 
 				$("#itemsByJobModalContent").html(data);
@@ -221,7 +221,7 @@ function magicLogic(map, _that) {
 			var divListado = $('<div/>', {
 			    id: mapping.divItems,
 			    class: 'span7',
-			    style :'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px;'
+			    style :'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 730px;'
 			});
 			
 			$.ajax(mapping.formUri+data, {

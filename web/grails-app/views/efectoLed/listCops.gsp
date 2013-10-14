@@ -65,7 +65,7 @@
 
 	<%-- Modals --%>
 
-	<div id="membersByProviderModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+	<div id="membersByProviderModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 		<div class="modal-header">
 			<h3>Integrantes</h3>
 		</div>

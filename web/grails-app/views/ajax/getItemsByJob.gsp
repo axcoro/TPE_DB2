@@ -1,16 +1,24 @@
-<div id="listJobsContainer">
+<center>
+<g:if test="${modal == false}">
+<div id="listJobsContainer" style="max-width: 890px;">
+</g:if>
+<g:else>
+<div id="listJobsContainer" style="max-width: 790px;">
+</g:else>
   <table class="table table-hover table-bordered table table-condensed table-header-fix">
 
 	<thead>
 		<tr>
-			<th class="table-col-codigo">Código Interno</th>
-			<th class="table-col-codigo">Código Proveedor</th>
-			<th class="table-col-descripcion">Descripción</th>
-			<th class="table-col-descripcion">Marca / Fabricante</th>
-			<th class="table-col-descripcion">Modelo</th>
-			<th class="table-col-precio">Cantidad Articulos</th>
-			<th class="table-col-precio">Costo Unitario</th>
-			<th class="table-col-custom">Borrar</th>
+			<th class="table-col-codigo"><center>Código Interno</center></th>
+			<th class="table-col-codigo"><center>Código Proveedor</center></th>
+			<th class="table-col-descripcion"><center>Descripción</center></th>
+			<th class="table-col-descripcion"><center>Marca/Fabricante</center></th>
+			<th class="table-col-descripcion"><center><center>Modelo</center></th>
+			<th class="table-col-precio"><center>Cantidad Articulos</center></th>
+			<th class="table-col-precio"><center>Costo Unitario</center></th>
+			<g:if test="${modal == false}">
+			    <th class="table-col-custom"><center>Borrar</center></th>
+			</g:if>
 		</tr>
 	</thead>
 
@@ -19,7 +27,7 @@
 		<g:if test="${itemsByJob == []}">
 
 			<tr>
-			  <td colspan="9" style="width: 1000px;">
+			  <td colspan="8" style="width: 1000px;">
 					Este trabajo no tiene artículos cargados.
 				</td>
 			</tr>
@@ -35,8 +43,14 @@
 					<td class="table-col-descripcion">${item.marca_fabricante}</td>
 					<td class="table-col-descripcion">${item.modelo}</td>
 					<td class="table-col-precio">${item.cantidad_articulos}</td>
-					<td class="table-col-precio">${item.costo_unitario}</td>
-					<td class="table-col-custom"><a href="#" name="item-remove" data-jobItemId="${item.id_articulos}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a></td>
+					<td class="table-col-precio">$ ${item.costo_unitario}</td>
+					<g:if test="${modal == false}">
+					      <td class="table-col-custom">
+					          <center>
+					            <a href="#" name="item-remove" data-jobItemId="${item.id_articulos}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a>
+					          </center>
+					      </td>
+					</g:if>
 				</tr>
 			</g:each>
 
@@ -45,7 +59,7 @@
 	</tbody>
 
 </table>
-
+</center>
 <script type="text/javascript">
   registerItemsFunctions(${jobId});
 </script>
