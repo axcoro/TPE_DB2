@@ -59,7 +59,7 @@ class AjaxController {
 	}
 
 	def getItemsForm() {
-
-		render(view:"getItemsForm", model:[jobId:params.jobId])
+		def providers = sqlService.getProviders()
+		render(view:"getItemsForm", model:[jobId:params.jobId, providers: providers])
 	}
 }

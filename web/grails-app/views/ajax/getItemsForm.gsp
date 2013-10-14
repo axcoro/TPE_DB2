@@ -6,7 +6,9 @@
 			<label class="control-label" for="proveedor">Proveedor</label>
 			<div class="controls">
 				<select id="proveedor" name="proveedor" class="input-large">
-					<option value="1">Phillips</option>
+					<g:each var="provider" in="${providers}">
+						<option value="${provider.id_proveedores}">${provider.razon_social}</option>
+					</g:each>
 				</select>
 			</div>
 		</div>

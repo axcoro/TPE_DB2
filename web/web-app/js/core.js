@@ -167,36 +167,39 @@ $("#crateNext").on('click', function() {
 		success: function(data) {
 
 			activateStep(nextStep());
-
-			var content = "";
-
-			content += "<div class=\"span12\"><div class=\"row-fluid\"><div class=\"span4\">";
+			var divContenedor = $('<div/>', {class: 'span12'});
+			var divRow = $('<div/>', {class: 'row-fluid'});
+			var divFormulario = $('<div/>', {class: 'span4'});
+			var divListado = $('<div/>', {
+			    class: 'span8',
+			    style :'margin-left: 0px; padding-left: 50px;'
+			});
 			
 			$.ajax("/getItemsForm?jobId="+data, {
 				async: false,
-				success: function(data2) { 
-					content += data2;
+				success: function(d1) { 
+					divFormulario.html(d1);
 				},
 				error: function() {
 					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
 				}
 			});
 
-			content += "</div>&nbsp;&nbsp;&nbsp;&nbsp;<div class=\"span7\">";
-
 			$.ajax("/itemsByJob?jobId="+data, {
 				async: false,
-				success: function(data3) { 
-					content += data3;
+				success: function(d2) { 
+					divListado.html(d2);
 				},
-				error: function(data3) {
+				error: function() {
 					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
 				}
 			});
 
-			content += "</div></div></div>";
+			divRow.append(divFormulario);
+			divRow.append(divListado);
+			divContenedor.append(divRow);
 
-			$("#createFormContent").html(content);
+			$("#createFormContent").html(divContenedor);
 			
 		},
 		error: function(data) {
