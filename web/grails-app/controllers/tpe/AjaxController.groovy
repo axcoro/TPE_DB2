@@ -77,15 +77,15 @@ class AjaxController {
 	}
 
 	def getMembersForm() {
-		println "----- getMembersForm ---- params.copId = ${params.copId}  -------------------------"
+
 		render(view:"getMembersForm", model:[copId:params.copId])
 	}
 
 	def getMembersByProvider() {
 
-		def membersByProvider = sqlService.getMembersByProvider(params.copId)
+		def membersByProvider = sqlService.getMembersByProvider(params.providerId)
 
-		render(view:"getMembersByProvider", model:[copId:params.copId, membersByProvider: membersByProvider])
+		render(view:"getMembersByProvider", model:[providerId:params.providerId, membersByProvider: membersByProvider])
 	}
 
 	def createMember() {

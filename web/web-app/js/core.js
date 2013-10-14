@@ -53,9 +53,31 @@ function activateStep(step, suffix, action){
 			$("#"+action+"Next").addClass('hide');
 			$("#"+action+"Reset").addClass('hide');
 			$("#"+action+"Cancel").html('Finalizar');
+			$("#"+action+"Cancel").removeClass('btn-danger');
+			$("#"+action+"Cancel").addClass('btn-success');
         }
     }
 }
+ 
+$("[name='membersByProvider']").on('click', function(){
+
+	clearAlert();
+	$("#membersByProviderModalContent").html("");
+
+	var providerId = $(this).attr("data-providerId");
+
+	$.ajax("/getMembersByProvider?providerId="+providerId, {
+
+		success: function(data) { 
+				$("#membersByProviderModalContent").html(data);
+				$("#membersByProviderModal").modal("show");
+		},
+		error: function(data) {
+
+			showAlert("No se pudieron obtener los integrantes.", "alert-error");
+		}
+	});
+});
 
 $("[name='itemsByJob']").on('click', function(){
 
@@ -344,8 +366,11 @@ function registerItemsFunctions(jobId) {
 }
 
 function registerMembersFunctions(copId) {
-    
-    /*  TODO: implementar con data-providerMemberId
+
+    /*  
+	revisarrrrr providerId
+
+    TODO: implementar con data-providerMemberId
 
     $("[name='item-remove']").off('click');
     $("[name='item-remove']").on('click', function() {
@@ -362,6 +387,10 @@ function registerMembersFunctions(copId) {
 
     });*/
 }
+
+$('#deleteModal, #createFormModal, #editFormModal').on('hide', function () {
+	location.reload();
+})
 
 $(document).ready(function() {
 

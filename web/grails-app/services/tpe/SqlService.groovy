@@ -162,9 +162,9 @@ class SqlService {
 		return result
 	}
 
-	def getMembersByProvider(copId) {
+	def getMembersByProvider(providerId) {
 
-		return getRows("{call LED_listarIntegrantesPorProveedor(${copId})}")
+		return getRows("{call LED_listarIntegrantesPorProveedor(${providerId})}")
 	}
 
 	def createMember(params) {

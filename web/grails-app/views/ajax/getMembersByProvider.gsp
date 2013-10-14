@@ -41,6 +41,6 @@
 </table>
 
 <script type="text/javascript">
-  registerMembersFunctions(${copId});
+  registerMembersFunctions(${providerId});
 </script>
 </div>

@@ -23,6 +23,9 @@
 					<th class="table-col-tel"><center>Tel. principal</center></th>
 					<th class="table-col-email"><center>Correo el. principal</center></th>
 					<th class="table-col-url"><center>Sitio web</center></th>
+					<g:if test="${copType == 0}">
+						<th class="table-col-custom"><center>Integrantes</center></th>
+					</g:if>
 					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
 			</thead> 
@@ -39,6 +42,11 @@
 						<td class="table-col-tel">${cop.telefono_principal}</td>
 						<td class="table-col-email">${cop.correo_electronico_principal}</td>
 						<td class="table-col-url">${cop.sitio_web}</td>
+
+						<g:if test="${copType == 0}">
+							<td class="table-col-custom"><a name="membersByProvider" data-providerId="${cop.id_proveedores}">Ver</a></td>
+						</g:if>
+
 						<td class="table-col-custom">
 							<div class="btn-group">
 								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
@@ -57,6 +65,22 @@
 
 	<%-- Modals --%>
 
+	<div id="membersByProviderModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div class="modal-header">
+			<h3>Integrantes</h3>
+		</div>
+		<div id="membersByProviderModalContent" class="modal-body">
+			<%-- Content --%>
+		</div>
+		<div class="modal-footer">
+			<div class="control-group">
+				<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+				Cerrar
+				</button>
+			</div>
+		</div>
+	</div>
+
 	<div id="deleteModal" class="modal hide fade modal-small" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 		<div class="modal-header">
 			<h3>Esta acción requiere confirmación</h3>
@@ -72,7 +96,6 @@
 		</div>
 	</div>
 
-	<%-- TODO: esto puedo llevarlo al layout, ver si se reutiliza este modal y el js en jobs --%>
 	<div id="createFormModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -116,7 +139,7 @@
 		    <a href="#">Datos del Trabajo</a>
 		  </li>
 		  <li class="disabled" name="stepEdit" id="step2Edit">
-		    <a href="#">Articulos del Trabajo</a>
+		    <a href="#">Artículos del Trabajo</a>
 		  </li>
 		</ul>
 		<div id="editFormContent">
