@@ -70,10 +70,8 @@ $("[name='itemsByJob']").on('click', function(){
 	$.ajax("/itemsByJob?jobId="+jobId, {
 
 		success: function(data) { 
-
 				$("#itemsByJobModalContent").html(data);
 				$("#itemsByJobModal").modal("show");
-			}
 		},
 		error: function(data) {
 
