@@ -151,12 +151,21 @@
 			</div>
 		</div>
 
-		<div id="editFormModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div id="editFormModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3>Editar Trabajo</h3>
 			</div>
-			<div id="editFormContent">
+
+			<ul class="nav nav-tabs">
+			  <li class="active" name="stepEdit" id="step1Edit">
+			    <a href="#">Datos del Trabajo</a>
+			  </li>
+			  <li class="disabled" name="stepEdit" id="step2Edit">
+			    <a href="#">Articulos del Trabajo</a>
+			  </li>
+			</ul>
+			<div id="editFormContent" class="row-fluid">
 				<%-- Content --%>
 			</div>
 			<div class="modal-footer">

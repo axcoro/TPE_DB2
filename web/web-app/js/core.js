@@ -13,7 +13,8 @@ function showAlert(msg, cls)
 {
     if(timerActive) // si hay un timer activo previo, borrarlo
         clearTimeout(timerActive);
-    
+       
+    console.log(msg);
     $("#notifications").html(msg);
     if(!cls)
         cls = '';
@@ -27,24 +28,31 @@ function showAlert(msg, cls)
     }, 3000);
 }
 
-function nextStep(){
-    var el = $("[name='step'].active").next();
+function nextStep(suffix){
+    if(!suffix)
+        suffix = "";
+    var el = $("[name='step"+suffix+"'].active").next();
     return el;
 }
 
-function activateStep(step){
-
+function activateStep(step, suffix, action){
+    if(!suffix)
+        suffix = "";
+    
+    if(!action)
+        action = "create";
+    
     if (step.length > 0) {
         var id = step[0].id;
         // activo tabs
-        $("[name='step']").removeClass('active').addClass('disabled');
+        $("[name='step"+suffix+"']").removeClass('active').addClass('disabled');
         $('#' + id).removeClass('disabled').addClass('active');
 
-        if (id === "step2"){
-			$("#createFormModal").removeClass('modal-medium').addClass('modal-extra-large');
-			$("#createNext").addClass('hide');
-			$("#createReset").addClass('hide');
-			$("#createCancel").html('Finalizar');
+        if (id === "step2" + suffix){
+			$("#"+action+"FormModal").removeClass('modal-medium').addClass('modal-extra-large');
+			$("#"+action+"Next").addClass('hide');
+			$("#"+action+"Reset").addClass('hide');
+			$("#"+action+"Cancel").html('Finalizar');
         }
     }
 }
@@ -176,7 +184,7 @@ $("#createNext").on('click', function() {
 			    style :'max-width: 440px; margin-right: 10px;'
 			});
 			var divListado = $('<div/>', {
-			    id: 'divItemsByJob',
+			    id: 'divItemsByJobCreate',
 			    class: 'span7',
 			    style :'margin-left: 0px; padding-left: 0px;'
 			});
@@ -186,7 +194,7 @@ $("#createNext").on('click', function() {
 				success: function(d1) { 
 					var form = $(d1);
 					divFormulario.html(form);
-					interceptSubmit(form);
+					interceptSubmit(form, divFormulario.html(), 'divItemsByJobCreate');
 				},
 				error: function() {
 					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
@@ -199,7 +207,7 @@ $("#createNext").on('click', function() {
 					divListado.html(d2);
 				},
 				error: function() {
-					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+					showAlert("Ocurió un error al intentar recuperar el listado de Articulos", "alert alert-error");
 				}
 			});
 
@@ -217,16 +225,71 @@ $("#createNext").on('click', function() {
 	});
 });
 
-$("#updNext").on('click', function() {
-    activateStep(nextStep());
+$("#editNext").on('click', function() {
+
+    var queryString = $("#formEditJob").serialize();
+
+    $.ajax("/editJob?"+queryString, {
+
+		success: function(data) {
+			var stepSuffix = "Edit";
+			var action = "edit";
+			activateStep(nextStep(stepSuffix), stepSuffix, action);
+			var divContenedor = $('<div/>', {class: 'span12'});
+			var divRow = $('<div/>', {class: 'row-fluid'});
+			var divFormulario = $('<div/>', {
+			    class: 'span5',
+			    style :'max-width: 440px; margin-right: 10px;'
+			});
+			var divListado = $('<div/>', {
+			    id: 'divItemsByJobEdit',
+			    class: 'span7',
+			    style :'margin-left: 0px; padding-left: 0px;'
+			});
+			
+			$.ajax("/getItemsForm?jobId="+data, {
+				async: false,
+				success: function(d1) { 
+					var form = $(d1);
+					divFormulario.html(form);
+					interceptSubmit(form, divFormulario.html(), 'divItemsByJobEdit');
+				},
+				error: function() {
+					showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+				}
+			});
+
+			$.ajax("/itemsByJob?jobId="+data, {
+				async: false,
+				success: function(d2) { 
+					divListado.html(d2);
+				},
+				error: function() {
+					showAlert("Ocurió un error al intentar recuperar el listado de Articulos", "alert alert-error");
+				}
+			});
+
+			divRow.append(divFormulario);
+			divRow.append(divListado);
+			divContenedor.append(divRow);
+
+			$("#editFormContent").html(divContenedor);
+			
+		},
+		error: function(data) {
+
+			showAlert("Ocurió un error al intentar recuperar el formulario de alta.", "alert alert-error");
+		}
+	});
 });
 
-function interceptSubmit(form){
+function interceptSubmit(form, html, itemsContainer){
     var el = form.find("#itemsForm"); 
     el.submit(function() {
         $.post($("#itemsForm").attr("action"), $("#itemsForm").serialize(), function(data){
-            // <--- limpiar el form!!
-            $('#divItemsByJob').html(data);
+            $('#'+itemsContainer).html(data);
+            var h = $(html).find('#itemsForm').html();
+            el.html(h);
         });
         return false;
     });

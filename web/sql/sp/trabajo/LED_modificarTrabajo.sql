@@ -14,12 +14,10 @@ CREATE PROCEDURE `LED_modificarTrabajo`(
 */
 _id INT,
 _descripcion VARCHAR(45),
-_fecha_aprobacion_presupuesto DATETIME,
-_fecha_inicio_obra DATETIME,
-_fecha_fin_obra DATETIME,
-_precio_total FLOAT,
-_precio_mano_obra FLOAT,
-_precio_articulos FLOAT
+_fecha_aprobacion_presupuesto DATE,
+_fecha_inicio_obra DATE,
+_fecha_fin_obra DATE,
+_precio_mano_obra FLOAT
 )
 BEGIN
 
@@ -28,9 +26,7 @@ UPDATE led_trabajos
         fecha_aprobacion_presupuesto = _fecha_aprobacion_presupuesto,
         fecha_inicio_obra = _fecha_inicio_obra,
         fecha_fin_obra = _fecha_fin_obra,
-        precio_total = _precio_total,
-        precio_mano_obra = _precio_mano_obra,
-        precio_articulos = _precio_articulos
+        precio_mano_obra = _precio_mano_obra
 WHERE
         id_trabajos = _id;
 
