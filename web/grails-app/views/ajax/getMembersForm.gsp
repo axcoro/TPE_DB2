@@ -1,7 +1,7 @@
 <div class="modal-body">
 	<form id="membersForm" method="post" action="/createMember" class="form-horizontal">
 		<fieldset>
-			<input type="hidden" id="copId" name="copId" value="${copId}"/>
+			<input type="hidden" id="providerId" name="providerId" value="${providerId}"/>
 
 			<div class="control-group">
 				<label class="control-label" for="nombre">Nombre</label>
@@ -18,7 +18,7 @@
 			<div class="control-group">
 				<label class="control-label" for="telefono">Teléfono Principal</label>
 				<div class="controls">
-					<input id="telefono" name="telefono" type="tel" placeholder="2664XXXXXX" class="input-medium" required="">
+					<input id="telefono" name="telefono" type="tel" pattern="[0-9]*" placeholder="2664XXXXXX" class="input-medium" required="">
 				</div>
 			</div>
 			<div class="control-group">

@@ -15,6 +15,10 @@ div {
     top: -70px;
 }
 
+#membersByProviderModalContent{
+    padding-top: 25px;
+}
+
 .table-container {
     overflow: auto;
 }
@@ -122,6 +126,15 @@ div {
 .table-col-url{
     min-width: 150px;
     max-width: 150px;
+}
+
+.table-col-integrantes{
+    min-width: 20px;
+    max-width: 20px;
+}
+
+.table-col-integrantes a{
+    cursor: pointer;
 }
 
 #integrantes {

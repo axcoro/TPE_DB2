@@ -135,7 +135,7 @@ class SqlService {
 
 	def createItem(params) {
 		def resultado = getRows("{call LED_crearArticulo('${params.codigo_interno}', '${params.descripcion}', '${params.marca_fabricante}', '${params.modelo}', '${params.observaciones}')}")[0]
-		return getRows("{call LED_asociarArticuloTrabajo(${resultado.id},${params.jobId},'${params.providerId}','${params.codigo_catalogo_proveedor}',${params.cantidad_articulos},'${params.costo_unitario}')}")[0]
+		return getRows("{call LED_asociarArticuloTrabajo(${resultado.id},${params.jobId},'${params.providerId}','${params.codigo_proveedor}',${params.cantidad_articulos},'${params.costo_unitario}')}")[0]
 	}
 
 	def editCop(cop) {
@@ -178,6 +178,6 @@ class SqlService {
 
 	def createMember(params) {
 
-		return getRows("{call LED_crearIntegrante('${params.nombre}', '${params.area}', '${params.telefono}', '${params.correo_electronico}', ${params.copId})}")[0] 
+		return getRows("{call LED_crearIntegrante('${params.nombre}', '${params.area}', '${params.telefono}', '${params.correo_electronico}', ${params.providerId})}")[0] 
 	}
 }

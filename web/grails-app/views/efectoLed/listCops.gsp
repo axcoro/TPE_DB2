@@ -24,7 +24,7 @@
 					<th class="table-col-email"><center>Correo el. principal</center></th>
 					<th class="table-col-url"><center>Sitio web</center></th>
 					<g:if test="${copType == 0}">
-						<th class="table-col-custom"><center>Integrantes</center></th>
+						<th class="table-col-integrantes"><center>Int.</center></th>
 					</g:if>
 					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
@@ -44,7 +44,7 @@
 						<td class="table-col-url">${cop.sitio_web}</td>
 
 						<g:if test="${copType == 0}">
-							<td class="table-col-custom"><a name="membersByProvider" data-providerId="${cop.id_proveedores}">Ver</a></td>
+							<td class="table-col-integrantes"><a name="membersByProvider" data-providerId="${cop.id_proveedores}">Ver</a></td>
 						</g:if>
 
 						<td class="table-col-custom">
@@ -69,7 +69,7 @@
 		<div class="modal-header">
 			<h3>Integrantes</h3>
 		</div>
-		<div id="membersByProviderModalContent" class="modal-body">
+		<div id="membersByProviderModalContent">
 			<%-- Content --%>
 		</div>
 		<div class="modal-footer">

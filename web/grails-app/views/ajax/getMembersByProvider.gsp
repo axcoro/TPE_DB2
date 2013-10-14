@@ -1,13 +1,14 @@
-<div id="listMembersContainer">
+<center>
+<div id="listMembersContainer" style="max-width: 650px;">
   <table class="table table-hover table-bordered table table-condensed table-header-fix">
 
 	<thead>
 		<tr>
-			<th class="table-col-codigo">Nombre</th>
-			<th class="table-col-descripcion">Area</th>
-			<th class="table-col-descripcion">Teléfono Principal</th>
-			<th class="table-col-descripcion">Correo Electrónico</th>
-			<th class="table-col-descripcion">Borrar</th>
+			<th class="table-col-codigo"><center>Nombre</center></th>
+			<th class="table-col-descripcion"><center>Area</center></th>
+			<th class="table-col-descripcion"><center>Teléfono P.</center></th>
+			<th class="table-col-descripcion"><center>Correo El.</center></th>
+			<th class="table-col-descripcion"><center>Borrar</center></th>
 		</tr>
 	</thead>
 
@@ -30,7 +31,11 @@
 					<td class="table-col-descripcion">${member.area}</td>
 					<td class="table-col-descripcion">${member.telefono}</td>
 					<td class="table-col-descripcion">${member.correo_electronico}</td>
-					<td class="table-col-descripcion"><a href="#" name="member-remove" data-memberId="${member.id_integrantes}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a></td>
+					<td class="table-col-descripcion">
+					    <center>
+					      <a href="#" name="member-remove" data-memberId="${member.id_integrantes}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a>
+					    </center>
+					</td>
 				</tr>
 			</g:each>
 
@@ -44,3 +49,4 @@
   registerMembersFunctions(${providerId});
 </script>
 </div>
+</center>

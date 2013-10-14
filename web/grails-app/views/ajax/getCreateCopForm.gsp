@@ -30,7 +30,7 @@
             <div class="control-group">
                 <label class="control-label" for="telefono_principal">Teléfono Principal</label>
                 <div class="controls">
-                    <input id="telefono_principal" name="telefono_principal" type="tel" placeholder="2664XXXXXX" class="input-large" required="">
+                    <input id="telefono_principal" name="telefono_principal" type="tel" pattern="[0-9]*" placeholder="2664XXXXXX" class="input-large" required="">
                 </div>
             </div>
             <div class="control-group">

@@ -194,6 +194,15 @@ $("[name='deleteJob']").on('click', function() {
 
 function magicLogic(map, _that) {
     var mapping = ($(_that).attr("data-copType") === "0") ? map.cop : map.job;
+    
+    var form = $(mapping.formSelector);
+            
+    form.submit(function() {return false;}); // ignorar el submit comun
+    
+    var btn = $("[name='submitBtn']"); // forzar la validacion estandar
+    btn[0].click();
+    
+    if(form[0].checkValidity()){
 
     var queryString = $(mapping.formSelector).serialize();
 
@@ -248,6 +257,7 @@ function magicLogic(map, _that) {
 			showAlert("Ocurió un error al intentar recuperar el formulario", "alert alert-error");
 		}
 	});
+    }
 };
 
 $("#createNext").on('click', function() {
@@ -267,8 +277,8 @@ $("#createNext").on('click', function() {
         cop: {
             "formSelector": "#formCreateCop",
             "createUri": "/createCop?",
-            "formUri": "/getMembersForm?copId=",
-            "listUri": "/getMembersByProvider?copId=",
+            "formUri": "/getMembersForm?providerId=",
+            "listUri": "/getMembersByProvider?providerId=",
             "formContentSelector": "#createFormContent",
             "divItems": "divItemsByCopCreate",
             "divItemsSelector": "#divItemsByCopCreate",
@@ -297,8 +307,8 @@ $("#editNext").on('click', function() {
         cop: {
             "formSelector": "#formEditCop",
             "createUri": "/editCop?",
-            "formUri": "/getMembersForm?copId=",
-            "listUri": "/getMembersByProvider?copId=",
+            "formUri": "/getMembersForm?providerId=",
+            "listUri": "/getMembersByProvider?providerId=",
             "formContentSelector": "#editFormContent",
             "divItems": "divItemsByCopEdit",
             "divItemsSelector": "#divItemsByCopEdit",
@@ -384,7 +394,7 @@ function registerMembersFunctions(providerId) {
 
 $('#deleteModal, #createFormModal, #editFormModal').on('hide', function () {
 	location.reload();
-})
+});
 
 $(document).ready(function() {
 

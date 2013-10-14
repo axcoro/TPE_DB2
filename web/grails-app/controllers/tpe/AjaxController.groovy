@@ -85,7 +85,7 @@ class AjaxController {
 
 	def getMembersForm() {
 
-		render(view:"getMembersForm", model:[copId:params.copId])
+		render(view:"getMembersForm", model:[providerId:params.providerId])
 	}
 
 	def getMembersByProvider() {

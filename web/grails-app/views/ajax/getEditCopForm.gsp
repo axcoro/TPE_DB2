@@ -31,7 +31,7 @@
       <div class="control-group">
         <label class="control-label" for="telefono_principal">Teléfono Principal</label>
         <div class="controls">
-          <input id="telefono_principal" name="telefono_principal" value="${cop.telefono_principal}" type="tel" placeholder="Ej: 2664XXXXXX" class="input-large" required="">
+          <input id="telefono_principal" name="telefono_principal" value="${cop.telefono_principal}" type="tel" pattern="[0-9]*" placeholder="Ej: 2664XXXXXX" class="input-large" required="">
         </div>
       </div>
       <div class="control-group">
