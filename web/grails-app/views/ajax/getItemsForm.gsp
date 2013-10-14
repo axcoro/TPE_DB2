@@ -37,7 +37,7 @@
 		              </div>
 
 		              <div class="control-group">
-			              <label class="control-label" for="descripcion">Descripcion</label>
+			              <label class="control-label" for="descripcion">Descripción</label>
 			              <div class="controls">
 				              <textarea id="descripcion" name="descripcion"></textarea>
 			              </div>
@@ -48,7 +48,7 @@
 			              <div class="controls">
 				              <input type="number" step="any" min="0" id="costo_unitario" required="" name="costo_unitario" value='0.0'>
 			              </div>
-			              <label class="control-label" for="cantidad_articulos">Cantidad Articulos</label>
+			              <label class="control-label" for="cantidad_articulos">Cantidad Artículos</label>
 			              <div class="controls">
 				              <input type="number" step="1" min="0" id="cantidad_articulos" required="" name="cantidad_articulos" value='0'>
 			              </div>

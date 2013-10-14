@@ -23,7 +23,7 @@
 
 			<div id="header" class="row-fluid">
 				<div class="page-header">
-				  <h1>&nbsp;&nbsp;&nbsp;Efecto LED <small>Sistema de gestión de trabajos</small></h1>
+				  <h1>&nbsp;&nbsp;&nbsp;Efecto LED <small>Gestión de trabajos</small></h1>
 				</div>
 			</div>
 			<br>
@@ -50,14 +50,14 @@
 			<div id="footer" class="row-fluid">
 				<div class="span6">
 					<div id="materia">
-						<h5>Trabajo Practico Especial</h5>
+						<h5>Trabajo Práctico Especial</h5>
 						<h5>Base de Datos 2, 2013</h5>
 					</div>
 				</div>
 				<div class="span6">
 					<div id="integrantes">
 						<h5>Coronel, Axel Ariel</h5>
-						<h5>Perez, Federico Sebastian</h5>
+						<h5>Perez, Federico Sebastián</h5>
 					</div>
 				</div>
 			</div>

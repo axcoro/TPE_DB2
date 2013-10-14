@@ -35,13 +35,13 @@
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="correo_electronico_principal">Correo Electroníco</label>
+        <label class="control-label" for="correo_electronico_principal">Correo Electrónico</label>
         <div class="controls">
           <input id="correo_electronico_principal" name="correo_electronico_principal" value="${cop.correo_electronico_principal}" type="email" placeholder="Ej: contacto&#64;efecto-led.com" class="input-large">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="sitio_web">Pagina Web</label>
+        <label class="control-label" for="sitio_web">Sitio Web</label>
         <div class="controls">
           <input id="sitio_web" name="sitio_web" type="url" value="${cop.sitio_web}" placeholder="http://www.unsl.edu.ar" class="input-large">
         </div>

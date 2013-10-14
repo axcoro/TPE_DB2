@@ -8,7 +8,7 @@
 			<th class="table-col-descripcion">Descripción</th>
 			<th class="table-col-descripcion">Marca / Fabricante</th>
 			<th class="table-col-descripcion">Modelo</th>
-			<th class="table-col-precio">Cantidad Articulos</th>
+			<th class="table-col-precio">Cantidad Artiíulos</th>
 			<th class="table-col-precio">Costo Unitario</th>
 			<th class="table-col-custom">Borrar</th>
 		</tr>

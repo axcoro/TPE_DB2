@@ -4,7 +4,7 @@
 	<thead>
 		<tr>
 			<th class="table-col-codigo">Nombre</th>
-			<th class="table-col-descripcion">Area</th>
+			<th class="table-col-descripcion">Área</th>
 			<th class="table-col-descripcion">Teléfono Principal</th>
 			<th class="table-col-descripcion">Correo Electrónico</th>
 			<th class="table-col-descripcion">Borrar</th>

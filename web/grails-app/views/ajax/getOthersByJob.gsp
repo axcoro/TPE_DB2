@@ -2,15 +2,15 @@
 
 	<thead>
 		<tr>
-			<th>CUIT / CUIL</th>
-			<th>Razón social</th>
+			<th>CUIL/CUIT</th>
+			<th>Razón Social</th>
 			<th>C. Prestación</th>
-			<th>Desc. trabajo</th>
+			<th>Desc. Trabajo</th>
 			<th>Dirección</th>
-			<th>Código postal</th>
-			<th>Tel. principal</th>
-			<th>Correo el. principal</th>
-			<th>Sitio web</th>
+			<th>Código Postal</th>
+			<th>Tel. Principal</th>
+			<th>Correo Electrónico</th>
+			<th>Sitio Web</th>
 		</tr>
 	</thead>
 

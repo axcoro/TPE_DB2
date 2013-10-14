@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="sitio_web">Pagina Web</label>
+                <label class="control-label" for="sitio_web">Sitio Web</label>
                 <div class="controls">
                     <input id="sitio_web" name="sitio_web" type="url" placeholder="http://www.unsl.edu.ar" value="http://" class="input-large">
                 </div>
