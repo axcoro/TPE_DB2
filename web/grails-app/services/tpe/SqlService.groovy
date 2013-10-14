@@ -13,7 +13,11 @@ class SqlService {
 
 		String query = storedProcedureCall;
 		
-		def sql = Sql.newInstance(dataSource)
+		println "-----------------------------"
+		println query
+		println "-----------------------------"
+		
+        		def sql = Sql.newInstance(dataSource)
 
 		List rows = sql.rows(query)
 
@@ -138,9 +142,20 @@ class SqlService {
 	
 	def editJob(job) {
 
-		def sql = Sql.newInstance(dataSource)
+		job.each { key, value -> 
+			if ( (key ==~ "fecha_.*") && (value == "") ){
+				job[key] = null
+			}
+			else if ( !(key in ["jobId", "clientId", "precio_mano_obra"]) ){
+				job[key] = "'${value}'"
+			}
+		}
 
-		int result = sql.call("{call LED_modificarTrabajo('${job.jobId}', '${job.descripcion}', '${job.fecha_creacion}', '${job.fecha_aprobacion_presupuesto}', '${job.fecha_inicio_obra}', '${job.fecha_fin_obra}', '${job.precio_total}', '${job.precio_mano_obra}', '${job.precio_articulos}'}")
+		def sql = Sql.newInstance(dataSource)
+		
+		String query = "{call LED_modificarTrabajo(${job.jobId}, ${job.descripcion}, ${job.fecha_aprobacion_presupuesto}, ${job.fecha_inicio_obra}, ${job.fecha_fin_obra}, ${job.precio_mano_obra})}"
+        
+		int result = sql.call(query)
 
 		sql.close()
 

@@ -47,9 +47,9 @@ class UrlMappings {
 			controller = "efectoLed"
 			action = "editCop"
 		}
-		"/editar-trabajo" {
+		"/editJob" {
 
-			controller = "efectoLed"
+			controller = "ajax"
 			action = "editJob"
 		}
 		"/itemsByJob" {

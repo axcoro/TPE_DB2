@@ -45,9 +45,9 @@ class AjaxController {
 		    render(view:"getEditCopForm", model: [cop : copData])
 		}
 		else {
-
+		    def clients = sqlService.getClients()
 		    def jobData = sqlService.getJob(params.jobId)
-		    render(view:"getEditJobForm", model: [job : jobData])
+		    render(view:"getEditJobForm", model: [job : jobData, clients: clients])
 		}
 	}
 
@@ -86,5 +86,11 @@ class AjaxController {
 		def membersByProvider = sqlService.getMembersByProvider(params.copId)
 
 		render(view:"getMembersByProvider", model:[copId:params.copId, membersByProvider: membersByProvider])
+	}
+
+    def editJob() {
+		sqlService.editJob(params)
+		
+		render "${params.jobId}"
 	}
 }
