@@ -45,7 +45,7 @@
 
 						<tr data-jobId="${job.id_trabajos}">
 
-							<td class="table-col-nombre"><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
+							<td class="table-col-nombre">${job.razon_social}</td>
 							<td class="table-col-descripcion">${job.descripcion}</td>
 							<td class="table-col-fecha">${job.fecha_creacion}</td>
 							<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto}</td>
