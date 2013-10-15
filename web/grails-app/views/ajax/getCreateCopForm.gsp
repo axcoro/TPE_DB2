@@ -18,7 +18,7 @@
             <div class="control-group">
                 <label class="control-label" for="direccion">Dirección</label>
                 <div class="controls">
-                    <input id="direccion" name="direccion" type="text" placeholder="Av. Siempre Viva 123" class="input-large" required="">
+                    <input id="direccion" name="direccion" type="text" placeholder="Ejercito de Los Andes 950" class="input-large" required="">
                 </div>
             </div>
             <div class="control-group">

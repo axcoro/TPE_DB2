@@ -47,10 +47,10 @@
 
 							<td class="table-col-nombre">${job.razon_social}</td>
 							<td class="table-col-descripcion">${job.descripcion}</td>
-							<td class="table-col-fecha">${job.fecha_creacion}</td>
-							<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto}</td>
-							<td class="table-col-fecha">${job.fecha_inicio_obra}</td>
-							<td class="table-col-fecha">${job.fecha_fin_obra}</td>
+							<td class="table-col-fecha">${job.fecha_creacion == null ? 'Sin Fecha' : job.fecha_creacion}</td>
+							<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto == null ? 'Sin Fecha' : job.fecha_aprobacion_presupuesto}</td>
+							<td class="table-col-fecha">${job.fecha_inicio_obra == null ? 'Sin Fecha' : job.fecha_inicio_obra}</td>
+							<td class="table-col-fecha">${job.fecha_fin_obra == null ? 'Sin Fecha' : job.fecha_fin_obra}</td>
 							<td class="table-col-precio">$ ${job.precio_prestaciones}</td>
 							<td class="table-col-precio">$ ${job.precio_mano_obra}</td>
 							<td class="table-col-precio">$ ${job.precio_articulos}</td>

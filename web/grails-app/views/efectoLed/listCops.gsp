@@ -48,8 +48,8 @@
 							<td class="table-col-direccion">${cop.direccion}</td>
 							<td class="table-col-codigo">${cop.codigo_postal}</td>
 							<td class="table-col-tel">${cop.telefono_principal}</td>
-							<td class="table-col-email">${cop.correo_electronico_principal}</td>
-							<td class="table-col-url">${cop.sitio_web}</td>
+							<td class="table-col-email"><a href="mailto:${cop.correo_electronico_principal}">${cop.correo_electronico_principal}</a></td>
+							<td class="table-col-url"><a target="_blank" href="${cop.sitio_web}">${cop.sitio_web}</a></td>
 
 							<g:if test="${copType == 0}">
 								<td class="table-col-integrantes"><a name="membersByProvider" data-providerId="${cop.id_proveedores}">Ver</a></td>
