@@ -7,7 +7,7 @@ CREATE
 	ON `led_trabajos`
 	FOR EACH ROW BEGIN
 
-		SET NEW.precio_total = NEW.precio_mano_obra + NEW.precio_articulos;
+		SET NEW.precio_total = NEW.precio_mano_obra + NEW.precio_articulos + NEW.precio_prestaciones;
 
 	END$$
 DELIMITER ;
