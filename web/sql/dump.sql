@@ -90,11 +90,11 @@ CREATE TABLE IF NOT EXISTS `led_datos` (
 -- Volcando datos para la tabla efecto_led.led_datos: ~24 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_datos` DISABLE KEYS */;
 INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`, `estado`) VALUES
-	(1, '1111111111', 'Razon Social cliente1', 'Dirección cliente1', '1', '2664111111', 'emailcliente1@tpe.com', 'http://cliente1.com', 1),
+	(1, '1111111111', 'Razon Social cliente1', 'Dirección cliente1', '1', '2664111111', '', 'http://cliente1.com', 1),
 	(2, '2222222222', 'Razon Social cliente2', 'Dirección cliente2', '2', '2664222222', 'emailcliente2@tpe.com', 'http://cliente2.com', 1),
 	(3, '3333333333', 'Razon Social cliente3', 'Dirección cliente3', '3', '2664333333', 'emailcliente3@tpe.com', 'http://cliente3.com', 1),
 	(4, '4444444444', 'Razon Social cliente4', 'Dirección cliente4', '4', '2664444444', 'emailcliente4@tpe.com', 'http://cliente4.com', 1),
-	(5, '5555555555', 'Razon Social cliente5', 'Dirección cliente5', '5', '2664555555', 'emailcliente5@tpe.com', 'http://cliente5.com', 1),
+	(5, '5555555555', 'Razon Social cliente5', 'Dirección cliente5', '5', '2664555555', '', '', 1),
 	(6, '6666666666', 'Razon Social cliente6', 'Dirección cliente6', '6', '2664666666', 'emailcliente6@tpe.com', 'http://cliente6.com', 1),
 	(7, '7777777777', 'Razon Social cliente7', 'Dirección cliente7', '7', '2664777777', 'emailcliente7@tpe.com', 'http://cliente7.com', 1),
 	(8, '8888888888', 'Razon Social cliente8', 'Dirección cliente8', '8', '2664888888', 'emailcliente8@tpe.com', 'http://cliente8.com', 1),
