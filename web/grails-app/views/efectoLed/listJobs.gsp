@@ -75,19 +75,21 @@
 
 		<%-- Modals --%>
 
-        <div id="deleteModal" class="modal hide fade modal-small" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+        <div id="deleteModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
             <div class="modal-header">
                 <h3>Esta acción requiere confirmación</h3>
             </div>
             <div class="modal-body">
-                Eliminar este trabajo implica perder constancia de los artículos utilizados durante el mismo.
+            	¿Está seguro que desea eliminar este trabajo?
+				<br>
+				Esto implica que se perderá también constancia de los artículos utilizados durante el mismo.
             </div>
             <div class="modal-footer">
                 <div class="control-group">
-                    <button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
-                        Cancelar
+                    <button data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+                        No
                     </button>
-                    <a id="yesBtn" class="btn btn-success" data-uri="/eliminar-trabajo">Eliminar</a>
+                    <a id="yesBtnDel" class="btn btn-success" data-uri="/eliminar-trabajo">Si</a>
                 </div>
             </div>
         </div>
@@ -101,7 +103,7 @@
 			</div>
 			<div class="modal-footer">
 				<div class="control-group">
-					<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+					<button data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
 					Cerrar
 					</button>
 				</div>
@@ -117,7 +119,7 @@
 			</div>
 			<div class="modal-footer">
 				<div class="control-group">
-					<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+					<button data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
 					Cerrar
 					</button>
 				</div>

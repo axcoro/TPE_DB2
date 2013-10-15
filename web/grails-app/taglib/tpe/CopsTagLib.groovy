@@ -17,7 +17,7 @@ class CopsTagLib {
 
 		Map singularCop = [ 0:"proveedor", 1:"cliente", 2:"tercero" ]
 
-		String deleteLink = "<a id=\"yesBtn\" class=\"btn btn-success\" data-uri=\"/eliminar-${singularCop[attrs.copType]}?copType=${attrs.copType}\">"
+		String deleteLink = "<a id=\"yesBtnDel\" class=\"btn btn-success\" data-uri=\"/eliminar-${singularCop[attrs.copType]}?copType=${attrs.copType}\">"
 
 		out << deleteLink
 	}
@@ -26,7 +26,7 @@ class CopsTagLib {
 
 		Map singularCop = [ 0:"proveedor", 1:"cliente", 2:"tercero" ]
 
-		String createLink = "<a id=\"yesBtn\" class=\"btn btn-success\" data-uri=\"/crear-${singularCop[attrs.copType]}?copType=${attrs.copType}\">"
+		String createLink = "<a class=\"btn btn-success\" data-uri=\"/crear-${singularCop[attrs.copType]}?copType=${attrs.copType}\">"
 
 		out << createLink
 	}
