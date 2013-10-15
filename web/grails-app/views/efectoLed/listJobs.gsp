@@ -8,7 +8,7 @@
 	</head>
 
 	<body>
-	  <div class="container">
+	  <div class="container" style="margin-left: 30px;">
 
 		<div id="notifications"></div>
 
@@ -21,9 +21,10 @@
 					<th class="table-col-fecha"><center>F. Apr.</center></th>
 					<th class="table-col-fecha"><center>F. Ini. Obra</center></th>
 					<th class="table-col-fecha"><center>F. Fin Obra</center></th>
-					<th class="table-col-precio"><center>P. Total</center></th>
+					<th class="table-col-precio"><center>P. Pres.</center></th>
 					<th class="table-col-precio"><center>P. M. Ob.</center></th>
 					<th class="table-col-precio"><center>P. Art.</center></th>
+					<th class="table-col-precio"><center>P. Total</center></th>
 					<th class="table-col-custom"><center>Mas Info.</center></th>
 					<th class="table-col-custom"><center>Acciones</center></th>
 				</tr>
@@ -50,9 +51,10 @@
 							<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto}</td>
 							<td class="table-col-fecha">${job.fecha_inicio_obra}</td>
 							<td class="table-col-fecha">${job.fecha_fin_obra}</td>
-							<td class="table-col-precio">$ ${job.precio_total}</td>
+							<td class="table-col-precio">$ ${job.precio_prestaciones}</td>
 							<td class="table-col-precio">$ ${job.precio_mano_obra}</td>
 							<td class="table-col-precio">$ ${job.precio_articulos}</td>
+							<td class="table-col-precio">$ ${job.precio_total}</td>
 							<td class="table-col-custom">
 								<div class="btn-group">
 									<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
