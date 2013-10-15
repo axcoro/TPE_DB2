@@ -1,4 +1,4 @@
-<div class="modal-body">
+<div>
               <form id="itemsForm" method="post" action="/createItem" class="form-horizontal">
 	              <fieldset>
 		              <input type="hidden" id="jobId" name="jobId" value="${jobId}"/>
@@ -54,12 +54,8 @@
 			              </div>
 		              </div>
 
-		              <div class="control-group">
-			              <label class="control-label" for="observaciones">Observaciones</label>
-			              <div class="controls">
-				              <textarea id="observaciones" name="observaciones"></textarea>
-			              </div>
-		              </div>
+				       <input type="hidden" id="observaciones" name="observaciones" />
+
 			<div class="control-group">
 			  <div>
 			  	<center>
