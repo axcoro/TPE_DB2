@@ -27,8 +27,8 @@
       <div class="control-group">
         <div>
           <center>
-            <button id="memberReset" type="reset" name="reset" class="btn" onclick="document.forms['formOther'].reset();">Limpiar</button>
-            <button id="memberSubmit" type="submit" name="submit" class="btn btn-success">Guardar</button>
+            <button id="otherReset" type="reset" name="reset" class="btn">Limpiar</button>
+            <button id="otherSubmit" type="submit" name="submit" class="btn btn-success">Guardar</button>
           </center>
         </div>
       </div>

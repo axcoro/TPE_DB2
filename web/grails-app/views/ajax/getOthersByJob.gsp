@@ -1,17 +1,26 @@
+<center>
+<g:if test="${modal == false}">
+<div id="listOthersContainer" style="max-width: 890px;">
+</g:if>
+<g:else>
 <div id="listOthersContainer" style="max-width: 920px;">
-<table class="table table-hover table-bordered table table-condensed">
+</g:else>
+<table class="table table-hover table-bordered table table-condensed table-header-fix">
 
 	<thead>
 		<tr>
-			<th>CUIL/CUIT</th>
-			<th>Razón Social</th>
-			<th>C. Prestación</th>
-			<th>Desc. Trabajo</th>
-			<th>Dirección</th>
-			<th>C. Postal</th>
-			<th>Tel. Principal</th>
-			<th>Correo Electrónico</th>
-			<th>Sitio Web</th>
+			<th class="table-col-cuit"><center>CUIL/CUIT</center></th>
+			<th class="table-col-razon"><center>Razón Social</center></th>
+			<th class="table-col-precio"><center>C. Prestación</center></th>
+			<th class="table-col-descripcion"><center>Desc. Trabajo</center></th>
+			<th class="table-col-direccion"><center>Dirección</center></th>
+			<th class="table-col-codigo"><center>C. Postal</center></th>
+			<th class="table-col-tel"><center>Tel. Principal</center></th>
+			<th class="table-col-email"><center>Correo Electrónico</center></th>
+			<th class="table-col-url"><center>Sitio Web</center></th>
+			<g:if test="${modal == false}">
+			  <th class="table-col-custom"><center>Borrar</center></th>
+			</g:if>
 		</tr>
 	</thead>
 
@@ -20,7 +29,7 @@
 		<g:if test="${othersByJob == []}">
 
 			<tr>
-				<td colspan="9">
+				<td colspan="9" style="width: 2000px;">
 					Este trabajo no tiene terceros cargados.
 				</td>
 			</tr>
@@ -30,15 +39,22 @@
 
 				<g:each var="other" in="${othersByJob}">
 					<tr>
-						<td>${other.numero_cuil}</td>
-						<td>${other.razon_social}</td>
-						<td>$ ${other.costo_prestacion}</td>
-						<td>${other.descripcion_trabajo_realizado}</td>
-						<td>${other.direccion}</td>
-						<td>${other.codigo_postal}</td>
-						<td>${other.telefono_principal}</td>
-						<td>${other.correo_electronico_principal}</td>
-						<td>${other.sitio_web}</td>
+					  <td class="table-col-cuit">${other.numero_cuil}</td>
+						<td class="table-col-razon">${other.razon_social}</td>
+						<td class="table-col-precio">$ ${other.costo_prestacion}</td>
+						<td class="table-col-descripcion">${other.descripcion_trabajo_realizado}</td>
+						<td class="table-col-direccion">${other.direccion}</td>
+						<td class="table-col-codigo">${other.codigo_postal}</td>
+						<td class="table-col-tel">${other.telefono_principal}</td>
+						<td class="table-col-email">${other.correo_electronico_principal}</td>
+						<td class="table-col-url">${other.sitio_web}</td>
+						<g:if test="${modal == false}">
+						  <td class="table-col-custom">
+						  <center>
+						    <a href="#" name="other-remove" data-otherId="${other.id_terceros}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a>
+						  </center>
+						  </td>
+						</g:if>
 					</tr>
 				</g:each>
 
@@ -51,3 +67,4 @@
   registerOthersFunctions(${jobId});
 </script>
 </div>
+</center>

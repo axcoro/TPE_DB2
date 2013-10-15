@@ -110,7 +110,7 @@ $("[name='othersByJob']").on('click', function(){
 
 	var jobId = $(this).attr("data-jobId");
 
-	$.ajax("/othersByJob?jobId="+jobId, {
+	$.ajax("/othersByJob?modal=&jobId="+jobId, {
 
 		success: function(data) {
 
@@ -296,18 +296,42 @@ function magicLogic(map, _that) {
 		var form = $(d1);
 		divFormulario.html(form);
 		
-		var newHtml = "";
 		    $.ajax(mapping.formOthersUri + jobId, {
 		        async: false,
-		        success: function(dnew) {
-		            newHtml = dnew;
+		        success: function(d1) {
+		            var form = $(d1);
+		            divFormulario.html(form);
+
+		            var itemsContainer = mapping.divItemsSelector, formListSelector = mapping.formOther;
+		            
+		            var el = form.find(formListSelector);
+		            el.submit(function() {
+			$.post($(formListSelector).attr("action"), $(formListSelector).serialize(), function(data) {
+			    $(itemsContainer).html(data);
+			    $.ajax(mapping.formOthersUri + jobId, {
+			        async: false,
+			        success: function(h) {
+			            var h = $(h).find(formListSelector).html();
+			            el.html(h);
+			        },
+			        error: function() {
+			            showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
+			        }
+			    });
+			    
+			});
+			return false;
+		            });
+		            
+		            
 		        },
 		        error: function() {
 		            showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
 		        }
 		    });
-		debugger;
-		interceptSubmit(form, newHtml, mapping.divItemsSelector, mapping.formOther);
+		
+		
+		interceptSubmit(form, divFormulario.html(), mapping.divItemsSelector, mapping.formOther);
 	            },
 	            error: function() {
 		showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");

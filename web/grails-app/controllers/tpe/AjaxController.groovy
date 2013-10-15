@@ -17,6 +17,13 @@ class AjaxController {
 
 	}
 
+	def deleteOther() {
+
+		sqlService.deleteOther(params.otherId)
+		redirect(action:"getOthersByJob", params : params)
+
+	}
+
 	def deleteMember() {
 
 		sqlService.deleteMember(params.memberId)
@@ -27,8 +34,10 @@ class AjaxController {
 	def getOthersByJob() {
 
 		def othersByJob = sqlService.getOthersByJob(params.jobId)
+		
+		def modal = params.containsKey("modal");
 
-		return [othersByJob:othersByJob, jobId:params.jobId ]
+		return [othersByJob:othersByJob, jobId:params.jobId, modal:modal]
 	}
 
 	def getCreateForm() {
@@ -79,10 +88,18 @@ class AjaxController {
 	def getOthersForm() {
 	        def others = sqlService.getOthers()
 	        def othersByJob = sqlService.getOthersByJob(params.jobId)
+//	        other.id_terceros
 
-	        others = others - othersByJob
+	        List list = []
+	        othersByJob.each {
+	            list += it.id_terceros
+	        }
         
-	        render(view:"getOtherForm", model:[jobId:params.jobId, others: others])
+	        def diff = others.findAll { 
+		!(it.id_terceros in list)
+	        }
+	        
+	        render(view:"getOtherForm", model:[jobId:params.jobId, others: diff])
 	}
 
 	def createCop() {

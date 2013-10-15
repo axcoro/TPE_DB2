@@ -94,6 +94,15 @@ class SqlService {
 		sql.close()
 	}
 
+	def deleteOther(otherId) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		sql.call("{call LED_eliminarTercero(${otherId})}")
+
+		sql.close()
+	}
+
 	def deleteMember(memberId) {
 
 		def sql = Sql.newInstance(dataSource)

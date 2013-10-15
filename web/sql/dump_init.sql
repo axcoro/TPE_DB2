@@ -15,6 +15,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+DROP DATABASE IF EXISTS `efecto_led`;
+CREATE DATABASE IF NOT EXISTS `efecto_led` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `efecto_led`;
+
 --
 -- Table structure for table `led_articulos`
 --
@@ -225,7 +229,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `after_insert_provistos` AFTER INSERT ON `led_provistos` FOR EACH ROW BEGIN
+/*!50003 CREATE*/ /*!50017 `*/ /*!50003 TRIGGER `after_insert_provistos` AFTER INSERT ON `led_provistos` FOR EACH ROW BEGIN
 
 		SET @jobId = NEW.id_trabajos;
 
@@ -256,7 +260,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `after_update_provistos` AFTER UPDATE ON `led_provistos` FOR EACH ROW BEGIN
+/*!50003 CREATE*/ /*!50017 `*/ /*!50003 TRIGGER `after_update_provistos` AFTER UPDATE ON `led_provistos` FOR EACH ROW BEGIN
 
 		SET @jobId = OLD.id_trabajos;
 
@@ -287,7 +291,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `after_delete_provistos` AFTER DELETE ON `led_provistos` FOR EACH ROW BEGIN
+/*!50003 CREATE*/ /*!50017 `*/ /*!50003 TRIGGER `after_delete_provistos` AFTER DELETE ON `led_provistos` FOR EACH ROW BEGIN
 
 		SET @jobId = OLD.id_trabajos;
 
@@ -377,7 +381,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `before_insert_trabajos` BEFORE INSERT ON `led_trabajos` FOR EACH ROW BEGIN
+/*!50003 CREATE*/ /*!50017 `*/ /*!50003 TRIGGER `before_insert_trabajos` BEFORE INSERT ON `led_trabajos` FOR EACH ROW BEGIN
 
 		SET NEW.precio_total = NEW.precio_mano_obra + NEW.precio_articulos;
 
@@ -396,7 +400,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `before_update_trabajos` BEFORE UPDATE ON `led_trabajos` FOR EACH ROW BEGIN
+/*!50003 CREATE*/ /*!50017 `*/ /*!50003 TRIGGER `before_update_trabajos` BEFORE UPDATE ON `led_trabajos` FOR EACH ROW BEGIN
 
 		SET NEW.precio_total = NEW.precio_mano_obra + NEW.precio_articulos;
 
