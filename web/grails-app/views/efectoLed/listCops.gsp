@@ -74,23 +74,38 @@
 		</div>
 		<div class="modal-footer">
 			<div class="control-group">
-				<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
+				<button data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">
 				Cerrar
 				</button>
 			</div>
 		</div>
 	</div>
 
-	<div id="deleteModal" class="modal hide fade modal-small" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+	<div id="deleteModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 		<div class="modal-header">
 			<h3>Esta acción requiere confirmación</h3>
 		</div>
 		<div class="modal-body">
-			¿Está seguro que desea eliminar este <cops:label copType="${copType}" />?
+			<g:if test="${copType == 0}">
+				¿Está seguro que desea eliminar este proveedor?
+				<br>
+				Esto implica que no podrá consultarlo ni agregar artículos provistos por él en el futuro.
+			</g:if>
+			<g:elseif test="${copType == 1}">
+				¿Está seguro que desea eliminar este cliente?
+				<br>
+				Esto implica que se eliminarán de manera permanente todos los trabajos que se hayan cargado para el mismo.
+			</g:elseif>
+			<g:elseif test="${copType == 2}">
+				¿Está seguro que desea eliminar este tercero?
+				<br>
+				Esto implica que no podrá consultarlo ni agregar servicios prestados por él en el futuro.
+			</g:elseif>
+			
 		</div>
 		<div class="modal-footer">
 			<div class="control-group">
-				<button id="noBtn" data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">No</button>
+				<button data-dismiss="modal" aria-hidden="true" name="cancel" class="btn btn-danger">No</button>
 				<cops:deleteLink copType="${copType}" />Si</a>
 			</div>
 		</div>

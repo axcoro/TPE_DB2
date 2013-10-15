@@ -58,12 +58,12 @@ class SqlService {
 
 	def getData(copId, copType) {
 
-		return getRows("{call LED_obtenerDato(${copId}, ${copType})}")[0] //TODO: cochinada
+		return getRows("{call LED_obtenerDato(${copId}, ${copType})}")[0]
 	}
 	
 	def getJob(jobId) {
 
-		return getRows("{call LED_obtenerTrabajo(${jobId})}")[0] //TODO: cochinada
+		return getRows("{call LED_obtenerTrabajo(${jobId})}")[0]
 	} 
 
 	def deleteCop(copId, copType) {

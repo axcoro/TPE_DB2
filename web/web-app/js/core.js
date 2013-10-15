@@ -1,4 +1,4 @@
-// todo: merjorar
+
 var timerActive = null; // timerid
 function clearAlert()
 {
@@ -124,9 +124,9 @@ $("[name='deleteCop']").on('click', function() {
 
 	var copId = $(this).attr("data-copId");
 
-	var dataUri = $("#yesBtn").attr("data-uri");
+	var dataUri = $("#yesBtnDel").attr("data-uri");
 
-	$("#yesBtn").attr("href", dataUri+"&copId="+copId);
+	$("#yesBtnDel").attr("href", dataUri+"&copId="+copId);
 
 	$("#deleteModal").modal('show');
 });
@@ -185,9 +185,9 @@ $("[name='deleteJob']").on('click', function() {
 
 	var jobId = $(this).attr("data-jobId");
 
-	var dataUri = $("#yesBtn").attr("data-uri");
+	var dataUri = $("#yesBtnDel").attr("data-uri");
 
-	$("#yesBtn").attr("href", dataUri+"?jobId="+jobId);
+	$("#yesBtnDel").attr("href", dataUri+"?jobId="+jobId);
 
 	$("#deleteModal").modal('show');
 });
