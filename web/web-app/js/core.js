@@ -1,4 +1,4 @@
-// todo: merjorar
+
 var timerActive = null; // timerid
 function clearAlert()
 {
