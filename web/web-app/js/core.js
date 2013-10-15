@@ -290,6 +290,7 @@ function magicLogic(map, _that) {
 	            style: 'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 730px;'
 	        });
 
+		            debugger;
 	        $.ajax(mapping.formOthersUri + jobId, {
 	            async: false,
 	            success: function(d1) {
@@ -303,15 +304,15 @@ function magicLogic(map, _that) {
 		            divFormulario.html(form);
 
 		            var itemsContainer = mapping.divItemsSelector, formListSelector = mapping.formOther;
-		            
+		            debugger;
 		            var el = form.find(formListSelector);
 		            el.submit(function() {
 			$.post($(formListSelector).attr("action"), $(formListSelector).serialize(), function(data) {
 			    $(itemsContainer).html(data);
 			    $.ajax(mapping.formOthersUri + jobId, {
 			        async: false,
-			        success: function(h) {
-			            var h = $(h).find(formListSelector).html();
+			        success: function(h1) {
+			            var h = $(h1).find(formListSelector).html();
 			            el.html(h);
 			        },
 			        error: function() {
@@ -404,6 +405,7 @@ $("#editNext").on('click', function() {
             "divItems": "divItemsByJobEdit",
             "divItemsSelector": "#divItemsByJobEdit",
             "formListSelector": "#itemsForm",
+            "formOther": "#formOther",
             "stepSuffix": "Edit",
             "action": "edit"
         },
