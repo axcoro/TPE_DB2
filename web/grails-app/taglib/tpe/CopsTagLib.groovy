@@ -8,7 +8,7 @@ class CopsTagLib {
 
 	def label = { attrs, body ->
 
-		Map singularCop = [ 0:"proveedor", 1:"cliente", 2:"tercero" ] // TODO: esto hacerlo de uso general
+		Map singularCop = [ 0:"proveedor", 1:"cliente", 2:"tercero" ]
 
 		out << singularCop[attrs.copType]
 	}
