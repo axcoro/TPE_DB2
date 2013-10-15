@@ -19,7 +19,7 @@
 					<th class="table-col-descripcion"><center>Descripción</center></th>
 					<th class="table-col-fecha"><center>F. Creación</center></th>
 					<th class="table-col-fecha"><center>F. Apr.</center></th>
-					<th class="table-col-fecha"><center>F. Inicio Obra</center></th>
+					<th class="table-col-fecha"><center>F. Ini. Obra</center></th>
 					<th class="table-col-fecha"><center>F. Fin Obra</center></th>
 					<th class="table-col-precio"><center>P. Total</center></th>
 					<th class="table-col-precio"><center>P. M. Ob.</center></th>
@@ -32,43 +32,52 @@
 		<table class="table table-hover table-bordered table-header-fix">
 			<tbody>
 
-				<g:each var="job" in="${jobs}">
-
-					<tr data-jobId="${job.id_trabajos}">
-
-						<td class="table-col-nombre"><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
-						<td class="table-col-descripcion">${job.descripcion}</td>
-						<td class="table-col-fecha">${job.fecha_creacion}</td>
-						<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto}</td>
-						<td class="table-col-fecha">${job.fecha_inicio_obra}</td>
-						<td class="table-col-fecha">${job.fecha_fin_obra}</td>
-						<td class="table-col-precio">$ ${job.precio_total}</td>
-						<td class="table-col-precio">$ ${job.precio_mano_obra}</td>
-						<td class="table-col-precio">$ ${job.precio_articulos}</td>
-						<td class="table-col-custom">
-							<div class="btn-group">
-								<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
-								<ul name="view" class="dropdown-menu" role="menu">
-									<li><a name="othersByJob" data-jobId="${job.id_trabajos}">Terceros</a></li>
-									<li><a name="itemsByJob" data-jobId="${job.id_trabajos}">Artículos</a></li>
-								</ul>
-							</div>
-						</td>
-						<td class="table-col-custom">
-							<div class="btn-group">
-								<button class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown">
-									<i class="icon-align-justify icon-white"></i>
-									<span class="caret"></span>
-								</button>
-
-								<ul class="dropdown-menu">
-									<li><a name="editJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-pencil"></i> Editar</a></li>
-									<li><a name="deleteJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-trash"></i> Eliminar</a></li>
-								</ul>
-							</div>
+				<g:if test="${jobs == []}">
+					<tr>
+						<td colspan="8" style="width: 1167px;">
+							Hasta el momento no se ha cargado ningún trabajo.
 						</td>
 					</tr>
-				</g:each>
+				</g:if>
+				<g:else>
+					<g:each var="job" in="${jobs}">
+
+						<tr data-jobId="${job.id_trabajos}">
+
+							<td class="table-col-nombre"><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">${job.id_cliente}</button></td>
+							<td class="table-col-descripcion">${job.descripcion}</td>
+							<td class="table-col-fecha">${job.fecha_creacion}</td>
+							<td class="table-col-fecha">${job.fecha_aprobacion_presupuesto}</td>
+							<td class="table-col-fecha">${job.fecha_inicio_obra}</td>
+							<td class="table-col-fecha">${job.fecha_fin_obra}</td>
+							<td class="table-col-precio">$ ${job.precio_total}</td>
+							<td class="table-col-precio">$ ${job.precio_mano_obra}</td>
+							<td class="table-col-precio">$ ${job.precio_articulos}</td>
+							<td class="table-col-custom">
+								<div class="btn-group">
+									<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
+									<ul name="view" class="dropdown-menu" role="menu">
+										<li><a name="othersByJob" data-jobId="${job.id_trabajos}">Terceros</a></li>
+										<li><a name="itemsByJob" data-jobId="${job.id_trabajos}">Artículos</a></li>
+									</ul>
+								</div>
+							</td>
+							<td class="table-col-custom">
+								<div class="btn-group">
+									<button class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown">
+										<i class="icon-align-justify icon-white"></i>
+										<span class="caret"></span>
+									</button>
+
+									<ul class="dropdown-menu">
+										<li><a name="editJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-pencil"></i> Editar</a></li>
+										<li><a name="deleteJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-trash"></i> Eliminar</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</g:each>
+				</g:else>
 			</tbody>
 		</table>
 	  </div>

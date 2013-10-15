@@ -33,32 +33,41 @@
 		<table class="table table-hover table-bordered table-header-fix">
 			<tbody>
 
-				<g:each var="cop" in="${cops}">
+				<g:if test="${cops == []}">
 					<tr>
-						<td class="table-col-cuit">${cop.numero_cuil}</td>
-						<td class="table-col-razon">${cop.razon_social}</td>
-						<td class="table-col-direccion">${cop.direccion}</td>
-						<td class="table-col-codigo">${cop.codigo_postal}</td>
-						<td class="table-col-tel">${cop.telefono_principal}</td>
-						<td class="table-col-email">${cop.correo_electronico_principal}</td>
-						<td class="table-col-url">${cop.sitio_web}</td>
-
-						<g:if test="${copType == 0}">
-							<td class="table-col-integrantes"><a name="membersByProvider" data-providerId="${cop.id_proveedores}">Ver</a></td>
-						</g:if>
-
-						<td class="table-col-custom">
-							<div class="btn-group">
-								<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									
-									<li><a name="editCop"   href="#" data-copId="${cop.id_datos}" data-copType="${copType}"><i class="icon-pencil"></i> Editar</a></li>
-									<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
-								</ul>
-							</div>
+						<td colspan="8" style="width: 1167px;">
+							Hasta el momento no se ha cargado ningún <cops:label copType="${copType}" />.
 						</td>
 					</tr>
-				</g:each>
+				</g:if>
+				<g:else>
+					<g:each var="cop" in="${cops}">
+						<tr>
+							<td class="table-col-cuit">${cop.numero_cuil}</td>
+							<td class="table-col-razon">${cop.razon_social}</td>
+							<td class="table-col-direccion">${cop.direccion}</td>
+							<td class="table-col-codigo">${cop.codigo_postal}</td>
+							<td class="table-col-tel">${cop.telefono_principal}</td>
+							<td class="table-col-email">${cop.correo_electronico_principal}</td>
+							<td class="table-col-url">${cop.sitio_web}</td>
+
+							<g:if test="${copType == 0}">
+								<td class="table-col-integrantes"><a name="membersByProvider" data-providerId="${cop.id_proveedores}">Ver</a></td>
+							</g:if>
+
+							<td class="table-col-custom">
+								<div class="btn-group">
+									<a class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-align-justify icon-white"></i>   <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										
+										<li><a name="editCop"   href="#" data-copId="${cop.id_datos}" data-copType="${copType}"><i class="icon-pencil"></i> Editar</a></li>
+										<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</g:each>
+				</g:else>
 			</tbody>
 		</table>
 	</div>
