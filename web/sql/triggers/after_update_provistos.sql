@@ -14,7 +14,7 @@ CREATE TRIGGER `after_update_provistos` AFTER UPDATE
 		FROM(
 			SELECT (p.costo_unitario * p.cantidad_articulos) as costo
 		    FROM led_provistos p
-		    WHERE p.id_trabajos = 58) s;
+		    WHERE p.id_trabajos = @jobId) s;
 
 		UPDATE led_trabajos t 
 		SET t.precio_articulos = @total
