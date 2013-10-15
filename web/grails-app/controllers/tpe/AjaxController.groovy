@@ -28,7 +28,7 @@ class AjaxController {
 
 		def othersByJob = sqlService.getOthersByJob(params.jobId)
 
-		return [othersByJob:othersByJob]
+		return [othersByJob:othersByJob, jobId:params.jobId ]
 	}
 
 	def getCreateForm() {
@@ -76,11 +76,27 @@ class AjaxController {
 		render(view:"getItemsForm", model:[jobId:params.jobId, providers: providers])
 	}
 
+	def getOthersForm() {
+	        def others = sqlService.getOthers()
+	        def othersByJob = sqlService.getOthersByJob(params.jobId)
+
+	        others = others - othersByJob
+        
+	        render(view:"getOtherForm", model:[jobId:params.jobId, others: others])
+	}
+
 	def createCop() {
 
 		def copId = sqlService.createCop(params).id
 
 		render "${copId}"
+	}
+
+	def asociateOther() {
+
+		def otherId = sqlService.asociateOther(params).id
+
+		redirect(action:"getOthersByJob", params : params)
 	}
 
 	def getMembersForm() {

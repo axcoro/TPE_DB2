@@ -47,15 +47,19 @@ function activateStep(step, suffix, action){
         // activo tabs
         $("[name='step"+suffix+"']").removeClass('active').addClass('disabled');
         $('#' + id).removeClass('disabled').addClass('active');
-
         if (id === "step2" + suffix){
 			$("#"+action+"FormModal").removeClass('modal-medium').addClass('modal-extra-large');
+			$("#"+action+"Reset").addClass('hide');
+        }
+        if (id === "end" + suffix || id === "step2end" + suffix){
+			$("#"+action+"FormModal").removeClass('modal-extra-large').addClass('modal-extra-large');
 			$("#"+action+"Next").addClass('hide');
 			$("#"+action+"Reset").addClass('hide');
 			$("#"+action+"Cancel").html('Finalizar');
 			$("#"+action+"Cancel").removeClass('btn-danger');
 			$("#"+action+"Cancel").addClass('btn-success');
         }
+        return id;
     }
 }
  
@@ -194,71 +198,141 @@ $("[name='deleteJob']").on('click', function() {
 
 function magicLogic(map, _that) {
     var mapping = ($(_that).attr("data-copType") === "0") ? map.cop : map.job;
-    
-    var form = $(mapping.formSelector);
-            
-    form.submit(function() {return false;}); // ignorar el submit comun
-    
-    var btn = $("[name='submitBtn']"); // forzar la validacion estandar
-    btn[0].click();
-    
-    if(form[0].checkValidity()){
+    var stepSuffix = mapping.stepSuffix;
+    var action = mapping.action;
+    var step = nextStep(stepSuffix);
+    var id = -1;
+    if(step.length > 0)
+        id = step[0].id;
+    switch (id) {
+        case 'step2':
+        case 'step2end':
+        case 'step2Edit':
+        case 'step2endEdit':
+            var form = $(mapping.formSelector);
 
-    var queryString = $(mapping.formSelector).serialize();
+            form.submit(function() {
+	return false;
+            }); // ignorar el submit comun
 
-    $.ajax(mapping.createUri+queryString, {
+            var btn = $("[name='submitBtn']"); // forzar la validacion estandar
+            btn[0].click();
 
-		success: function(data) {
-			var stepSuffix = mapping.stepSuffix;
-			var action = mapping.action;
-			activateStep(nextStep(stepSuffix), stepSuffix, action);
-			var divContenedor = $('<div/>', {class: 'span12'});
-			var divRow = $('<div/>', {class: 'row-fluid'});
-			var divFormulario = $('<div/>', {
-			    class: 'span5',
-			    style :'max-width: 440px; margin-right: 10px;'
-			});
-			var divListado = $('<div/>', {
-			    id: mapping.divItems,
-			    class: 'span7',
-			    style :'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 730px;'
-			});
-			
-			$.ajax(mapping.formUri+data, {
-				async: false,
-				success: function(d1) { 
-					var form = $(d1);
-					divFormulario.html(form);
-					interceptSubmit(form, divFormulario.html(), mapping.divItemsSelector, mapping.formListSelector);
-				},
-				error: function() {
-					showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
-				}
-			});
+            if (form[0].checkValidity()) {
+	activateStep(step, stepSuffix, action);
 
-			$.ajax(mapping.listUri+data, {
-				async: false,
-				success: function(d2) { 
-					divListado.html(d2);
-				},
-				error: function() {
-					showAlert("Ocurió un error al intentar recuperar el listado.", "alert alert-error");
-				}
-			});
+	var queryString = $(mapping.formSelector).serialize();
 
-			divRow.append(divFormulario);
-			divRow.append(divListado);
-			divContenedor.append(divRow);
+	$.ajax(mapping.createUri + queryString, {
+	    success: function(data) {
 
-			$(mapping.formContentSelector).html(divContenedor);
-			
-		},
-		error: function() {
-			showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
-		}
+	        var divContenedor = $('<div/>', {class: 'span12'});
+	        var divRow = $('<div/>', {class: 'row-fluid'});
+	        var divFormulario = $('<div/>', {
+	            class: 'span5',
+	            style: 'max-width: 440px; margin-right: 10px;'
+	        });
+	        var divListado = $('<div/>', {
+	            id: mapping.divItems,
+	            class: 'span7',
+	            style: 'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 730px;'
+	        });
+
+	        $.ajax(mapping.formUri + data, {
+	            async: false,
+	            success: function(d1) {
+		var form = $(d1);
+		divFormulario.html(form);
+		interceptSubmit(form, divFormulario.html(), mapping.divItemsSelector, mapping.formListSelector);
+	            },
+	            error: function() {
+		showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
+	            }
+	        });
+
+	        $.ajax(mapping.listUri + data, {
+	            async: false,
+	            success: function(d2) {
+		divListado.html(d2);
+	            },
+	            error: function() {
+		showAlert("Ocurió un error al intentar recuperar el listado.", "alert alert-error");
+	            }
+	        });
+
+	        divRow.append(divFormulario);
+	        divRow.append(divListado);
+	        divContenedor.append(divRow);
+
+	        $(mapping.formContentSelector).html(divContenedor);
+
+	    },
+	    error: function() {
+	        showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
+	    }
 	});
+            }
+            break;
+        case 'end':
+        case 'endEdit':
+	activateStep(step, stepSuffix, action);
+	var jobId = document.getElementById('hiddenJobId').innerHTML;
+	$(mapping.formContentSelector).html('');
+	        var divContenedor = $('<div/>', {class: 'span12'});
+	        var divRow = $('<div/>', {class: 'row-fluid'});
+	        var divFormulario = $('<div/>', {
+	            class: 'span5',
+	            style: 'max-width: 440px; margin-right: 10px;'
+	        });
+	        var divListado = $('<div/>', {
+	            id: mapping.divItems,
+	            class: 'span7',
+	            style: 'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 730px;'
+	        });
+
+	        $.ajax(mapping.formOthersUri + jobId, {
+	            async: false,
+	            success: function(d1) {
+		var form = $(d1);
+		divFormulario.html(form);
+		
+		var newHtml = "";
+		    $.ajax(mapping.formOthersUri + jobId, {
+		        async: false,
+		        success: function(dnew) {
+		            newHtml = dnew;
+		        },
+		        error: function() {
+		            showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
+		        }
+		    });
+		debugger;
+		interceptSubmit(form, newHtml, mapping.divItemsSelector, mapping.formOther);
+	            },
+	            error: function() {
+		showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
+	            }
+	        });
+
+	        $.ajax(mapping.listOthersUri + jobId, {
+	            async: false,
+	            success: function(d2) {
+		divListado.html(d2);
+	            },
+	            error: function() {
+		showAlert("Ocurió un error al intentar recuperar el listado.", "alert alert-error");
+	            }
+	        });
+
+	        divRow.append(divFormulario);
+	        divRow.append(divListado);
+	        divContenedor.append(divRow);
+
+	        $(mapping.formContentSelector).html(divContenedor);
+            break;
     }
-};
+}
+;
 
 $("#createNext").on('click', function() {
     var mapping = {
@@ -267,10 +341,13 @@ $("#createNext").on('click', function() {
             "createUri": "/createJob?",
             "formUri": "/getItemsForm?jobId=",
             "listUri": "/itemsByJob?jobId=",
+            "formOthersUri": "/getOthersForm?jobId=",
+            "listOthersUri": "/othersByJob?jobId=",
             "formContentSelector": "#createFormContent",
             "divItems": "divItemsByJobCreate",
             "divItemsSelector": "#divItemsByJobCreate",
             "formListSelector": "#itemsForm",
+            "formOther": "#formOther",
             "stepSuffix": "",
             "action": "create"
         },
@@ -297,6 +374,8 @@ $("#editNext").on('click', function() {
             "createUri": "/editJob?",
             "formUri": "/getItemsForm?jobId=",
             "listUri": "/itemsByJob?jobId=",
+            "formOthersUri": "/getOthersForm?jobId=",
+            "listOthersUri": "/othersByJob?jobId=",
             "formContentSelector": "#editFormContent",
             "divItems": "divItemsByJobEdit",
             "divItemsSelector": "#divItemsByJobEdit",
@@ -357,6 +436,23 @@ function create() {
 		}
 	});
 };
+
+function registerOthersFunctions(jobId) {
+    $("[name='other-remove']").off('click');
+    $("[name='other-remove']").on('click', function() {
+        var otherId = $(this).attr("data-otherId");
+
+        $.ajax("/deleteOther?otherId=" + otherId + "&jobId=" + jobId, {
+            success: function(data) {
+	    $("#listOthersContainer").replaceWith(data);
+            },
+            error: function() {
+	showAlert("No se pudieron obtener los artículos.", "alert-error");
+            }
+        });
+
+    });
+}
 
 function registerItemsFunctions(jobId) {
     $("[name='item-remove']").off('click');

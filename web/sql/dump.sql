@@ -26,181 +26,13 @@ CREATE TABLE IF NOT EXISTS `led_articulos` (
   `modelo` varchar(255) NOT NULL,
   `observaciones` varchar(255) NOT NULL,
   PRIMARY KEY (`id_articulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=316 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=325 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_articulos: ~170 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_articulos: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_articulos` DISABLE KEYS */;
 INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `marca_fabricante`, `modelo`, `observaciones`) VALUES
-	(9, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(10, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(11, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(12, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(13, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(14, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(15, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(16, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(17, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(18, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(19, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(20, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(21, 'asd', 'asd', 'asd', 'asd', 'asd'),
-	(24, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
-	(25, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
-	(26, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
-	(27, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
-	(28, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
-	(29, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasd'),
-	(30, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
-	(33, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
-	(35, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
-	(36, 'asda', 'asdsad', 'asdas', 'asdas', 'asdasdasd'),
-	(39, 'asdasd', 'asdas', 'asdas', 'asdas', 'asdasdasdas'),
-	(42, 'asdasd', 'asdas', 'asdas', 'asdas', 'asdasdasdas'),
-	(43, 'asdasd', 'asdas', 'asdas', 'asdas', 'asdasdasdas'),
-	(56, 'asdas', 'asdas', 'asdas', 'asdas', 'asdasd'),
-	(64, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(68, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(69, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(70, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(71, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(72, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(73, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(74, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(75, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(76, 'asd', 'asdasd', 'asdsad', 'asdasd', 'asdad'),
-	(77, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(83, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(84, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(85, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(86, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(87, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(88, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(89, 'asda', 'asdas', 'asda', 'asd', 'asdasd'),
-	(91, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(92, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(93, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(94, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(95, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(96, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(97, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(98, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(99, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(100, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(101, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(102, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(103, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(104, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(105, 'asda', 'asdas', 'asdas', 'asdas', 'asdasdasasd'),
-	(119, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(120, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(127, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(129, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(130, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(131, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(132, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(138, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(139, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(140, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(141, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasdasdasd'),
-	(162, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(163, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(164, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(165, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(166, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(167, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(168, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(169, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(170, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(171, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(172, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(173, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(174, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(175, 'asdas', 'asdasd', 'asdas', 'asdas', 'asdasdas'),
-	(176, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(177, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(178, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(179, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(180, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(181, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(182, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(183, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(184, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(185, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(186, 'asdasd', '', 'asddas', 'asdasd', ''),
-	(187, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(188, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(189, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(190, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(191, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(192, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(193, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(194, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(195, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(196, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(197, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(198, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(199, 'asdasd', '', 'asdasd', 'asdasdas', ''),
-	(200, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(201, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(202, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(203, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(204, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(205, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(206, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(207, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(208, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(209, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(210, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(211, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(212, 'asdasd', '', 'asdasdas', 'asdasd', ''),
-	(254, 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd'),
-	(255, 'asdas', 'sadasd', 'asdasd', 'asdasd', 'asdasds'),
-	(256, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(257, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(258, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(259, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(260, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(261, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(262, 'asda', '', 'asdasd', 'asdas', ''),
-	(263, 'asda', '', 'asdasd', 'asdas', ''),
-	(264, 'asda', '', 'asdasd', 'asdas', ''),
-	(265, 'asda', '', 'asdasd', 'asdas', ''),
-	(266, 'asdasd', '', 'asdas', 'asdasd', ''),
-	(267, 'asdasd', '', 'asdas', 'asdasd', ''),
-	(268, 'asdasd', '', 'asdas', 'asdasd', ''),
-	(269, 'asd', '', 'asd', 'asd', ''),
-	(270, 'asd', '', 'asd', 'asd', ''),
-	(271, 'asd', '', 'asd', 'asd', ''),
-	(272, 'asd', '', 'asd', 'asd', ''),
-	(273, 'asd', '', 'asd', 'asd', ''),
-	(274, 'asd', '', 'asd', 'asd', ''),
-	(275, 'asd', 'asd', 'asd', 'asd', 'asdasd'),
-	(276, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasd'),
-	(277, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasd'),
-	(278, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasd'),
-	(279, 'asdasd', 'asdasd', 'asdas', 'sdasd', 'asdasd'),
-	(280, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(281, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(282, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(283, 'asdas', '', 'asdas', 'asdasdas', ''),
-	(291, 'asda', 'asdasd', 'asdasd', 'asdasd', 'asdasd'),
-	(292, 'asdas', 'asdas', 'asdasd', 'asdas', 'asdasdasd'),
-	(293, 'asdasd', 'asdas', 'asdas', 'asdasd', 'asdasdasd'),
-	(294, 'asdasd', 'asdasd', 'asdas', 'asdasd', 'asdasdasd'),
-	(295, 'asdasd', 'sadasdasdas', 'asdasd', 'asdasd', 'asdasdsds'),
-	(296, 'asdas', 'asdasd', 'asdas', 'sadasd', 'asdasdasd'),
-	(297, 'asdas', 'asdas', 'asdas', 'asdasd', 'asdasd'),
-	(298, 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasds'),
-	(299, 'asdasd', 'asdasd', 'asdas', 'asdas', 'asdasdasadasd'),
-	(300, '', '', '', '', ''),
-	(301, '', '', '', '', ''),
-	(302, 'asdasd', 'asdas', 'asdas', 'asdasd', 'asdas'),
-	(306, 'qweqw', 'qqq', 'qq', 'qq', 'dasd'),
-	(307, 'asdas', 'asdasdasd', 'asds', 'asdasd', 'asdasasd'),
-	(308, 'asd', 'asdasd', 'asd', 'asd', 'asdasdasdasdas'),
-	(311, '', '', '', '', ''),
-	(314, 'ggg', 'asdasd', '2222', 'ggg', 'fdsfdsfd'),
-	(315, 'ggg', 'asdasd', 'aaa', '222', 'ggggg');
+	(322, 'gfds', 'gsdfa', '432', '1234', 'gfsdads'),
+	(324, 'gfds', 'gfd', 'gfds', 'gfd', 'hgfd');
 /*!40000 ALTER TABLE `led_articulos` ENABLE KEYS */;
 
 
@@ -212,14 +44,14 @@ CREATE TABLE IF NOT EXISTS `led_clientes` (
   PRIMARY KEY (`id_cliente`),
   KEY `fk_led_cliente_led_datos1_idx` (`id_datos`),
   CONSTRAINT `fk_led_cliente_led_datos1` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_clientes: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_clientes` DISABLE KEYS */;
 INSERT INTO `led_clientes` (`id_cliente`, `id_datos`) VALUES
 	(7, 7),
 	(8, 8),
-	(9, 15);
+	(11, 35);
 /*!40000 ALTER TABLE `led_clientes` ENABLE KEYS */;
 
 
@@ -236,23 +68,22 @@ CREATE TABLE IF NOT EXISTS `led_datos` (
   `sitio_web` varchar(45) DEFAULT NULL,
   `estado` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 = desactivado / 1 = habilitado',
   PRIMARY KEY (`id_datos`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_datos: ~21 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_datos: ~24 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_datos` DISABLE KEYS */;
 INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`, `estado`) VALUES
-	(7, '7', 'asdasda', '7', '7', '7', 'a@a.com.ar', 'http://www.com.ar', 0),
-	(8, '8', '8', '8', '8', '8', '8', '8', 0),
+	(7, '7', 'asdasda', '7', '7', '7', 'a@a.com.ar', 'http://www.com.ar', 1),
+	(8, '8', '8', '8', '8', '8', '', '', 1),
 	(9, '9', '9', '9', '9', '9', '9', '9', 1),
 	(13, '123123', 'test', 'test 123', '5700', '2664863396', 'a@a.com.ar', 'http://www.example.com', 1),
-	(14, '1234', 'test', 'test 123', '5700', '266486336', 'a@a.com.ar', 'http://www.com.ar', 0),
-	(15, '999999', 'test', '123123', '12312', '12312', 'a@a.com.ar', 'http://www.com.ar', 1),
-	(17, '123123', 'ytr', 'tr', '7777', '43345', 'a@a.com.ar', 'http://www.asdf.com.ar', 0),
-	(18, '', '', '', '', '', '', 'http://', 0),
+	(14, '1234', 'test', 'test 123', '5700', '266486336', 'a@a.com.ar', 'http://www.com.ar', 1),
+	(17, '123123', 'ytr', 'tr', '7777', '43345', 'a@a.com.ar', 'http://www.asdf.com.ar', 1),
+	(18, '', '', '', '', '', '', 'http://', 1),
 	(19, '123', '12312', '13123', '13123', '123123', '', '', 1),
 	(20, '', '', '', '', '', '', 'http://', 1),
-	(21, 'asda', 'asd', 'asd', 'asd', 'asd', 'asd', 'http://www.com.ar', 0),
-	(22, '123', 'MIRO', '123', '123', '123', '123@123.com.ar', 'http://www.sdf.com.ar', 0),
+	(21, 'asda', 'asd', 'asd', 'asd', 'asd', 'asd', 'http://www.com.ar', 1),
+	(22, '123', 'MIRO', '123', '123', '123', '123@123.com.ar', 'http://www.sdf.com.ar', 1),
 	(23, '', '', '', '', '', '', 'http://', 1),
 	(24, '', '', '', '', '', '', 'http://', 1),
 	(25, '', '', '', '', '', '', 'http://', 1),
@@ -261,7 +92,11 @@ INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`,
 	(28, '132', '132', '123', '123', '123', '123@123.com.ar', 'http://www.asdf.com.ar', 1),
 	(29, '123', '123', '123', '123', '123', '123@gmail.com', 'http://123.asd.cm', 1),
 	(30, '2345', 'gggg', 'fffff', '5700', '2222', '', 'http://www.com.ar', 1),
-	(31, '266486', 'asd', 'asd', '5700', '2664', 'asd@ad.com', 'http://wwww.com.ar', 1);
+	(31, '266486', 'asd', 'asd', '5700', '2664', 'asd@ad.com', 'http://wwww.com.ar', 1),
+	(32, '123123', 'asdasd', 'asdads', '23432', '123123', '', '', 1),
+	(33, '123', '123', '123', '123', '123', '', '', 1),
+	(34, '123', '123', '123', '123', '123', '', '', 1),
+	(35, '132', 'gfd', 'aeasd', '3213', '13123', '', '', 1);
 /*!40000 ALTER TABLE `led_datos` ENABLE KEYS */;
 
 
@@ -277,13 +112,11 @@ CREATE TABLE IF NOT EXISTS `led_integrantes` (
   PRIMARY KEY (`id_integrantes`),
   KEY `tienen` (`id_proveedor`),
   CONSTRAINT `tienen` FOREIGN KEY (`id_proveedor`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla efecto_led.led_integrantes: ~21 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_integrantes` DISABLE KEYS */;
 INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `correo_electronico`, `id_proveedor`) VALUES
-	(16, '10', '10', '10', '10', 8),
-	(17, '10', '10', '10', '10', 8),
 	(18, '10', '10', '10', '10', 8),
 	(26, 'test', 'test', 'asdasdas', 'te@st.com.ar', 16),
 	(27, 'asd', 'asd', 'asd', 'asd@com.ar', 16),
@@ -302,7 +135,9 @@ INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `
 	(57, 'test', 'test', '123123', 'asda@a.com.ar', 14),
 	(58, 'test', 'test', '123123', 'asda@a.com.ar', 14),
 	(60, 'test', 'test', '123123', 'asda@a.com.ar', 14),
-	(61, 'test', 'test', '123123', 'asda@a.com.ar', 14);
+	(61, 'test', 'test', '123123', 'asda@a.com.ar', 14),
+	(63, 'fd', 'gfds', '123', '', 29),
+	(65, 'sdf', 'gfd', '342', '', 8);
 /*!40000 ALTER TABLE `led_integrantes` ENABLE KEYS */;
 
 
@@ -320,10 +155,15 @@ CREATE TABLE IF NOT EXISTS `led_participa` (
   CONSTRAINT `fk_led_participa_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_participa: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_participa: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_participa` DISABLE KEYS */;
 INSERT INTO `led_participa` (`id_terceros`, `id_trabajos`, `costo_prestacion`, `descripcion_trabajo_realizado`) VALUES
-	(7, 14, 35, 'eger');
+	(7, 110, 5432, 'asdf'),
+	(7, 125, 9, 'asdasdasdas'),
+	(7, 127, 6, 'gfds'),
+	(7, 128, 5, 'asdasdasd'),
+	(8, 128, 5, 'dsfdsfdsf'),
+	(9, 126, 12, 'others');
 /*!40000 ALTER TABLE `led_participa` ENABLE KEYS */;
 
 
@@ -335,9 +175,9 @@ CREATE TABLE IF NOT EXISTS `led_proveedores` (
   PRIMARY KEY (`id_proveedores`),
   KEY `fk_led_proveedores_led_datos_idx` (`id_datos`),
   CONSTRAINT `fk_led_proveedores_led_datos` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_proveedores: ~18 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_proveedores: ~21 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_proveedores` DISABLE KEYS */;
 INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
 	(7, 7),
@@ -357,7 +197,10 @@ INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
 	(23, 28),
 	(24, 29),
 	(25, 30),
-	(26, 31);
+	(26, 31),
+	(27, 32),
+	(28, 33),
+	(29, 34);
 /*!40000 ALTER TABLE `led_proveedores` ENABLE KEYS */;
 
 
@@ -379,159 +222,11 @@ CREATE TABLE IF NOT EXISTS `led_provistos` (
   CONSTRAINT `fk_led_provistos_led_proveedores1` FOREIGN KEY (`id_proveedores`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_provistos: ~150 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_provistos: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
 INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `codigo_catalogo_proveedor`, `cantidad_articulos`, `costo_unitario`) VALUES
-	(33, 8, 58, 'null', 6, 19.5),
-	(35, 8, 58, 'null', 6, 19.5),
-	(36, 8, 58, 'null', 6, 19.5),
-	(39, 7, 59, 'null', 5, 4),
-	(42, 7, 59, 'null', 5, 4),
-	(43, 7, 59, 'null', 5, 4),
-	(56, 7, 60, 'null', 4, 4),
-	(64, 7, 61, 'null', 4, 3),
-	(68, 7, 61, 'null', 4, 3),
-	(69, 7, 61, 'null', 4, 3),
-	(70, 7, 61, 'null', 4, 3),
-	(71, 7, 61, 'null', 4, 3),
-	(72, 7, 61, 'null', 4, 3),
-	(73, 7, 61, 'null', 4, 3),
-	(74, 7, 61, 'null', 4, 3),
-	(75, 7, 61, 'null', 4, 3),
-	(76, 7, 61, 'null', 4, 3),
-	(77, 7, 62, 'null', 5, 4),
-	(83, 7, 62, 'null', 5, 4),
-	(84, 7, 62, 'null', 5, 4),
-	(85, 7, 62, 'null', 5, 4),
-	(86, 7, 62, 'null', 5, 4),
-	(87, 7, 62, 'null', 5, 4),
-	(88, 7, 62, 'null', 5, 4),
-	(89, 7, 62, 'null', 5, 4),
-	(91, 7, 63, 'null', 4, 4),
-	(92, 7, 63, 'null', 4, 4),
-	(93, 7, 63, 'null', 4, 4),
-	(94, 7, 63, 'null', 4, 4),
-	(95, 7, 63, 'null', 4, 4),
-	(96, 7, 63, 'null', 4, 4),
-	(97, 7, 63, 'null', 4, 4),
-	(98, 7, 63, 'null', 4, 4),
-	(99, 7, 63, 'null', 4, 4),
-	(100, 7, 63, 'null', 4, 4),
-	(101, 7, 63, 'null', 4, 4),
-	(102, 7, 63, 'null', 4, 4),
-	(103, 7, 63, 'null', 4, 4),
-	(104, 7, 63, 'null', 4, 4),
-	(105, 7, 63, 'null', 4, 4),
-	(119, 7, 64, 'null', 6, 5),
-	(120, 7, 64, 'null', 6, 5),
-	(127, 7, 64, 'null', 6, 5),
-	(129, 7, 64, 'null', 6, 5),
-	(130, 7, 64, 'null', 6, 5),
-	(131, 7, 64, 'null', 6, 5),
-	(132, 7, 64, 'null', 6, 5),
-	(138, 7, 64, 'null', 6, 5),
-	(139, 7, 64, 'null', 6, 5),
-	(140, 7, 64, 'null', 6, 5),
-	(141, 7, 64, 'null', 6, 5),
-	(162, 7, 66, 'null', 4, 9.8),
-	(163, 7, 66, 'null', 4, 9.8),
-	(164, 7, 66, 'null', 4, 9.8),
-	(165, 7, 66, 'null', 4, 9.8),
-	(166, 7, 66, 'null', 4, 9.8),
-	(167, 7, 66, 'null', 4, 9.8),
-	(168, 7, 66, 'null', 4, 9.8),
-	(169, 7, 66, 'null', 4, 9.8),
-	(170, 7, 66, 'null', 4, 9.8),
-	(171, 7, 66, 'null', 4, 9.8),
-	(172, 7, 66, 'null', 4, 9.8),
-	(173, 7, 66, 'null', 4, 9.8),
-	(174, 7, 66, 'null', 4, 9.8),
-	(175, 7, 66, 'null', 4, 9.8),
-	(176, 7, 67, 'null', 0, 0),
-	(177, 7, 67, 'null', 0, 0),
-	(178, 7, 67, 'null', 0, 0),
-	(179, 7, 67, 'null', 0, 0),
-	(180, 7, 67, 'null', 0, 0),
-	(181, 7, 67, 'null', 0, 0),
-	(182, 7, 67, 'null', 0, 0),
-	(183, 7, 67, 'null', 0, 0),
-	(184, 7, 67, 'null', 0, 0),
-	(185, 7, 67, 'null', 0, 0),
-	(186, 7, 67, 'null', 0, 0),
-	(187, 7, 68, 'null', 0, 0),
-	(188, 7, 68, 'null', 0, 0),
-	(189, 7, 68, 'null', 0, 0),
-	(190, 7, 68, 'null', 0, 0),
-	(191, 7, 68, 'null', 0, 0),
-	(192, 7, 68, 'null', 0, 0),
-	(193, 7, 68, 'null', 0, 0),
-	(194, 7, 68, 'null', 0, 0),
-	(195, 7, 68, 'null', 0, 0),
-	(196, 7, 68, 'null', 0, 0),
-	(197, 7, 68, 'null', 0, 0),
-	(198, 7, 68, 'null', 0, 0),
-	(199, 7, 68, 'null', 0, 0),
-	(200, 7, 69, 'null', 0, 0),
-	(201, 7, 69, 'null', 0, 0),
-	(202, 7, 69, 'null', 0, 0),
-	(203, 7, 69, 'null', 0, 0),
-	(204, 7, 69, 'null', 0, 0),
-	(205, 7, 69, 'null', 0, 0),
-	(206, 7, 69, 'null', 0, 0),
-	(207, 7, 69, 'null', 0, 0),
-	(208, 7, 69, 'null', 0, 0),
-	(209, 7, 69, 'null', 0, 0),
-	(210, 7, 69, 'null', 0, 0),
-	(211, 7, 69, 'null', 0, 0),
-	(212, 7, 69, 'null', 0, 0),
-	(254, 7, 72, 'null', 4, 3),
-	(255, 7, 81, 'null', 3, 4),
-	(256, 7, 82, 'null', 0, 0),
-	(257, 7, 82, 'null', 0, 0),
-	(258, 7, 82, 'null', 0, 0),
-	(259, 7, 82, 'null', 0, 0),
-	(260, 7, 82, 'null', 0, 0),
-	(261, 7, 82, 'null', 0, 0),
-	(262, 7, 83, 'null', 0, 0),
-	(263, 7, 83, 'null', 0, 0),
-	(264, 7, 83, 'null', 0, 0),
-	(265, 7, 83, 'null', 0, 0),
-	(266, 7, 84, 'null', 0, 0),
-	(267, 7, 84, 'null', 0, 0),
-	(268, 7, 84, 'null', 0, 0),
-	(269, 7, 85, 'null', 0, 0),
-	(270, 7, 86, 'null', 0, 0),
-	(271, 7, 86, 'null', 0, 0),
-	(272, 7, 86, 'null', 0, 0),
-	(273, 7, 86, 'null', 0, 0),
-	(274, 7, 86, 'null', 0, 0),
-	(275, 7, 87, 'null', 4, 4),
-	(276, 7, 88, 'null', 2, 3),
-	(277, 7, 88, 'null', 2, 3),
-	(278, 7, 88, 'null', 2, 3),
-	(279, 7, 88, 'null', 2, 3),
-	(280, 7, 89, 'null', 0, 0),
-	(281, 7, 89, 'null', 0, 0),
-	(282, 7, 89, 'null', 0, 0),
-	(283, 7, 89, 'null', 0, 0),
-	(291, 7, 90, 'null', 4, 4),
-	(292, 7, 90, 'null', 4, 3),
-	(293, 7, 91, 'null', 6, 5),
-	(294, 7, 91, 'null', 4, 3),
-	(295, 8, 92, 'null', 5, 5),
-	(296, 7, 92, 'null', 4, 3),
-	(297, 7, 93, 'null', 3, 3),
-	(298, 7, 93, 'null', 4, 4),
-	(299, 7, 93, 'null', 3, 3),
-	(300, 7, 93, 'null', 0, 0),
-	(301, 7, 93, 'null', 0, 0),
-	(302, 7, 84, 'null', 4, 4),
-	(306, 11, 94, 'null', 3, 2),
-	(307, 7, 95, 'null', 3, 4),
-	(308, 7, 97, 'null', 5, 4),
-	(311, 7, 101, 'null', 0, 0),
-	(314, 23, 14, 'aaa', 3, 4),
-	(315, 15, 104, 'tttt', 4, 3);
+	(322, 7, 106, 'xcvb', 1, 100),
+	(324, 17, 107, 'gfds', 5, 4);
 /*!40000 ALTER TABLE `led_provistos` ENABLE KEYS */;
 
 
@@ -571,103 +266,32 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
   PRIMARY KEY (`id_trabajos`),
   KEY `solicita` (`id_cliente`),
   CONSTRAINT `solicita` FOREIGN KEY (`id_cliente`) REFERENCES `led_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_trabajos: ~92 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_trabajos: ~21 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `id_cliente`) VALUES
-	(14, 'test2asd', '2013-10-08 21:08:36', '2013-10-12 00:00:00', '2013-10-10 00:00:00', '2013-10-11 00:00:00', 0, 3, 0, 7),
-	(15, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 7),
-	(16, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
-	(17, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
-	(18, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
-	(19, '1', '2013-10-08 21:08:36', '2013-10-08 21:08:37', '2013-10-08 21:08:38', '2013-10-08 21:08:38', 0, 0, 0, 8),
-	(20, 'test', '2013-10-13 19:36:38', '2013-10-10 00:00:00', NULL, '2013-10-10 00:00:00', 0, 10, 0, 8),
-	(21, 'test', '2013-10-13 19:36:45', '2013-10-10 00:00:00', NULL, '2013-10-10 00:00:00', 0, 10, 0, 8),
-	(22, 'test', '2013-10-13 19:37:06', '2013-10-10 00:00:00', NULL, '2013-10-10 00:00:00', 0, 10, 0, 8),
-	(23, 'asdasdasd', '2013-10-14 08:31:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7.8, 0, 7),
-	(24, 'asdasda', '2013-10-14 08:32:56', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7.8, 0, 7),
-	(25, 'sdasasd', '2013-10-14 08:34:28', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(26, 'asdasdasd', '2013-10-14 08:36:45', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7.8, 0, 7),
-	(27, 'asdasdasd', '2013-10-14 08:42:16', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 11.9, 0, 7),
-	(28, 'asdasdasdasdasd', '2013-10-14 08:43:45', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
-	(29, 'asdasd', '2013-10-14 08:54:31', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(30, 'asdasdas', '2013-10-14 08:59:46', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7, 0, 7),
-	(31, 'asdasdasd', '2013-10-14 09:02:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(32, 'asdasdasd', '2013-10-14 09:12:51', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
-	(33, 'asdasdasd', '2013-10-14 09:13:40', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
-	(34, 'asdasdas', '2013-10-14 09:14:37', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
-	(35, 'asdasdasdasdasdasd', '2013-10-14 09:16:03', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7, 0, 7),
-	(36, 'asdasdasd', '2013-10-14 09:17:22', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(37, 'asdasdasdasdas', '2013-10-14 09:19:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(38, 'asdasdas', '2013-10-14 09:21:02', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(39, 'asdasdasdas', '2013-10-14 09:25:23', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
-	(40, 'asdada', '2013-10-14 09:28:23', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 3, 0, 7),
-	(41, 'asdasdasdaasdasdas', '2013-10-14 09:45:05', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 3, 0, 7),
-	(42, 'asdasds', '2013-10-14 09:51:02', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(43, 'asdasdas', '2013-10-14 09:52:39', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
-	(44, 'asdasdasd', '2013-10-14 09:54:35', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(45, 'asdasd', '2013-10-14 09:55:16', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(46, 'asdasdasd', '2013-10-14 09:58:20', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 6, 0, 7),
-	(47, 'asdasdas', '2013-10-14 09:59:33', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(48, 'asdasdasd', '2013-10-14 10:00:48', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(49, 'adasdasdsa', '2013-10-14 10:02:28', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 8),
-	(50, 'asdasdas', '2013-10-14 10:07:23', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(51, 'asdasdsa', '2013-10-14 10:15:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(52, 'asdasdsa', '2013-10-14 10:15:47', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(53, '\'asdasdsa\'', '2013-10-14 10:16:48', NULL, NULL, NULL, 0, 5, 0, 7),
-	(54, 'adasdas', '2013-10-14 10:21:17', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(55, 'adasdas', '2013-10-14 10:25:26', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 5, 0, 7),
-	(56, 'asdasdas', '2013-10-14 10:27:27', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(57, 'asdasdasdas', '2013-10-14 10:29:04', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 7, 0, 7),
-	(58, 'asdasdasdasd', '2013-10-14 10:29:41', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 8, 0, 7),
-	(59, '', '2013-10-14 10:57:32', NULL, '2013-10-14 00:00:00', NULL, 0, 0, 0, 7),
-	(60, '', '2013-10-14 11:00:03', NULL, NULL, NULL, 0, 0, 0, 7),
-	(61, '', '2013-10-14 11:04:20', NULL, NULL, NULL, 0, 0, 0, 7),
-	(62, '', '2013-10-14 11:07:41', NULL, NULL, NULL, 0, 0, 0, 7),
-	(63, '', '2013-10-14 11:10:31', NULL, NULL, NULL, 0, 0, 0, 7),
-	(64, '', '2013-10-14 11:15:55', NULL, NULL, NULL, 0, 0, 0, 7),
-	(65, '', '2013-10-14 11:22:39', NULL, NULL, NULL, 0, 0, 0, 7),
-	(66, '', '2013-10-14 11:28:35', NULL, NULL, NULL, 0, 0, 0, 7),
-	(67, '', '2013-10-14 11:29:57', NULL, NULL, NULL, 0, 0, 0, 7),
-	(68, '', '2013-10-14 11:30:20', NULL, NULL, NULL, 0, 0, 0, 7),
-	(69, '', '2013-10-14 11:31:08', NULL, NULL, NULL, 0, 0, 0, 7),
-	(70, '', '2013-10-14 11:31:38', NULL, NULL, NULL, 0, 0, 0, 7),
-	(71, '', '2013-10-14 11:33:11', NULL, NULL, NULL, 0, 0, 0, 7),
-	(72, '', '2013-10-14 11:34:16', NULL, NULL, NULL, 0, 0, 0, 7),
-	(73, '', '2013-10-14 11:36:33', NULL, NULL, NULL, 0, 0, 0, 7),
-	(74, '', '2013-10-14 11:36:59', NULL, NULL, NULL, 0, 0, 0, 7),
-	(75, '', '2013-10-14 11:37:07', NULL, NULL, NULL, 0, 0, 0, 7),
-	(76, '', '2013-10-14 11:37:27', NULL, NULL, NULL, 0, 0, 0, 7),
-	(77, '', '2013-10-14 11:38:56', NULL, NULL, NULL, 0, 0, 0, 7),
-	(78, '', '2013-10-14 11:39:16', NULL, NULL, NULL, 0, 0, 0, 7),
-	(79, '', '2013-10-14 11:40:23', NULL, NULL, NULL, 0, 0, 0, 7),
-	(80, '', '2013-10-14 11:40:41', NULL, NULL, NULL, 0, 0, 0, 7),
-	(81, '', '2013-10-14 11:51:50', NULL, NULL, NULL, 0, 0, 0, 7),
-	(82, '', '2013-10-14 11:52:13', NULL, NULL, NULL, 0, 0, 0, 7),
-	(83, '', '2013-10-14 11:54:20', NULL, NULL, NULL, 0, 0, 0, 7),
-	(84, '', '2013-10-14 12:00:25', NULL, NULL, NULL, 0, 0, 0, 7),
-	(85, '', '2013-10-14 12:03:04', NULL, NULL, NULL, 0, 0, 0, 7),
-	(86, '', '2013-10-14 12:04:03', NULL, NULL, NULL, 0, 0, 0, 7),
-	(87, '', '2013-10-14 12:06:47', NULL, NULL, NULL, 0, 0, 0, 7),
-	(88, '', '2013-10-14 12:07:29', NULL, NULL, NULL, 0, 0, 0, 7),
-	(89, '', '2013-10-14 12:09:03', NULL, NULL, NULL, 0, 0, 0, 7),
-	(90, '', '2013-10-14 13:12:32', NULL, NULL, NULL, 0, 0, 0, 7),
-	(91, '', '2013-10-14 13:13:59', NULL, NULL, NULL, 0, 0, 0, 7),
-	(92, '', '2013-10-14 13:14:31', NULL, NULL, NULL, 0, 0, 0, 7),
-	(93, '', '2013-10-14 13:17:39', NULL, NULL, NULL, 0, 0, 0, 7),
-	(94, '', '2013-10-14 13:33:13', NULL, NULL, NULL, 0, 0, 0, 7),
-	(95, 'asdasdasd', '2013-10-14 15:11:42', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 0, 4, 0, 7),
-	(96, '', '2013-10-14 15:12:28', NULL, NULL, NULL, 0, 0, 0, 7),
-	(97, '', '2013-10-14 15:13:00', NULL, NULL, NULL, 0, 0, 0, 7),
-	(98, '', '2013-10-14 15:17:43', NULL, NULL, NULL, 0, 0, 0, 7),
-	(99, '', '2013-10-14 15:19:19', NULL, NULL, NULL, 0, 0, 0, 7),
-	(100, '', '2013-10-14 15:22:12', NULL, NULL, NULL, 0, 0, 0, 7),
-	(101, '', '2013-10-14 15:22:22', NULL, NULL, NULL, 0, 0, 0, 7),
-	(102, '', '2013-10-14 16:59:21', NULL, NULL, NULL, 0, 0, 0, 7),
-	(103, '', '2013-10-14 16:59:42', NULL, NULL, NULL, 0, 0, 0, 7),
-	(104, '', '2013-10-14 19:15:55', NULL, NULL, NULL, 0, 0, 0, 9),
-	(105, '', '2013-10-14 20:17:28', NULL, NULL, NULL, 0, 0, 0, 9);
+	(106, 'test', '2013-10-14 20:53:22', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 106, 6, 100, 8),
+	(107, 'ggggg', '2013-10-14 20:54:12', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 25, 5, 20, 7),
+	(110, '', '2013-10-14 21:30:58', NULL, NULL, NULL, 0, 0, 0, 8),
+	(111, '', '2013-10-14 21:57:33', NULL, NULL, NULL, 0, 0, 0, 8),
+	(112, '', '2013-10-14 21:58:27', NULL, NULL, NULL, 0, 0, 0, 8),
+	(113, '', '2013-10-14 21:58:42', NULL, NULL, NULL, 0, 0, 0, 8),
+	(114, '', '2013-10-14 21:58:45', NULL, NULL, NULL, 0, 0, 0, 8),
+	(115, '', '2013-10-14 22:01:42', NULL, NULL, NULL, 0, 0, 0, 8),
+	(116, '', '2013-10-14 22:02:53', NULL, NULL, NULL, 0, 0, 0, 8),
+	(117, '', '2013-10-14 22:08:48', NULL, NULL, NULL, 0, 0, 0, 8),
+	(118, '', '2013-10-14 22:29:47', NULL, NULL, NULL, 0, 0, 0, 8),
+	(119, '', '2013-10-14 22:38:04', NULL, NULL, NULL, 0, 0, 0, 8),
+	(120, '', '2013-10-14 22:44:53', NULL, NULL, NULL, 0, 0, 0, 8),
+	(121, '', '2013-10-14 22:45:39', NULL, NULL, NULL, 0, 0, 0, 8),
+	(122, '', '2013-10-14 23:11:38', NULL, NULL, NULL, 0, 0, 0, 8),
+	(123, '', '2013-10-14 23:11:59', NULL, NULL, NULL, 0, 0, 0, 8),
+	(124, '', '2013-10-14 23:14:09', NULL, NULL, NULL, 0, 0, 0, 7),
+	(125, '', '2013-10-14 23:14:36', NULL, NULL, NULL, 0, 0, 0, 7),
+	(126, 'others', '2013-10-14 23:18:21', '2013-10-14 00:00:00', '2013-10-14 00:00:00', '2013-10-14 00:00:00', 5, 5, 0, 7),
+	(127, '', '2013-10-14 23:24:39', NULL, NULL, NULL, 0, 0, 0, 7),
+	(128, '', '2013-10-14 23:25:59', NULL, NULL, NULL, 0, 0, 0, 7);
 /*!40000 ALTER TABLE `led_trabajos` ENABLE KEYS */;
 
 
@@ -689,6 +313,40 @@ BEGIN
 INSERT INTO led_provistos
 (id_articulos, id_proveedores, id_trabajos, codigo_catalogo_proveedor, cantidad_articulos, costo_unitario)
 VALUES (_id_articulo, _id_proveedor, _id_trabajo, _codigo_catalogo_proveedor, _cantidad_articulos, _costo_unitario);
+
+select LAST_INSERT_ID() as id;
+
+END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento efecto_led.LED_asociarTerceroTrabajo
+DROP PROCEDURE IF EXISTS `LED_asociarTerceroTrabajo`;
+DELIMITER //
+CREATE PROCEDURE `LED_asociarTerceroTrabajo`(
+
+
+_id_terceros INT,
+_id_trabajos INT,
+_costo_prestacion FLOAT,
+_descripcion_trabajo_realizado VARCHAR(45)
+)
+BEGIN
+
+INSERT INTO
+led_participa
+(
+id_terceros,
+id_trabajos,
+costo_prestacion,
+descripcion_trabajo_realizado
+)
+VALUES (
+_id_terceros,
+_id_trabajos,
+_costo_prestacion,
+_descripcion_trabajo_realizado
+);
 
 select LAST_INSERT_ID() as id;
 
@@ -913,8 +571,10 @@ _id INT
 )
 BEGIN
 
-select a.*, p.* from led_articulos a
+select a.*, p.*, d.* from led_articulos a
 inner join led_provistos p on p.id_articulos = a.id_articulo
+inner join led_proveedores pr on pr.id_proveedores = p.id_proveedores
+inner join led_datos d on d.id_datos = pr.id_datos
 where p.id_trabajos = _id;
 
 END//
@@ -1307,7 +967,7 @@ CREATE TRIGGER `after_delete_provistos` AFTER DELETE ON `led_provistos` FOR EACH
 		FROM(
 			SELECT (p.costo_unitario * p.cantidad_articulos) as costo
 		    FROM led_provistos p
-		    WHERE p.id_trabajos = 58) s;
+		    WHERE p.id_trabajos = @jobId) s;
 
 		UPDATE led_trabajos t 
 		SET t.precio_articulos = @total
@@ -1332,7 +992,7 @@ CREATE TRIGGER `after_insert_provistos` AFTER INSERT ON `led_provistos` FOR EACH
 		FROM(
 			SELECT (p.costo_unitario * p.cantidad_articulos) as costo
 		    FROM led_provistos p
-		    WHERE p.id_trabajos = 58) s;
+		    WHERE p.id_trabajos = @jobId) s;
 
 		UPDATE led_trabajos t 
 		SET t.precio_articulos = @total
@@ -1357,7 +1017,7 @@ CREATE TRIGGER `after_update_provistos` AFTER UPDATE ON `led_provistos` FOR EACH
 		FROM(
 			SELECT (p.costo_unitario * p.cantidad_articulos) as costo
 		    FROM led_provistos p
-		    WHERE p.id_trabajos = 58) s;
+		    WHERE p.id_trabajos = @jobId) s;
 
 		UPDATE led_trabajos t 
 		SET t.precio_articulos = @total

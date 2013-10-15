@@ -122,7 +122,7 @@
 			  <li class="active" name="step" id="step1">
 			    <a href="#">Datos del Proveedor</a>
 			  </li>
-			  <li class="disabled" name="step" id="step2">
+			  <li class="disabled" name="step" id="step2end">
 			    <a href="#">Integrantes del proveedor</a>
 			  </li>
 			</ul>
@@ -155,7 +155,7 @@
 		  <li class="active" name="stepEdit" id="step1Edit">
 		    <a href="#">Datos del Proveedor</a>
 		  </li>
-		  <li class="disabled" name="stepEdit" id="step2Edit">
+		  <li class="disabled" name="stepEdit" id="step2endEdit">
 		    <a href="#">Integrantes del Proveedor</a>
 		  </li>
 		</ul>

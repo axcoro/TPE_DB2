@@ -114,6 +114,10 @@ class SqlService {
 		return result
 	}
 
+	def asociateOther(other) {
+		return getRows("{call LED_asociarTerceroTrabajo(${other.otherId}, ${other.jobId}, '${other.costo_prestacion}', '${other.descripcion_trabajo_realizado}')}")[0]
+	}
+
 	def createCop(cop) {
 
 		return getRows("{call LED_crearDatos('${cop.numero_cuil}', '${cop.razon_social}', '${cop.direccion}', '${cop.codigo_postal}', '${cop.telefono_principal}', '${cop.correo_electronico_principal}', '${cop.sitio_web}', ${cop.copType}, 1)}")[0]

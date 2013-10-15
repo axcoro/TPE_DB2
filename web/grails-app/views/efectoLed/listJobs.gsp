@@ -139,6 +139,9 @@
 			  <li class="disabled" name="step" id="step2">
 			    <a href="#">Artículos del Trabajo</a>
 			  </li>
+			  <li class="disabled" name="step" id="end">
+			    <a href="#">Terceros del Trabajo</a>
+			  </li>
 			</ul>
 			<div id="createFormContent" class="row-fluid">
 				<%-- Content --%>
@@ -164,6 +167,9 @@
 			  </li>
 			  <li class="disabled" name="stepEdit" id="step2Edit">
 			    <a href="#">Artículos del Trabajo</a>
+			  </li>
+			  <li class="disabled" name="step" id="endEdit">
+			    <a href="#">Terceros del Trabajo</a>
 			  </li>
 			</ul>
 			<div id="editFormContent" class="row-fluid">

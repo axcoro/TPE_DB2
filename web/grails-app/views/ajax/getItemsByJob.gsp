@@ -65,4 +65,5 @@
 <script type="text/javascript">
   registerItemsFunctions(${jobId});
 </script>
+<span id="hiddenJobId" class="hide">${jobId}</span>
 </div>

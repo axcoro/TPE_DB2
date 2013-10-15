@@ -1,3 +1,4 @@
+<div id="listOthersContainer" style="max-width: 920px;">
 <table class="table table-hover table-bordered table table-condensed">
 
 	<thead>
@@ -46,3 +47,7 @@
 	</tbody>
 
 </table>
+<script type="text/javascript">
+  registerOthersFunctions(${jobId});
+</script>
+</div>
