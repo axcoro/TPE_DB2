@@ -3,7 +3,7 @@
 <div id="listJobsContainer" style="max-width: 890px;">
 </g:if>
 <g:else>
-<div id="listJobsContainer" style="max-width: 790px;">
+<div id="listJobsContainer" style="max-width: 920px;">
 </g:else>
   <table class="table table-hover table-bordered table table-condensed table-header-fix">
 
@@ -11,6 +11,7 @@
 		<tr>
 			<th class="table-col-codigo"><center>Código Interno</center></th>
 			<th class="table-col-codigo"><center>Código Proveedor</center></th>
+			<th class="table-col-descripcion"><center>Proveedor</center></th>
 			<th class="table-col-descripcion"><center>Descripción</center></th>
 			<th class="table-col-descripcion"><center>Marca/Fabricante</center></th>
 			<th class="table-col-descripcion"><center><center>Modelo</center></th>
@@ -39,6 +40,7 @@
 				<tr>
 					<td class="table-col-codigo">${item.codigo_interno}</td>
 					<td class="table-col-codigo">${item.codigo_catalogo_proveedor}</td>
+					<td class="table-col-descripcion">${item.razon_social}</td>
 					<td class="table-col-descripcion">${item.descripcion}</td>
 					<td class="table-col-descripcion">${item.marca_fabricante}</td>
 					<td class="table-col-descripcion">${item.modelo}</td>

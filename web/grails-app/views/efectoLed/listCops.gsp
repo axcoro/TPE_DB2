@@ -19,7 +19,7 @@
 					<th class="table-col-cuit"><center>CUIL/CUIT</center></th>
 					<th class="table-col-razon"><center>Razón Social</center></th>
 					<th class="table-col-direccion"><center>Dirección</center></th>
-					<th class="table-col-codigo"><center>Código Postal</center></th>
+					<th class="table-col-codigo"><center>C. Postal</center></th>
 					<th class="table-col-tel"><center>Tel. Principal</center></th>
 					<th class="table-col-email"><center>Correo Electrónico</center></th>
 					<th class="table-col-url"><center>Sitio Web</center></th>

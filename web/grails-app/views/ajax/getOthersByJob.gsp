@@ -7,7 +7,7 @@
 			<th>C. Prestación</th>
 			<th>Desc. Trabajo</th>
 			<th>Dirección</th>
-			<th>Código Postal</th>
+			<th>C. Postal</th>
 			<th>Tel. Principal</th>
 			<th>Correo Electrónico</th>
 			<th>Sitio Web</th>

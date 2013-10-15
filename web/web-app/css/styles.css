@@ -19,6 +19,10 @@ div {
     padding-top: 25px;
 }
 
+.modal-header{
+    margin-bottom: 5px;
+}
+
 .table-container {
     overflow: auto;
 }
@@ -46,6 +50,12 @@ div {
     top: 20px !important;
     width: 900px;
     margin-left: -450px;
+}
+
+.modal-large2 {
+    top: 20px !important;
+    width: 1000px;
+    margin-left: -500px;
 }
 
 .modal-extra-large {
@@ -151,12 +161,11 @@ div {
 
 #header {
     color: white;
-    background-image: url('../img/lights.jpg');
-    background-size: cover;
+    background: url("../img/lights.jpg") 99% center no-repeat;
 }
 
 #header {
-    max-height: 80px;
+    /*max-height: 80px;*/
 }
 
 #footer {

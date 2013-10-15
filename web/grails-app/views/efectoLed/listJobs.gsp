@@ -18,11 +18,11 @@
 					<th class="table-col-nombre"><center>Cliente</center></th>
 					<th class="table-col-descripcion"><center>Descripción</center></th>
 					<th class="table-col-fecha"><center>F. Creación</center></th>
-					<th class="table-col-fecha"><center>F. Aprobación</center></th>
+					<th class="table-col-fecha"><center>F. Apr.</center></th>
 					<th class="table-col-fecha"><center>F. Inicio Obra</center></th>
 					<th class="table-col-fecha"><center>F. Fin Obra</center></th>
 					<th class="table-col-precio"><center>P. Total</center></th>
-					<th class="table-col-precio"><center>P. M. Obra</center></th>
+					<th class="table-col-precio"><center>P. M. Ob.</center></th>
 					<th class="table-col-precio"><center>P. Art.</center></th>
 					<th class="table-col-custom"><center>Mas Info.</center></th>
 					<th class="table-col-custom"><center>Acciones</center></th>
@@ -92,7 +92,7 @@
             </div>
         </div>
 
-		<div id="itemsByJobModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div id="itemsByJobModal" class="modal hide fade modal-large2" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 			<div class="modal-header">
 				<h3>Artículos</h3>
 			</div>
