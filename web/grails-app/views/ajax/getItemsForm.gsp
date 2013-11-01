@@ -67,3 +67,6 @@
       </fieldset>
   </form>
 </div>
+<script type="text/javascript">
+        createSearch('providerId');
+</script>

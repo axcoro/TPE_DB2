@@ -1,4 +1,4 @@
-<div class="modal-body">
+<div class="modal-body" style="min-height: 400px;">
   <form id="formOther" method="post" class="form-horizontal" action="/asociateOther">
     <fieldset>
       <input type="hidden" name="jobId" value="${jobId}"/>
@@ -35,3 +35,6 @@
     </fieldset>
   </form>
 </div>
+<script type="text/javascript">
+        createSearch('otherId');
+</script>

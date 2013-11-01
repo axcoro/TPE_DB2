@@ -8,7 +8,7 @@
 	</head>
 
 	<body>
-	  <div class="container" style="margin-left: 30px;">
+	  <div class="container" style="max-width: 1100px;">
 
 		<div id="notifications"></div>
 

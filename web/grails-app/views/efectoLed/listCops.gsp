@@ -8,7 +8,8 @@
 	</head>
 
 	<body>
-	  <div class="container">
+	<center>
+	  <div class="container"  style="max-width: 990px;">
 
 		<div id="notifications"></div>
 
@@ -71,7 +72,7 @@
 			</tbody>
 		</table>
 	</div>
-
+</center>
 	<%-- Modals --%>
 
 	<div id="membersByProviderModal" class="modal hide fade modal-medium" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">

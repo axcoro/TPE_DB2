@@ -196,6 +196,10 @@ $("[name='deleteJob']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
+function createSearch(target) {
+    $("#" + target).select2();
+}
+
 function magicLogic(map, _that) {
     var mapping = ($(_that).attr("data-copType") === "0") ? map.cop : map.job;
     var stepSuffix = mapping.stepSuffix;
@@ -222,7 +226,7 @@ function magicLogic(map, _that) {
 	activateStep(step, stepSuffix, action);
 
 	var queryString = $(mapping.formSelector).serialize();
-
+	$(mapping.formContentSelector).html('');
 	$.ajax(mapping.createUri + queryString, {
 	    success: function(data) {
 

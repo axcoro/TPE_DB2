@@ -41,9 +41,11 @@
 			<br>
 
 			<div id="content" class="row-fluid">
-				<div class="span12 table-container">
-					<g:layoutBody />
-				</div>
+			  <center>
+			    <div class="table-container" style="max-width: 1135px;">
+			      <g:layoutBody />
+			    </div>
+			  </center>	
 			</div>
 
 			<div id="footer" class="row-fluid">

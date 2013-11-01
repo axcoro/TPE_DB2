@@ -134,6 +134,5 @@ class UrlMappings {
 			controller = "ajax"
 			action = "createMember"
 		}
-
 	}
 }

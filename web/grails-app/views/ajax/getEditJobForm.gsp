@@ -46,3 +46,6 @@
     <button name="submitBtn" type="submit" class="hide"></button>
   </fieldset>
 </form>
+<script type="text/javascript">
+        createSearch('clientId');
+</script>
