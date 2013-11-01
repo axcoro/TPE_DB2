@@ -8,7 +8,7 @@
             <g:each var="client" in="${clients}">
               <option value="${client.id_cliente}">${client.razon_social}</option>
             </g:each>
-          </select>&nbsp*
+          </select><cops:requiredMark />
         </div>
       </div>
       <div class="control-group">
@@ -32,7 +32,7 @@
       <div class="control-group">
         <label class="control-label" for="precio_mano_obra">Mano de Obra</label>
         <div class="controls">                     
-          <input type="number" step="any" min="0" id="precio_mano_obra" required="" name="precio_mano_obra" value='0.0'>&nbsp*
+          <input type="number" step="any" min="0" id="precio_mano_obra" required="" name="precio_mano_obra" value='0.0'><cops:requiredMark />
         </div>
       </div>
       <div class="control-group">
@@ -40,9 +40,7 @@
         <div class="controls">                     
           <textarea id="descripcion" name="descripcion"></textarea>
         </div>
-        <div>
-          <h5 class="pull-right">* campos obligatorios</h5>	
-        </div>
+        <cops:requiredMarkExplain />
       </div>
     </div>
     <button name="submitBtn" type="submit" class="hide"></button>

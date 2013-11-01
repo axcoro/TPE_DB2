@@ -30,4 +30,13 @@ class CopsTagLib {
 
 		out << createLink
 	}
+
+	def requiredMark = { attrs, body ->
+
+		out << "<span style='color: red;'>&nbsp*</span>"
+	}
+
+	def requiredMarkExplain = { attrs, body ->
+		out << "<div><h5 class='pull-right'>* campos obligatorios</h5></div>"
+	}
 }

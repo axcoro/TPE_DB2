@@ -10,29 +10,29 @@
 					              <g:each var="provider" in="${providers}">
 						              <option value="${provider.id_proveedores}">${provider.razon_social}</option>
 					              </g:each>
-				              </select>&nbsp*
+				              </select><cops:requiredMark />
 			              </div>
 		              </div>
 
 		              <div class="control-group">
 			              <label class="control-label" for="codigo_interno">Código Interno</label>
 			              <div class="controls">
-				              <input id="codigo_interno" name="codigo_interno" type="text" placeholder="ABCD12345" class="input-large" required="">&nbsp*
+				              <input id="codigo_interno" name="codigo_interno" type="text" placeholder="ABCD12345" class="input-large" required=""><cops:requiredMark />
 			              </div>
 			              <label class="control-label" for="codigo_proveedor">Código Catalogo Proveedor</label>
 			              <div class="controls">
-				              <input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="ABCD12345" class="input-large" required="">&nbsp*
+				              <input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="ABCD12345" class="input-large" required=""><cops:requiredMark />
 			              </div>
 		              </div>
 
 		              <div class="control-group">
 			              <label class="control-label" for="marca_fabricante">Fabricante</label>
 			              <div class="controls">
-				              <input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Phillips" class="input-large" required="">&nbsp*
+				              <input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Phillips" class="input-large" required=""><cops:requiredMark />
 			              </div>
 			              <label class="control-label" for="modelo">Modelo</label>
 			              <div class="controls">
-				              <input id="modelo" name="modelo" type="text" placeholder="Bañador FX3388" class="input-large" required="">&nbsp*
+				              <input id="modelo" name="modelo" type="text" placeholder="Bañador FX3388" class="input-large" required=""><cops:requiredMark />
 			              </div>
 		              </div>
 
@@ -46,15 +46,13 @@
 		              <div class="control-group">
 			              <label class="control-label" for="costo_unitario">Costo Unitario</label>
 			              <div class="controls">
-				              <input type="number" step="any" min="0" id="costo_unitario" required="" name="costo_unitario" value='0.0'>&nbsp*
+				              <input type="number" step="any" min="0" id="costo_unitario" required="" name="costo_unitario" value='0.0'><cops:requiredMark />
 			              </div>
 			              <label class="control-label" for="cantidad_articulos">Cantidad Artículos</label>
 			              <div class="controls">
-				              <input type="number" step="1" min="0" id="cantidad_articulos" required="" name="cantidad_articulos" value='0'>&nbsp*
+				              <input type="number" step="1" min="0" id="cantidad_articulos" required="" name="cantidad_articulos" value='0'><cops:requiredMark />
 			              </div>
-			              <div>
-				<h5 class="pull-right">* campos obligatorios</h5>	
-			              </div>
+			              <cops:requiredMarkExplain />
 		              </div>
 
 				       <input type="hidden" id="observaciones" name="observaciones" />
