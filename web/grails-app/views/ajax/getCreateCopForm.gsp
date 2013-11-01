@@ -30,13 +30,13 @@
             <div class="control-group">
                 <label class="control-label" for="telefono_principal">Teléfono Principal</label>
                 <div class="controls">
-                    <input id="telefono_principal" name="telefono_principal" type="tel" pattern="[0-9]*" placeholder="2664XXXXXX" class="input-large" required=""><cops:requiredMark />
+                    <input id="telefono_principal" name="telefono_principal" type="tel" placeholder="2664XXXXXX" class="input-large" required=""><cops:requiredMark />
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="correo_electronico_principal">Correo Electroníco</label>
                 <div class="controls">
-                    <input id="correo_electronico_principal" name="correo_electronico_principal" type="email" placeholder="contacto@efecto-led.com" class="input-large">
+                    <input id="correo_electronico_principal" name="correo_electronico_principal" type="email" placeholder="contacto&#64;efecto-led.com" class="input-large">
                 </div>
             </div>
             <div class="control-group">
@@ -50,3 +50,6 @@
         <cops:requiredMarkExplain />
     </form>
 </div>
+<script type="text/javascript">
+
+</script>

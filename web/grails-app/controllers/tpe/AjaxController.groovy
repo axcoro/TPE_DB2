@@ -148,11 +148,11 @@ class AjaxController {
 		render "${params.jobId}"
 	}
 	
-//    	def listClients() {
-//	    def clients = sqlService.getClients()
-//	    render(contentType: 'text/json') {[
-//	            'value': clients,
-//	            'status': clients ? true : false
-//	        ]}
-//	}
+    	def listClients() {
+	    def clients = sqlService.getClients()
+	    render(contentType: 'text/json') {[
+	            'value': clients,
+	            'status': clients ? true : false
+	        ]}
+	}
 }

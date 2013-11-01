@@ -47,5 +47,5 @@
   </fieldset>
 </form>
 <script type="text/javascript">
-        createSearch('clientId');
+        createSearch('clientId', 'razon_social', '/listClients');
 </script>

@@ -196,8 +196,12 @@ $("[name='deleteJob']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
-function createSearch(target) {
-    $("#" + target).select2();
+function createSearch(target, term, searchUrl) {
+    $("#" + target).typeahead({
+        name: target,
+        remote: searchUrl,
+        valueKey: term
+    });
 }
 
 function magicLogic(map, _that) {
