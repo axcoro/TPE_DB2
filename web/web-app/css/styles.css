@@ -19,6 +19,10 @@ div {
     padding-top: 25px;
 }
 
+.input-large2{
+ width: 220px !important;   
+}
+
 .modal-header{
     margin-bottom: 5px;
 }
@@ -88,6 +92,11 @@ div {
     max-width: 80px;
 }
 
+.table-col-descripcion-large {
+    min-width: 120px;
+    max-width: 120px;
+}
+
 .table-col-fecha {
     min-width: 80px;
     max-width: 80px;
@@ -121,6 +130,11 @@ div {
 .table-col-codigo {
     min-width: 75px;
     max-width: 75px;
+}
+
+.table-col-codigo-large {
+    min-width: 100px;
+    max-width: 100px;
 }
 
 .table-col-tel {

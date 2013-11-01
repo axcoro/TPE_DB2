@@ -4,11 +4,11 @@
       <div class="control-group">
         <label class="control-label" for="cliente">Cliente</label>
         <div class="controls">
-          <select id="clientId" name="clientId" class="input-large">
+          <select id="clientId" name="clientId" class="input-large2">
             <g:each var="client" in="${clients}">
               <option value="${client.id_cliente}">${client.razon_social}</option>
             </g:each>
-          </select>
+          </select>&nbsp*
         </div>
       </div>
       <div class="control-group">
@@ -32,13 +32,16 @@
       <div class="control-group">
         <label class="control-label" for="precio_mano_obra">Mano de Obra</label>
         <div class="controls">                     
-          <input type="number" step="any" min="0" id="precio_mano_obra" required="" name="precio_mano_obra" value='0.0'>
+          <input type="number" step="any" min="0" id="precio_mano_obra" required="" name="precio_mano_obra" value='0.0'>&nbsp*
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="descripcion">Descripción</label>
         <div class="controls">                     
           <textarea id="descripcion" name="descripcion"></textarea>
+        </div>
+        <div>
+          <h5 class="pull-right">* campos obligatorios</h5>	
         </div>
       </div>
     </div>

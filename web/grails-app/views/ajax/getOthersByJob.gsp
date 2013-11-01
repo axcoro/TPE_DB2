@@ -46,8 +46,8 @@
 						<td class="table-col-direccion">${other.direccion}</td>
 						<td class="table-col-codigo">${other.codigo_postal}</td>
 						<td class="table-col-tel">${other.telefono_principal}</td>
-						<td class="table-col-email">${other.correo_electronico_principal}</td>
-						<td class="table-col-url">${other.sitio_web}</td>
+						<td class="table-col-email"><a href="mailto:${other.correo_electronico_principal}">${other.correo_electronico_principal}</a></td>
+						<td class="table-col-url"><a href="${other.sitio_web}">${other.sitio_web}</a></td>
 						<g:if test="${modal == false}">
 						  <td class="table-col-custom">
 						  <center>

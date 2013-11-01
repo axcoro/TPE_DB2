@@ -5,16 +5,16 @@
       <div class="control-group">
         <label class="control-label" for="otherId">Terceros</label>
         <div class="controls">
-          <select id="otherId" name="otherId" class="input-large">
+          <select id="otherId" name="otherId" class="input-large2">
             <g:each var="other" in="${others}">
               <option value="${other.id_terceros}">${other.razon_social}</option>
             </g:each>
-          </select>
+          </select>&nbsp*
         </div>
         <div class="control-group">
           <label class="control-label" for="costo_prestacion">Costo Prestacion</label>
           <div class="controls">                     
-            <input type="number" step="any" min="0" id="costo_prestacion" required="" name="costo_prestacion" value='0.0'>
+            <input type="number" step="any" min="0" id="costo_prestacion" required="" name="costo_prestacion" value='0.0'>&nbsp*
           </div>
         </div>
         <div class="control-group">
@@ -22,6 +22,9 @@
           <div class="controls">                     
             <textarea id="descripcion_trabajo_realizado" name="descripcion_trabajo_realizado"></textarea>
           </div>
+        </div>
+        <div>
+          <h5 class="pull-right">* campos obligatorios</h5>	
         </div>
       </div>
       <div class="control-group">

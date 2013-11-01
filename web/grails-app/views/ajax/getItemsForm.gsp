@@ -6,33 +6,33 @@
 		              <div class="control-group">
 			              <label class="control-label" for="providerId">Proveedor</label>
 			              <div class="controls">
-				              <select id="providerId" name="providerId" class="input-medium">
+				              <select id="providerId" name="providerId" class="input-large2">
 					              <g:each var="provider" in="${providers}">
 						              <option value="${provider.id_proveedores}">${provider.razon_social}</option>
 					              </g:each>
-				              </select>
+				              </select>&nbsp*
 			              </div>
 		              </div>
 
 		              <div class="control-group">
 			              <label class="control-label" for="codigo_interno">Código Interno</label>
 			              <div class="controls">
-				              <input id="codigo_interno" name="codigo_interno" type="text" placeholder="ABCD12345" class="input-medium" required="">
+				              <input id="codigo_interno" name="codigo_interno" type="text" placeholder="ABCD12345" class="input-large" required="">&nbsp*
 			              </div>
 			              <label class="control-label" for="codigo_proveedor">Código Catalogo Proveedor</label>
 			              <div class="controls">
-				              <input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="ABCD12345" class="input-medium" required="">
+				              <input id="codigo_proveedor" name="codigo_proveedor" type="text" placeholder="ABCD12345" class="input-large" required="">&nbsp*
 			              </div>
 		              </div>
 
 		              <div class="control-group">
 			              <label class="control-label" for="marca_fabricante">Fabricante</label>
 			              <div class="controls">
-				              <input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Phillips" class="input-medium" required="">
+				              <input id="marca_fabricante" name="marca_fabricante" type="text" placeholder="Phillips" class="input-large" required="">&nbsp*
 			              </div>
 			              <label class="control-label" for="modelo">Modelo</label>
 			              <div class="controls">
-				              <input id="modelo" name="modelo" type="text" placeholder="Bañador FX3388" class="input-medium" required="">
+				              <input id="modelo" name="modelo" type="text" placeholder="Bañador FX3388" class="input-large" required="">&nbsp*
 			              </div>
 		              </div>
 
@@ -46,11 +46,14 @@
 		              <div class="control-group">
 			              <label class="control-label" for="costo_unitario">Costo Unitario</label>
 			              <div class="controls">
-				              <input type="number" step="any" min="0" id="costo_unitario" required="" name="costo_unitario" value='0.0'>
+				              <input type="number" step="any" min="0" id="costo_unitario" required="" name="costo_unitario" value='0.0'>&nbsp*
 			              </div>
 			              <label class="control-label" for="cantidad_articulos">Cantidad Artículos</label>
 			              <div class="controls">
-				              <input type="number" step="1" min="0" id="cantidad_articulos" required="" name="cantidad_articulos" value='0'>
+				              <input type="number" step="1" min="0" id="cantidad_articulos" required="" name="cantidad_articulos" value='0'>&nbsp*
+			              </div>
+			              <div>
+				<h5 class="pull-right">* campos obligatorios</h5>	
 			              </div>
 		              </div>
 

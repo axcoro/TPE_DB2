@@ -13,7 +13,7 @@
 			<th class="table-col-codigo"><center>Código Proveedor</center></th>
 			<th class="table-col-descripcion"><center>Proveedor</center></th>
 			<th class="table-col-descripcion"><center>Descripción</center></th>
-			<th class="table-col-descripcion"><center>Marca/Fabricante</center></th>
+			<th class="table-col-descripcion"><center>Marca/Fabr.</center></th>
 			<th class="table-col-descripcion"><center><center>Modelo</center></th>
 			<th class="table-col-precio"><center>Cantidad Artículos</center></th>
 			<th class="table-col-precio"><center>Costo Unitario</center></th>

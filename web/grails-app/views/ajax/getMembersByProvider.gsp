@@ -1,6 +1,6 @@
 <center>
 <g:if test="${modal == false}">
-<div id="listMembersContainer" style="max-width: 650px;">
+<div id="listMembersContainer" style="max-width: 630px;">
 </g:if>
 <g:else>
 <div id="listMembersContainer" style="max-width: 500px;">
@@ -9,12 +9,12 @@
 
 	<thead>
 		<tr>
-			<th class="table-col-codigo"><center>Nombre</center></th>
-			<th class="table-col-descripcion"><center>Área</center></th>
-			<th class="table-col-descripcion"><center>Teléfono P.</center></th>
-			<th class="table-col-descripcion"><center>Correo El.</center></th>
+			<th class="table-col-codigo-large"><center>Nombre</center></th>
+			<th class="table-col-descripcion-large"><center>Área</center></th>
+			<th class="table-col-descripcion-large"><center>Teléfono P.</center></th>
+			<th class="table-col-descripcion-large"><center>Correo El.</center></th>
 			<g:if test="${modal == false}">
-			      <th class="table-col-descripcion"><center>Borrar</center></th>
+			      <th class="table-col-descripcion-large"><center>Borrar</center></th>
 			</g:if>
 		</tr>
 	</thead>
@@ -34,12 +34,12 @@
 
 			<g:each var="member" in="${membersByProvider}">
 				<tr>
-					<td class="table-col-codigo">${member.nombre}</td>
-					<td class="table-col-descripcion">${member.area}</td>
-					<td class="table-col-descripcion">${member.telefono}</td>
-					<td class="table-col-descripcion">${member.correo_electronico}</td>
+					<td class="table-col-codigo-large">${member.nombre}</td>
+					<td class="table-col-descripcion-large">${member.area}</td>
+					<td class="table-col-descripcion-large">${member.telefono}</td>
+					<td class="table-col-descripcion-large"><a href="mailto:${member.correo_electronico}">${member.correo_electronico}</a></td>
 					<g:if test="${modal == false}">
-					      <td class="table-col-descripcion">
+					      <td class="table-col-descripcion-large">
 					          <center>
 					            <a href="#" name="member-remove" data-memberId="${member.id_integrantes}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a>
 					          </center>
