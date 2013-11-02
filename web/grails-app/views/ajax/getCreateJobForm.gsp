@@ -4,12 +4,8 @@
       <div class="control-group">
         <label class="control-label" for="cliente">Cliente</label>
         <div class="controls">
-<!--          <select id="clientId" name="clientId" class="input-large2">
-            <g:each var="client" in="${clients}">
-              <option value="${client.id_cliente}">${client.razon_social}</option>
-            </g:each>
-          </select>-->
-          <input id="clientId" name="clientId" type="text" class="input-large2">
+          <input id="clientId_hidden" name="clientId" type="hidden" />
+          <input id="clientId" type="text" autocomplete="off" class="input-large2" required="" />
           <cops:requiredMark />
         </div>
       </div>

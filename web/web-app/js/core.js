@@ -197,12 +197,28 @@ $("[name='deleteJob']").on('click', function() {
 });
 
 function createSearch(target, term, searchUrl) {
-    $("#" + target).typeahead([
-        {
-            name: 'planets',
-            local: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
-        }
-    ]);
+    $("#" + target).typeahead(
+            [
+	{
+	    name: target,
+	    prefetch: searchUrl,
+	    remote: searchUrl,
+	    valueKey: term,
+	    template: '{{razon_social}}',
+	    engine: Hogan
+	}
+            ]
+            );
+
+    $("#" + target).on("typeahead:selected typeahead:autocompleted", function(e, data) {
+        var el = document.getElementById(target + '_hidden');
+        if (data.hasOwnProperty('id_cliente'))
+            el.value = data.id_cliente;
+        else if (data.hasOwnProperty('id_terceros'))
+            el.value = data.id_terceros;
+        else if (data.hasOwnProperty('id_proveedores'))
+            el.value = data.id_proveedores;
+    });
 }
 
 function magicLogic(map, _that) {

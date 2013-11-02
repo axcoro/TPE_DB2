@@ -150,9 +150,16 @@ class AjaxController {
 	
     	def listClients() {
 	    def clients = sqlService.getClients()
-	    render(contentType: 'text/json') {[
-	            'value': clients,
-	            'status': clients ? true : false
-	        ]}
+	    render(contentType: 'text/json') {clients}
+	}
+    	
+	def listOthers() {
+	    def others = sqlService.getOthers()
+	    render(contentType: 'text/json') {others}
+	}
+	
+	def listProviders() {
+	    def providers = sqlService.getProviders()
+	    render(contentType: 'text/json') {providers}
 	}
 }

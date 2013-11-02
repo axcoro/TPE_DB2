@@ -144,5 +144,15 @@ class UrlMappings {
 			controller = "ajax"
 			action = "listClients"
 		}
+		"/listOthers" {
+
+			controller = "ajax"
+			action = "listOthers"
+		}
+		"/listProviders" {
+
+			controller = "ajax" 
+			action = "listProviders"
+		}
 	}
 }
