@@ -21,7 +21,7 @@ BEGIN
 case  
 when _type = 'datos' then
     select (1) from led_datos d
-    where d.razon_social = _keyValue;
+    where d.numero_cuil = _keyValue;
 
 end case; 
 
