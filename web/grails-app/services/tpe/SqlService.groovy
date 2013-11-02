@@ -46,6 +46,11 @@ class SqlService {
 		return getRows("{call LED_listarDatos(${Constants.CLIENTS})}")
 	}
 
+	def getClientByJob(jobId) {
+
+		return getRows("{call LED_obtenerClientePorTrabajo(${jobId})}")[0]
+	}
+
 	def getProviders() {
 
 		return getRows("{call LED_listarDatos(${Constants.PROVIDERS})}")

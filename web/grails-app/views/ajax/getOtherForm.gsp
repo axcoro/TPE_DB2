@@ -5,11 +5,8 @@
       <div class="control-group">
         <label class="control-label" for="otherId">Terceros</label>
         <div class="controls">
-          <select id="otherId" name="otherId" class="input-large2">
-            <g:each var="other" in="${others}">
-              <option value="${other.id_terceros}">${other.razon_social}</option>
-            </g:each>
-          </select>
+          <input id="otherId_hidden" name="otherId" type="hidden" />
+          <input id="otherId" type="text" autocomplete="off" class="" required="" />
           <cops:requiredMark />
         </div>
         <div class="control-group">
@@ -38,5 +35,5 @@
   </form>
 </div>
 <script type="text/javascript">
-        createSearch('otherId');
+  createSearch('otherId', 'razon_social', '/listProviders');
 </script>
