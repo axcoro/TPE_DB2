@@ -170,7 +170,7 @@
 				<button id="createCancel" name="cancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
 				<button id="createReset" name="reset" class="btn" onclick="document.forms['formCreateCop'].reset();" >Limpiar</button>
 				<g:if test="${copType == 0}">
-					<button id="createNext" data-copType="${copType}" name="next" class="btn btn-success">Siguiente</button>
+					<button id="createNext" data-copType="${copType}" data-type="datos" data-form-target="formCreateCop" data-key="numero_cuil" name="next" class="btn btn-success">Siguiente</button>
 				</g:if>
 				<g:else>
 					<button id="createSave" data-type="datos" data-form-target="formCreateCop" data-key="numero_cuil" name="save" class="btn btn-success">Guardar</button>
@@ -202,7 +202,7 @@
 				<button id="editCancel" name="cancel" data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Cancelar</button>
 				<button id="editReset" name="reset" class="btn" onclick="document.forms['formEditCop'].reset();" >Deshacer</button>
 				<g:if test="${copType == 0}">
-					<button id="editNext" name="edit" data-copType="${copType}" name="save" class="btn btn-success">Siguiente</button>
+					<button id="editNext" name="edit" data-copType="${copType}" data-type="datos" data-form-target="formEditCop" data-key="numero_cuil" name="save" class="btn btn-success">Siguiente</button>
 				</g:if>
 				<g:else>
 					<button id="editSave" name="save" class="btn btn-success" data-type="datos" data-form-target="formEditCop" data-key="numero_cuil" >Guardar</button>

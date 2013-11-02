@@ -238,7 +238,8 @@ function createSearch(target, term, searchUrl) {
 }
 
 function magicLogic(map, _that) {
-    var mapping = ($(_that).attr("data-copType") === "0") ? map.cop : map.job;
+    var copType = $(_that).attr("data-copType");
+    var mapping = (copType === "0") ? map.cop : map.job;
     var stepSuffix = mapping.stepSuffix;
     var action = mapping.action;
     var step = nextStep(stepSuffix);
@@ -250,14 +251,24 @@ function magicLogic(map, _that) {
         case 'step2end':
         case 'step2Edit':
         case 'step2endEdit':
+
             var form = $(mapping.formSelector);
-
-            form.submit(function() {
-	return false;
-            }); // ignorar el submit comun
-
-            var btn = $("[name='submitBtn']"); // forzar la validacion estandar
-            btn[0].click();
+            if (copType === "0") // proveedores
+            {
+	if (id.indexOf('Edit') > -1){
+	    var idControl = document.getElementById('hiddenId').value;
+	    existKey("editNext", idControl, false);
+	}
+	else
+	    existKey("createNext", false, false);
+            }
+            else {
+	form.submit(function() {
+	    return false;
+	}); // ignorar el submit comun
+	var btn = $("[name='submitBtn']"); // forzar la validacion estandar
+	btn[0].click();
+            }
 
             if (form[0].checkValidity()) {
 	activateStep(step, stepSuffix, action);
@@ -397,7 +408,7 @@ function magicLogic(map, _that) {
     }
 }
 
-function existKey(btn, control){
+function existKey(btn, control, submit){
     var elf = document.getElementById(btn);
     
     var formSelector = "#" + elf.getAttribute("data-form-target");
@@ -423,18 +434,19 @@ function existKey(btn, control){
     }
     else{
         $.ajax("/existKey", {
+            async: false,
             data: fields,
             success: function(response) {
-	debugger;
-	if (+response > -1 && !(control && control === +response)) {
+	if (+response > -1 && !(control && control === response)) {
 	    el.setCustomValidity("Ya existe otro registro con este valor");
 	}
 	else
 	{
 	    el.setCustomValidity("");
-	    $(formSelector).off('submit');
+	    if(submit !== false)
+	        $(formSelector).off('submit');
 	}
-
+	
 	var btn = $("[name='submitBtn']"); // forzar la validacion estandar
 	btn[0].click();
             },
