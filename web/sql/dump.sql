@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `led_articulos` (
   `observaciones` varchar(255) NOT NULL,
   PRIMARY KEY (`id_articulo`),
   UNIQUE KEY `Índice 2` (`codigo_interno`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_articulos: ~14 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_articulos: ~15 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_articulos` DISABLE KEYS */;
 INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `marca_fabricante`, `modelo`, `observaciones`) VALUES
 	(1, 'COD-INT-1', 'Descripcion 1', 'MarcaA', 'ProductoA', ''),
@@ -45,7 +45,8 @@ INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `ma
 	(11, 'COD-INT-11', 'Descripcion 11', 'MarcaK', 'ProductoK', ''),
 	(12, 'COD-INT-12', 'Descripcion 12', 'MarcaL', 'ProductoL', ''),
 	(13, 'COD-INT-13', 'Descripcion 13', 'MarcaM', 'ProductoM', ''),
-	(14, 'cod1', '', 'proveedor', 'mod1', '');
+	(14, 'cod1', '', 'proveedor', 'mod1', ''),
+	(15, 'test', 'qweq', 'qwe', 'qwe', '');
 /*!40000 ALTER TABLE `led_articulos` ENABLE KEYS */;
 
 
@@ -242,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `led_provistos` (
   CONSTRAINT `fk_led_provistos_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_provistos: ~29 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_provistos: ~30 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
 INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `codigo_catalogo_proveedor`, `cantidad_articulos`, `costo_unitario`) VALUES
 	(1, 1, 4, 'CAT001', 8, 320.75),
@@ -273,7 +274,8 @@ INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `c
 	(12, 7, 18, 'CAT757', 5, 139.19),
 	(12, 7, 20, 'CAT70', 5, 714.17),
 	(13, 3, 20, 'CAT842', 5, 336.59),
-	(14, 3, 21, 'proov2', 9, 23.7);
+	(14, 3, 21, 'proov2', 9, 23.7),
+	(15, 8, 4, 'test', 3, 2);
 /*!40000 ALTER TABLE `led_provistos` ENABLE KEYS */;
 
 
@@ -319,12 +321,12 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
   PRIMARY KEY (`id_trabajos`),
   KEY `solicita` (`id_cliente`),
   CONSTRAINT `solicita` FOREIGN KEY (`id_cliente`) REFERENCES `led_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_trabajos: ~31 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_trabajos: ~34 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `precio_prestaciones`, `id_cliente`) VALUES
-	(4, 'Descripcion Trabajo 1', '2013-10-15 00:46:35', '2013-06-15 00:00:00', '2013-12-16 00:00:00', '2014-01-16 00:00:00', 8961.15, 1570.25, 6864.15, 526.75, 1),
+	(4, 'Descripcion Trabajo 1', '2013-10-15 00:46:35', '2013-06-15 00:00:00', '2013-12-16 00:00:00', '2014-01-16 00:00:00', 8967.15, 1570.25, 6870.15, 526.75, 1),
 	(6, 'Descripción Trabajo 2', '2013-10-15 01:20:29', '2013-10-25 00:00:00', '2013-12-17 00:00:00', '2013-10-20 00:00:00', 13664.2, 350.75, 12784.9, 528.54, 1),
 	(7, 'Descripcion Trabajo 3', '2013-10-15 00:46:35', NULL, NULL, NULL, 485.62, 0, 0, 485.62, 1),
 	(8, 'Descripcion Trabajo 4', '2013-10-15 00:46:35', '2013-10-04 00:00:00', '2013-10-10 00:00:00', '2013-10-11 00:00:00', 9440.34, 0, 7785.05, 1655.29, 1),
@@ -354,7 +356,10 @@ INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fec
 	(38, '', '2013-11-01 20:16:35', NULL, NULL, NULL, 0, 0, 0, 0, 1),
 	(39, 'asd', '2013-11-01 23:02:34', NULL, NULL, NULL, 0, 0, 0, 0, 1),
 	(40, 'typeahead', '2013-11-01 23:02:58', NULL, NULL, NULL, 0, 0, 0, 0, 1),
-	(41, 'gggg', '2013-11-01 23:05:02', NULL, NULL, NULL, 0, 0, 0, 0, 1);
+	(41, 'gggg', '2013-11-01 23:05:02', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(42, '', '2013-11-01 23:13:46', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(43, '', '2013-11-01 23:18:27', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(44, '', '2013-11-01 23:19:49', NULL, NULL, NULL, 0, 0, 0, 0, 1);
 /*!40000 ALTER TABLE `led_trabajos` ENABLE KEYS */;
 
 
@@ -676,15 +681,51 @@ case
 when _tipo = 0 then 
     select p.id_proveedores, d.* from led_datos d
 	inner join led_proveedores p on d.id_datos = p.id_datos
-	where d.estado = 1;
+	order by d.estado desc, d.razon_social;
 when _tipo = 1 then 
     select p.id_cliente, d.* from led_datos d
 	inner join led_clientes p on d.id_datos = p.id_datos
-	where d.estado = 1;
+	order by d.estado desc, d.razon_social;
 when _tipo = 2 then 
     select p.id_terceros, d.* from led_datos d
 	inner join led_terceros p on d.id_datos = p.id_datos
-	where d.estado = 1;
+	order by d.estado desc, d.razon_social;
+end case; 
+
+END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento efecto_led.LED_listarDatosFiltrando
+DROP PROCEDURE IF EXISTS `LED_listarDatosFiltrando`;
+DELIMITER //
+CREATE PROCEDURE `LED_listarDatosFiltrando`(
+
+
+_tipo INT,
+_query VARCHAR(255)
+)
+BEGIN
+
+case  
+when _tipo = 0 then 
+    select p.id_proveedores, d.* from led_datos d
+	inner join led_proveedores p on d.id_datos = p.id_datos
+	where (`numero_cuil` LIKE concat('%',_query,'%') OR `razon_social` LIKE concat('%',_query,'%') OR `direccion` LIKE concat('%',_query,'%') OR `codigo_postal` LIKE concat('%',_query,'%') OR `telefono_principal` LIKE concat('%',_query,'%') OR `correo_electronico_principal` LIKE concat('%',_query,'%'))
+	and d.estado = 1
+	order by d.estado desc, d.razon_social;
+when _tipo = 1 then 
+    select p.id_cliente, d.* from led_datos d
+	inner join led_clientes p on d.id_datos = p.id_datos
+	where (`numero_cuil` LIKE concat('%',_query,'%') OR `razon_social` LIKE concat('%',_query,'%') OR `direccion` LIKE concat('%',_query,'%') OR `codigo_postal` LIKE concat('%',_query,'%') OR `telefono_principal` LIKE concat('%',_query,'%') OR `correo_electronico_principal` LIKE concat('%',_query,'%'))
+	and d.estado = 1
+	order by d.estado desc, d.razon_social;
+when _tipo = 2 then 
+    select p.id_terceros, d.* from led_datos d
+	inner join led_terceros p on d.id_datos = p.id_datos
+	where (`numero_cuil` LIKE concat('%',_query,'%') OR `razon_social` LIKE concat('%',_query,'%') OR `direccion` LIKE concat('%',_query,'%') OR `codigo_postal` LIKE concat('%',_query,'%') OR `telefono_principal` LIKE concat('%',_query,'%') OR `correo_electronico_principal` LIKE concat('%',_query,'%'))
+	and d.estado = 1
+	order by d.estado desc, d.razon_social;
 end case; 
 
 END//
