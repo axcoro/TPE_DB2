@@ -202,7 +202,7 @@ function createSearch(target, term, searchUrl) {
 	{
 	    name: target,
 	    prefetch: searchUrl,
-	    remote: searchUrl,
+	    remote: searchUrl + "?q=%QUERY",
 	    valueKey: term,
 	    template: '{{razon_social}}',
 	    engine: Hogan

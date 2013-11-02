@@ -61,9 +61,9 @@ class AjaxController {
 		    render(view:"getEditCopForm", model: [cop : copData])
 		}
 		else {
-		    def clients = sqlService.getClients()
 		    def jobData = sqlService.getJob(params.jobId)
-		    render(view:"getEditJobForm", model: [job : jobData, clients: clients])
+		    def client = sqlService.getClientByJob(jobData.id_trabajos)
+		    render(view:"getEditJobForm", model: [job : jobData, client: client])
 		}
 	}
 
