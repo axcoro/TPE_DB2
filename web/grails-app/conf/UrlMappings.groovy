@@ -32,6 +32,11 @@ class UrlMappings {
 			controller = "efectoLed"
 			action = "deleteCop"
 		}
+		"/activar-(cliente|proveedor|tercero)" {
+
+			controller = "efectoLed"
+			action = "activateCop"
+		}
 		"/eliminar-trabajo" {
 
 			controller = "efectoLed"

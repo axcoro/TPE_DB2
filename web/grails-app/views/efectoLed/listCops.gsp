@@ -43,7 +43,13 @@
 				</g:if>
 				<g:else>
 					<g:each var="cop" in="${cops}">
-						<tr>
+						<g:if test="${cop.estado == 0}">
+							<tr style="background-color:#F0F0F0;">
+						</g:if>
+						<g:else>
+							<tr>
+						</g:else>
+
 							<td class="table-col-cuit">${cop.numero_cuil}</td>
 							<td class="table-col-razon">${cop.razon_social}</td>
 							<td class="table-col-direccion">${cop.direccion}</td>
@@ -62,7 +68,20 @@
 									<ul class="dropdown-menu">
 										
 										<li><a name="editCop"   href="#" data-copId="${cop.id_datos}" data-copType="${copType}"><i class="icon-pencil"></i> Editar</a></li>
-										<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
+
+										<g:if test="${cop.estado == 0}">
+
+											<% Map singularCop = [ 0:"proveedor", 1:"cliente", 2:"tercero" ] %>
+
+											<li><a name="activateCop" href="/activar-${singularCop[copType]}?copType=${copType}&copId=${cop.id_datos}"><i class="icon-ok-sign"></i> Habilitar</a></li>
+
+											
+
+										</g:if>
+										<g:else>
+											<li><a name="deleteCop" href="#" data-copId="${cop.id_datos}" ><i class="icon-trash"></i> Eliminar</a></li>
+										</g:else>
+
 									</ul>
 								</div>
 							</td>
@@ -96,22 +115,27 @@
 			<h3>Esta acción requiere confirmación</h3>
 		</div>
 		<div class="modal-body">
+
+
 			<g:if test="${copType == 0}">
 				¿Está seguro que desea eliminar este proveedor?
 				<br>
-				Esto implica que no podrá consultarlo ni agregar artículos provistos por él en el futuro.
+				Esto implica que no podrá agregar artículos provistos por él en el futuro.
+				<% /*Esto implica que no podrá consultarlo ni agregar artículos provistos por él en el futuro.*/ %>
 			</g:if>
 			<g:elseif test="${copType == 1}">
 				¿Está seguro que desea eliminar este cliente?
 				<br>
-				Esto implica que se eliminarán de manera permanente todos los trabajos que se hayan cargado para el mismo.
+				Esto implica que no se podrán cargar nuevos trabajos para él en el futuro.
+				<% /*Esto implica que se eliminarán de manera permanente todos los trabajos que se hayan cargado para el mismo.*/ %>
 			</g:elseif>
 			<g:elseif test="${copType == 2}">
 				¿Está seguro que desea eliminar este tercero?
 				<br>
-				Esto implica que no podrá consultarlo ni agregar servicios prestados por él en el futuro.
+				Esto implica que no podrá agregar servicios prestados por él en el futuro.
+				<% /*Esto implica que no podrá consultarlo ni agregar servicios prestados por él en el futuro.*/ %>
 			</g:elseif>
-			
+
 		</div>
 		<div class="modal-footer">
 			<div class="control-group">

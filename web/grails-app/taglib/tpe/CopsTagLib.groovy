@@ -33,10 +33,10 @@ class CopsTagLib {
 
 	def requiredMark = { attrs, body ->
 
-		out << "<span style='color: red;'>&nbsp*</span>"
+		out << "<span style='color:#D00000;'>&nbsp*</span>"
 	}
 
 	def requiredMarkExplain = { attrs, body ->
-		out << "<div><h5 class='pull-right'>* campos obligatorios</h5></div>"
+		out << "<div><h5 class='pull-right' style='color:#D00000;'>* campos obligatorios</h5></div>"
 	}
 }

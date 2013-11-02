@@ -10,6 +10,7 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" type="image/x-icon" href="img/fav.ico" />
+
 		<r:layoutResources/>
 
 		<g:layoutHead />

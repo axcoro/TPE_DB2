@@ -70,15 +70,18 @@ class SqlService {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result
-		if (copType == "${Constants.CLIENTS}") {
+		int result = sql.call("{call LED_cambiarEstadoDato(${copId}, 0)}")
 
-			result = sql.call("{call LED_eliminarDatos(${copId})}")
-		}
-		else {
+		sql.close()
 
-			result = sql.call("{call LED_cambiarEstadoDato(${copId}, 0)}")
-		}
+		return result
+	}
+
+	def activateCop(copId, copType) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_cambiarEstadoDato(${copId}, 1)}")
 
 		sql.close()
 
