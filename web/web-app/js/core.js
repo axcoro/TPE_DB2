@@ -397,7 +397,7 @@ function magicLogic(map, _that) {
     }
 }
 
-function existKey(btn){
+function existKey(btn, control){
     var elf = document.getElementById(btn);
     
     var formSelector = "#" + elf.getAttribute("data-form-target");
@@ -416,24 +416,33 @@ function existKey(btn){
         return false;
     }); // ignorar el submit comun
     
-    $.ajax("/existKey", {
-	data: fields,
-	success: function(response) {
-	    if (response === "true") {
-	        el.setCustomValidity("Valor duplicado");
-	    }
-	    else
-	    {
-	        el.setCustomValidity("");
-	    }
-	    
-	    var btn = $("[name='submitBtn']"); // forzar la validacion estandar
-	    btn[0].click();
-	},
-	error: function() {
-	    showAlert("Ocurió un error al intentar procesar la operacion", "alert alert-error");
+    if (el.value === '') {
+        el.setCustomValidity("Completa este campo");
+        var btn = $("[name='submitBtn']"); // forzar la validacion estandar
+        btn[0].click();
+    }
+    else{
+        $.ajax("/existKey", {
+            data: fields,
+            success: function(response) {
+	debugger;
+	if (+response > -1 && !(control && control === +response)) {
+	    el.setCustomValidity("Ya existe otro registro con este valor");
 	}
-            });
+	else
+	{
+	    el.setCustomValidity("");
+	    $(formSelector).off('submit');
+	}
+
+	var btn = $("[name='submitBtn']"); // forzar la validacion estandar
+	btn[0].click();
+            },
+            error: function() {
+	showAlert("Ocurió un error al intentar procesar la operacion", "alert alert-error");
+            }
+        });
+    }
 }
 
 $("#createSave").on('click', function() {
@@ -441,7 +450,8 @@ $("#createSave").on('click', function() {
 });
 
 $("#editSave").on('click', function() {
-    existKey("editSave");
+    idControl = document.getElementById('id').value;
+    existKey("editSave", idControl);
 });
 
 $("#createNext").on('click', function() {
