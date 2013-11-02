@@ -154,5 +154,11 @@ class UrlMappings {
 			controller = "ajax" 
 			action = "listProviders"
 		}
+
+		"/existKey" {
+
+			controller = "ajax" 
+			action = "existKey"	
+		}
 	}
 }

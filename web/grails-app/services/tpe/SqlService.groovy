@@ -217,4 +217,15 @@ class SqlService {
 
 		return getRows("{call LED_crearIntegrante('${params.nombre}', '${params.area}', '${params.telefono}', '${params.correo_electronico}', ${params.providerId})}")[0] 
 	}
+
+	Boolean existKey(keyName, keyValue, type) {
+
+		def sql = Sql.newInstance(dataSource)
+
+		int result = sql.call("{call LED_buscar('${keyName}','${keyValue}','${type}')}")
+
+		sql.close()
+
+		return result == 1
+	}
 }
