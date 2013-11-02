@@ -168,8 +168,15 @@ class AjaxController {
 
 	def existKey() {
 
-		Boolean exist = sqlService.existKey(params.keyName, params.keyValue, params.type)
+		def result = sqlService.existKey(params.keyName, params.keyValue, params.type)
 
-		render exist
+		if (result != null) {
+
+			render "${result.id}"
+		}
+		else {
+
+			render "-1"
+		}
 	}
 }
