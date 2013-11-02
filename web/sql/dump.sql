@@ -25,10 +25,11 @@ CREATE TABLE IF NOT EXISTS `led_articulos` (
   `marca_fabricante` varchar(255) NOT NULL,
   `modelo` varchar(255) NOT NULL,
   `observaciones` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_articulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_articulo`),
+  UNIQUE KEY `Índice 2` (`codigo_interno`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_articulos: ~13 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_articulos: ~14 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_articulos` DISABLE KEYS */;
 INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `marca_fabricante`, `modelo`, `observaciones`) VALUES
 	(1, 'COD-INT-1', 'Descripcion 1', 'MarcaA', 'ProductoA', ''),
@@ -43,7 +44,8 @@ INSERT INTO `led_articulos` (`id_articulo`, `codigo_interno`, `descripcion`, `ma
 	(10, 'COD-INT-10', 'Descripcion 10', 'MarcaJ', 'ProductoJ', ''),
 	(11, 'COD-INT-11', 'Descripcion 11', 'MarcaK', 'ProductoK', ''),
 	(12, 'COD-INT-12', 'Descripcion 12', 'MarcaL', 'ProductoL', ''),
-	(13, 'COD-INT-13', 'Descripcion 13', 'MarcaM', 'ProductoM', '');
+	(13, 'COD-INT-13', 'Descripcion 13', 'MarcaM', 'ProductoM', ''),
+	(14, 'cod1', '', 'proveedor', 'mod1', '');
 /*!40000 ALTER TABLE `led_articulos` ENABLE KEYS */;
 
 
@@ -85,12 +87,12 @@ CREATE TABLE IF NOT EXISTS `led_datos` (
   `sitio_web` varchar(45) DEFAULT NULL,
   `estado` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0 = desactivado / 1 = habilitado',
   PRIMARY KEY (`id_datos`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_datos: ~24 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_datos: ~26 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_datos` DISABLE KEYS */;
 INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`, `codigo_postal`, `telefono_principal`, `correo_electronico_principal`, `sitio_web`, `estado`) VALUES
-	(1, '1111111111', 'Razon Social cliente1', 'Dirección cliente1', '1', '2664111111', '', 'http://cliente1.com', 1),
+	(1, '1111111111', 'Razon Social cliente Test', 'Dirección cliente1', '1', '2664111111', '', 'http://cliente1.com', 1),
 	(2, '2222222222', 'Razon Social cliente2', 'Dirección cliente2', '2', '2664222222', 'emailcliente2@tpe.com', 'http://cliente2.com', 1),
 	(3, '3333333333', 'Razon Social cliente3', 'Dirección cliente3', '3', '2664333333', 'emailcliente3@tpe.com', 'http://cliente3.com', 1),
 	(4, '4444444444', 'Razon Social cliente4', 'Dirección cliente4', '4', '2664444444', 'emailcliente4@tpe.com', 'http://cliente4.com', 1),
@@ -106,14 +108,16 @@ INSERT INTO `led_datos` (`id_datos`, `numero_cuil`, `razon_social`, `direccion`,
 	(14, '5000000000', 'Razon Social proveedor5', 'Dirección proveedor5', '50', '2657555555', 'emailproveedor5@tpe.com', 'http://proveedor5.com', 1),
 	(15, '6000000000', 'Razon Social proveedor6', 'Dirección proveedor6', '60', '2657666666', 'emailproveedor6@tpe.com', 'http://proveedor6.com', 1),
 	(16, '7000000000', 'Razon Social proveedor7', 'Dirección proveedor7', '70', '2657777777', 'emailproveedor7@tpe.com', 'http://proveedor7.com', 1),
-	(17, '1111110000', 'Razon Social tercero1', 'Dirección tercero1', '9911', '9999111111', 'emailtercero1@tpe.com', 'http://tercero1.ar', 1),
-	(18, '2222220000', 'Razon Social tercero2', 'Dirección tercero2', '9922', '9999222222', 'emailtercero2@tpe.com', 'http://tercero2.ar', 1),
+	(17, '1111110000', 'Razon Social tercero1', 'Dirección tercero1', '9911', '9999111111', 'emailtercero1@tpe.com', 'http://tercero1.ar', 0),
+	(18, '2222220000', 'Razon Social tercero2', 'Dirección tercero2', '9922', '9999222222', 'emailtercero2@tpe.com', 'http://tercero2.ar', 0),
 	(19, '3333330000', 'Razon Social tercero3', 'Dirección tercero3', '9933', '9999333333', 'emailtercero3@tpe.com', 'http://tercero3.ar', 1),
 	(20, '4444440000', 'Razon Social tercero4', 'Dirección tercero4', '9944', '9999444444', 'emailtercero4@tpe.com', 'http://tercero4.ar', 1),
 	(21, '5555550000', 'Razon Social tercero5', 'Dirección tercero5', '9955', '9999555555', 'emailtercero5@tpe.com', 'http://tercero5.ar', 1),
 	(22, '6666660000', 'Razon Social tercero6', 'Dirección tercero6', '9966', '9999666666', 'emailtercero6@tpe.com', 'http://tercero6.ar', 1),
 	(23, '7777770000', 'Razon Social tercero7', 'Dirección tercero7', '9977', '9999777777', 'emailtercero7@tpe.com', 'http://tercero7.ar', 1),
-	(24, '8888880000', 'Razon Social tercero8', 'Dirección tercero8', '9988', '9999888888', 'emailtercero8@tpe.com', 'http://tercero8.ar', 1);
+	(24, '8888880000', 'Razon Social tercero8', 'Dirección tercero8', '9988', '9999888888', 'emailtercero8@tpe.com', 'http://tercero8.ar', 1),
+	(25, '123', 'unsl', 'direccion', '5700', '6667777', '', '', 1),
+	(26, '2222220000', 'Test', 'direccion 1', '5700', '2664', '', '', 1);
 /*!40000 ALTER TABLE `led_datos` ENABLE KEYS */;
 
 
@@ -129,9 +133,9 @@ CREATE TABLE IF NOT EXISTS `led_integrantes` (
   PRIMARY KEY (`id_integrantes`),
   KEY `tienen` (`id_proveedor`),
   CONSTRAINT `tienen` FOREIGN KEY (`id_proveedor`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_integrantes: ~10 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_integrantes: ~11 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_integrantes` DISABLE KEYS */;
 INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `correo_electronico`, `id_proveedor`) VALUES
 	(1, 'int1prov1', 'area_int1prov1', '2657111111', 'int1prov1@o', 1),
@@ -143,7 +147,8 @@ INSERT INTO `led_integrantes` (`id_integrantes`, `nombre`, `area`, `telefono`, `
 	(7, 'int2prov4', 'area_int2prov4', '2657444444', 'int2prov4@o.com', 4),
 	(8, 'int3prov4', 'area_int3prov4', '2657764823', 'int3prov4@lala.com', 4),
 	(9, 'int1prov7', 'area_int1prov7', '351777777', 'int1prov7@tpe.com', 7),
-	(10, 'int2prov7', 'area_int2prov7', '351777772', 'int2prov7@tpe7.u', 7);
+	(10, 'int2prov7', 'area_int2prov7', '351777772', 'int2prov7@tpe7.u', 7),
+	(11, 'test', 'test', '1113123', 'asdas@asdasdaasdas.com', 1);
 /*!40000 ALTER TABLE `led_integrantes` ENABLE KEYS */;
 
 
@@ -161,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `led_participa` (
   CONSTRAINT `fk_led_participa_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_participa: ~27 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_participa: ~28 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_participa` DISABLE KEYS */;
 INSERT INTO `led_participa` (`id_terceros`, `id_trabajos`, `costo_prestacion`, `descripcion_trabajo_realizado`) VALUES
 	(1, 8, 964.15, 'Descripcion Prestacion 806'),
@@ -183,6 +188,7 @@ INSERT INTO `led_participa` (`id_terceros`, `id_trabajos`, `costo_prestacion`, `
 	(5, 15, 955.2, 'Descripcion Prestacion 158'),
 	(5, 18, 695.65, 'Descripcion Prestacion 882'),
 	(5, 20, 88.75, 'Descripcion Prestacion 4'),
+	(5, 21, 28.78, 'descripcion'),
 	(6, 12, 950.38, 'Descripcion Prestacion 988'),
 	(6, 18, 346.47, 'Descripcion Prestacion 641'),
 	(6, 20, 880.95, 'Descripcion Prestacion 21'),
@@ -202,9 +208,9 @@ CREATE TABLE IF NOT EXISTS `led_proveedores` (
   PRIMARY KEY (`id_proveedores`),
   KEY `fk_led_proveedores_led_datos_idx` (`id_datos`),
   CONSTRAINT `fk_led_proveedores_led_datos` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_proveedores: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_proveedores: ~8 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_proveedores` DISABLE KEYS */;
 INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
 	(1, 10),
@@ -213,7 +219,8 @@ INSERT INTO `led_proveedores` (`id_proveedores`, `id_datos`) VALUES
 	(4, 13),
 	(5, 14),
 	(6, 15),
-	(7, 16);
+	(7, 16),
+	(8, 25);
 /*!40000 ALTER TABLE `led_proveedores` ENABLE KEYS */;
 
 
@@ -230,12 +237,12 @@ CREATE TABLE IF NOT EXISTS `led_provistos` (
   KEY `fk_led_provistos_led_articulos1_idx` (`id_articulos`),
   KEY `fk_led_provistos_led_proveedores1_idx` (`id_proveedores`),
   KEY `fk_led_provistos_led_trabajos1_idx` (`id_trabajos`),
-  CONSTRAINT `fk_led_provistos_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_led_provistos_led_articulos1` FOREIGN KEY (`id_articulos`) REFERENCES `led_articulos` (`id_articulo`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `fk_led_provistos_led_proveedores1` FOREIGN KEY (`id_proveedores`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION
+  CONSTRAINT `fk_led_provistos_led_proveedores1` FOREIGN KEY (`id_proveedores`) REFERENCES `led_proveedores` (`id_proveedores`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_led_provistos_led_trabajos1` FOREIGN KEY (`id_trabajos`) REFERENCES `led_trabajos` (`id_trabajos`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_provistos: ~28 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_provistos: ~29 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_provistos` DISABLE KEYS */;
 INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `codigo_catalogo_proveedor`, `cantidad_articulos`, `costo_unitario`) VALUES
 	(1, 1, 4, 'CAT001', 8, 320.75),
@@ -265,7 +272,8 @@ INSERT INTO `led_provistos` (`id_articulos`, `id_proveedores`, `id_trabajos`, `c
 	(12, 2, 13, 'CAT506', 5, 893.46),
 	(12, 7, 18, 'CAT757', 5, 139.19),
 	(12, 7, 20, 'CAT70', 5, 714.17),
-	(13, 3, 20, 'CAT842', 5, 336.59);
+	(13, 3, 20, 'CAT842', 5, 336.59),
+	(14, 3, 21, 'proov2', 9, 23.7);
 /*!40000 ALTER TABLE `led_provistos` ENABLE KEYS */;
 
 
@@ -277,9 +285,9 @@ CREATE TABLE IF NOT EXISTS `led_terceros` (
   PRIMARY KEY (`id_terceros`),
   KEY `fk_led_terceros_led_datos1_idx` (`id_datos`),
   CONSTRAINT `fk_led_terceros_led_datos1` FOREIGN KEY (`id_datos`) REFERENCES `led_datos` (`id_datos`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_terceros: ~8 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_terceros: ~9 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_terceros` DISABLE KEYS */;
 INSERT INTO `led_terceros` (`id_terceros`, `id_datos`) VALUES
 	(1, 17),
@@ -289,7 +297,8 @@ INSERT INTO `led_terceros` (`id_terceros`, `id_datos`) VALUES
 	(5, 21),
 	(6, 22),
 	(7, 23),
-	(8, 24);
+	(8, 24),
+	(9, 26);
 /*!40000 ALTER TABLE `led_terceros` ENABLE KEYS */;
 
 
@@ -310,9 +319,9 @@ CREATE TABLE IF NOT EXISTS `led_trabajos` (
   PRIMARY KEY (`id_trabajos`),
   KEY `solicita` (`id_cliente`),
   CONSTRAINT `solicita` FOREIGN KEY (`id_cliente`) REFERENCES `led_clientes` (`id_cliente`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla efecto_led.led_trabajos: ~16 rows (aproximadamente)
+-- Volcando datos para la tabla efecto_led.led_trabajos: ~31 rows (aproximadamente)
 /*!40000 ALTER TABLE `led_trabajos` DISABLE KEYS */;
 INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fecha_aprobacion_presupuesto`, `fecha_inicio_obra`, `fecha_fin_obra`, `precio_total`, `precio_mano_obra`, `precio_articulos`, `precio_prestaciones`, `id_cliente`) VALUES
 	(4, 'Descripcion Trabajo 1', '2013-10-15 00:46:35', '2013-06-15 00:00:00', '2013-12-16 00:00:00', '2014-01-16 00:00:00', 8961.15, 1570.25, 6864.15, 526.75, 1),
@@ -330,7 +339,22 @@ INSERT INTO `led_trabajos` (`id_trabajos`, `descripcion`, `fecha_creacion`, `fec
 	(17, 'Descripcion Trabajo 13', '2013-10-15 00:46:35', '2013-08-31 00:00:00', NULL, NULL, 4383.06, 0, 4327.3, 55.76, 3),
 	(18, 'Descripcion Trabajo 14', '2013-10-15 00:46:35', NULL, NULL, NULL, 14390.8, 0, 13239, 1151.88, 3),
 	(19, 'Descripcion Trabajo 15', '2013-10-15 00:46:35', '2013-06-15 00:00:00', '2013-11-08 00:00:00', '2013-12-14 00:00:00', 29156.2, 0, 29156.2, 0, 3),
-	(20, 'Descripcion Trabajo 16', '2013-10-15 00:46:35', NULL, NULL, NULL, 12022.7, 0, 11053, 969.7, 3);
+	(20, 'Descripcion Trabajo 16', '2013-10-15 00:46:35', NULL, NULL, NULL, 12022.7, 0, 11053, 969.7, 3),
+	(21, 'Descripcion Trabajo 17', '2013-10-15 08:55:03', NULL, '2013-10-15 00:00:00', '2013-10-15 00:00:00', 1031.88, 789.8, 213.3, 28.78, 1),
+	(28, '', '2013-11-01 14:02:34', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(29, '', '2013-11-01 14:04:30', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(30, '', '2013-11-01 15:11:16', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(31, '', '2013-11-01 15:20:28', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(32, '', '2013-11-01 15:56:36', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(33, '', '2013-11-01 15:59:13', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(34, '', '2013-11-01 16:02:50', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(35, '', '2013-11-01 16:23:58', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(36, '', '2013-11-01 18:09:21', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(37, '', '2013-11-01 18:13:09', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(38, '', '2013-11-01 20:16:35', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(39, 'asd', '2013-11-01 23:02:34', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(40, 'typeahead', '2013-11-01 23:02:58', NULL, NULL, NULL, 0, 0, 0, 0, 1),
+	(41, 'gggg', '2013-11-01 23:05:02', NULL, NULL, NULL, 0, 0, 0, 0, 1);
 /*!40000 ALTER TABLE `led_trabajos` ENABLE KEYS */;
 
 
@@ -731,7 +755,20 @@ CREATE PROCEDURE `LED_listarTrabajos`(
 )
 BEGIN
 
-select t.*, d.razon_social from led_trabajos t
+SELECT
+t.id_trabajos,
+t.descripcion,
+date(t.fecha_creacion) as fecha_creacion,
+date(t.fecha_aprobacion_presupuesto) as fecha_aprobacion_presupuesto,
+date(t.fecha_inicio_obra) as fecha_inicio_obra,
+date(t.fecha_fin_obra) as fecha_fin_obra,
+t.precio_total,
+t.precio_mano_obra,
+t.precio_articulos,
+t.precio_prestaciones,
+t.id_cliente,
+d.razon_social
+from led_trabajos t
 inner join led_clientes c on c.id_cliente = t.id_cliente
 inner join led_datos d on d.id_datos = c.id_datos;
 
