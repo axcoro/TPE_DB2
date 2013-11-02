@@ -222,10 +222,10 @@ class SqlService {
 
 		def sql = Sql.newInstance(dataSource)
 
-		int result = sql.call("{call LED_buscar('${keyName}','${keyValue}','${type}')}")
+		def exist = getRows("{call LED_buscar('${keyName}','${keyValue}','${type}')}")[0] != null
 
 		sql.close()
 
-		return result == 1
+		return exist
 	}
 }

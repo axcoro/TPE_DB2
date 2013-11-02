@@ -20,7 +20,7 @@ BEGIN
 
 case  
 when _type = 'datos' then
-    select (1) from led_datos d
+    select (1) as exist from led_datos d
     where d.numero_cuil = _keyValue;
 
 end case; 
