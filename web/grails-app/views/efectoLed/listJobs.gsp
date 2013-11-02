@@ -12,7 +12,7 @@
 
 		<div id="notifications"></div>
 
-		<table class="table table-hover table-bordered table-header-fix">
+		<table class="table table-bordered table-header-fix">
 			<thead>
 				<tr>
 					<th class="table-col-nombre"><center>Cliente</center></th>
@@ -30,7 +30,7 @@
 				</tr>
 			</thead>
 		</table>
-		<table class="table table-hover table-bordered table-header-fix">
+		<table class="table table-bordered table-header-fix">
 			<tbody>
 
 				<g:if test="${jobs == []}">
@@ -43,7 +43,12 @@
 				<g:else>
 					<g:each var="job" in="${jobs}">
 
-						<tr data-jobId="${job.id_trabajos}">
+						<g:if test="${job.estado == 0}">
+							<tr data-jobId="${job.id_trabajos}" style="background-color:#F0F0F0;">
+						</g:if>
+						<g:else>
+							<tr data-jobId="${job.id_trabajos}">
+						</g:else>
 
 							<td class="table-col-nombre">${job.razon_social}</td>
 							<td class="table-col-descripcion">${job.descripcion}</td>
@@ -66,11 +71,18 @@
 							</td>
 							<td class="table-col-custom">
 								<div class="btn-group">
-									<button class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown">
+
+									<g:if test="${job.estado == 0}">
+										<button class="btn btn-primary btn-mini dropdown-toggle disabled" data-toggle="dropdown">
+									</g:if>
+									<g:else>
+										<button class="btn btn-primary btn-mini dropdown-toggle" data-toggle="dropdown">
+									</g:else>
+
 										<i class="icon-align-justify icon-white"></i>
 										<span class="caret"></span>
 									</button>
-
+								
 									<ul class="dropdown-menu">
 										<li><a name="editJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-pencil"></i> Editar</a></li>
 										<li><a name="deleteJob" href="#" data-jobId="${job.id_trabajos}"><i class="icon-trash"></i> Eliminar</a></li>
