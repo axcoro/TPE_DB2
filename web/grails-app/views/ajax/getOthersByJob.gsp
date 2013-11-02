@@ -5,7 +5,7 @@
 <g:else>
 <div id="listOthersContainer" style="max-width: 920px;">
 </g:else>
-<table class="table table-hover table-bordered table table-condensed table-header-fix">
+<table class="table table-bordered table table-condensed table-header-fix">
 
 	<thead>
 		<tr>

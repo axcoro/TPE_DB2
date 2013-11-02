@@ -13,7 +13,7 @@
 
 		<div id="notifications"></div>
 
-		<table class="table table-hover table-bordered table-header-fix">
+		<table class="table table-bordered table-header-fix">
 
 			<thead>
 				<tr>
@@ -31,7 +31,7 @@
 				</tr>
 			</thead> 
 		</table> 
-		<table class="table table-hover table-bordered table-header-fix">
+		<table class="table table-bordered table-header-fix">
 			<tbody>
 
 				<g:if test="${cops == []}">
