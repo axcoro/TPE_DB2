@@ -4,11 +4,13 @@
       <div class="control-group">
         <label class="control-label" for="cliente">Cliente</label>
         <div class="controls">
-          <select id="clientId" name="clientId" class="input-large2">
+<!--          <select id="clientId" name="clientId" class="input-large2">
             <g:each var="client" in="${clients}">
               <option value="${client.id_cliente}">${client.razon_social}</option>
             </g:each>
-          </select><cops:requiredMark />
+          </select>-->
+          <input id="clientId" name="clientId" type="text" class="input-large2">
+          <cops:requiredMark />
         </div>
       </div>
       <div class="control-group">
@@ -47,5 +49,5 @@
   </fieldset>
 </form>
 <script type="text/javascript">
-        createSearch('clientId', 'razon_social', '/listClients');
+  createSearch('clientId', 'razon_social', '/listClients');
 </script>

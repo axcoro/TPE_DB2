@@ -197,11 +197,12 @@ $("[name='deleteJob']").on('click', function() {
 });
 
 function createSearch(target, term, searchUrl) {
-    $("#" + target).typeahead({
-        name: target,
-        remote: searchUrl,
-        valueKey: term
-    });
+    $("#" + target).typeahead([
+        {
+            name: 'planets',
+            local: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+        }
+    ]);
 }
 
 function magicLogic(map, _that) {
