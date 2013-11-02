@@ -149,17 +149,20 @@ class AjaxController {
 	}
 	
     	def listClients() {
-	    def clients = sqlService.getClients()
+	    String query = (params.containsKey("q") ? params.q : "") 
+	    def clients = sqlService.getClientsByQuery(query)
 	    render(contentType: 'text/json') {clients}
 	}
     	
 	def listOthers() {
-	    def others = sqlService.getOthers()
+	    String query = (params.containsKey("q") ? params.q : "") 
+	    def others = sqlService.getOthersByQuery(query)
 	    render(contentType: 'text/json') {others}
 	}
 	
 	def listProviders() {
-	    def providers = sqlService.getProviders()
+	    String query = (params.containsKey("q") ? params.q : "") 
+	    def providers = sqlService.getProvidersByQuery(query)
 	    render(contentType: 'text/json') {providers}
 	}
 }

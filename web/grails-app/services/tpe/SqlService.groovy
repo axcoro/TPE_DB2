@@ -46,6 +46,11 @@ class SqlService {
 		return getRows("{call LED_listarDatos(${Constants.CLIENTS})}")
 	}
 
+	def getClientsByQuery(query) {
+
+		return getRows("{call LED_listarDatosFiltrando(${Constants.CLIENTS}, '${query}')}")
+	}
+
 	def getClientByJob(jobId) {
 
 		return getRows("{call LED_obtenerClientePorTrabajo(${jobId})}")[0]
@@ -56,9 +61,20 @@ class SqlService {
 		return getRows("{call LED_listarDatos(${Constants.PROVIDERS})}")
 	}
 
+	def getProvidersByQuery(query) {
+
+		return getRows("{call LED_listarDatosFiltrando(${Constants.PROVIDERS}, '${query}')}")
+	}
+
 	def getOthers() {
 
 		return getRows("{call LED_listarDatos(${Constants.OTHERS})}")
+	}
+	
+    
+	def getOthersByQuery(query) {
+
+		return getRows("{call LED_listarDatosFiltrando(${Constants.OTHERS}, '${query}')}")
 	}
 
 	def getData(copId, copType) {

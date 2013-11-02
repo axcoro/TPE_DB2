@@ -35,5 +35,5 @@
   </form>
 </div>
 <script type="text/javascript">
-  createSearch('otherId', 'razon_social', '/listProviders');
+  createSearch('otherId', 'razon_social', '/listOthers');
 </script>

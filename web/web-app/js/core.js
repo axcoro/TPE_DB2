@@ -204,7 +204,12 @@ function createSearch(target, term, searchUrl) {
 	    prefetch: searchUrl,
 	    remote: searchUrl + "?q=%QUERY",
 	    valueKey: term,
-	    template: '{{razon_social}}',
+	    template: [
+	        '<strong>{{razon_social}}</strong>',
+	        '<small>cuil: {{numero_cuil}}</small>',
+	        '<small>tel: {{telefono_principal}}</small>',
+	        '<small>direccion: {{direccion}}</small>'
+	    ].join('</br>'),
 	    engine: Hogan
 	}
             ]
