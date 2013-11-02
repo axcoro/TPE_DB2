@@ -20,7 +20,17 @@ BEGIN
 
 case  
 when _type = 'datos' then
-    select d.id_datos as id from led_datos d
+    
+    select c.id_cliente as id from led_datos d
+    inner join led_clientes c on d.id_datos = c.id_datos
+    where d.numero_cuil = _keyValue
+    union
+    select p.id_proveedores as id from led_datos d
+    inner join led_proveedores p on d.id_datos = p.id_datos
+    where d.numero_cuil = _keyValue
+    union
+    select t.id_terceros as id from led_datos d
+    inner join led_terceros t on d.id_datos = t.id_datos
     where d.numero_cuil = _keyValue;
 
 end case;
