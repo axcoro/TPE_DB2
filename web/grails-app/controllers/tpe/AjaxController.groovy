@@ -144,11 +144,11 @@ class AjaxController {
 	
 	def editJob() {
 		sqlService.editJob(params)
-		
+
 		render "${params.jobId}"
 	}
 	
-    	def listClients() {
+    def listClients() {
 	    String query = (params.containsKey("q") ? params.q : "") 
 	    def clients = sqlService.getClientsByQuery(query)
 	    render(contentType: 'text/json') {clients}
@@ -164,5 +164,12 @@ class AjaxController {
 	    String query = (params.containsKey("q") ? params.q : "") 
 	    def providers = sqlService.getProvidersByQuery(query)
 	    render(contentType: 'text/json') {providers}
+	}
+
+	def existKey() {
+
+		Boolean exist = sqlService.existKey(params.keyName, params.keyValue, params.type)
+
+		render exist
 	}
 }
