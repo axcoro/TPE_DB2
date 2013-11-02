@@ -396,7 +396,53 @@ function magicLogic(map, _that) {
             break;
     }
 }
-;
+
+function existKey(btn){
+    var elf = document.getElementById(btn);
+    
+    var formSelector = "#" + elf.getAttribute("data-form-target");
+    var keyName = elf.getAttribute("data-key");
+    var type = elf.getAttribute("data-type");
+    
+    var el = document.getElementById(keyName);
+    
+    var fields = {
+        type: type,
+        keyName: keyName,
+        keyValue: el.value
+    };
+    
+    $(formSelector).submit(function() {
+        return false;
+    }); // ignorar el submit comun
+    
+    $.ajax("/existKey", {
+	data: fields,
+	success: function(response) {
+	    if (response === "true") {
+	        el.setCustomValidity("Valor duplicado");
+	    }
+	    else
+	    {
+	        el.setCustomValidity("");
+	    }
+	    
+	    var btn = $("[name='submitBtn']"); // forzar la validacion estandar
+	    btn[0].click();
+	},
+	error: function() {
+	    showAlert("Ocurió un error al intentar procesar la operacion", "alert alert-error");
+	}
+            });
+}
+
+$("#createSave").on('click', function() {
+    existKey("createSave");
+});
+
+$("#editSave").on('click', function() {
+    existKey("editSave");
+});
 
 $("#createNext").on('click', function() {
     var mapping = {

@@ -173,7 +173,7 @@
 					<button id="createNext" data-copType="${copType}" name="next" class="btn btn-success">Siguiente</button>
 				</g:if>
 				<g:else>
-					<button name="save" class="btn btn-success" onclick="document.forms['formCreateCop'].submitBtn.click();">Guardar</button>
+					<button id="createSave" data-type="datos" data-form-target="formCreateCop" data-key="numero_cuil" name="save" class="btn btn-success">Guardar</button>
 				</g:else>
 			</div>
 		</div>
@@ -205,7 +205,7 @@
 					<button id="editNext" name="edit" data-copType="${copType}" name="save" class="btn btn-success">Siguiente</button>
 				</g:if>
 				<g:else>
-					<button name="save" class="btn btn-success" onclick="document.forms['formEditCop'].submitBtn.click();">Guardar</button>
+					<button id="editSave" name="save" class="btn btn-success" data-type="datos" data-form-target="formEditCop" data-key="numero_cuil" >Guardar</button>
 				</g:else>
 			</div>
 		</div>
