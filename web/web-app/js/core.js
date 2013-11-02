@@ -224,6 +224,17 @@ function createSearch(target, term, searchUrl) {
         else if (data.hasOwnProperty('id_proveedores'))
             el.value = data.id_proveedores;
     });
+
+    $("#" + target).on("typeahead:closed", function(e, data) {
+        var el = document.getElementById(target + '_hidden');
+        if (el.value === '')
+            document.getElementById(target).value = '';
+    });
+
+    $("#" + target).on('keydown.tt keypress.tt queryChanged', function(e, data) {
+        var el = document.getElementById(target + '_hidden');
+            el.value = '';
+    });
 }
 
 function magicLogic(map, _that) {
