@@ -1,6 +1,6 @@
 <form id="formEditJob" method="post" action="/editJob" class="form-horizontal">
   <fieldset>
-    <input type="hidden" name="jobId" value="${job.id_trabajos}"/>
+    <input type="hidden" name="jobId" id="hiddenId" value="${job.id_trabajos}"/>
     <div class="modal-body">
       <div class="control-group">
         <label class="control-label" for="cliente">Cliente</label>

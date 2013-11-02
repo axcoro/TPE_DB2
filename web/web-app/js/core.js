@@ -450,7 +450,7 @@ $("#createSave").on('click', function() {
 });
 
 $("#editSave").on('click', function() {
-    idControl = document.getElementById('id').value;
+    var idControl = document.getElementById('hiddenId').value;
     existKey("editSave", idControl);
 });
 

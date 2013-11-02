@@ -2,7 +2,7 @@
   <form id="formEditCop" method="post" class="form-horizontal" action="/editar">
     <fieldset>
       <input type="hidden" name="copType" value="${cop.tipo}"/>
-      <input type="hidden" name="id" value="${cop.id}"/>
+      <input type="hidden" id="hiddenId" name="id" value="${cop.id}"/>
 
       <div class="control-group">
         <label class="control-label" for="numero_cuil">CUIL/CUIT</label>
