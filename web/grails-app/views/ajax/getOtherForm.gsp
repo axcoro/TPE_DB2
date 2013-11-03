@@ -12,7 +12,7 @@
         <div class="control-group">
           <label class="control-label" for="costo_prestacion">Costo Prestacion</label>
           <div class="controls">                     
-            <input type="number" step="any" min="0" id="costo_prestacion" required="" name="costo_prestacion" value='0.0'><cops:requiredMark />
+            <input type="number" step="any" min="0.1" id="costo_prestacion" required="" name="costo_prestacion" value='0.0'><cops:requiredMark />
           </div>
         </div>
         <div class="control-group">
