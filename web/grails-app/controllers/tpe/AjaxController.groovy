@@ -157,7 +157,19 @@ class AjaxController {
 	def listOthers() {
 	    String query = (params.containsKey("q") ? params.q : "") 
 	    def others = sqlService.getOthersByQuery(query)
-	    render(contentType: 'text/json') {others}
+	    
+	    def othersByJob = sqlService.getOthersByJob(params.jobId)
+        
+	    List list = []
+	    othersByJob.each {
+	        list += it.id_terceros
+	    }
+
+	    def diff = others.findAll { 
+	        !(it.id_terceros in list)
+	    }
+        
+	    render(contentType: 'text/json') {diff}
 	}
 	
 	def listProviders() {

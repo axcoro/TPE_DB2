@@ -26,7 +26,7 @@
       <div class="control-group">
         <div>
           <center>
-            <button id="otherReset" type="reset" name="reset" class="btn">Limpiar</button>
+            <button id="otherReset" type="reset" name="_reset" class="btn">Limpiar</button>
             <button id="otherSubmit" type="submit" name="submit" class="btn btn-success">Guardar</button>
           </center>
         </div>
@@ -35,5 +35,5 @@
   </form>
 </div>
 <script type="text/javascript">
-  createSearch('otherId', 'razon_social', '/listOthers');
+  createSearch('otherId', 'razon_social', '/listOthers', 'jobId=${jobId}');
 </script>

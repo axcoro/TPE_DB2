@@ -196,13 +196,13 @@ $("[name='deleteJob']").on('click', function() {
 	$("#deleteModal").modal('show');
 });
 
-function createSearch(target, term, searchUrl) {
+function createSearch(target, term, searchUrl, extra) {
+    $("#" + target).typeahead('destroy');
     $("#" + target).typeahead(
             [
 	{
 	    name: target,
-	    prefetch: searchUrl,
-	    remote: searchUrl + "?q=%QUERY",
+	    remote: searchUrl + "?q=%QUERY" + (extra ? "&" + extra : ''),
 	    valueKey: term,
 	    template: [
 	        '<strong>{{razon_social}}</strong>',
@@ -223,6 +223,8 @@ function createSearch(target, term, searchUrl) {
             el.value = data.id_terceros;
         else if (data.hasOwnProperty('id_proveedores'))
             el.value = data.id_proveedores;
+        
+        localStorage.clear();
     });
 
     $("#" + target).on("typeahead:closed", function(e, data) {
@@ -362,8 +364,10 @@ function magicLogic(map, _that) {
 			    $.ajax(mapping.formOthersUri + jobId, {
 			        async: false,
 			        success: function(h1) {
-			            var h = $(h1).find(formListSelector).html();
-			            el.html(h);
+			            $(itemsContainer).html(data);
+			            $("[name='_reset']").each(function(idx, obj) {
+				obj.click();
+			            });
 			        },
 			        error: function() {
 			            showAlert("Ocurió un error al intentar recuperar el formulario.", "alert alert-error");
@@ -537,9 +541,10 @@ function interceptSubmit(form, html, itemsContainer, formListSelector){
     el.submit(function() {
         $.post($(formListSelector).attr("action"), $(formListSelector).serialize(), function(data){
             $(itemsContainer).html(data);
-            var h = $(html).find(formListSelector).html();
-            el.html(h);
-        });
+	$("[name='_reset']").each(function(idx, obj){
+	    obj.click();
+	});
+           });
         return false;
     });
 }

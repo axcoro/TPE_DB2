@@ -58,8 +58,9 @@
 			<div class="control-group">
 			  <div>
 			  	<center>
-				  <button id="itemReset" type="reset" name="reset" class="btn" onclick="document.forms['itemsForm'].reset();">Limpiar</button>
-				  <button id="itemSubmit" type="submit" name="submit" class="btn btn-success">Guardar</button>
+				  <button id="itemReset" type="reset" name="_reset" class="btn" onclick="document.forms['itemsForm'].reset();">Limpiar</button>
+				  <button id="itemSubmit" type="submit" name="submitBtn" class="hide">Guardar</button>
+				  <button id="itemFakeSubmit" type="button" data-type="articulos" data-form-target="itemsForm" data-key="codigo_interno" class="btn btn-success">Guardar</button>
 				</center>
 			  </div>
 		    </div>
@@ -68,4 +69,8 @@
 </div>
 <script type="text/javascript">
   createSearch('providerId', 'razon_social', '/listProviders');
+  
+  $("#itemFakeSubmit").on('click', function() {
+    existKey("itemFakeSubmit", false, false);
+  });
 </script>
