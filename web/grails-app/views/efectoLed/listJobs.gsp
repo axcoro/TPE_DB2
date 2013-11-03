@@ -25,8 +25,8 @@
 					<th class="table-col-precio"><center>P. M. Ob.</center></th>
 					<th class="table-col-precio"><center>P. Art.</center></th>
 					<th class="table-col-precio"><center>P. Total</center></th>
-					<th class="table-col-custom"><center>Mas Info.</center></th>
-					<th class="table-col-custom"><center>Acciones</center></th>
+					<th class="table-col-custom2"><center>Mas Info.</center></th>
+					<th class="table-col-custom2"><center>Acciones</center></th>
 				</tr>
 			</thead>
 		</table>
@@ -60,7 +60,7 @@
 							<td class="table-col-precio">$ ${job.precio_mano_obra}</td>
 							<td class="table-col-precio">$ ${job.precio_articulos}</td>
 							<td class="table-col-precio">$ ${job.precio_total}</td>
-							<td class="table-col-custom">
+							<td class="table-col-custom2">
 								<div class="btn-group">
 									<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
 									<ul name="view" class="dropdown-menu" role="menu">
@@ -69,7 +69,7 @@
 									</ul>
 								</div>
 							</td>
-							<td class="table-col-custom">
+							<td class="table-col-custom2">
 								<div class="btn-group">
 
 									<g:if test="${job.estado == 0}">

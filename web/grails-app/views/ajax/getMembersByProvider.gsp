@@ -1,7 +1,6 @@
 <center>
 <g:if test="${modal == false}">
-<!--<div id="listMembersContainer" style="max-width: 630px;">-->
-<div id="listMembersContainer" style="">
+<div id="listMembersContainer" style="max-width: 645px;">
 </g:if>
 <g:else>
 <div id="listMembersContainer" style="max-width: 550px;">
@@ -15,7 +14,7 @@
 			<th class="table-col-descripcion-large"><center>Teléfono P.</center></th>
 			<th class="table-col-email"><center>Correo El.</center></th>
 			<g:if test="${modal == false}">
-			      <th class="table-col-descripcion-large"><center>Borrar</center></th>
+			      <th class="table-col-descripcion"><center>Borrar</center></th>
 			</g:if>
 		</tr>
 	</thead>
@@ -40,7 +39,7 @@
 					<td class="table-col-descripcion-large">${member.telefono}</td>
 					<td class="table-col-email"><a href="mailto:${member.correo_electronico}">${member.correo_electronico}</a></td>
 					<g:if test="${modal == false}">
-					      <td class="table-col-descripcion-large">
+					      <td class="table-col-descripcion">
 					          <center>
 					            <a href="#" name="member-remove" data-memberId="${member.id_integrantes}" class="btn btn-danger btn-mini"><i class="icon-white icon-minus-sign"></i></a>
 					          </center>

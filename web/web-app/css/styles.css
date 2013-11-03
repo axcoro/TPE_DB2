@@ -110,6 +110,11 @@ div {
 }
 
 .table-col-custom {
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.table-col-custom2 {
     min-width: 65px;
     max-width: 65px;
 }
@@ -145,8 +150,8 @@ div {
 }
 
 .table-col-email{
-    min-width: 175px;
-    max-width: 175px;
+    min-width: 190px;
+    max-width: 190px;
 }
 
 .table-col-url{
