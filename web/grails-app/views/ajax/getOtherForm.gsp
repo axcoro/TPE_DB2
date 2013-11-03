@@ -9,20 +9,20 @@
           <input id="otherId" type="text" autocomplete="off" class="" required="" />
           <cops:requiredMark />
         </div>
-        <div class="control-group">
-          <label class="control-label" for="costo_prestacion">Costo Prestacion</label>
-          <div class="controls">                     
-            <input type="number" step="any" min="1" id="costo_prestacion" required="" name="costo_prestacion" value='0.0'><cops:requiredMark />
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label" for="descripcion_trabajo_realizado">Descripción Trabajo</label>
-          <div class="controls">                     
-            <textarea id="descripcion_trabajo_realizado" name="descripcion_trabajo_realizado"></textarea>
-          </div>
-        </div>
-        <cops:requiredMarkExplain />
       </div>
+      <div class="control-group">
+        <label class="control-label" for="costo_prestacion">Costo Prestacion</label>
+        <div class="controls">                     
+          <input type="number" step="any" min="0" id="costo_prestacion" required="" name="costo_prestacion" value=''><cops:requiredMark />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="descripcion_trabajo_realizado">Descripción Trabajo</label>
+        <div class="controls">                     
+          <textarea id="descripcion_trabajo_realizado" name="descripcion_trabajo_realizado"></textarea>
+        </div>
+      </div>
+      <cops:requiredMarkExplain />
       <div class="control-group">
         <div>
           <center>

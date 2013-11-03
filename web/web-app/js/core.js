@@ -204,6 +204,7 @@ function createSearch(target, term, searchUrl, extra) {
 	    name: target,
 	    remote: searchUrl + "?q=%QUERY" + (extra ? "&" + extra : ''),
 	    valueKey: term,
+	    ttl_ms: 0,
 	    template: [
 	        '<strong>{{razon_social}}</strong>',
 	        '<small>cuil: {{numero_cuil}}</small>',
@@ -224,19 +225,25 @@ function createSearch(target, term, searchUrl, extra) {
         else if (data.hasOwnProperty('id_proveedores'))
             el.value = data.id_proveedores;
         
-        localStorage.clear();
+                window.localStorage.clear();
     });
 
     $("#" + target).on("typeahead:closed", function(e, data) {
         var el = document.getElementById(target + '_hidden');
         if (el.value === '')
             document.getElementById(target).value = '';
+        
+                window.localStorage.clear();
     });
 
     $("#" + target).on('keydown.tt keypress.tt queryChanged', function(e, data) {
         var el = document.getElementById(target + '_hidden');
             el.value = '';
+            
+                    window.localStorage.clear();
     });
+    
+            window.localStorage.clear();
 }
 
 function magicLogic(map, _that) {
@@ -284,7 +291,7 @@ function magicLogic(map, _that) {
 	        var divRow = $('<div/>', {class: 'row-fluid'});
 	        var divFormulario = $('<div/>', {
 	            class: 'span5',
-	            style: 'max-width: 440px; margin-right: 10px;'
+	            style: 'max-width: 445px; margin-right: 10px;'
 	        });
 	        var divListado = $('<div/>', {
 	            id: mapping.divItems,
@@ -336,7 +343,7 @@ function magicLogic(map, _that) {
 	        var divRow = $('<div/>', {class: 'row-fluid'});
 	        var divFormulario = $('<div/>', {
 	            class: 'span5',
-	            style: 'max-width: 440px; margin-right: 10px;'
+	            style: 'max-width: 445px; margin-right: 10px;'
 	        });
 	        var divListado = $('<div/>', {
 	            id: mapping.divItems,

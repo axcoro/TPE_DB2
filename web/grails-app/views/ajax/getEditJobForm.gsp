@@ -31,7 +31,7 @@
       <div class="control-group">
         <label class="control-label" for="precio_mano_obra">Mano de Obra</label>
         <div class="controls">                     
-          <input type="number" step="any" min="1" id="precio_mano_obra" required="" name="precio_mano_obra" value="${job.precio_mano_obra}">
+          <input type="number" step="any" min="0" id="precio_mano_obra" required="" name="precio_mano_obra" value="${job.precio_mano_obra}">
         </div>
       </div>
       <div class="control-group">
