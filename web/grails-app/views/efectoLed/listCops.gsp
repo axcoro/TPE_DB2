@@ -9,7 +9,7 @@
 
 	<body>
 	<center>
-	  <div class="container"  style="max-width: 990px;">
+	  <div class="container"  style="max-width: 1030px;">
 
 		<div id="notifications"></div>
 
