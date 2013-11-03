@@ -50,11 +50,16 @@ function activateStep(step, suffix, action){
         if (id === "step2" + suffix){
 			$("#"+action+"FormModal").removeClass('modal-medium').addClass('modal-extra-large');
 			$("#"+action+"Reset").addClass('hide');
+			
+			$("#"+action+"Cancel").html('Finalizar');
+			$("#"+action+"Cancel").removeClass('btn-danger');
+			$("#"+action+"Cancel").addClass('btn-success');
         }
         if (id === "end" + suffix || id === "step2end" + suffix){
 			$("#"+action+"FormModal").removeClass('modal-extra-large').addClass('modal-extra-large');
 			$("#"+action+"Next").addClass('hide');
 			$("#"+action+"Reset").addClass('hide');
+			
 			$("#"+action+"Cancel").html('Finalizar');
 			$("#"+action+"Cancel").removeClass('btn-danger');
 			$("#"+action+"Cancel").addClass('btn-success');
@@ -296,7 +301,7 @@ function magicLogic(map, _that) {
 	        var divListado = $('<div/>', {
 	            id: mapping.divItems,
 	            class: 'span7',
-	            style: 'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 730px;'
+	            style: 'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 691px;'
 	        });
 
 	        $.ajax(mapping.formUri + data, {
@@ -348,7 +353,7 @@ function magicLogic(map, _that) {
 	        var divListado = $('<div/>', {
 	            id: mapping.divItems,
 	            class: 'span7',
-	            style: 'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 730px;'
+	            style: 'margin-left: 0px; padding-left: 0px; overflow-x: auto; min-height: 430px; min-width: 691px;'
 	        });
 
 	        $.ajax(mapping.formOthersUri + jobId, {

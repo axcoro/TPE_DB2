@@ -7,7 +7,7 @@
 			              <label class="control-label" for="providerId">Proveedor</label>
 			              <div class="controls">
 				<input id="providerId_hidden" name="providerId" type="hidden" />
-				<input id="providerId" type="text" autocomplete="off" class="input-large2" required="" />
+				<input id="providerId" type="text" autocomplete="off" class="input-large" required="" />
 				<cops:requiredMark />
 			              </div>
 		              </div>

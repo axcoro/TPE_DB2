@@ -1,9 +1,10 @@
 <center>
 <g:if test="${modal == false}">
-<div id="listMembersContainer" style="max-width: 630px;">
+<!--<div id="listMembersContainer" style="max-width: 630px;">-->
+<div id="listMembersContainer" style="">
 </g:if>
 <g:else>
-<div id="listMembersContainer" style="max-width: 500px;">
+<div id="listMembersContainer" style="max-width: 550px;">
 </g:else>
   <table class="table table-bordered table table-condensed table-header-fix">
 
@@ -12,7 +13,7 @@
 			<th class="table-col-codigo-large"><center>Nombre</center></th>
 			<th class="table-col-descripcion-large"><center>Área</center></th>
 			<th class="table-col-descripcion-large"><center>Teléfono P.</center></th>
-			<th class="table-col-descripcion-large"><center>Correo El.</center></th>
+			<th class="table-col-email"><center>Correo El.</center></th>
 			<g:if test="${modal == false}">
 			      <th class="table-col-descripcion-large"><center>Borrar</center></th>
 			</g:if>
@@ -37,7 +38,7 @@
 					<td class="table-col-codigo-large">${member.nombre}</td>
 					<td class="table-col-descripcion-large">${member.area}</td>
 					<td class="table-col-descripcion-large">${member.telefono}</td>
-					<td class="table-col-descripcion-large"><a href="mailto:${member.correo_electronico}">${member.correo_electronico}</a></td>
+					<td class="table-col-email"><a href="mailto:${member.correo_electronico}">${member.correo_electronico}</a></td>
 					<g:if test="${modal == false}">
 					      <td class="table-col-descripcion-large">
 					          <center>

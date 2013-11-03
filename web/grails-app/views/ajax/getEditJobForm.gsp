@@ -6,7 +6,7 @@
         <label class="control-label" for="cliente">Cliente</label>
         <div class="controls">
           <input id="clientId_hidden" name="clientId" type="hidden" value="${client.id_cliente}" />
-          <input id="clientId" type="text" autocomplete="off" class="input-large2" required="" value="${client.razon_social}" />
+          <input id="clientId" type="text" autocomplete="off" class="input-large" required="" value="${client.razon_social}" />
           <cops:requiredMark />
         </div>
       </div>
