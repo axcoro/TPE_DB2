@@ -154,6 +154,11 @@ div {
     max-width: 190px;
 }
 
+.table-col-email2{
+    min-width: 200px;
+    max-width: 200px;
+}
+
 .table-col-url{
     min-width: 150px;
     max-width: 150px;

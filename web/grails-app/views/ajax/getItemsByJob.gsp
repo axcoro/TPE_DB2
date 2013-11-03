@@ -3,7 +3,7 @@
 <div id="listJobsContainer" style="max-width: 890px;">
 </g:if>
 <g:else>
-<div id="listJobsContainer" style="max-width: 920px;">
+<div id="listJobsContainer" style="max-width: 700px;">
 </g:else>
   <table class="table table-bordered table table-condensed table-header-fix">
 

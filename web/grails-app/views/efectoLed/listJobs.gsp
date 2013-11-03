@@ -117,7 +117,7 @@
             </div>
         </div>
 
-		<div id="itemsByJobModal" class="modal hide fade modal-large2" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div id="itemsByJobModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 			<div class="modal-header">
 				<h3>Artículos</h3>
 			</div>
@@ -133,7 +133,7 @@
 			</div>
 		</div>
 
-		<div id="othersByJobModal" class="modal hide fade modal-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
+		<div id="othersByJobModal" class="modal hide fade modal-extra-large" tabindex="-1" role="dialog" aria-labelledby="modalPopUp" aria-hidden="true">
 			<div class="modal-header">
 				<h3>Terceros</h3>
 			</div>

@@ -3,7 +3,7 @@
 <div id="listOthersContainer" style="max-width: 890px;">
 </g:if>
 <g:else>
-<div id="listOthersContainer" style="max-width: 920px;">
+<div id="listOthersContainer" style="max-width: 1055px;">
 </g:else>
 <table class="table table-bordered table table-condensed table-header-fix">
 
