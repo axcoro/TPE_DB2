@@ -11,7 +11,7 @@ CREATE
 
 		SET @total = 0;
 
-		SELECT SUM(s.costo) into @total
+		SELECT IFNULL(SUM(s.costo),0) into @total
 		FROM(
 			SELECT (p.costo_unitario * p.cantidad_articulos) as costo
 		    FROM led_provistos p

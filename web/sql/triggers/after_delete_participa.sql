@@ -11,7 +11,7 @@ CREATE
 
 		SET @total = 0;
 
-		SELECT SUM(p.costo_prestacion) into @total
+		SELECT IFNULL(SUM(p.costo_prestacion),0) into @total
 		FROM led_participa p
 		WHERE p.id_trabajos = @jobId;
 
