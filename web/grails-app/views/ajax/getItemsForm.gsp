@@ -44,11 +44,11 @@
 		              <div class="control-group">
 			              <label class="control-label" for="costo_unitario">Costo Unitario</label>
 			              <div class="controls">
-				              <input type="number" step="any" min="0.1" id="costo_unitario" required="" name="costo_unitario" value='0.0'><cops:requiredMark />
+				              <input type="number" step="any" min="1" id="costo_unitario" required="" name="costo_unitario" value='0.0'><cops:requiredMark />
 			              </div>
 			              <label class="control-label" for="cantidad_articulos">Cantidad Artículos</label>
 			              <div class="controls">
-				              <input type="number" step="1" min="0.1" id="cantidad_articulos" required="" name="cantidad_articulos" value='0'><cops:requiredMark />
+				              <input type="number" step="1" min="1" id="cantidad_articulos" required="" name="cantidad_articulos" value='0'><cops:requiredMark />
 			              </div>
 			              <cops:requiredMarkExplain />
 		              </div>
